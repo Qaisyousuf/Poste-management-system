@@ -84,6 +84,10 @@
     <Compile Include="Migrations\202001121647439_DateTimeChangedToDateTime2.designer.cs">
       <DependentUpon>202001121647439_DateTimeChangedToDateTime2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001122156355_DataChanged.cs" />
+    <Compile Include="Migrations\202001122156355_DataChanged.designer.cs">
+      <DependentUpon>202001122156355_DataChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001121647439_DateTimeChangedToDateTime2.resx">
       <DependentUpon>202001121647439_DateTimeChangedToDateTime2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001122156355_DataChanged.resx">
+      <DependentUpon>202001122156355_DataChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
