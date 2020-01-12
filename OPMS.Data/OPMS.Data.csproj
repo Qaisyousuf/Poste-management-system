@@ -61,6 +61,11 @@
     <Compile Include="FluentAPI\SiteSettingsMapping.cs" />
     <Compile Include="FluentAPI\TagMapping.cs" />
     <Compile Include="FluentAPI\UserMapping.cs" />
+    <Compile Include="Migrations\202001121621325_Initial.cs" />
+    <Compile Include="Migrations\202001121621325_Initial.designer.cs">
+      <DependentUpon>202001121621325_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,7 +78,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202001121621325_Initial.resx">
+      <DependentUpon>202001121621325_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

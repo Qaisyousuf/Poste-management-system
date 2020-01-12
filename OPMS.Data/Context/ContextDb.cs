@@ -22,6 +22,12 @@ namespace OPMS.Data.Context
         public DbSet<UserModel> UserModels { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Menu> Menus { get; set; }
+        public DbSet<RoleModel> RoleModels { get; set; }
+        public DbSet<SiteSettings> SiteSettings { get; set; }
+
+        
+
+
 
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
