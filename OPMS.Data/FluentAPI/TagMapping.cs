@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OPMS.Models;
 using System.Data.Entity.ModelConfiguration;
-using OPMS.Models;
 
 namespace OPMS.Data.FluentAPI
 {
-   public class TagMapping:EntityTypeConfiguration<Tag>
+    public class TagMapping:EntityTypeConfiguration<Tag>
     {
         public TagMapping()
         {

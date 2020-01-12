@@ -10,6 +10,7 @@ namespace OPMS.Models
         }
         public string UserName { get; set; }
         public string PhoneNumber { get; set; }
+        public string Email { get; set; }
         public string HashPassword { get; set; }
 
         public ICollection<RoleModel> Roles { get; set; }

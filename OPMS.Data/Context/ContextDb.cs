@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
-using OPMS.Data.FluentAPI;
+﻿using OPMS.Data.FluentAPI;
 using OPMS.Models;
+using System;
+using System.Data.Entity;
 
 namespace OPMS.Data.Context
 {
@@ -19,10 +15,10 @@ namespace OPMS.Data.Context
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<Tag> Tags { get; set;}
         public DbSet<Sidebar> Sidebars { get; set; }
-        public DbSet<UserModel> UserModels { get; set; }
+        public DbSet<UserModel> Users { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Menu> Menus { get; set; }
-        public DbSet<RoleModel> RoleModels { get; set; }
+        public DbSet<RoleModel> Roles { get; set; }
         public DbSet<SiteSettings> SiteSettings { get; set; }
 
         
@@ -41,6 +37,7 @@ namespace OPMS.Data.Context
             modelBuilder.Configurations.Add(new SidebarMapping());
             modelBuilder.Configurations.Add(new SiteSettingsMapping());
             modelBuilder.Configurations.Add(new MenuMapping());
+            modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("datetime2"));
             base.OnModelCreating(modelBuilder);
         }
     }

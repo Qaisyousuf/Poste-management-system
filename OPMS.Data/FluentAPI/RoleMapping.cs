@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OPMS.Models;
 using System.Data.Entity.ModelConfiguration;
-using OPMS.Models;
 
 namespace OPMS.Data.FluentAPI
 {
@@ -15,6 +10,7 @@ namespace OPMS.Data.FluentAPI
             Property(r => r.Name)
                 .HasColumnName("Role Name")
                 .IsRequired();
+            ToTable("Roles");
         }
     }
 }

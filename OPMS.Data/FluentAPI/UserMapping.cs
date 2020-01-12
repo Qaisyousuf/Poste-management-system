@@ -19,6 +19,7 @@ namespace OPMS.Data.FluentAPI
                 .IsRequired();
             Property(p => p.HashPassword)
                 .IsRequired();
+            ToTable("Users");
         }
     }
 }
