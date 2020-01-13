@@ -1,5 +1,6 @@
 using OPMS.Data.Concrete;
 using OPMS.Data.Interfaces;
+using OPMS.Services;
 using System;
 
 using Unity;
@@ -45,6 +46,7 @@ namespace OPMS.Web
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IUnitOfWork, UnitOfWork>();
+            container.RegisterType<IAuthenticationService, AuthenticationService>();
         }
     }
 }
