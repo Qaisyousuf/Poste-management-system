@@ -17,8 +17,7 @@ namespace OPMS.Web.Controllers
         }
         public ActionResult Index()
         {
-            var sidebarfromdb = uow.SidebarRepository.GetAll();
-            return View(sidebarfromdb);
+            return View();
         }
     }
 }

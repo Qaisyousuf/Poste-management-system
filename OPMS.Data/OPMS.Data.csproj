@@ -88,6 +88,10 @@
     <Compile Include="Migrations\202001122156355_DataChanged.designer.cs">
       <DependentUpon>202001122156355_DataChanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001131059054_PhoneNumberAddedToUserModel.cs" />
+    <Compile Include="Migrations\202001131059054_PhoneNumberAddedToUserModel.designer.cs">
+      <DependentUpon>202001131059054_PhoneNumberAddedToUserModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001122156355_DataChanged.resx">
       <DependentUpon>202001122156355_DataChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001131059054_PhoneNumberAddedToUserModel.resx">
+      <DependentUpon>202001131059054_PhoneNumberAddedToUserModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

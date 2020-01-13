@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OPMS.Data.Interfaces;
+﻿using OPMS.Data.Interfaces;
 using OPMS.Models;
 
 namespace OPMS.Services
@@ -35,7 +30,7 @@ namespace OPMS.Services
             return null;
         }
 
-        public bool Register(string email, string username, string password)
+        public bool Register(string email, string username,string phonenumber, string password,out int? userId)
         {
             var userExists = uow.UserRepository.UserExists(username);
             if(!userExists)
@@ -45,13 +40,16 @@ namespace OPMS.Services
                 {
                     Email = email,
                     UserName=username,
+                    PhoneNumber=phonenumber,
                     HashPassword=hashedPassword
                 };
                 uow.UserRepository.Add(user);
                 uow.Commit();
+                userId = user.Id;
                 return true;
 
             }
+            userId = null;
             return false;
         }
 

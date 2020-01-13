@@ -34,7 +34,7 @@ namespace OPMS.Data.Concrete
 
         public UserModel GetUserWithRoles(string username)
         {
-            var user = _context.Users.Include(u => u.Roles).SingleOrDefault();
+            var user = _context.Users.Include(u => u.Roles).FirstOrDefault();
             UserModel currentuser = new UserModel
             {
                 Id = user.Id,
@@ -60,7 +60,7 @@ namespace OPMS.Data.Concrete
 
         public bool UserExists(string username)
         {
-            throw new NotImplementedException();
+            return _context.Users.Any(x => x.UserName == username);
         }
     }
 }

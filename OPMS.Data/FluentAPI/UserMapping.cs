@@ -19,6 +19,8 @@ namespace OPMS.Data.FluentAPI
                 .IsRequired();
             Property(p => p.HashPassword)
                 .IsRequired();
+            Property(mb => mb.PhoneNumber)
+                .IsRequired();
             ToTable("Users");
         }
     }
