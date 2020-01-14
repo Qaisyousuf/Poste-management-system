@@ -59,6 +59,7 @@
     <Compile Include="Concrete\UnitOfWork.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Context\ContextDb.cs" />
+    <Compile Include="Context\ContextDb.Views.cs" />
     <Compile Include="FluentAPI\BlogPostMapping.cs" />
     <Compile Include="FluentAPI\ContactMapping.cs" />
     <Compile Include="FluentAPI\MenuMapping.cs" />

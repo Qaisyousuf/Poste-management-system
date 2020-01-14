@@ -147,6 +147,14 @@
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
     <Content Include="Areas\OPMSAdmin\Views\Sidebars\Index.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Sidebars\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Sidebars\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Sidebars\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Sidebars\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Tags\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Tags\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Tags\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Tags\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Tags\Details.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -509,6 +517,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SidebarsController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\TagsController.cs" />
     <Compile Include="Areas\OPMSAdmin\OPMSAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

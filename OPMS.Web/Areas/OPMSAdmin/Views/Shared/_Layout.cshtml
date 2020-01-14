@@ -18,10 +18,16 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Panneau d'administration", "Index", "Home", new { area = "OPMSAdmin" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Sidebar", "Index", "Sidebars", new { area = "OPMSAdmin" }, new { @class = "navbar-brand" })
+              
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav"></ul>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Sidebar", "Index", "Sidebars", new { area = "OPMSAdmin" }, null)</li>
+                    <li>@Html.ActionLink("Tag", "Index", "Tags", new { area = "OPMSAdmin" }, null)</li>
+                    <li>@Html.ActionLink("Sidebar", "Index", "Sidebars", new { area = "OPMSAdmin" }, null)</li>
+                   
+
+                </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
