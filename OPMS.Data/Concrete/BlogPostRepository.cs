@@ -21,6 +21,11 @@ namespace OPMS.Data.Concrete
             return _context.BlogPosts.Where(x => x.Slug == slug).SingleOrDefault();
         }
 
+        public BlogPost GetBlogPostByTag(int id)
+        {
+            return _context.BlogPosts.Include("Tags").Where(x => x.Id == id).FirstOrDefault();
+        }
+
         public bool SlugExists(string slug)
         {
             return _context.BlogPosts.Any(x => x.Slug == slug);

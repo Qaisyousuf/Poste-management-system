@@ -160,6 +160,14 @@
     <Content Include="Areas\OPMSAdmin\Views\Pages\Edit.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Pages\Delete.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Pages\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Menus\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Menus\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Menus\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Menus\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Menus\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -521,6 +529,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\BlogPostsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\MenusController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\PagesController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SidebarsController.cs" />
@@ -558,7 +567,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\OPMSAdmin\Models\" />
-    <Folder Include="Areas\OPMSAdmin\Views\Menus\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OPMS.Data\OPMS.Data.csproj">

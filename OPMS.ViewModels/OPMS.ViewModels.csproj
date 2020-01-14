@@ -64,7 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseViewModel.cs" />
+    <Compile Include="BlogPostViewModel.cs" />
     <Compile Include="LoginViewModel.cs" />
+    <Compile Include="MenuViewModel.cs" />
     <Compile Include="PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterViewModel.cs" />
