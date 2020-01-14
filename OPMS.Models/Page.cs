@@ -10,6 +10,7 @@ namespace OPMS.Models
         public string MetaKeywords { get; set; }
         public string MetaDescription { get; set; }
         public bool IsPageMetaDataOn { get; set; }
+        public bool IsVisibleToSearchEngine { get; set; }
 
         public int SidebarId { get; set; }
 

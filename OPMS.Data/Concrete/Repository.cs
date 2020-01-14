@@ -24,6 +24,18 @@ namespace OPMS.Data.Concrete
             return data;
         }
 
+        public IQueryable<TModel> GetAll(params string[] navigationProperties)
+        {
+            var data = _context.Set<TModel>().AsQueryable();
+
+            foreach (string navigationProperty in navigationProperties)
+            {
+                data = data.Include(navigationProperty);
+            }
+
+            return data;
+        }
+
         public TModel GetById(object id)
         {
             return _context.Set<TModel>().Find(id);

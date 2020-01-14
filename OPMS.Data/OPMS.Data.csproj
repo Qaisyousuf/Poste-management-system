@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\BlogPostRepository.cs" />
+    <Compile Include="Concrete\MenuRepository.cs" />
     <Compile Include="Concrete\PageRepository.cs" />
     <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Concrete\SidebarRepository.cs" />
@@ -59,7 +60,6 @@
     <Compile Include="Concrete\UnitOfWork.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Context\ContextDb.cs" />
-    <Compile Include="Context\ContextDb.Views.cs" />
     <Compile Include="FluentAPI\BlogPostMapping.cs" />
     <Compile Include="FluentAPI\ContactMapping.cs" />
     <Compile Include="FluentAPI\MenuMapping.cs" />
@@ -70,6 +70,7 @@
     <Compile Include="FluentAPI\TagMapping.cs" />
     <Compile Include="FluentAPI\UserMapping.cs" />
     <Compile Include="Interfaces\IBlogPostRepository.cs" />
+    <Compile Include="Interfaces\IMenuRepository.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\ISidebarRepository.cs" />
@@ -92,6 +93,10 @@
     <Compile Include="Migrations\202001131059054_PhoneNumberAddedToUserModel.cs" />
     <Compile Include="Migrations\202001131059054_PhoneNumberAddedToUserModel.designer.cs">
       <DependentUpon>202001131059054_PhoneNumberAddedToUserModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001141307588_IsVisibleToSearchEngineAddedToPageModel.cs" />
+    <Compile Include="Migrations\202001141307588_IsVisibleToSearchEngineAddedToPageModel.designer.cs">
+      <DependentUpon>202001141307588_IsVisibleToSearchEngineAddedToPageModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001131059054_PhoneNumberAddedToUserModel.resx">
       <DependentUpon>202001131059054_PhoneNumberAddedToUserModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001141307588_IsVisibleToSearchEngineAddedToPageModel.resx">
+      <DependentUpon>202001141307588_IsVisibleToSearchEngineAddedToPageModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

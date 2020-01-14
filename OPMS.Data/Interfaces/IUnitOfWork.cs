@@ -14,6 +14,7 @@ namespace OPMS.Data.Interfaces
         IBlogPostRepository BlogPostRepository { get; }
         ITagRepository TagRepository { get; }
         IUserRepository UserRepository { get; }
+        IMenuRepository MenuRepository { get; }
 
         ISidebarRepository SidebarRepository { get; }
 

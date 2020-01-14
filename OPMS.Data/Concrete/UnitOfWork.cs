@@ -29,7 +29,7 @@ namespace OPMS.Data.Concrete
 
         public ISidebarRepository SidebarRepository => new SidebarRepository(Context);
 
-      
+        public IMenuRepository MenuRepository => new MenuRepository(Context);
 
         public void Commit()
         {
