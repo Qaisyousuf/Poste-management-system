@@ -1,9 +1,10 @@
 ﻿using OPMS.Data.Interfaces;
 using OPMS.Models;
+using System;
 
 namespace OPMS.Services
 {
-    public class AuthenticationService : IAuthenticationService
+    public class AuthenticationService : IAuthenticatioService
     {
         private readonly IUnitOfWork uow;
 
@@ -13,8 +14,8 @@ namespace OPMS.Services
         }
         public string GenerateHash(string password)
         {
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-            return hashedPassword;
+            string HashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+            return HashedPassword;
         }
 
         public UserModel Login(string username, string password)
@@ -22,32 +23,29 @@ namespace OPMS.Services
             var user = uow.UserRepository.GetUserWithRoles(username);
             if (user == null)
                 return null;
-            bool hashValidated = VerifyHash(user.UserName, password);
-            if(hashValidated)
+            bool hashValideated = VerifyHash(user.UserName, password);
+            if(hashValideated)
             {
                 return user;
             }
             return null;
         }
 
-        public bool Register(string email, string username,string phonenumber, string password,out int? userId)
+        public bool Register(string username, string email, string password, string phonenumber, out int? userId)
         {
             var userExists = uow.UserRepository.UserExists(username);
             if(!userExists)
             {
                 string hashedPassword = GenerateHash(password);
-                UserModel user = new UserModel
-                {
-                    Email = email,
-                    UserName=username,
-                    PhoneNumber=phonenumber,
-                    HashPassword=hashedPassword
-                };
+                UserModel user = new UserModel();
+                user.Email = email;
+                user.PhoneNumber = phonenumber;
+                user.UserName = username;
+                user.HashPassword = hashedPassword;
                 uow.UserRepository.Add(user);
                 uow.Commit();
                 userId = user.Id;
                 return true;
-
             }
             userId = null;
             return false;
@@ -56,8 +54,8 @@ namespace OPMS.Services
         public bool VerifyHash(string username, string password)
         {
             var hashedPassword = uow.UserRepository.GetPassword(username);
-            bool hashMatched = BCrypt.Net.BCrypt.Verify(password, hashedPassword);
-            return hashMatched;
+            bool hashMatch = BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+            return hashMatch;
         }
     }
 }

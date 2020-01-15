@@ -25,13 +25,15 @@ namespace OPMS.Data.Concrete
             get { return new TagReposiitory(Context); }
         }
 
-        public IUserRepository UserRepository => new UserRepository(Context);
+       
 
         public ISidebarRepository SidebarRepository => new SidebarRepository(Context);
 
         public IMenuRepository MenuRepository => new MenuRepository(Context);
 
         public ISiteSettingsRepository SiteSettingsRepository => new SiteSettingRepository(Context);
+
+        public IUserRepository UserRepository => new UserRepository(Context);
 
         public void Commit()
         {

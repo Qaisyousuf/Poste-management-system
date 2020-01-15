@@ -80,33 +80,9 @@
     <Compile Include="Interfaces\ITagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
-    <Compile Include="Migrations\202001121621325_Initial.cs" />
-    <Compile Include="Migrations\202001121621325_Initial.designer.cs">
-      <DependentUpon>202001121621325_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001121647439_DateTimeChangedToDateTime2.cs" />
-    <Compile Include="Migrations\202001121647439_DateTimeChangedToDateTime2.designer.cs">
-      <DependentUpon>202001121647439_DateTimeChangedToDateTime2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001122156355_DataChanged.cs" />
-    <Compile Include="Migrations\202001122156355_DataChanged.designer.cs">
-      <DependentUpon>202001122156355_DataChanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001131059054_PhoneNumberAddedToUserModel.cs" />
-    <Compile Include="Migrations\202001131059054_PhoneNumberAddedToUserModel.designer.cs">
-      <DependentUpon>202001131059054_PhoneNumberAddedToUserModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001141307588_IsVisibleToSearchEngineAddedToPageModel.cs" />
-    <Compile Include="Migrations\202001141307588_IsVisibleToSearchEngineAddedToPageModel.designer.cs">
-      <DependentUpon>202001141307588_IsVisibleToSearchEngineAddedToPageModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001151250513_ClearingTheData.cs" />
-    <Compile Include="Migrations\202001151250513_ClearingTheData.designer.cs">
-      <DependentUpon>202001151250513_ClearingTheData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001151314476_IsRegisterTypeChanged.cs" />
-    <Compile Include="Migrations\202001151314476_IsRegisterTypeChanged.designer.cs">
-      <DependentUpon>202001151314476_IsRegisterTypeChanged.cs</DependentUpon>
+    <Compile Include="Migrations\202001152215206_Initial.cs" />
+    <Compile Include="Migrations\202001152215206_Initial.designer.cs">
+      <DependentUpon>202001152215206_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,29 +98,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001121621325_Initial.resx">
-      <DependentUpon>202001121621325_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001121647439_DateTimeChangedToDateTime2.resx">
-      <DependentUpon>202001121647439_DateTimeChangedToDateTime2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001122156355_DataChanged.resx">
-      <DependentUpon>202001122156355_DataChanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001131059054_PhoneNumberAddedToUserModel.resx">
-      <DependentUpon>202001131059054_PhoneNumberAddedToUserModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001141307588_IsVisibleToSearchEngineAddedToPageModel.resx">
-      <DependentUpon>202001141307588_IsVisibleToSearchEngineAddedToPageModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001151250513_ClearingTheData.resx">
-      <DependentUpon>202001151250513_ClearingTheData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001151314476_IsRegisterTypeChanged.resx">
-      <DependentUpon>202001151314476_IsRegisterTypeChanged.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001152215206_Initial.resx">
+      <DependentUpon>202001152215206_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

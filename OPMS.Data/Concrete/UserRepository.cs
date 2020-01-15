@@ -1,22 +1,18 @@
 ﻿using OPMS.Data.Context;
 using OPMS.Data.Interfaces;
 using OPMS.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Linq;
 
 namespace OPMS.Data.Concrete
 {
-    public class UserRepository:Repository<UserModel>,IUserRepository
+    public class UserRepository : Repository<UserModel>, IUserRepository
     {
         public UserRepository(ContextDb context):base(context)
         {
 
         }
-
         public string GetPassword(string username)
         {
             return _context.Users.Where(x => x.UserName == username).Select(x => x.HashPassword).SingleOrDefault();
@@ -34,28 +30,36 @@ namespace OPMS.Data.Concrete
 
         public UserModel GetUserWithRoles(string username)
         {
-            var user = _context.Users.Include(u => u.Roles).FirstOrDefault();
-            UserModel currentuser = new UserModel
-            {
-                Id = user.Id,
-                UserName=user.UserName,
-                PhoneNumber=user.PhoneNumber,
-                Email=user.Email,
-                Roles=user.Roles
-            };
-            return currentuser;
+            //var user = _context.Users.Include(u => u.Roles).SingleOrDefault();
+            UserModel user = _context.Users.Include("Roles").Where(x => x.UserName == username).FirstOrDefault();
+            UserModel currentUser = new UserModel();
+
+            currentUser.Id = user.Id;
+            currentUser.UserName = user.UserName;
+            currentUser.PhoneNumber = user.PhoneNumber;
+            currentUser.Email = user.Email;
+            currentUser.Roles = user.Roles;
+            return currentUser; 
+
 
         }
 
         public IEnumerable<UserModel> GetUserWithRoles()
         {
-            var user = _context.Users.Include(u => u.Roles);
-            List<UserModel> userwithRoles = new List<UserModel>();
-            foreach (var item in user)
+            var users = _context.Users.Include(u => u.Roles);
+            List<UserModel> userWithRoles = new List<UserModel>();
+            foreach (UserModel user in users)
             {
-                userwithRoles.Add(new UserModel { Id = item.Id, UserName = item.UserName, Email = item.Email,PhoneNumber=item.PhoneNumber, Roles = item.Roles });
+                userWithRoles.Add(new UserModel
+                {
+                    Id=user.Id,
+                    Email=user.Email,
+                    UserName=user.UserName,
+                    PhoneNumber=user.PhoneNumber,
+                    Roles=user.Roles
+                });
             }
-            return userwithRoles;
+            return userWithRoles;
         }
 
         public bool UserExists(string username)

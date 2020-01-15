@@ -13,7 +13,7 @@ namespace OPMS.Data.Interfaces
         IPageRepository PageRepository { get; }
         IBlogPostRepository BlogPostRepository { get; }
         ITagRepository TagRepository { get; }
-        IUserRepository UserRepository { get; }
+       IUserRepository UserRepository { get; }
         IMenuRepository MenuRepository { get; }
         ISiteSettingsRepository SiteSettingsRepository { get; }
         ISidebarRepository SidebarRepository { get; }

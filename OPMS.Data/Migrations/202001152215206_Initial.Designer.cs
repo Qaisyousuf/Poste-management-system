@@ -7,13 +7,13 @@ namespace OPMS.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class PhoneNumberAddedToUserModel : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PhoneNumberAddedToUserModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001131059054_PhoneNumberAddedToUserModel"; }
+            get { return "202001152215206_Initial"; }
         }
         
         string IMigrationMetadata.Source

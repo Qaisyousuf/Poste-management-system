@@ -42,7 +42,7 @@
                         Address = c.String(),
                         MobileNumber = c.String(name: "Mobile Number", nullable: false),
                         IpAddres = c.String(),
-                        ContactedDate = c.DateTime(nullable: false),
+                        ContactedDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         Message = c.String(nullable: false),
                         ContactedLocation = c.String(),
                     })
@@ -73,6 +73,7 @@
                         MetaKeywords = c.String(),
                         MetaDescription = c.String(),
                         IsPageMetaDataOn = c.Boolean(nullable: false),
+                        IsVisibleToSearchEngine = c.Boolean(nullable: false),
                         SidebarId = c.Int(name: "Sidebar Id", nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -86,12 +87,12 @@
                         Id = c.Int(nullable: false, identity: true),
                         SidebarName = c.String(name: "Sidebar Name", nullable: false),
                         ContentName = c.String(name: "Content Name", nullable: false),
-                        PublishDate = c.DateTime(nullable: false),
+                        PublishDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                     })
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.RoleModels",
+                "dbo.Roles",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -100,12 +101,13 @@
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.UserModels",
+                "dbo.Users",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         UserName = c.String(nullable: false),
-                        PhoneNumber = c.String(),
+                        PhoneNumber = c.String(nullable: false),
+                        Email = c.String(),
                         HashPassword = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -116,7 +118,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         SiteName = c.String(name: "Site Name", nullable: false),
-                        IsSiteRegister = c.String(name: "Is Site Register", nullable: false),
+                        IsSiteRegister = c.Boolean(name: "Is Site Register", nullable: false),
                         SiteFooter = c.String(name: "Site Footer"),
                         FavIconURL = c.String(),
                         SiteOwner = c.String(name: "Site Owner", nullable: false),
@@ -127,7 +129,7 @@
                         IsCustomCSSOn = c.Boolean(nullable: false),
                         CustomJS = c.String(),
                         IsCustomJsOn = c.Boolean(nullable: false),
-                        siteLastUpdated = c.DateTime(name: "site Last Updated", nullable: false),
+                        siteLastUpdated = c.DateTime(name: "site Last Updated", nullable: false, precision: 7, storeType: "datetime2"),
                         UpdatedBy = c.String(name: "Updated By"),
                     })
                 .PrimaryKey(t => t.Id);
@@ -153,8 +155,8 @@
                         RoleId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
-                .ForeignKey("dbo.UserModels", t => t.UserId, cascadeDelete: true)
-                .ForeignKey("dbo.RoleModels", t => t.RoleId, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.Roles", t => t.RoleId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
             
@@ -162,8 +164,8 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.UserRoles", "RoleId", "dbo.RoleModels");
-            DropForeignKey("dbo.UserRoles", "UserId", "dbo.UserModels");
+            DropForeignKey("dbo.UserRoles", "RoleId", "dbo.Roles");
+            DropForeignKey("dbo.UserRoles", "UserId", "dbo.Users");
             DropForeignKey("dbo.Pages", "Sidebar Id", "dbo.Sidebars");
             DropForeignKey("dbo.Menus", "ParentId", "dbo.Menus");
             DropForeignKey("dbo.BlogPostTag", "TagId", "dbo.Tags");
@@ -177,8 +179,8 @@
             DropTable("dbo.UserRoles");
             DropTable("dbo.BlogPostTag");
             DropTable("dbo.SiteSettings");
-            DropTable("dbo.UserModels");
-            DropTable("dbo.RoleModels");
+            DropTable("dbo.Users");
+            DropTable("dbo.Roles");
             DropTable("dbo.Sidebars");
             DropTable("dbo.Pages");
             DropTable("dbo.Menus");

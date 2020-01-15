@@ -46,7 +46,8 @@ namespace OPMS.Web
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IUnitOfWork, UnitOfWork>();
-            container.RegisterType<IAuthenticationService, AuthenticationService>();
+            container.RegisterType<IAuthenticatioService, AuthenticationService>();
+           
         }
     }
 }

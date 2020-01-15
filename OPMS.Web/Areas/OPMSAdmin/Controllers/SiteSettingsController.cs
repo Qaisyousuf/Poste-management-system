@@ -51,7 +51,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var username = uow.UserRepository.GetAll("UserModel");
+           
             return View();
         }
         [HttpPost]

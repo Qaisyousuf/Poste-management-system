@@ -1,4 +1,4 @@
-using OPMS.Web.Filters;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Optimization;
+using OPMS.Web.Filters;
 
 namespace OPMS.Web
 {
@@ -15,8 +16,8 @@ namespace OPMS.Web
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            GlobalFilters.Filters.Add(new CustomAuthenticationFilter());
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            GlobalFilters.Filters.Add(new CustomAuthenticationFilter());
         }
     }
 }

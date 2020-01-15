@@ -13,16 +13,18 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.SiteName)
-        </th> 
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.SiteOwner)
         </th>
-
         <th>
             @Html.DisplayNameFor(model => model.SiteLastUpdated)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.UpdateBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
         </th>
         <th></th>
     </tr>
@@ -35,12 +37,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.SiteOwner)
         </td>
-       
         <td>
             @Html.DisplayFor(modelItem => item.SiteLastUpdated)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UpdateBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.UserName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
