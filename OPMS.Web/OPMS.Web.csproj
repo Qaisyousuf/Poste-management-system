@@ -168,6 +168,11 @@
     <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Create.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Index.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\SiteSettings\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\SiteSettings\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\SiteSettings\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\SiteSettings\Delete.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -533,6 +538,7 @@
     <Compile Include="Areas\OPMSAdmin\Controllers\MenusController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\PagesController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SidebarsController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\SiteSettingsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\TagsController.cs" />
     <Compile Include="Areas\OPMSAdmin\OPMSAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
@@ -566,7 +572,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\OPMSAdmin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OPMS.Data\OPMS.Data.csproj">

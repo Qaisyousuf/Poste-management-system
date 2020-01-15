@@ -121,5 +121,77 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             GetTags();
             return View(viewmodle);
         }
+        [HttpPost]
+        public ActionResult Edit([Bind
+            (Include ="Id,Title,Slug,Content,BlogPostMetaDataOn,MetaKeywords,MetaDescription,MetaOgImage,IsVisibleToSearchEngine")]
+        BlogPostViewModel viewmodel,int[] TagIds)
+        {
+            if(!ModelState.IsValid)
+            {
+                GetTags();
+                return View(viewmodel);
+            }
+
+            string slug;
+            var blogPost = uow.BlogPostRepository.GetBlogPostByTag(viewmodel.Id);
+            if (string.IsNullOrEmpty(viewmodel.Slug))
+                slug = SlugHelper.Create(true, viewmodel.Title);
+            else
+                slug = SlugHelper.Create(true, viewmodel.Slug);
+            if (uow.BlogPostRepository.SlugExists(viewmodel.Id,slug))
+            {
+                ModelState.AddModelError("", "Le titre ou le slug existe déjà");
+                GetTags();
+                return View(viewmodel);
+            }
+            blogPost.Title = viewmodel.Title;
+            blogPost.Slug = slug;
+            blogPost.Content = viewmodel.Content;
+            blogPost.IsVisibleToSearchEngine = viewmodel.IsVisibleToSearchEngine;
+            blogPost.MetaKeywords = viewmodel.MetaKeywords;
+            blogPost.MetaDescription = viewmodel.MetaDescription;
+            blogPost.BlogPostMetaDataOn = viewmodel.BlogPostMetaDataOn;
+            blogPost.MetaOgImage = viewmodel.MetaOgImage;
+
+            var tagsToadd = uow.Context.Tags.Where(x => TagIds.Contains(x.Id)).ToList();
+            blogPost.Tags.Clear();
+
+            foreach (var tag in tagsToadd)
+            {
+                blogPost.Tags.Add(tag);
+            }
+            uow.BlogPostRepository.Update(blogPost);
+            uow.Commit();
+
+            return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var blogPost = uow.BlogPostRepository.GetById(id);
+            BlogPostViewModel viewmodle = new BlogPostViewModel
+            {
+                Id = blogPost.Id,
+                Title = blogPost.Title,
+                Slug = blogPost.Slug,
+                Content = blogPost.Content,
+                IsVisibleToSearchEngine = blogPost.IsVisibleToSearchEngine,
+                MetaKeywords = blogPost.MetaKeywords,
+                MetaDescription = blogPost.MetaDescription,
+                MetaOgImage = blogPost.MetaOgImage,
+            };
+
+           
+            return View(viewmodle);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult ConfirmDelete(int id)
+        {
+            var blogPost = uow.BlogPostRepository.GetById(id);
+            uow.BlogPostRepository.Remove(blogPost);
+            uow.Commit();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

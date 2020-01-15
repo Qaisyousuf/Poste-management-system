@@ -56,6 +56,7 @@
     <Compile Include="Concrete\PageRepository.cs" />
     <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Concrete\SidebarRepository.cs" />
+    <Compile Include="Concrete\SiteSettingRepository.cs" />
     <Compile Include="Concrete\TagReposiitory.cs" />
     <Compile Include="Concrete\UnitOfWork.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\ISidebarRepository.cs" />
+    <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ISlug.cs" />
     <Compile Include="Interfaces\ITagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
@@ -97,6 +99,14 @@
     <Compile Include="Migrations\202001141307588_IsVisibleToSearchEngineAddedToPageModel.cs" />
     <Compile Include="Migrations\202001141307588_IsVisibleToSearchEngineAddedToPageModel.designer.cs">
       <DependentUpon>202001141307588_IsVisibleToSearchEngineAddedToPageModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151250513_ClearingTheData.cs" />
+    <Compile Include="Migrations\202001151250513_ClearingTheData.designer.cs">
+      <DependentUpon>202001151250513_ClearingTheData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151314476_IsRegisterTypeChanged.cs" />
+    <Compile Include="Migrations\202001151314476_IsRegisterTypeChanged.designer.cs">
+      <DependentUpon>202001151314476_IsRegisterTypeChanged.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001141307588_IsVisibleToSearchEngineAddedToPageModel.resx">
       <DependentUpon>202001141307588_IsVisibleToSearchEngineAddedToPageModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151250513_ClearingTheData.resx">
+      <DependentUpon>202001151250513_ClearingTheData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151314476_IsRegisterTypeChanged.resx">
+      <DependentUpon>202001151314476_IsRegisterTypeChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

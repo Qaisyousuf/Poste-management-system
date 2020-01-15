@@ -1,0 +1,136 @@
+﻿@model OPMS.ViewModels.SiteSettingsViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SiteSettingsViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SiteName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiteName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsRegister)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsRegister)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SiteFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiteFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FavIconURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FavIconURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SiteOwner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiteOwner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoogleSiteVerification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoogleSiteVerification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoogleAds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoogleAds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoogleAnalytics)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoogleAnalytics)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomCSS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomCSS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCustomCSSOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsCustomCSSOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomJS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomJS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCustomJsOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsCustomJsOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SiteLastUpdated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiteLastUpdated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateBy)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -15,7 +15,7 @@ namespace OPMS.Data.Interfaces
         ITagRepository TagRepository { get; }
         IUserRepository UserRepository { get; }
         IMenuRepository MenuRepository { get; }
-
+        ISiteSettingsRepository SiteSettingsRepository { get; }
         ISidebarRepository SidebarRepository { get; }
 
         void Commit();

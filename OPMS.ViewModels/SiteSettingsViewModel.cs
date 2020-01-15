@@ -1,10 +1,18 @@
-﻿using System;
+﻿using OPMS.Models;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace OPMS.Models
+namespace OPMS.ViewModels
 {
-    public class SiteSettings:EntityBase
+    public class SiteSettingsViewModel
     {
+      
+        public int Id { get; set; }
+
         public string SiteName { get; set; }
 
         public bool IsRegister { get; set; }
@@ -31,8 +39,8 @@ namespace OPMS.Models
 
         public DateTime SiteLastUpdated { get; set; }
 
-       
         public string UpdateBy { get; set; }
-       
+
+        
     }
 }

@@ -31,6 +31,8 @@ namespace OPMS.Data.Concrete
 
         public IMenuRepository MenuRepository => new MenuRepository(Context);
 
+        public ISiteSettingsRepository SiteSettingsRepository => new SiteSettingRepository(Context);
+
         public void Commit()
         {
             Context.SaveChanges();
