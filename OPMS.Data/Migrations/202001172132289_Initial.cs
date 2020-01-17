@@ -37,13 +37,13 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        FullNamme = c.String(name: "Full Namme", nullable: false),
+                        FullName = c.String(nullable: false),
                         Email = c.String(),
                         Address = c.String(),
-                        MobileNumber = c.String(name: "Mobile Number", nullable: false),
+                        MobileNumber = c.String(nullable: false),
                         IpAddres = c.String(),
                         ContactedDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
-                        Message = c.String(nullable: false),
+                        MessageText = c.String(nullable: false),
                         ContactedLocation = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
@@ -53,7 +53,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        MenuTitle = c.String(name: "Menu Title"),
+                        Title = c.String(nullable: false),
                         Description = c.String(),
                         Url = c.String(),
                         ParentId = c.Int(),
@@ -67,14 +67,14 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        PageTitle = c.String(name: "Page Title", nullable: false),
+                        Title = c.String(nullable: false),
                         Slug = c.String(),
                         Content = c.String(),
                         MetaKeywords = c.String(),
                         MetaDescription = c.String(),
                         IsPageMetaDataOn = c.Boolean(nullable: false),
                         IsVisibleToSearchEngine = c.Boolean(nullable: false),
-                        SidebarId = c.Int(name: "Sidebar Id", nullable: false),
+                        SidebarId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Sidebars", t => t.SidebarId, cascadeDelete: true)
@@ -85,8 +85,8 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        SidebarName = c.String(name: "Sidebar Name", nullable: false),
-                        ContentName = c.String(name: "Content Name", nullable: false),
+                        Name = c.String(nullable: false),
+                        Content = c.String(nullable: false),
                         PublishDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                     })
                 .PrimaryKey(t => t.Id);
@@ -96,7 +96,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        RoleName = c.String(name: "Role Name", nullable: false),
+                        Name = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -117,20 +117,20 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        SiteName = c.String(name: "Site Name", nullable: false),
-                        IsSiteRegister = c.Boolean(name: "Is Site Register", nullable: false),
-                        SiteFooter = c.String(name: "Site Footer"),
+                        SiteName = c.String(nullable: false),
+                        IsRegister = c.Boolean(nullable: false),
+                        SiteFooter = c.String(),
                         FavIconURL = c.String(),
-                        SiteOwner = c.String(name: "Site Owner", nullable: false),
-                        GoogleSiteVerification = c.String(name: "Google Site Verification"),
-                        GoogleAds = c.String(name: "Google Ads"),
-                        GoogleAnalytics = c.String(name: "Google Analytics"),
+                        SiteOwner = c.String(nullable: false),
+                        GoogleSiteVerification = c.String(),
+                        GoogleAds = c.String(),
+                        GoogleAnalytics = c.String(),
                         CustomCSS = c.String(),
                         IsCustomCSSOn = c.Boolean(nullable: false),
                         CustomJS = c.String(),
                         IsCustomJsOn = c.Boolean(nullable: false),
-                        siteLastUpdated = c.DateTime(name: "site Last Updated", nullable: false, precision: 7, storeType: "datetime2"),
-                        UpdatedBy = c.String(name: "Updated By"),
+                        SiteLastUpdated = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        UpdateBy = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -166,7 +166,7 @@
         {
             DropForeignKey("dbo.UserRoles", "RoleId", "dbo.Roles");
             DropForeignKey("dbo.UserRoles", "UserId", "dbo.Users");
-            DropForeignKey("dbo.Pages", "Sidebar Id", "dbo.Sidebars");
+            DropForeignKey("dbo.Pages", "SidebarId", "dbo.Sidebars");
             DropForeignKey("dbo.Menus", "ParentId", "dbo.Menus");
             DropForeignKey("dbo.BlogPostTag", "TagId", "dbo.Tags");
             DropForeignKey("dbo.BlogPostTag", "BlogPostId", "dbo.BlogPosts");
@@ -174,7 +174,7 @@
             DropIndex("dbo.UserRoles", new[] { "UserId" });
             DropIndex("dbo.BlogPostTag", new[] { "TagId" });
             DropIndex("dbo.BlogPostTag", new[] { "BlogPostId" });
-            DropIndex("dbo.Pages", new[] { "Sidebar Id" });
+            DropIndex("dbo.Pages", new[] { "SidebarId" });
             DropIndex("dbo.Menus", new[] { "ParentId" });
             DropTable("dbo.UserRoles");
             DropTable("dbo.BlogPostTag");

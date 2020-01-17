@@ -1,21 +1,22 @@
-﻿using System;
+﻿using OPMS.Data.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Script.Serialization;
-using System.Web.Security;
 using OPMS.Services;
-using OPMS.Services.Security;
 using OPMS.ViewModels;
+using OPMS.Services.Security;
+using System.Web.Security;
+using System.Web.Script.Serialization;
 
 namespace OPMS.Web.Controllers
 {
     public class AccountsController : Controller
     {
-        private readonly IAuthenticatioService authService;
+        private readonly IAuthenticationService authService;
 
-        public AccountsController(IAuthenticatioService authService)
+        public AccountsController(IAuthenticationService authService)
         {
             this.authService = authService;
         }
@@ -27,7 +28,7 @@ namespace OPMS.Web.Controllers
         [HttpPost]
         public ActionResult LogOut()
         {
-            FormsAuthentication.SignOut(); 
+            FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
         [HttpGet]
@@ -41,21 +42,21 @@ namespace OPMS.Web.Controllers
         {
             if(!ModelState.IsValid)
             {
+               
                 return View(viewmodel);
             }
             var user = authService.Login(viewmodel.UserName, viewmodel.Password);
-
             if(user==null)
             {
-                ModelState.AddModelError("", "Invalid login attempt");
+                ModelState.AddModelError("", "L'utilisateur portant ce nom n'existe pas");
                 return View(viewmodel);
             }
             CustomPricipalSerialize serialize = new CustomPricipalSerialize
             {
                 Id = user.Id,
                 UserName = user.UserName,
-                Email = user.Email,
                 PhoneNumber=user.PhoneNumber,
+                Email = user.Email,
                 Roles = user.Roles.Select(x => x.Name).ToArray()
             };
 
@@ -73,6 +74,7 @@ namespace OPMS.Web.Controllers
 
             Response.Cookies.Add(myCookie);
             return RedirectToAction("Index", "Home");
+
         }
 
         [HttpGet]
@@ -87,15 +89,16 @@ namespace OPMS.Web.Controllers
             {
                 return View(viewmodel);
             }
+            bool registerSuccess = authService.Register(viewmodel.Email, viewmodel.UserName, viewmodel.Password, viewmodel.PhoneNumber, out int? userId);
 
-            bool registerSucess = authService.Register(viewmodel.UserName, viewmodel.Email, viewmodel.Password, viewmodel.PhoneNumber, out int? userId);
-            if(!registerSucess)
+            if(!registerSuccess)
             {
-                ModelState.AddModelError("", "User Exists Already");
+                ModelState.AddModelError("", "Quelque chose ne va pas");
                 return View(viewmodel);
             }
-            TempData["Registration"] = "Registration successful";
+            TempData["Success"] = "Inscription terminée avec succès";
             return RedirectToAction(nameof(Register));
+
         }
     }
 }

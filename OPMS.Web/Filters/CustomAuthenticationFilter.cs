@@ -1,10 +1,12 @@
-﻿using System;
+﻿using OPMS.Services.Security;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Filters;
 using System.Web.Script.Serialization;
 using System.Web.Security;
-using OPMS.Services.Security;
 
 namespace OPMS.Web.Filters
 {
@@ -14,7 +16,7 @@ namespace OPMS.Web.Filters
         {
             HttpCookie myCookie = filterContext.HttpContext.Request.Cookies[FormsAuthentication.FormsCookieName];
 
-            if(myCookie !=null)
+            if (myCookie != null)
             {
                 FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(myCookie.Value);
 
@@ -23,21 +25,21 @@ namespace OPMS.Web.Filters
 
                 CustomPrincipal currentUser = new CustomPrincipal(authTicket.Name)
                 {
-                    Id=serialize.Id,
-                    UserName=serialize.UserName,
-                    Email=serialize.Email,
+                    Id = serialize.Id,
+                    UserName = serialize.UserName,
+                    Email = serialize.Email,
                     PhoneNumber=serialize.PhoneNumber,
-                    Roles=serialize.Roles
+                    Roles = serialize.Roles
                 };
 
                 filterContext.HttpContext.User = currentUser;
-                
+
             }
         }
 
         public void OnAuthenticationChallenge(AuthenticationChallengeContext filterContext)
         {
-          
+            
         }
     }
 }

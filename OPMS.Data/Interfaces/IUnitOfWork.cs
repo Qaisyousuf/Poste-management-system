@@ -1,9 +1,5 @@
 ﻿using OPMS.Data.Context;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OPMS.Data.Interfaces
 {
@@ -13,10 +9,13 @@ namespace OPMS.Data.Interfaces
         IPageRepository PageRepository { get; }
         IBlogPostRepository BlogPostRepository { get; }
         ITagRepository TagRepository { get; }
-       IUserRepository UserRepository { get; }
         IMenuRepository MenuRepository { get; }
         ISiteSettingsRepository SiteSettingsRepository { get; }
         ISidebarRepository SidebarRepository { get; }
+        IContactRepository ContactRepository { get; }
+        IUserRepository UserRepository { get;}
+        IRolesRepository RolesRepository { get; }
+       
 
         void Commit();
     }

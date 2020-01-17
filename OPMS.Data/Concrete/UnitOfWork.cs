@@ -1,10 +1,5 @@
 ﻿using OPMS.Data.Context;
 using OPMS.Data.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OPMS.Data.Concrete
 {
@@ -24,16 +19,14 @@ namespace OPMS.Data.Concrete
         {
             get { return new TagReposiitory(Context); }
         }
-
-       
-
         public ISidebarRepository SidebarRepository => new SidebarRepository(Context);
-
         public IMenuRepository MenuRepository => new MenuRepository(Context);
-
         public ISiteSettingsRepository SiteSettingsRepository => new SiteSettingRepository(Context);
+        public IContactRepository ContactRepository => new ContactRepository(Context);
 
         public IUserRepository UserRepository => new UserRepository(Context);
+
+        public IRolesRepository RolesRepository => new RolesRepository(Context);
 
         public void Commit()
         {

@@ -7,15 +7,26 @@ using System.Linq;
 
 namespace OPMS.Data.Concrete
 {
-    public class UserRepository : Repository<UserModel>, IUserRepository
+    public class UserRepository:Repository<UserModel>,IUserRepository
     {
         public UserRepository(ContextDb context):base(context)
         {
 
         }
+
+        public void AddUserToRoles(int? userId, int[] roleIds,ContextDb context)
+        {
+            var user = _context.Users.Where(x => x.Id == userId).FirstOrDefault();
+            var rolesFromdb = GetRolesById(roleIds);
+            foreach (var role in rolesFromdb)
+            {
+                user.Roles.Add(role);
+            }
+        }
+
         public string GetPassword(string username)
         {
-            return _context.Users.Where(x => x.UserName == username).Select(x => x.HashPassword).SingleOrDefault();
+            return _context.Users.Where(x => x.UserName == username).Select(x => x.HashPassword).FirstOrDefault();
         }
 
         public IEnumerable<RoleModel> GetRoles()
@@ -30,25 +41,24 @@ namespace OPMS.Data.Concrete
 
         public UserModel GetUserWithRoles(string username)
         {
-            //var user = _context.Users.Include(u => u.Roles).SingleOrDefault();
-            UserModel user = _context.Users.Include("Roles").Where(x => x.UserName == username).FirstOrDefault();
-            UserModel currentUser = new UserModel();
-
-            currentUser.Id = user.Id;
-            currentUser.UserName = user.UserName;
-            currentUser.PhoneNumber = user.PhoneNumber;
-            currentUser.Email = user.Email;
-            currentUser.Roles = user.Roles;
-            return currentUser; 
-
-
+            UserModel user = _context.Users.Include("Roles").Where(x=>x.UserName==username).SingleOrDefault();
+            UserModel currentUser = new UserModel
+            {
+                Id = user.Id,
+                UserName = user.UserName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                Roles=user.Roles
+            };
+            return currentUser;
         }
 
         public IEnumerable<UserModel> GetUserWithRoles()
         {
             var users = _context.Users.Include(u => u.Roles);
+
             List<UserModel> userWithRoles = new List<UserModel>();
-            foreach (UserModel user in users)
+            foreach (var user in users)
             {
                 userWithRoles.Add(new UserModel
                 {
@@ -57,6 +67,7 @@ namespace OPMS.Data.Concrete
                     UserName=user.UserName,
                     PhoneNumber=user.PhoneNumber,
                     Roles=user.Roles
+                    
                 });
             }
             return userWithRoles;

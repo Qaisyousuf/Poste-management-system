@@ -9,7 +9,8 @@ namespace OPMS.Data.Context
     {
         public ContextDb():base("OPMS")
         {
-
+            Configuration.LazyLoadingEnabled = false;
+            
         }
         public DbSet<Page> Pages { get; set; }
         public DbSet<BlogPost> BlogPosts { get; set; }

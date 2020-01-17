@@ -8,7 +8,7 @@ namespace OPMS.Data.FluentAPI
         public MenuMapping()
         {
             Property(m => m.Title)
-                .HasColumnName("Menu Title");
+                .IsRequired();
         }
     }
 }

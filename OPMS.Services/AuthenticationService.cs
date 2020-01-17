@@ -1,10 +1,14 @@
-﻿using OPMS.Data.Interfaces;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using OPMS.Data.Interfaces;
 using OPMS.Models;
-using System;
 
 namespace OPMS.Services
 {
-    public class AuthenticationService : IAuthenticatioService
+    public class AuthenticationService : IAuthenticationService
     {
         private readonly IUnitOfWork uow;
 
@@ -12,36 +16,48 @@ namespace OPMS.Services
         {
             this.uow = uow;
         }
+
+        public void AddUserToRoles(int? userId, int[] roleIds)
+        {
+            uow.UserRepository.AddUserToRoles(userId, roleIds,uow.Context);
+            uow.Commit();
+        }
+
         public string GenerateHash(string password)
         {
-            string HashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-            return HashedPassword;
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+            return hashedPassword;
         }
 
         public UserModel Login(string username, string password)
         {
             var user = uow.UserRepository.GetUserWithRoles(username);
+
             if (user == null)
                 return null;
-            bool hashValideated = VerifyHash(user.UserName, password);
-            if(hashValideated)
+            bool hashValidate = VerifyHash(user.UserName, password);
+
+            if(hashValidate)
             {
                 return user;
             }
             return null;
         }
 
-        public bool Register(string username, string email, string password, string phonenumber, out int? userId)
+        public bool Register(string email, string username, string password, string phonenumber,out int? userId)
         {
             var userExists = uow.UserRepository.UserExists(username);
             if(!userExists)
             {
                 string hashedPassword = GenerateHash(password);
-                UserModel user = new UserModel();
-                user.Email = email;
-                user.PhoneNumber = phonenumber;
-                user.UserName = username;
-                user.HashPassword = hashedPassword;
+
+                UserModel user = new UserModel
+                {
+                    Email = email,
+                    UserName = username,
+                    HashPassword=hashedPassword,
+                    PhoneNumber=phonenumber
+                };
                 uow.UserRepository.Add(user);
                 uow.Commit();
                 userId = user.Id;

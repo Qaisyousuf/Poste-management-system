@@ -8,6 +8,7 @@ using System.Web.Routing;
 using System.Web.Optimization;
 using OPMS.Web.Filters;
 
+
 namespace OPMS.Web
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -18,6 +19,7 @@ namespace OPMS.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             GlobalFilters.Filters.Add(new CustomAuthenticationFilter());
+          
         }
     }
 }

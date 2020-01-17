@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OPMS.ViewModels
 {
-    public class RegisterViewModel
+    public class InsertUserViewModel
     {
-       
-
         [Required(ErrorMessage = "Nom d'utilisateur est nécessaire")]
         [Display(Name = "Nom d'utilisateur")]
         public string UserName { get; set; }
 
-        [EmailAddress(ErrorMessage ="Entrez le bon e-mail")]
+        [EmailAddress(ErrorMessage = "Entrez le bon e-mail")]
         [Required(ErrorMessage = "L'email est requis")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
@@ -30,10 +24,12 @@ namespace OPMS.ViewModels
         [Display(Name = "Mot de passe")]
         public string Password { get; set; }
 
-        [Compare("Password",ErrorMessage = "Confirmer que le mot de passe ne correspond pas")]
+        [Compare("Password", ErrorMessage = "Confirmer que le mot de passe ne correspond pas")]
         [DataType(DataType.Password)]
         [Display(Name = "Confirmez le mot de passe")]
         public string ConfirmPassword { get; set; }
+
+        public List<CheckBoxViewModel> Roles { get; set; }
 
     }
 }

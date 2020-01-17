@@ -8,10 +8,8 @@ namespace OPMS.Data.FluentAPI
         public PageMapping()
         {
             Property(t => t.Title)
-                .HasColumnName("Page Title")
                 .IsRequired();
-            Property(s => s.SidebarId)
-                .HasColumnName("Sidebar Id");
+           
         }
     }
 }

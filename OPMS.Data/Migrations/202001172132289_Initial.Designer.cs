@@ -13,7 +13,7 @@ namespace OPMS.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202001152215206_Initial"; }
+            get { return "202001172132289_Initial"; }
         }
         
         string IMigrationMetadata.Source

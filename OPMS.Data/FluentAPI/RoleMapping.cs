@@ -8,7 +8,6 @@ namespace OPMS.Data.FluentAPI
         public RoleMapping()
         {
             Property(r => r.Name)
-                .HasColumnName("Role Name")
                 .IsRequired();
             ToTable("Roles");
         }
