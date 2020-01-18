@@ -1,39 +1,53 @@
-﻿@model IEnumerable<OPMS.ViewModels.SidebarViewModel>
-
+﻿
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
+<br />
+<h4>Welcome to the Sidebar Creation Page</h4>
+<br />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button class="btn btn-default"> @Html.ActionLink("Create New Sidebar", "Create")</button>
+  
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PublishDate)
-        </th>
-        <th></th>
-    </tr>
+<hr />
+<table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
+    <thead class="bg-primary">
+        <tr>
+            <th><i class="glyphicon glyphicon-align-left"></i>Name</th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublishDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
+            <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
+        </tr>
+    </thead>
 </table>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable({
+               info: false,
+                lengthMenu: [[1, 5, 10, 25, 50, -1], [1, 5, 10, 25, 50, 'All']],
+                dom: 'lfrtiBp',
+                buttons: [
+                    'print'
+                ],
+                ajax: {
+                    url: '/OPMSAdmin/Sidebars/GetSidebarData',
+                    type: 'Get',
+                    dataType: 'json'
+                    },
+                columns: [
+                   
+                    { data: 'Name' },
+                  
+                    {
+                        data: 'actions',
+                        render: function (data, type, row, meta) {
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Sidebars/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Edit</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/Sidebars/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
+                            //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
+                            return data;
+                        }
+                    },
+                ],
+            })
+        });
+    </script>
+}

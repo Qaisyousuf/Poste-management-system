@@ -148,7 +148,6 @@
     <Content Include="Scripts\ckeditor\ckeditor.asp" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
-    <Content Include="Areas\OPMSAdmin\Views\Sidebars\Index.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Sidebars\Create.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Sidebars\Edit.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Sidebars\Delete.cshtml" />
@@ -185,6 +184,7 @@
     <Content Include="Areas\OPMSAdmin\Views\AdminUser\Index.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Roles\Create.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Roles\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Sidebars\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />

@@ -19,22 +19,28 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         }
         public ActionResult Index()
         {
-            var sidebarFromDb = uow.SidebarRepository.GetAll();
+            //var sidebarFromDb = uow.SidebarRepository.GetAll();
 
-            List<SidebarViewModel> viewmodel = new List<SidebarViewModel>();
+            //List<SidebarViewModel> viewmodel = new List<SidebarViewModel>();
 
-            foreach (var item in sidebarFromDb)
-            {
-                viewmodel.Add(new SidebarViewModel
-                {
-                    Id=item.Id,
-                    Name=item.Name,
-                    Content=item.Content,
-                    PublishDate=item.PublishDate
-                });
-            }
+            //foreach (var item in sidebarFromDb)
+            //{
+            //    viewmodel.Add(new SidebarViewModel
+            //    {
+            //        Id=item.Id,
+            //        Name=item.Name,
+            //        Content=item.Content,
+            //        PublishDate=item.PublishDate
+            //    });
+            //}
 
-            return View(viewmodel);
+            return View();
+        }
+
+        public JsonResult GetSidebarData()
+        {
+            var sidebarFromdb = uow.SidebarRepository.GetAll();
+            return Json(new { data = sidebarFromdb }, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
         public ActionResult Create()
