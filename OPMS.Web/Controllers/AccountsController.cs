@@ -70,7 +70,7 @@ namespace OPMS.Web.Controllers
 
             HttpCookie myCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptTicket);
             myCookie.HttpOnly = true;
-            myCookie.Expires = DateTime.Now.AddMinutes(20);
+            myCookie.Expires = DateTime.Now.AddMinutes(1);
 
             Response.Cookies.Add(myCookie);
             return RedirectToAction("Index", "Home");

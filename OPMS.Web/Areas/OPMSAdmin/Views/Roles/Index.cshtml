@@ -1,34 +1,65 @@
-﻿@model IEnumerable<OPMS.ViewModels.RoleViewModel>
+﻿
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Users</h2>
+<br />
+<h4>Welcome to the User Creation Page</h4>
+<br />
+<a  class="btn btn-primary" href="/OPMSAdmin/Roles/Create">Create New Roles</a>
+<hr />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
+                <thead class="btn-primary">
+                    <tr>
+                        <th><i class="glyphicon glyphicon-user"></i> Name</th>
+                    
+                        <th><i class="glyphicon glyphicon-wrench"></i> actions</th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @*@Html.DisplayFor(modelItem => item.Name)*@
-            <span class="label label-success">@item.Name</span>
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable({
+                info: false,
+                lengthMenu: [[1, 5, 10, 25, 50, -1], [1, 5, 10, 25, 50, 'All']],
+                dom: 'lfrtiBp',
+                buttons: [
+                    'print'
+                ],
+                ajax: {
+                    url: '/OPMSAdmin/Roles/GetRolesData',
+                    type: 'Post',
+                    dataType: 'json'
+                },
+                columns: [
+                    { data: 'Name' },
+                  
+                   
+                   
+                    {
+                        "data": "actions",
+                        "render": function (data, type, row, meta) {
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/AdminUser//Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Edit</a> | <a class="btn btn-danger btn-bg" href="//OPMSAdmin/Users/Users/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Delete User</a>';
+                            //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
+                            return data;
+                        }
+                    },
+
+
+                ]
+            })
+        });
+    </script>
 }
-
-</table>

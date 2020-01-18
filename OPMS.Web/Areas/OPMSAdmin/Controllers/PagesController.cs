@@ -22,28 +22,34 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         {
             ViewBag.SidebarDropDownList = uow.SidebarRepository.GetAll();
         }
+        public JsonResult GetPagesData()
+        {
+            //var pageFromdb = uow.Context.Pages.Include("Sidebars").ToList();
+            var pageFromdb = uow.PageRepository.GetAll("Sidebars");
+            return Json(new { data = pageFromdb }, JsonRequestBehavior.AllowGet);
+        }
         public ActionResult Index()
         {
-            var pagFromDb = uow.PageRepository.GetAll("Sidebars");
-            List<PageViewModel> viewmodel = new List<PageViewModel>();
+            //var pagFromDb = uow.PageRepository.GetAll("Sidebars");
+            //List<PageViewModel> viewmodel = new List<PageViewModel>();
 
-            foreach (var item in pagFromDb)
-            {
-                viewmodel.Add(new PageViewModel
-                {
-                    Id = item.Id,
-                    Title = item.Title,
-                    Slug = item.Slug,
-                    Content = item.Slug,
-                    MetaKeywords = item.MetaKeywords,
-                    MetaDescription = item.MetaDescription,
-                    IsPageMetaDataOn = item.IsPageMetaDataOn,
-                    IsVisibleToSearchEngine = item.IsVisibleToSearchEngine,
-                    SidebarId = item.SidebarId,
-                    Sidebars = item.Sidebars
-                });
-            }
-            return View(viewmodel);
+            //foreach (var item in pagFromDb)
+            //{
+            //    viewmodel.Add(new PageViewModel
+            //    {
+            //        Id = item.Id,
+            //        Title = item.Title,
+            //        Slug = item.Slug,
+            //        Content = item.Slug,
+            //        MetaKeywords = item.MetaKeywords,
+            //        MetaDescription = item.MetaDescription,
+            //        IsPageMetaDataOn = item.IsPageMetaDataOn,
+            //        IsVisibleToSearchEngine = item.IsVisibleToSearchEngine,
+            //        SidebarId = item.SidebarId,
+            //        Sidebars = item.Sidebars
+            //    });
+            //}
+            return View();
         }
 
         [HttpGet]

@@ -9,6 +9,7 @@ using OPMS.Services;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+    
     public class AdminUserController : Controller
     {
         private readonly IUnitOfWork uow;
@@ -21,9 +22,17 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         }
         public ActionResult Index()
         {
-            var userFromdb = uow.UserRepository.GetUserWithRoles();
-            
-            return View(userFromdb);
+            //var userFromdb = uow.UserRepository.GetUserWithRoles();
+
+            //return View(userFromdb);
+            return View();
+        }
+        public JsonResult GetUserData()
+        {
+
+            var userFromdb = uow.UserRepository.GetAll();
+            //var userdb = uow.UserRepository.GetAll("Roles");
+            return Json(new { data = userFromdb },JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
         public ActionResult Create()

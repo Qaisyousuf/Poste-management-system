@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+   
     public class RolesController : Controller
     {
         private readonly IUnitOfWork uow;
@@ -19,21 +20,26 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         }
         public ActionResult Index()
         {
-            var roleFromdb = uow.RolesRepository.GetAll();
+            //var roleFromdb = uow.RolesRepository.GetAll();
 
-            List<RoleViewModel> viewmodel = new List<RoleViewModel>();
+            //List<RoleViewModel> viewmodel = new List<RoleViewModel>();
 
-            foreach (var role in roleFromdb)
-            {
-                viewmodel.Add(new RoleViewModel
-                {
-                    Id = role.Id,
-                    Name = role.Name,
-                    Users = role.Users,
-                });
-            }
+            //foreach (var role in roleFromdb)
+            //{
+            //    viewmodel.Add(new RoleViewModel
+            //    {
+            //        Id = role.Id,
+            //        Name = role.Name,
+            //        Users = role.Users,
+            //    });
+            //}
 
-            return View(viewmodel);
+            return View();
+        }
+        public JsonResult GetRolesData()
+        {
+            var roles = uow.RolesRepository.GetAll();
+            return Json(new { data = roles }, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
         public ActionResult Create()
