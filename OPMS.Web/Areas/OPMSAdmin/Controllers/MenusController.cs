@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OPMS.Models;
+using System.Data.Entity;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
@@ -26,17 +27,24 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             {
                 viewmodel.Add(new MenuViewModel
                 {
-                    Id=item.Id,
-                    Title=item.Title,
-                    Description=item.Description,
-                    Url=item.Url,
-                    Parent=item.Parent,
-                    ParentId=item.ParentId
+                    Id = item.Id,
+                    Title = item.Title,
+                    Description = item.Description,
+                    Url = item.Url,
+                    Parent = item.Parent,
+                    ParentId = item.ParentId
                 });
 
             }
 
             return View(viewmodel);
+            //return View();
+        }
+        public JsonResult GetMenuData()
+        {
+            var MenuFromdb = uow.MenuRepository.GetAll("Parent","SubMenus");
+            GetMenus();
+            return Json(new { data = MenuFromdb }, JsonRequestBehavior.AllowGet);
         }
 
         public void GetMenus()

@@ -63,5 +63,68 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             }
             return View(viewmodel);
         }
+       [HttpGet]
+       public ActionResult Edit(int id)
+        {
+            var rolesfromdb = uow.RolesRepository.GetById(id);
+
+            RoleViewModel viewmodel = new RoleViewModel
+            {
+                Id = rolesfromdb.Id,
+                Name=rolesfromdb.Name,
+                Users=rolesfromdb.Users
+            };
+            return View(viewmodel);
+        }
+        [HttpPost]
+        public ActionResult Edit(RoleViewModel viewmodel)
+        {
+            if(ModelState.IsValid)
+            {
+                var rolesfrodb = uow.RolesRepository.GetById(viewmodel.Id);
+
+                rolesfrodb.Id = viewmodel.Id;
+                rolesfrodb.Name = viewmodel.Name;
+                uow.RolesRepository.Update(rolesfrodb);
+                uow.Commit();
+                return RedirectToAction(nameof(Index));
+            }
+            TempData["Wrong"] = "update is not working";
+            return View(viewmodel);
+        }
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var rolesfromdb = uow.RolesRepository.GetById(id);
+
+            RoleViewModel viewmodel = new RoleViewModel
+            {
+                Id=rolesfromdb.Id,
+                Name=rolesfromdb.Name
+            };
+            return View(viewmodel);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirm(int id)
+        {
+            var rolesfromdb = uow.RolesRepository.GetById(id);
+            uow.RolesRepository.Remove(rolesfromdb);
+            uow.Commit();
+            return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var role = uow.RolesRepository.GetById(id);
+
+            RoleViewModel viewmodel = new RoleViewModel
+            {
+                Id=role.Id,
+                Name=role.Name,
+            };
+            return View(viewmodel);
+        }
+
     }
 }

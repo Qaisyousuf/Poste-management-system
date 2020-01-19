@@ -20,33 +20,40 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         }
         public ActionResult Index()
         {
-            var blogPostFromdb = uow.BlogPostRepository.GetAll("Tags").ToList();
+            //var blogPostFromdb = uow.BlogPostRepository.GetAll("Tags").ToList();
 
-            List<BlogPostViewModel> viewmodel = new List<BlogPostViewModel>();
+            //List<BlogPostViewModel> viewmodel = new List<BlogPostViewModel>();
 
-            foreach (var blogpost in blogPostFromdb)
-            {
+            //foreach (var blogpost in blogPostFromdb)
+            //{
 
-                var tagIds = blogpost.Tags.Select(x => x.Id).ToList();
+            //    var tagIds = blogpost.Tags.Select(x => x.Id).ToList();
 
-                var tagNams = uow.Context.Tags.Where(x => tagIds.Contains(x.Id)).Select(x => x.Name).ToList();
-                viewmodel.Add(new BlogPostViewModel
-                {
-                    Id = blogpost.Id,
-                    Title = blogpost.Title,
-                    Slug = blogpost.Slug,
-                    Content = blogpost.Content,
-                    BlogPostMetaDataOn= blogpost.BlogPostMetaDataOn,
-                    MetaKeywords= blogpost.MetaKeywords,
-                    MetaDescription= blogpost.MetaDescription,
-                    MetaOgImage= blogpost.MetaOgImage,
-                    IsVisibleToSearchEngine= blogpost.IsVisibleToSearchEngine,
-                    TagNames=tagNams
-                });
+            //    var tagNams = uow.Context.Tags.Where(x => tagIds.Contains(x.Id)).Select(x => x.Name).ToList();
+            //    viewmodel.Add(new BlogPostViewModel
+            //    {
+            //        Id = blogpost.Id,
+            //        Title = blogpost.Title,
+            //        Slug = blogpost.Slug,
+            //        Content = blogpost.Content,
+            //        BlogPostMetaDataOn= blogpost.BlogPostMetaDataOn,
+            //        MetaKeywords= blogpost.MetaKeywords,
+            //        MetaDescription= blogpost.MetaDescription,
+            //        MetaOgImage= blogpost.MetaOgImage,
+            //        IsVisibleToSearchEngine= blogpost.IsVisibleToSearchEngine,
+            //        TagNames=tagNams
+            //    });
                 
-            }
+            //}
 
-            return View(viewmodel);
+            //return View(viewmodel);
+            return View();
+        }
+
+        public JsonResult GetBlog()
+        {
+            var blogFromdb = uow.BlogPostRepository.GetAll();
+            return Json(new { data = blogFromdb }, JsonRequestBehavior.AllowGet);
         }
 
         public void GetTags()

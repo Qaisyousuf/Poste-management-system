@@ -21,26 +21,36 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         }
         public ActionResult Index()
         {
-            var contactfromdb = uow.ContactRepository.GetAll();
-            List<ContactViewModel> viewmodel = new List<ContactViewModel>();
+            //var contactfromdb = uow.ContactRepository.GetAll();
+            //List<ContactViewModel> viewmodel = new List<ContactViewModel>();
 
-            foreach (var Contact in contactfromdb)
-            {
-                viewmodel.Add(new ContactViewModel
-                {
-                    Id=Contact.Id,
-                    FullName=Contact.FullName,
-                    Email=Contact.Email,
-                    Address=Contact.Address,
-                    MobileNumber=Contact.MobileNumber,
-                    IpAddres=Contact.IpAddres,
-                    MessageText=Contact.MessageText,
-                    ContactedDate=Contact.ContactedDate,
-                    ContactedLocation=Contact.ContactedLocation
-                });
-            }
-            
-            return View(viewmodel);
+            //foreach (var Contact in contactfromdb)
+            //{
+            //    viewmodel.Add(new ContactViewModel
+            //    {
+            //        Id=Contact.Id,
+            //        FullName=Contact.FullName,
+            //        Email=Contact.Email,
+            //        Address=Contact.Address,
+            //        MobileNumber=Contact.MobileNumber,
+            //        IpAddres=Contact.IpAddres,
+            //        MessageText=Contact.MessageText,
+            //        ContactedDate=Contact.ContactedDate,
+            //        ContactedLocation=Contact.ContactedLocation
+            //    });
+            //}
+
+            //return View(viewmodel);
+            return View();
+        }
+
+        public JsonResult GetContactData()
+        {
+
+
+            var contactFromDb = uow.ContactRepository.GetAll();
+
+            return Json(new { data = contactFromDb }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

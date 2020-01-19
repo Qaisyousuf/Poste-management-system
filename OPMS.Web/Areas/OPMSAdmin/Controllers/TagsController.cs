@@ -19,19 +19,26 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         }
         public ActionResult Index()
         {
-            var tagFromdb = uow.TagRepository.GetAll();
+            //var tagFromdb = uow.TagRepository.GetAll();
 
-            List<TagViewModel> viewmodel = new List<TagViewModel>();
+            //List<TagViewModel> viewmodel = new List<TagViewModel>();
 
-            foreach (var item in tagFromdb)
-            {
-                viewmodel.Add(new TagViewModel
-                {
-                    Id=item.Id,
-                    Name=item.Name
-                });
-            }
-            return View(viewmodel);
+            //foreach (var item in tagFromdb)
+            //{
+            //    viewmodel.Add(new TagViewModel
+            //    {
+            //        Id=item.Id,
+            //        Name=item.Name
+            //    });
+            //}
+            //return View(viewmodel);
+            return View();
+        }
+
+        public JsonResult GetTagData()
+        {
+            var tagFromDb = uow.TagRepository.GetAll();
+            return Json(new { data = tagFromDb }, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
         public ActionResult Create()

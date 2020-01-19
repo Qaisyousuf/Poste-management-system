@@ -1,18 +1,14 @@
 ﻿@model IEnumerable<OPMS.ViewModels.PageViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "";
 }
-
-<h2>Index</h2>
-<br />
-<h4> Welcome to the Page Creation Page </h4>
-<br />
+<hr />
+<h4>Liste des pages</h4>
 <p>
     @*//<button class="btn btn-primary"><a href="/Pages/Create"></a>Create</button>*@
-    <a class="btn btn-primary" href="/OPMSAdmin/Pages/Create">Create New Page</a>
+    <a class="btn btn-primary" href="/OPMSAdmin/Pages/Create">Créer une nouvelle page</a>
 </p>
-
 <hr />
 <table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
     <thead class="bg-primary">
@@ -20,7 +16,6 @@
             <th><i class="glyphicon glyphicon-align-center"></i> Ttitle</th>
             <th><i class="glyphicon glyphicon-link"></i> Slug</th>
             <th><i class="glyphicon glyphicon-menu-right"></i> Meta Description</th>
-            <th><i class="glyphicon glyphicon-menu-right"></i> Meta Keywords</th>
             <th><i class="glyphicon glyphicon-menu-right"></i> Sidebar Name</th>
             <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
         </tr>
@@ -39,18 +34,17 @@
                 "ajax": {
                     "url": "/OPMSAdmin/Pages/GetPagesData",
                     "type": "Get",
-                    "dataType":"json"
+                    "dataType": "json"
                 },
                 "columns": [
                     { "data": "Title" },
                     { "data": "Slug" },
                     { "data": "MetaDescription" },
                     { "data": "Sidebars.Name" },
-                    { "data":"MetaKeywords"},
                     {
                         "data": "actions",
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Pages/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Edit Page</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/Pages/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Delete Page</a> <a class="btn btn-info btn-bg" href="/OPMSAdmin/Pages/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Page Info</a>';
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Pages/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/Pages/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> <a class="btn btn-default btn-bg" href="/OPMSAdmin/Pages/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
                             return data;
                         }

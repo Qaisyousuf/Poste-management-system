@@ -5,7 +5,7 @@
         using (Html.BeginForm("LogOut", "Accounts", new { Area = "" }, FormMethod.Post, new { id = "logoutForm" }))
         {
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="javascript:document.getElementById('logoutForm').submit();"> Bonjour  @User.Identity.Name |  LogOut </a></li>
+                <li><a  href="javascript:document.getElementById('logoutForm').submit();"> Bonjour  @User.Identity.Name <span class="btn btn-danger"> LogOut</span> </a></li>
             </ul>
         }
     }
@@ -14,6 +14,6 @@ else
 {
     <ul class="nav navbar-nav navbar-right">
         @*<li>@Html.ActionLink("Register", "Register", "Accounts", new { Area = "" },null)</li>*@
-        <li>@Html.ActionLink("LogIn", "Login", "Accounts", new { Area = "" }, null)</li>
+        <li>@Html.ActionLink("LogIn", "Login", "Accounts", new { Area = "" },null)</li>
     </ul>
 }

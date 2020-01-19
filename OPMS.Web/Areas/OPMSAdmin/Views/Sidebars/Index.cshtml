@@ -2,12 +2,10 @@
 @{
     ViewBag.Title = "Index";
 }
-<br />
-<h4>Welcome to the Sidebar Creation Page</h4>
-<br />
+<hr />
+<h4>Liste de la barre latérale</h4>
 <p>
-    <button class="btn btn-default"> @Html.ActionLink("Create New Sidebar", "Create")</button>
-  
+    <a class="btn btn-primary" href="/OPMSAdmin/Sidebars/Create">Créer une barre latérale</a>
 </p>
 <hr />
 <table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
@@ -24,7 +22,7 @@
         $(document).ready(function () {
             $('#dataTable').DataTable({
                info: false,
-                lengthMenu: [[1, 5, 10, 25, 50, -1], [1, 5, 10, 25, 50, 'All']],
+                lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, 'All']],
                 dom: 'lfrtiBp',
                 buttons: [
                     'print'
@@ -41,7 +39,7 @@
                     {
                         data: 'actions',
                         render: function (data, type, row, meta) {
-                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Sidebars/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Edit</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/Sidebars/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Sidebars/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/Sidebars/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> |<a class="btn btn-default btn-bg" href="/OPMSAdmin/Sidebars/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
                             return data;
                         }

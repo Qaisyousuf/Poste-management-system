@@ -3,14 +3,10 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Users</h2>
-<br />
-<h4>Welcome to the User Creation Page</h4>
-<br />
-<a  class="btn btn-primary" href="/OPMSAdmin/Roles/Create">Create New Roles</a>
 <hr />
-
+<h4>Liste des rôles</h4>
+<a class="btn btn-primary" href="/OPMSAdmin/Roles/Create">Créer un rôle</a>
+<hr />
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -33,7 +29,7 @@
         $(document).ready(function () {
             $('#dataTable').DataTable({
                 info: false,
-                lengthMenu: [[1, 5, 10, 25, 50, -1], [1, 5, 10, 25, 50, 'All']],
+                lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, 'All']],
                 dom: 'lfrtiBp',
                 buttons: [
                     'print'
@@ -46,12 +42,10 @@
                 columns: [
                     { data: 'Name' },
                   
-                   
-                   
                     {
                         "data": "actions",
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/AdminUser//Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Edit</a> | <a class="btn btn-danger btn-bg" href="//OPMSAdmin/Users/Users/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Delete User</a>';
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Roles/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Modifier le rôle</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/Roles/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer le rôle</a> <a class="btn btn-default btn-bg" href="/OPMSAdmin/Roles/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails du rôle</a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
                             return data;
                         }

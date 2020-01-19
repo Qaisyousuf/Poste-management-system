@@ -1,0 +1,28 @@
+﻿@model OPMS.ViewModels.RoleViewModel
+@{
+    ViewBag.Title = "Delete";
+}
+<hr />
+<h4>Voulez-vous vraiment supprimer le rôle de <button class="btn btn-danger"> @Model.Name</button> ?  cela changera la logique du système</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a class="btn btn-primary" href="/OPMSAdmin/Roles/Index">Retour à la liste principale</a>
+    </div>
+    }
+</div>

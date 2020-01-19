@@ -10,7 +10,7 @@ namespace OPMS.ViewModels
         public string UserName { get; set; }
 
         [EmailAddress(ErrorMessage = "Entrez le bon e-mail")]
-        [Required(ErrorMessage = "L'email est requis")]
+        [Display(Name = "E-mail(facultatif)")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
@@ -29,6 +29,7 @@ namespace OPMS.ViewModels
         [Display(Name = "Confirmez le mot de passe")]
         public string ConfirmPassword { get; set; }
 
+        [Required(ErrorMessage = "Rôles requis")]
         public List<CheckBoxViewModel> Roles { get; set; }
 
     }
