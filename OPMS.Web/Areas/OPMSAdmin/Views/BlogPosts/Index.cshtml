@@ -1,18 +1,15 @@
 ﻿@model IEnumerable<OPMS.ViewModels.BlogPostViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Blog";
 }
-
-<h2>Index</h2>
-<br />
-<h4> Welcome to the Page Creation Page </h4>
+<hr />
+<h4>Liste des articles de blog</h4>
 <br />
 <p>
     @*//<button class="btn btn-primary"><a href="/Pages/Create"></a>Create</button>*@
-    <a class="btn btn-primary" href="/OPMSAdmin/BlogPosts/Create">Create New Page</a>
+    <a class="btn btn-primary glyphicon glyphicon-plus" href="/OPMSAdmin/BlogPosts/Create"> Créer un article de blog</a>
 </p>
-
 <hr />
 <table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
     <thead class="bg-primary">
@@ -33,8 +30,8 @@
                 "info": false,
                 "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
-                "buttons": [
-                    "print"
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
                 ],
                 "ajax": {
                     "url": "/OPMSAdmin/BlogPosts/GetBlog",
@@ -49,7 +46,7 @@
                     {
                         "data": "actions",
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/BlogPosts/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Edit</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/BlogPosts/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Delete</a> <a class="btn btn-info btn-bg" href="/OPMSAdmin/BlogPosts/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i>Info</a>';
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/BlogPosts/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/BlogPosts/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> <a class="btn btn-default btn-bg" href="/OPMSAdmin/BlogPosts/Detials/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
                             return data;
                         }

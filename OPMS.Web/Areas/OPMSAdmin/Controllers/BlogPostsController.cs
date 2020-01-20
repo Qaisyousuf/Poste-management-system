@@ -200,5 +200,27 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             uow.Commit();
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public ActionResult Detials(int id)
+        {
+            var blogPost = uow.BlogPostRepository.GetBlogPostByTag(id);
+            BlogPostViewModel viewmodle = new BlogPostViewModel
+            {
+                Id = blogPost.Id,
+                Title = blogPost.Title,
+                Slug = blogPost.Slug,
+                Content = blogPost.Content,
+                IsVisibleToSearchEngine = blogPost.IsVisibleToSearchEngine,
+                MetaKeywords = blogPost.MetaKeywords,
+                MetaDescription = blogPost.MetaDescription,
+                MetaOgImage = blogPost.MetaOgImage,
+            };
+
+            int[] tagIds = blogPost.Tags.Select(x => x.Id).ToArray();
+            viewmodle.TagIds = tagIds;
+            GetTags();
+            return View(viewmodle);
+        }
     }
 }

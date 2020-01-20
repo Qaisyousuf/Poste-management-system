@@ -1,10 +1,10 @@
 ﻿@model OPMS.ViewModels.BlogPostViewModel
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Detials";
 }
 <hr />
-<h4>Voulez-vous vraiment supprimer le <button class="btn btn-danger">@Model.Title Blog</button> ?</h4>
+    <h4>Détails du blog</h4>
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -73,14 +73,8 @@
         </dd>
 
     </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-<div class="form-actions no-color">
-    <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+</div>
+<p>
+    @Html.ActionLink("Éditer", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
     <a class="btn btn-primary" href="/OPMSAdmin/BlogPosts/Index">Retour à la liste principale</a>
-
-</div>
-    }
-</div>
+</p>

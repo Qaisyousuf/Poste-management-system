@@ -1,9 +1,9 @@
 ﻿@model OPMS.ViewModels.SiteSettingsViewModel
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
 }
 <hr />
-<h4>Voulez-vous vraiment supprimer le <button class="btn btn-danger">@Model.SiteName</button> ? cela modifiera les paramètres du système</h4>
+<h4>Détails des paramètres du site</h4>
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -120,13 +120,8 @@
         </dd>
 
     </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-<div class="form-actions no-color">
-    <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+</div>
+<p>
+    @Html.ActionLink("Éditer", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" }) |
     <a class="btn btn-primary" href="/OPMSAdmin/SiteSettings/Index">Retour à la liste principale</a>
-</div>
-    }
-</div>
+</p>

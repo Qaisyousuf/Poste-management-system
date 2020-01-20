@@ -19,35 +19,44 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         }
         public ActionResult Index()
         {
-            var siteSetting = uow.SiteSettingsRepository.GetAll();
+            //var siteSetting = uow.SiteSettingsRepository.GetAll();
 
-            List<SiteSettingsViewModel> viewmodel = new List<SiteSettingsViewModel>();
+            //List<SiteSettingsViewModel> viewmodel = new List<SiteSettingsViewModel>();
 
-            foreach (var site in siteSetting)
-            {
-                viewmodel.Add(new SiteSettingsViewModel
-                {
-                    Id=site.Id,
-                    SiteName=site.SiteName,
-                    IsRegister=site.IsRegister,
-                    SiteFooter=site.SiteFooter,
-                    FavIconURL=site.FavIconURL,
-                    SiteOwner=site.SiteOwner,
-                    GoogleSiteVerification=site.GoogleSiteVerification,
-                    GoogleAds=site.GoogleAds,
-                    GoogleAnalytics=site.GoogleAnalytics,
-                    CustomCSS=site.CustomCSS,
-                    CustomJS=site.CustomJS,
-                    IsCustomCSSOn=site.IsCustomCSSOn,
-                    IsCustomJsOn=site.IsCustomJsOn,
-                    SiteLastUpdated=site.SiteLastUpdated,
-                    UpdateBy=site.UpdateBy
-                    
-                });
-            }
+            //foreach (var site in siteSetting)
+            //{
+            //    viewmodel.Add(new SiteSettingsViewModel
+            //    {
+            //        Id=site.Id,
+            //        SiteName=site.SiteName,
+            //        IsRegister=site.IsRegister,
+            //        SiteFooter=site.SiteFooter,
+            //        FavIconURL=site.FavIconURL,
+            //        SiteOwner=site.SiteOwner,
+            //        GoogleSiteVerification=site.GoogleSiteVerification,
+            //        GoogleAds=site.GoogleAds,
+            //        GoogleAnalytics=site.GoogleAnalytics,
+            //        CustomCSS=site.CustomCSS,
+            //        CustomJS=site.CustomJS,
+            //        IsCustomCSSOn=site.IsCustomCSSOn,
+            //        IsCustomJsOn=site.IsCustomJsOn,
+            //        SiteLastUpdated=site.SiteLastUpdated,
+            //        UpdateBy=site.UpdateBy
 
-            return View(viewmodel);
+            //    });
+            //}
+
+            //return View(viewmodel);
+            return View();
         }
+
+        public JsonResult GetSiteSettingData()
+        {
+            var siteSettingFromdb = uow.SiteSettingsRepository.GetAll();
+
+            return Json(new { data = siteSettingFromdb }, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpGet]
         public ActionResult Create()
         {
@@ -59,7 +68,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         {
             if(ModelState.IsValid)
             {
-               // string username = uow.Context.Users.Where(x => x.UserName ==User.Identity.Name).FirstOrDefault().ToString();
+              // string username = uow.Context.Users.Where(x => x.UserName ==User.Identity.Name).FirstOrDefault().ToString();
                 SiteSettings siteSettings = new SiteSettings
                 {
                     Id = viewmodel.Id,
@@ -76,7 +85,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                     IsCustomCSSOn = viewmodel.IsCustomCSSOn,
                     IsCustomJsOn = viewmodel.IsCustomJsOn,
                     SiteLastUpdated = DateTime.Now,
-                    UpdateBy =viewmodel.UpdateBy
+                    UpdateBy = viewmodel.UpdateBy
                 };
                 uow.SiteSettingsRepository.Add(siteSettings);
                 uow.Commit();
@@ -192,6 +201,31 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             uow.Commit();
             return RedirectToAction(nameof(Index));
 
+        }
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var siteSetting = uow.SiteSettingsRepository.GetById(id);
+
+            SiteSettingsViewModel viewmodel = new SiteSettingsViewModel
+            {
+                Id = siteSetting.Id,
+                SiteName = siteSetting.SiteName,
+                IsRegister = siteSetting.IsRegister,
+                SiteFooter = siteSetting.SiteFooter,
+                FavIconURL = siteSetting.FavIconURL,
+                SiteOwner = siteSetting.SiteOwner,
+                GoogleSiteVerification = siteSetting.GoogleSiteVerification,
+                GoogleAds = siteSetting.GoogleAds,
+                GoogleAnalytics = siteSetting.GoogleAnalytics,
+                CustomCSS = siteSetting.CustomCSS,
+                CustomJS = siteSetting.CustomJS,
+                IsCustomCSSOn = siteSetting.IsCustomCSSOn,
+                IsCustomJsOn = siteSetting.IsCustomJsOn,
+                SiteLastUpdated = DateTime.Now,
+                UpdateBy = siteSetting.UpdateBy
+            };
+            return View(viewmodel);
         }
     }
 }

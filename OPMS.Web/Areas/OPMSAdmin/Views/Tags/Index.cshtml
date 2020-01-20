@@ -1,14 +1,12 @@
 ﻿
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tags";
 }
 <hr />
-<h3>Liste des balises</h3>
-<br />
-<a class="btn btn-primary" href="/OPMSAdmin/Tags/Create">Créer de nouveaux tags</a>
+<h4>Liste des balises</h4>
+<a class="btn btn-primary" href="/OPMSAdmin/Tags/Create">Créer un tag</a>
 <hr />
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -17,7 +15,7 @@
                     <tr>
                         <th><i class="glyphicon glyphicon-user"></i> Name</th>
 
-                        <th><i class="glyphicon glyphicon-wrench"></i> actions</th>
+                        <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
 
                     </tr>
                 </thead>
@@ -31,10 +29,10 @@
         $(document).ready(function () {
             $('#dataTable').DataTable({
                 info: false,
-                lengthMenu: [[1, 5, 10, 25, 50, -1], [1, 5, 10, 25, 50, 'All']],
+                lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, 'All']],
                 dom: 'lfrtiBp',
                 buttons: [
-                    'print'
+                    'copy', 'csv', 'excel', 'pdf', 'print'
                 ],
                 ajax: {
                     url: '/OPMSAdmin/Tags/GetTagData',
@@ -43,13 +41,10 @@
                 },
                 columns: [
                     { data: 'Name' },
-
-
-
                     {
                         "data": "actions",
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Tags/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Edit</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/Tags/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Delete User</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/Tags/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Get Info</a>';
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Tags/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/Tags/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> | <a class="btn btn-default btn-bg" href="/OPMSAdmin/Tags/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
                             return data;
                         }

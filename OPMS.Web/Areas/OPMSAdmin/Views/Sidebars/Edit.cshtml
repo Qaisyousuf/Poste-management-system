@@ -4,8 +4,7 @@
     ViewBag.Title = "Edit";
 }
 <hr />
-<h4>Modifier la barre latérale</h4>
-<h5>Voulez-vous vraiment modifier le <button class="btn btn-danger">@Model.Name</button> ? cela va changer la logique du système</h5>
+<h4>Voulez-vous vraiment modifier le <button class="btn btn-danger">@Model.Name</button> ? cela va changer la logique du système</h4>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -35,7 +34,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="S'inscrire" class="btn btn-primary" />
+                <input type="submit" value="Sauvegarder les modifications" class="btn btn-primary" />
                 <a class="btn btn-primary" href="/OPMSAdmin/Sidebars/Index">Retour à la liste principale</a>
             </div>
         </div>

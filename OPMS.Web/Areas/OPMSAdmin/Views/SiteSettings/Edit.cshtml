@@ -1,17 +1,13 @@
 ﻿@model OPMS.ViewModels.SiteSettingsViewModel
-
 @{
     ViewBag.Title = "Edit";
 }
-
-<h2>Edit</h2>
-
+<hr />
+    <h4>Voulez-vous vraiment modifier les <button class="btn btn-danger">@Model.SiteName</button> paramètres cela modifiera les paramètres du système</h4>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
     <div class="form-horizontal">
-        <h4>SiteSettingsViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
@@ -122,12 +118,11 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Sauvegarder les modifications" class="btn btn-primary" />
+                <a class="btn btn-primary" href="/OPMSAdmin/SiteSettings/Index">Retour à la liste principale</a>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+

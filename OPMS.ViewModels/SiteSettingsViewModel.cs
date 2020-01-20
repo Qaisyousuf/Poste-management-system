@@ -1,6 +1,7 @@
 ﻿using OPMS.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace OPMS.ViewModels
       
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Le nom du site est requis")]
         public string SiteName { get; set; }
 
         public bool IsRegister { get; set; }
