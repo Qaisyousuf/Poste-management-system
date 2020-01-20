@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OPMS.ViewModels
 {
-    public class InsertUserViewModel
+    public class InsertUserViewModel:BaseViewModel
     {
         [Required(ErrorMessage = "Nom d'utilisateur est nécessaire")]
         [Display(Name = "Nom d'utilisateur")]

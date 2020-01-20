@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace OPMS.ViewModels
 {
-    public class PageViewModel
+    public class PageViewModel:BaseViewModel
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Le titre de la page est requis")]

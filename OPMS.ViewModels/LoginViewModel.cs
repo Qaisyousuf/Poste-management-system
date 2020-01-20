@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OPMS.ViewModels
 {
-    public class LoginViewModel
+    public class LoginViewModel:BaseViewModel
     {
         [Required(ErrorMessage = "Nom d'utilisateur est nécessaire")]
         [Display(Name = "Nom d'utilisateur")]

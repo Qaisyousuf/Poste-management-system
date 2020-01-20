@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OPMS.ViewModels
 {
-    public class RegisterViewModel
+    public class RegisterViewModel:BaseViewModel
     {
        
 

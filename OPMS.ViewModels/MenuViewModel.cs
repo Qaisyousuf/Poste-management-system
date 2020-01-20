@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OPMS.ViewModels
 {
-    public class MenuViewModel
+    public class MenuViewModel:BaseViewModel
     {
         public MenuViewModel()
         {

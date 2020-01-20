@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace OPMS.ViewModels
 {
-    public class BlogPostViewModel
+    public class BlogPostViewModel:BaseViewModel
     {
         public BlogPostViewModel()
         {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OPMS.ViewModels
 {
-    public class RoleViewModel
+    public class RoleViewModel:BaseViewModel
     {
         public RoleViewModel()
         {

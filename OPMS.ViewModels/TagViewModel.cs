@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OPMS.ViewModels
 {
-    public class TagViewModel
+    public class TagViewModel:BaseViewModel
     {
         public TagViewModel()
         {

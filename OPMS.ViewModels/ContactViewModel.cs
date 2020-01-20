@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OPMS.ViewModels
 {
-    public class ContactViewModel
+    public class ContactViewModel:BaseViewModel
     {
         public int Id { get; set; }
 

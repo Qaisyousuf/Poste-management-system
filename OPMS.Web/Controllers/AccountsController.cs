@@ -25,7 +25,7 @@ namespace OPMS.Web.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View();
+            return View(new LoginViewModel());
         }
 
         [HttpPost]
@@ -71,7 +71,7 @@ namespace OPMS.Web.Controllers
         [HttpGet]
         public ActionResult Register()
         {
-            return View();
+            return View(new RegisterViewModel());
         }
         [HttpPost]
         public ActionResult Register(RegisterViewModel viewmodel)

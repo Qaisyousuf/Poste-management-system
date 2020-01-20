@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace OPMS.ViewModels
 {
-    public class SidebarViewModel
+    public class SidebarViewModel:BaseViewModel
     {
         public int Id { get; set; }
 
