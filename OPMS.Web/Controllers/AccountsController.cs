@@ -1,25 +1,16 @@
-﻿using OPMS.Data.Interfaces;
+﻿using OPMS.Services.Security;
+using OPMS.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using OPMS.Services;
-using OPMS.ViewModels;
-using OPMS.Services.Security;
-using System.Web.Security;
 using System.Web.Script.Serialization;
+using System.Web.Security;
 
 namespace OPMS.Web.Controllers
 {
-    public class AccountsController : Controller
+    public class AccountsController : BaseController
     {
-        private readonly IAuthenticationService authService;
-
-        public AccountsController(IAuthenticationService authService)
-        {
-            this.authService = authService;
-        }
         public ActionResult Index()
         {
             return View();
@@ -45,7 +36,7 @@ namespace OPMS.Web.Controllers
                
                 return View(viewmodel);
             }
-            var user = authService.Login(viewmodel.UserName, viewmodel.Password);
+            var user = _authSerivce.Login(viewmodel.UserName, viewmodel.Password);
             if(user==null)
             {
                 ModelState.AddModelError("", "L'utilisateur portant ce nom n'existe pas");
@@ -89,7 +80,7 @@ namespace OPMS.Web.Controllers
             {
                 return View(viewmodel);
             }
-            bool registerSuccess = authService.Register(viewmodel.Email, viewmodel.UserName, viewmodel.Password, viewmodel.PhoneNumber, out int? userId);
+            bool registerSuccess = _authSerivce.Register(viewmodel.Email, viewmodel.UserName, viewmodel.Password, viewmodel.PhoneNumber, out int? userId);
 
             if(!registerSuccess)
             {
