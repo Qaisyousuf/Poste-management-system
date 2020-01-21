@@ -91,7 +91,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             page.IsPageMetaDataOn = viewmodel.IsPageMetaDataOn;
             page.SidebarId = viewmodel.SidebarId;
             page.Sidebars = viewmodel.Sidebars;
-            page.IsVisibleToSearchEngine = viewmodel.IsVisibleToSearchEngine;
+            page.IsVisibleToSearchEngine =( bool)viewmodel.IsVisibleToSearchEngine;
 
             uow.PageRepository.Add(page);
             uow.Commit();

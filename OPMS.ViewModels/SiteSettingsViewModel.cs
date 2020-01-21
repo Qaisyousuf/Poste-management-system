@@ -43,6 +43,6 @@ namespace OPMS.ViewModels
 
         public string UpdateBy { get; set; }
 
-        
+        public bool? IsVisibleToSearchEngineBase { get; set; }
     }
 }

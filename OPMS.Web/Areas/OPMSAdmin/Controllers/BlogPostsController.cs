@@ -94,7 +94,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             blogPost.BlogPostMetaDataOn = viewmodel.BlogPostMetaDataOn;
             blogPost.MetaDescription = viewmodel.MetaDescription;
             blogPost.MetaKeywords = viewmodel.MetaKeywords;
-            blogPost.IsVisibleToSearchEngine = viewmodel.IsVisibleToSearchEngine;
+            blogPost.IsVisibleToSearchEngine = (bool)viewmodel.IsVisibleToSearchEngine;
             blogPost.MetaOgImage = viewmodel.MetaOgImage;
 
             foreach (var item in viewmodel.TagIds)
@@ -154,7 +154,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             blogPost.Title = viewmodel.Title;
             blogPost.Slug = slug;
             blogPost.Content = viewmodel.Content;
-            blogPost.IsVisibleToSearchEngine = viewmodel.IsVisibleToSearchEngine;
+            blogPost.IsVisibleToSearchEngine =Convert.ToBoolean(viewmodel.IsVisibleToSearchEngine);
             blogPost.MetaKeywords = viewmodel.MetaKeywords;
             blogPost.MetaDescription = viewmodel.MetaDescription;
             blogPost.BlogPostMetaDataOn = viewmodel.BlogPostMetaDataOn;

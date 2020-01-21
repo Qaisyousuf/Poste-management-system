@@ -5,9 +5,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title-@Model.SiteName </title>
+    <link href="@Html.Raw(Model.GoogleSiteVerification)" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    @if (Model.IsVisibleToSearchEngine == true)
+    {
+        <meta name="robots" content="follow,index" />
+    }
+    else if (Model.IsVisibleToSearchEngine == null)
+    {
+        <meta name="robots" content="follow,index" />
+    }
+    else
+    {
+        <meta name="robots" content="nofollow,noindex,noarchive,noodp,notranslate,noimageindex,nosnippet,noydir" />
+    }
+    @if (Model.IsMetaDataOn != null)
+    {
+        <meta name="author" content="@Model.SiteOwner" />
+        <meta name="keywords" content="@Model.MetaKeywords" />
+        <meta name="description" content="@Model.MetaDescritpion" />
+    }
+    @*<link href="@Model.FavIcon" rel="icon" type="image/svg" sizes="16X16" />*@
     <link href="https://bootswatch.com/3/paper/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -19,18 +39,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Online Post Management System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Coallia OPMS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                @Html.Action("PagesMenuPartial","Home")
-                <ul class="nav navbar-nav"></ul>
+                @Html.Action("PagesMenuPartial", "Home")
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
 
     <div class="container body-content">
-        @RenderBody()
+        <div class="row">
+            <div class="col-md-8">
+                @RenderBody()
+            </div>
+            <div class="col-md-4">
+                @Html.Action("SidbarPartial", "Home")
+            </div>
+        </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - @Model.SiteOwner</p>

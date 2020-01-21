@@ -109,6 +109,10 @@
     <Compile Include="Migrations\202001172132289_Initial.designer.cs">
       <DependentUpon>202001172132289_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001211017494_NotingChanged.cs" />
+    <Compile Include="Migrations\202001211017494_NotingChanged.designer.cs">
+      <DependentUpon>202001211017494_NotingChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -125,6 +129,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001172132289_Initial.resx">
       <DependentUpon>202001172132289_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001211017494_NotingChanged.resx">
+      <DependentUpon>202001211017494_NotingChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

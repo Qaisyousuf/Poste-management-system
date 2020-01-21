@@ -23,12 +23,14 @@ namespace OPMS.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
         [HttpGet]
+        [Route("Authorization")]
         public ActionResult Login()
         {
             return View(new LoginViewModel());
         }
 
         [HttpPost]
+        [Route("Authorization")]
         public ActionResult Login(LoginViewModel viewmodel)
         {
             if(!ModelState.IsValid)
@@ -69,11 +71,13 @@ namespace OPMS.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Register()
         {
             return View(new RegisterViewModel());
         }
         [HttpPost]
+        [Authorize]
         public ActionResult Register(RegisterViewModel viewmodel)
         {
             if(!ModelState.IsValid)

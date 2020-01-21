@@ -1,0 +1,17 @@
+﻿@model OPMS.ViewModels.SidebarViewModel
+<br />
+<br />
+<br />
+<br />
+@if (Model?.Id != null)
+{
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            @Model.Name
+        </div>
+        <div class="panel-body">
+            @Html.Raw(Model.Content)
+        </div>
+    </div>
+}
+

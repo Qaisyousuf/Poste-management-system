@@ -35,16 +35,16 @@ namespace OPMS.ViewModels
         public bool BlogPostMetaDataOn { get; set; }
 
 
-        public string MetaKeywords { get; set; }
+        //public string MetaKeywords { get; set; }
 
         [Display(Name = "Meta Description")]
         public string MetaDescription { get; set; }
 
 
-        public string MetaOgImage { get; set; }
+        //public string MetaOgImage { get; set; }
 
-       
-        public bool IsVisibleToSearchEngine { get; set; }
+
+        //public bool IsVisibleToSearchEngine { get; set; }
     }
 
 }

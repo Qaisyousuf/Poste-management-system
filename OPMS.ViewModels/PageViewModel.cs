@@ -20,8 +20,7 @@ namespace OPMS.ViewModels
         [Required(ErrorMessage = "Le contenu de la page est requis")]
         public string Content { get; set; }
 
-        [Display(Name = "Mots-clés Meta")]
-        public string MetaKeywords { get; set; }
+       
 
         [Display(Name = "Meta Description")]
         public string MetaDescription { get; set; }

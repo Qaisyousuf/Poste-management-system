@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="BlogPost.cs" />
     <Compile Include="Contact.cs" />
+    <Compile Include="ContactMainPage.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Page.cs" />

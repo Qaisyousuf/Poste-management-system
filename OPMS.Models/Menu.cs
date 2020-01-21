@@ -15,7 +15,7 @@ namespace OPMS.Models
 
         [InverseProperty("SubMenus")]
         public int? ParentId { get; set; }
-        public virtual Menu Parent { get; set; }
+        public  Menu Parent { get; set; }
 
         [ForeignKey("ParentId")]
         public List<Menu> SubMenus { get; set; }

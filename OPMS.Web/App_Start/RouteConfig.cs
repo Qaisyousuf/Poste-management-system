@@ -13,8 +13,13 @@ namespace OPMS.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+            routes.MapRoute("Page", "{slug}", new { controller = "Home", action = "Index" }, new[] { "OPMS.Web.Controllers" });
+            routes.MapRoute("Default", "", new { controller = "Home", action = "Index" }, new[] { "OPMS.Web.Controllers" });
+
+
             routes.MapRoute(
-                name: "Default",
+                name: "Old",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
