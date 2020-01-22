@@ -38,18 +38,18 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.MetaKeywords, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.MetaKeywordsPage, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.MetaKeywords, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.MetaKeywords, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.MetaKeywordsPage, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MetaKeywordsPage, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.MetaDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.MetaDescriptionPage, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.MetaDescription, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.MetaDescription, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.MetaDescriptionPage, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MetaDescriptionPage, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -63,11 +63,11 @@
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.IsVisibleToSearchEngine, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.IsVisibleToSearchEnginePage, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             <div class="checkbox">
-                @Html.EditorFor(model => model.IsVisibleToSearchEngine)
-                @Html.ValidationMessageFor(model => model.IsVisibleToSearchEngine, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.IsVisibleToSearchEnginePage)
+                @Html.ValidationMessageFor(model => model.IsVisibleToSearchEnginePage, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>

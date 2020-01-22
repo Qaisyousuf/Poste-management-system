@@ -113,6 +113,26 @@
     <Compile Include="Migrations\202001211017494_NotingChanged.designer.cs">
       <DependentUpon>202001211017494_NotingChanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001212113021_DataAddedToSiteSettings.cs" />
+    <Compile Include="Migrations\202001212113021_DataAddedToSiteSettings.designer.cs">
+      <DependentUpon>202001212113021_DataAddedToSiteSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001221151423_SiteSetttingsDataIsChanged.cs" />
+    <Compile Include="Migrations\202001221151423_SiteSetttingsDataIsChanged.designer.cs">
+      <DependentUpon>202001221151423_SiteSetttingsDataIsChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001221426483_DataAddedToSettings.cs" />
+    <Compile Include="Migrations\202001221426483_DataAddedToSettings.designer.cs">
+      <DependentUpon>202001221426483_DataAddedToSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001221521196_NewDataAddedToSiteSettingsModel.cs" />
+    <Compile Include="Migrations\202001221521196_NewDataAddedToSiteSettingsModel.designer.cs">
+      <DependentUpon>202001221521196_NewDataAddedToSiteSettingsModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001221556541_ColumnsChangedInSitSettingandPag.cs" />
+    <Compile Include="Migrations\202001221556541_ColumnsChangedInSitSettingandPag.designer.cs">
+      <DependentUpon>202001221556541_ColumnsChangedInSitSettingandPag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -132,6 +152,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001211017494_NotingChanged.resx">
       <DependentUpon>202001211017494_NotingChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001212113021_DataAddedToSiteSettings.resx">
+      <DependentUpon>202001212113021_DataAddedToSiteSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221151423_SiteSetttingsDataIsChanged.resx">
+      <DependentUpon>202001221151423_SiteSetttingsDataIsChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221426483_DataAddedToSettings.resx">
+      <DependentUpon>202001221426483_DataAddedToSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221521196_NewDataAddedToSiteSettingsModel.resx">
+      <DependentUpon>202001221521196_NewDataAddedToSiteSettingsModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221556541_ColumnsChangedInSitSettingandPag.resx">
+      <DependentUpon>202001221556541_ColumnsChangedInSitSettingandPag.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

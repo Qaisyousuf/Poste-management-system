@@ -1,10 +1,12 @@
-﻿@model OPMS.ViewModels.SiteSettingsViewModel
+﻿@model OPMS.Models.SiteSettings
+
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "SiteSettings";
 }
 <hr />
 <h4>Détails des paramètres du site</h4>
 <div>
+ 
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -48,6 +50,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.CustomCSS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomCSS)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.GoogleSiteVerification)
         </dt>
 
@@ -56,27 +66,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.GoogleAds)
+            @Html.DisplayNameFor(model => model.GoogelAds)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.GoogleAds)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GoogleAnalytics)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GoogleAnalytics)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomCSS)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CustomCSS)
+            @Html.DisplayFor(model => model.GoogelAds)
         </dd>
 
         <dt>
@@ -119,9 +113,129 @@
             @Html.DisplayFor(model => model.UpdateBy)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AboutFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AboutFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AboutUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AboutUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RolesFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RolesFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RolesUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RolesUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumberFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumberFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddresFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddresFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CopyrightFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CopyrightFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginFooter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoginFooter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoginUrl)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Éditer", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id },new { @class="btn btn-default"}) |
     <a class="btn btn-primary" href="/OPMSAdmin/SiteSettings/Index">Retour à la liste principale</a>
 </p>

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<OPMS.ViewModels.SiteSettingsViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SiteSettings";
 }
 <hr />
 <h4>Liste des paramètres du site</h4>
@@ -15,7 +15,7 @@
             <th><i class="glyphicon glyphicon-align-left"></i> Site Name</th>
             <th><i class="glyphicon glyphicon-align-left"></i> Site Owner</th>
             <th><i class="glyphicon glyphicon-align-left"></i> Site Last Update By</th>
-            <th><i class="glyphicon glyphicon-align-left"></i> Site Footer</th>
+            <th><i class="glyphicon glyphicon-align-left"></i> Copywright</th>
             <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
         </tr>
     </thead>
@@ -40,7 +40,7 @@
                     { data: 'SiteName' },
                     { data: 'SiteOwner' },
                     { data: 'UpdateBy' },
-                    { data: 'SiteFooter' },
+                    { data: 'CopyrightFooter' },
 
 
                     {

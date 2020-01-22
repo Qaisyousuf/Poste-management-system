@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title-@Model.SiteName </title>
-    <link href="@Html.Raw(Model.GoogleSiteVerification)" rel="stylesheet" />
+    <title>@ViewBag.Title-@Model.SiteNameBase </title>
+    <link href="@Html.Raw(Model.GoogleSiteVerificationBase)" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
@@ -31,16 +31,14 @@
 
     <div class="container body-content">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 @RenderBody()
             </div>
-            <div class="col-md-4">
-          
-            </div>
+           
         </div>
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - @Model.SiteOwner</p>
+            <p>&copy; @DateTime.Now.Year - @Model.SiteOwnerBase</p>
         </footer>
     </div>
 

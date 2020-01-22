@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace OPMS.Web.Controllers
 {
+   
     public class HomeController :BaseController
     {
         //[Route("{slug}")]
@@ -37,8 +38,10 @@ namespace OPMS.Web.Controllers
                 Content=pageFromDb.Content,
                 IsVisibleToSearchEngine=pageFromDb.IsVisibleToSearchEngine,
                 IsMetaDataOn=pageFromDb.IsPageMetaDataOn,
-                MetaKeywords=pageFromDb.MetaKeywords,
-                MetaDescription=pageFromDb.MetaDescription,
+                MetaKeywords=pageFromDb.MetaKeywordse,
+                MetaDescritpion=pageFromDb.MetaDescription,
+                //IsPageMetaDataOn=pageFromDb.IsPageMetaDataOn,
+                
             };
 
             return View(viewmodel);

@@ -4,7 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title-@Model.SiteName </title>
+    <link href="@Model.SiteName" rel="stylesheet" />
+    <link href="@Model.GoogelAds" rel="stylesheet" />
+    <link href="@Model.GoogleSiteVerification" rel="stylesheet" />
+    <title>@ViewBag.Title-@Model.SiteName</title>
+
     <link href="@Html.Raw(Model.GoogleSiteVerification)" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />

@@ -20,17 +20,18 @@ namespace OPMS.ViewModels
         [Required(ErrorMessage = "Le contenu de la page est requis")]
         public string Content { get; set; }
 
-       
-
-        [Display(Name = "Meta Description")]
-        public string MetaDescription { get; set; }
-
-
-        [Display(Name = "Page Métadonnées sur")]
+        [Display(Name = "Page Métadonnées")]
         public bool IsPageMetaDataOn { get; set; }
 
-        [Display(Name = "Visible sur le moteur de recherche")]
-        public bool IsVisibleToSearchEngine { get; set; }
+        [Display(Name = "Mots-clés Meta")]
+        public string MetaKeywordsPage { get; set; }
+
+        [Display(Name = "Méta descriptions")]
+        public string MetaDescriptionPage { get; set; }
+
+        [Display(Name = "IsVisibleToSearchEngine")]
+        public bool IsVisibleToSearchEnginePage { get; set; }
+
         [Display(Name = "Barre latérale")]
         public int SidebarId { get; set; }
 

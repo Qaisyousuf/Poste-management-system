@@ -86,12 +86,12 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             }
             page.Slug = slug;
             page.Content = viewmodel.Content;
-            page.MetaKeywords = viewmodel.MetaKeywords;
-            page.MetaDescription = viewmodel.MetaDescription;
+            page.MetaKeywordse = viewmodel.MetaKeywordsPage;
+            page.MetaDescription = viewmodel.MetaDescriptionPage;
             page.IsPageMetaDataOn = viewmodel.IsPageMetaDataOn;
             page.SidebarId = viewmodel.SidebarId;
             page.Sidebars = viewmodel.Sidebars;
-            page.IsVisibleToSearchEngine =( bool)viewmodel.IsVisibleToSearchEngine;
+            page.IsVisibleToSearchEngine =( bool)viewmodel.IsVisibleToSearchEnginePage;
 
             uow.PageRepository.Add(page);
             uow.Commit();
@@ -109,10 +109,10 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Title = page.Title,
                 Slug = page.Slug,
                 Content = page.Content,
-                MetaKeywords = page.MetaKeywords,
-                MetaDescription = page.MetaDescription,
+                MetaKeywordsPage = page.MetaKeywordse,
+                MetaDescriptionPage = page.MetaDescription,
                 IsPageMetaDataOn = page.IsPageMetaDataOn,
-                IsVisibleToSearchEngine = page.IsVisibleToSearchEngine,
+                IsVisibleToSearchEnginePage = page.IsVisibleToSearchEngine,
                 SidebarId = page.SidebarId,
                 Sidebars = page.Sidebars
 
@@ -148,9 +148,9 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             }
             page.Slug = slug;
             page.Content = viewmodel.Content;
-            page.MetaKeywords = viewmodel.MetaKeywords;
-            page.MetaDescription = viewmodel.MetaDescription;
-            page.IsPageMetaDataOn = viewmodel.IsPageMetaDataOn;
+            page.MetaKeywordse = viewmodel.MetaKeywordsPage;
+            page.MetaDescription = viewmodel.MetaKeywordsPage;
+            page.IsVisibleToSearchEngine = viewmodel.IsVisibleToSearchEnginePage;
             page.IsPageMetaDataOn = viewmodel.IsPageMetaDataOn;
             page.SidebarId = viewmodel.SidebarId;
             page.Sidebars = viewmodel.Sidebars;
@@ -171,10 +171,10 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Title=pageDelete.Title,
                 Slug=pageDelete.Slug,
                 Content=pageDelete.Content,
-                MetaKeywords=pageDelete.MetaKeywords,
-                MetaDescription=pageDelete.MetaDescription,
+                MetaKeywordsPage=pageDelete.MetaKeywordse,
+                MetaDescriptionPage=pageDelete.MetaDescription,
                 IsPageMetaDataOn=pageDelete.IsPageMetaDataOn,
-                IsVisibleToSearchEngine=pageDelete.IsVisibleToSearchEngine,
+                IsVisibleToSearchEnginePage=pageDelete.IsVisibleToSearchEngine,
                 SidebarId=pageDelete.SidebarId,
                 Sidebars=pageDelete.Sidebars
             };
@@ -192,9 +192,9 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Slug=page.Slug,
                 Content=page.Content,
                 IsPageMetaDataOn=page.IsPageMetaDataOn,
-                IsVisibleToSearchEngine=page.IsVisibleToSearchEngine,
-                MetaDescription=page.MetaDescription,
-                MetaKeywords=page.MetaKeywords,
+                IsVisibleToSearchEnginePage=page.IsVisibleToSearchEngine,
+                MetaKeywordsPage=page.MetaKeywordse,
+                MetaDescriptionPage=page.MetaKeywordse,
                 SidebarId=page.SidebarId,
                 Sidebars=page.Sidebars
             };
@@ -213,10 +213,10 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Title = pageDelete.Title,
                 Slug = pageDelete.Slug,
                 Content = pageDelete.Content,
-                MetaKeywords = pageDelete.MetaKeywords,
-                MetaDescription = pageDelete.MetaDescription,
+                MetaKeywordsPage = pageDelete.MetaKeywordse,
+                MetaDescriptionPage = pageDelete.MetaDescription,
                 IsPageMetaDataOn = pageDelete.IsPageMetaDataOn,
-                IsVisibleToSearchEngine = pageDelete.IsVisibleToSearchEngine,
+                IsVisibleToSearchEnginePage = pageDelete.IsVisibleToSearchEngine,
                 SidebarId = pageDelete.SidebarId,
                 Sidebars = pageDelete.Sidebars
             };

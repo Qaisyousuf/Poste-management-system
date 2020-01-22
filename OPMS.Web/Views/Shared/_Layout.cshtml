@@ -4,11 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title-@Model.SiteName </title>
-    <link href="@Html.Raw(Model.GoogleSiteVerification)" rel="stylesheet" />
+    <link href="@Model.SiteName" rel="stylesheet" />
+    <link href="@Model.GoogelAds" rel="stylesheet" />
+    <link href="@Model.GoogleSiteVerification" rel="stylesheet" />
+    <link href="" rel="stylesheet" />
+
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+
+
     @if (Model.IsVisibleToSearchEngine == true)
     {
         <meta name="robots" content="follow,index" />
@@ -59,7 +64,20 @@
         </div>
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - @Model.SiteOwner</p>
+            <div class="card text-center">
+                <div class="card-header">
+                    Featured
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@Model.SiteFooter</h5>
+                    <p class="card-text">@Model.SiteName</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                <div class="card-footer text-muted">
+                    WebSiteLastUpdated @Model.SiteLastUpdate
+                </div>
+            </div>
+            <p><h3>@Model.AboutFooter</h3></p>
         </footer>
     </div>
 

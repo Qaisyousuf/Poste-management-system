@@ -28,18 +28,36 @@ namespace OPMS.Web.Controllers
                     var siteSettings = _uow.Context.SiteSettings.Where(x => x.Id == site.Id).FirstOrDefault();
 
                     baseviewmodel.SiteName = siteSettings.SiteName;
-                    baseviewmodel.IsRegister = siteSettings.IsRegister;
-                    baseviewmodel.SiteOwner = siteSettings.SiteOwner;
                     baseviewmodel.SiteFooter = siteSettings.SiteFooter;
+                    baseviewmodel.IsRegister = siteSettings.IsRegister;
                     baseviewmodel.FavIcon = siteSettings.FavIconURL;
-                    baseviewmodel.GoogleAds = siteSettings.GoogleAds;
-                    baseviewmodel.GoogleAnalytics = siteSettings.GoogleAnalytics;
-                    baseviewmodel.GoogleSiteVerification = siteSettings.GoogleSiteVerification;
-                    baseviewmodel.CustomCSS = siteSettings.CustomCSS;
+                    baseviewmodel.SiteOwner = siteSettings.SiteOwner;
                     baseviewmodel.IsCustomCSSOn = siteSettings.IsCustomCSSOn;
-                    baseviewmodel.CustomJs = siteSettings.CustomJS;
                     baseviewmodel.IsCustomJSOn = siteSettings.IsCustomJsOn;
+                    baseviewmodel.CustomCSS = siteSettings.CustomCSS;
+                    baseviewmodel.CustomJs = siteSettings.CustomJS;
                     baseviewmodel.SiteLastUpdate = siteSettings.SiteLastUpdated;
+                    baseviewmodel.HomeFooter = siteSettings.HomeFooter;
+                    baseviewmodel.HomeUrlBase = siteSettings.HomeUrl;
+                    baseviewmodel.AboutFooter = siteSettings.AboutFooter;
+                    baseviewmodel.AboutUrl = siteSettings.AboutUrl;
+                    baseviewmodel.ContactFooterBase = siteSettings.ContactFooter;
+                    baseviewmodel.ContactUrlBase = siteSettings.ContactUrl;
+                    baseviewmodel.RolesFooterBase = siteSettings.RolesFooter;
+                    baseviewmodel.RolesUrlBase = siteSettings.RolesUrl;
+                    baseviewmodel.ContactNumberFooterBase = siteSettings.ContactNumberFooter;
+                    baseviewmodel.EmailFooterBase = siteSettings.EmailFooter;
+                    baseviewmodel.AddresFooterBase = siteSettings.AddresFooter;
+                    baseviewmodel.ContentFooterBase = siteSettings.ContentFooter;
+                    baseviewmodel.CopyrightFooterBase = siteSettings.CopyrightFooter;
+                    baseviewmodel.LoginFooter = siteSettings.LoginFooter;
+                    baseviewmodel.LoginUrlBase = siteSettings.LoginUrl;
+                    baseviewmodel.GoogleSiteVerification = siteSettings.GoogleSiteVerification;
+                    baseviewmodel.GoogelAds = siteSettings.GoogelAds;
+
+                    
+
+                    
                     
 
 
