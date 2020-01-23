@@ -73,17 +73,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\BlogPostRepository.cs" />
+    <Compile Include="Concrete\BuildingRepository.cs" />
     <Compile Include="Concrete\ContactRepository.cs" />
+    <Compile Include="Concrete\FloorsRepository.cs" />
     <Compile Include="Concrete\MenuRepository.cs" />
+    <Compile Include="Concrete\MessageRepository.cs" />
     <Compile Include="Concrete\PageRepository.cs" />
     <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Concrete\RolesRepository.cs" />
+    <Compile Include="Concrete\RoomRepository.cs" />
     <Compile Include="Concrete\SidebarRepository.cs" />
     <Compile Include="Concrete\SiteSettingRepository.cs" />
+    <Compile Include="Concrete\SocialWorkerRepository.cs" />
     <Compile Include="Concrete\TagReposiitory.cs" />
     <Compile Include="Concrete\UnitOfWork.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Context\ContextDb.cs" />
+    <Compile Include="Context\ContextDb.Views.cs" />
     <Compile Include="FluentAPI\BlogPostMapping.cs" />
     <Compile Include="FluentAPI\ContactMapping.cs" />
     <Compile Include="FluentAPI\MenuMapping.cs" />
@@ -94,14 +100,19 @@
     <Compile Include="FluentAPI\TagMapping.cs" />
     <Compile Include="FluentAPI\UserMapping.cs" />
     <Compile Include="Interfaces\IBlogPostRepository.cs" />
+    <Compile Include="Interfaces\IBuildingRepository.cs" />
     <Compile Include="Interfaces\IContactRepository.cs" />
+    <Compile Include="Interfaces\IFloorsRepository.cs" />
     <Compile Include="Interfaces\IMenuRepository.cs" />
+    <Compile Include="Interfaces\IMessageRepository.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRolesRepository.cs" />
+    <Compile Include="Interfaces\IRoomRepository.cs" />
     <Compile Include="Interfaces\ISidebarRepository.cs" />
     <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ISlug.cs" />
+    <Compile Include="Interfaces\ISocialWorkerRepository.cs" />
     <Compile Include="Interfaces\ITagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
@@ -132,6 +143,10 @@
     <Compile Include="Migrations\202001221556541_ColumnsChangedInSitSettingandPag.cs" />
     <Compile Include="Migrations\202001221556541_ColumnsChangedInSitSettingandPag.designer.cs">
       <DependentUpon>202001221556541_ColumnsChangedInSitSettingandPag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001222332201_MessageModelAdded.cs" />
+    <Compile Include="Migrations\202001222332201_MessageModelAdded.designer.cs">
+      <DependentUpon>202001222332201_MessageModelAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001221556541_ColumnsChangedInSitSettingandPag.resx">
       <DependentUpon>202001221556541_ColumnsChangedInSitSettingandPag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001222332201_MessageModelAdded.resx">
+      <DependentUpon>202001222332201_MessageModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

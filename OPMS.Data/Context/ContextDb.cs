@@ -22,6 +22,14 @@ namespace OPMS.Data.Context
         public DbSet<RoleModel> Roles { get; set; }
         public DbSet<SiteSettings> SiteSettings { get; set; }
 
+        //Message Models
+        public DbSet<MessageContainer> MessageContainers { get; set; }
+        public DbSet<SocialWorker> SocialWorkers { get; set; }
+        public DbSet<BuildingAddress> BuildingAddresses { get; set; }
+        public DbSet<FloorsAddress> FloorsAddresses { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+
+
         
 
 

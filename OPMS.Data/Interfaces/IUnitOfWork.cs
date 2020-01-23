@@ -15,8 +15,11 @@ namespace OPMS.Data.Interfaces
         IContactRepository ContactRepository { get; }
         IUserRepository UserRepository { get;}
         IRolesRepository RolesRepository { get; }
-       
-
+        IMessageRepository MessageRepository { get; }
+        ISocialWorkerRepository SocialWorkerRepository { get; }
+        IBuildingRepository BuildingRepository { get; }
+        IFloorsRepository FloorsRepository { get; }
+        IRoomRepository RoomRepository { get; }
         void Commit();
     }
 }

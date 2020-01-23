@@ -28,6 +28,16 @@ namespace OPMS.Data.Concrete
 
         public IRolesRepository RolesRepository => new RolesRepository(Context);
 
+        public IMessageRepository MessageRepository => new MessageRepository(Context);
+
+        public ISocialWorkerRepository SocialWorkerRepository => new SocialWorkerRepository(Context);
+
+        public IBuildingRepository BuildingRepository => new BuildingRepository(Context);
+
+        public IFloorsRepository FloorsRepository => new FloorsRepository(Context);
+
+        public IRoomRepository RoomRepository => new RoomRepository(Context);
+
         public void Commit()
         {
             Context.SaveChanges();

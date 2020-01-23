@@ -12,6 +12,7 @@ namespace OPMS.Data.Interfaces
         IEnumerable<RoleModel> GetRoles();
         IEnumerable<UserModel> GetUserWithRoles();
         IEnumerable<RoleModel> GetRolesById(int[] ids);
+       
         void AddUserToRoles(int? userId, int[] roleIds,ContextDb context);
     }
 }
