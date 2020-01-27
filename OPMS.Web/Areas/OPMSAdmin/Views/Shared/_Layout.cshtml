@@ -43,20 +43,49 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Zone d'administration", "Index", "Home", new { area = "OPMSAdmin" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Zone d'administration", "Index", "Pages", new { area = "OPMSAdmin" }, new { @class = "navbar-brand" })
               
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("HomePage", "Index", "Pages", new { area = "OPMSAdmin" }, null)</li>
+                    <li>@Html.ActionLink("Home", "Index", "Pages", new { area = "OPMSAdmin" }, null)</li>
+                    <li class="dropdown">
+                        <a title="About" href="#" class="dropdown-toggle" data-toggle="dropdown"> About <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("About Page", "Index", "AboutPage", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("About Section", "Index", "AboutSections", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Short Section", "Index", "AboutShortSection", new { area = "OPMSAdmin" }, null)</li>
+                        </ul>
+                    </li>
                     <li>@Html.ActionLink("Sidebar", "Index", "Sidebars", new { area = "OPMSAdmin" }, null)</li>
                     <li>@Html.ActionLink("Tag", "Index", "Tags", new { area = "OPMSAdmin" }, null)</li>
                     <li>@Html.ActionLink("Menus", "Index", "Menus", new { area = "OPMSAdmin" }, null)</li>
-                    <li>@Html.ActionLink("BlogPost", "Index", "BlogPosts", new { area = "OPMSAdmin" }, null)</li>
-                    <li>@Html.ActionLink("SiteSetting", "Index", "Sitesettings", new { area = "OPMSAdmin" }, null)</li>
-                    <li>@Html.ActionLink("ContactInfo", "Index", "Contacts", new { area = "OPMSAdmin" }, null)</li>
-                    <li>@Html.ActionLink("Users", "Index", "AdminUser", new { area = "OPMSAdmin" }, null)</li>
-                    <li>@Html.ActionLink("Roles", "Index", "Roles", new { area = "OPMSAdmin" }, null)</li>
+                    <li class="dropdown">
+                        <a title="Address" href="#" class="dropdown-toggle" data-toggle="dropdown"> Address <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Building", "Index", "BuildingAddres", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Rooms", "Index", "Rooms", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Floors", "Index", "Floors", new { area = "OPMSAdmin" }, null)</li>
+
+
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Mesage Sample", "Index", "MessageContainer", new { area = "OPMSAdmin" }, null)</li>
+
+
+                    <li class="dropdown">
+                        <a title="About" href="#" class="dropdown-toggle" data-toggle="dropdown">Messages<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Social Workesr", "Index", "SocialWorker", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Blog Post", "Index", "BlogPosts", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Site Setting", "Index", "Sitesettings", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Contact Information", "Index", "Contacts", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Users", "Index", "AdminUser", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Roles", "Index", "Roles", new { area = "OPMSAdmin" }, null)</li>
+
+                        </ul>
+                    </li>
+
 
 
                 </ul>

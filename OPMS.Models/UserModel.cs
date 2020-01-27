@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OPMS.Models
 {
@@ -14,6 +15,12 @@ namespace OPMS.Models
         public string HashPassword { get; set; }
 
         public ICollection<RoleModel> Roles { get; set; }
+
+
+
+
+     
+      
 
     }
 }

@@ -20,6 +20,10 @@ namespace OPMS.Data.Interfaces
         IBuildingRepository BuildingRepository { get; }
         IFloorsRepository FloorsRepository { get; }
         IRoomRepository RoomRepository { get; }
+        IMessagesSendingRepository MessagesSendingRepository { get; }
+        IAboutRepository AboutPageRepository { get; }
+        IAboutSectionRepository AboutSectionRepository { get; }
+        IAboutShortSectionRepository AboutShortSectionRepository { get; }
         void Commit();
     }
 }

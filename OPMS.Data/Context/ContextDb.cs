@@ -21,6 +21,9 @@ namespace OPMS.Data.Context
         public DbSet<Menu> Menus { get; set; }
         public DbSet<RoleModel> Roles { get; set; }
         public DbSet<SiteSettings> SiteSettings { get; set; }
+        public DbSet<AboutPage> AboutPages { get; set; }
+        public DbSet<AboutSection> AboutSections { get; set; }
+        public DbSet<AboutShortSection> AboutShortSections { get; set; }
 
         //Message Models
         public DbSet<MessageContainer> MessageContainers { get; set; }
@@ -28,6 +31,7 @@ namespace OPMS.Data.Context
         public DbSet<BuildingAddress> BuildingAddresses { get; set; }
         public DbSet<FloorsAddress> FloorsAddresses { get; set; }
         public DbSet<Room> Rooms { get; set; }
+        public DbSet<Messages> Messages { get; set; }
 
 
         

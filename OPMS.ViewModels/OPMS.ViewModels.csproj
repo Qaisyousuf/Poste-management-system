@@ -63,19 +63,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutPageViewModel.cs" />
+    <Compile Include="AboutSectionViewModel.cs" />
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="BlogPostViewModel.cs" />
+    <Compile Include="BuildingAddressViewModel.cs" />
     <Compile Include="CheckBoxViewModel.cs" />
+    <Compile Include="AboutShortSectionVM.cs" />
     <Compile Include="ContactViewModel.cs" />
+    <Compile Include="EditUserViewModel.cs" />
+    <Compile Include="FloorsAddressViewModel.cs" />
     <Compile Include="InsertUserViewModel.cs" />
     <Compile Include="LoginViewModel.cs" />
     <Compile Include="MenuViewModel.cs" />
+    <Compile Include="MessageContainerViewModel.cs" />
+    <Compile Include="MessagesViewModel.cs" />
     <Compile Include="PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterViewModel.cs" />
     <Compile Include="RoleViewModel.cs" />
+    <Compile Include="RoomViewModel.cs" />
     <Compile Include="SidebarViewModel.cs" />
     <Compile Include="SiteSettingsViewModel.cs" />
+    <Compile Include="SocialWorkerViewModel.cs" />
     <Compile Include="TagViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

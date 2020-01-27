@@ -72,12 +72,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concrete\AboutRepository.cs" />
+    <Compile Include="Concrete\AboutSectionRepository.cs" />
+    <Compile Include="Concrete\AboutShortSectionRepository.cs" />
     <Compile Include="Concrete\BlogPostRepository.cs" />
     <Compile Include="Concrete\BuildingRepository.cs" />
     <Compile Include="Concrete\ContactRepository.cs" />
     <Compile Include="Concrete\FloorsRepository.cs" />
     <Compile Include="Concrete\MenuRepository.cs" />
     <Compile Include="Concrete\MessageRepository.cs" />
+    <Compile Include="Concrete\MessagesSendingRepository.cs" />
     <Compile Include="Concrete\PageRepository.cs" />
     <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Concrete\RolesRepository.cs" />
@@ -89,7 +93,6 @@
     <Compile Include="Concrete\UnitOfWork.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Context\ContextDb.cs" />
-    <Compile Include="Context\ContextDb.Views.cs" />
     <Compile Include="FluentAPI\BlogPostMapping.cs" />
     <Compile Include="FluentAPI\ContactMapping.cs" />
     <Compile Include="FluentAPI\MenuMapping.cs" />
@@ -99,12 +102,16 @@
     <Compile Include="FluentAPI\SiteSettingsMapping.cs" />
     <Compile Include="FluentAPI\TagMapping.cs" />
     <Compile Include="FluentAPI\UserMapping.cs" />
+    <Compile Include="Interfaces\IAboutRepository.cs" />
+    <Compile Include="Interfaces\IAboutSectionRepository.cs" />
+    <Compile Include="Interfaces\IAboutShortSectionRepository.cs" />
     <Compile Include="Interfaces\IBlogPostRepository.cs" />
     <Compile Include="Interfaces\IBuildingRepository.cs" />
     <Compile Include="Interfaces\IContactRepository.cs" />
     <Compile Include="Interfaces\IFloorsRepository.cs" />
     <Compile Include="Interfaces\IMenuRepository.cs" />
     <Compile Include="Interfaces\IMessageRepository.cs" />
+    <Compile Include="Interfaces\IMessagesSendingRepository.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRolesRepository.cs" />
@@ -116,37 +123,17 @@
     <Compile Include="Interfaces\ITagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
-    <Compile Include="Migrations\202001172132289_Initial.cs" />
-    <Compile Include="Migrations\202001172132289_Initial.designer.cs">
-      <DependentUpon>202001172132289_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202001271055585_Initial.cs" />
+    <Compile Include="Migrations\202001271055585_Initial.designer.cs">
+      <DependentUpon>202001271055585_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001211017494_NotingChanged.cs" />
-    <Compile Include="Migrations\202001211017494_NotingChanged.designer.cs">
-      <DependentUpon>202001211017494_NotingChanged.cs</DependentUpon>
+    <Compile Include="Migrations\202001271333497_AboutPageAdded.cs" />
+    <Compile Include="Migrations\202001271333497_AboutPageAdded.designer.cs">
+      <DependentUpon>202001271333497_AboutPageAdded.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001212113021_DataAddedToSiteSettings.cs" />
-    <Compile Include="Migrations\202001212113021_DataAddedToSiteSettings.designer.cs">
-      <DependentUpon>202001212113021_DataAddedToSiteSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001221151423_SiteSetttingsDataIsChanged.cs" />
-    <Compile Include="Migrations\202001221151423_SiteSetttingsDataIsChanged.designer.cs">
-      <DependentUpon>202001221151423_SiteSetttingsDataIsChanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001221426483_DataAddedToSettings.cs" />
-    <Compile Include="Migrations\202001221426483_DataAddedToSettings.designer.cs">
-      <DependentUpon>202001221426483_DataAddedToSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001221521196_NewDataAddedToSiteSettingsModel.cs" />
-    <Compile Include="Migrations\202001221521196_NewDataAddedToSiteSettingsModel.designer.cs">
-      <DependentUpon>202001221521196_NewDataAddedToSiteSettingsModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001221556541_ColumnsChangedInSitSettingandPag.cs" />
-    <Compile Include="Migrations\202001221556541_ColumnsChangedInSitSettingandPag.designer.cs">
-      <DependentUpon>202001221556541_ColumnsChangedInSitSettingandPag.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001222332201_MessageModelAdded.cs" />
-    <Compile Include="Migrations\202001222332201_MessageModelAdded.designer.cs">
-      <DependentUpon>202001222332201_MessageModelAdded.cs</DependentUpon>
+    <Compile Include="Migrations\202001272013428_AboutPageCreated.cs" />
+    <Compile Include="Migrations\202001272013428_AboutPageCreated.designer.cs">
+      <DependentUpon>202001272013428_AboutPageCreated.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -162,29 +149,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001172132289_Initial.resx">
-      <DependentUpon>202001172132289_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001271055585_Initial.resx">
+      <DependentUpon>202001271055585_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001211017494_NotingChanged.resx">
-      <DependentUpon>202001211017494_NotingChanged.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001271333497_AboutPageAdded.resx">
+      <DependentUpon>202001271333497_AboutPageAdded.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001212113021_DataAddedToSiteSettings.resx">
-      <DependentUpon>202001212113021_DataAddedToSiteSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001221151423_SiteSetttingsDataIsChanged.resx">
-      <DependentUpon>202001221151423_SiteSetttingsDataIsChanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001221426483_DataAddedToSettings.resx">
-      <DependentUpon>202001221426483_DataAddedToSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001221521196_NewDataAddedToSiteSettingsModel.resx">
-      <DependentUpon>202001221521196_NewDataAddedToSiteSettingsModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001221556541_ColumnsChangedInSitSettingandPag.resx">
-      <DependentUpon>202001221556541_ColumnsChangedInSitSettingandPag.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001222332201_MessageModelAdded.resx">
-      <DependentUpon>202001222332201_MessageModelAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001272013428_AboutPageCreated.resx">
+      <DependentUpon>202001272013428_AboutPageCreated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

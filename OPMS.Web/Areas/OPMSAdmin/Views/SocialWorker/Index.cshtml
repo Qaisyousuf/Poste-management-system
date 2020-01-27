@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Social Workers";
+}
+<hr />
+<h4>Liste des travailleurs sociaux</h4>
+
+<p>
+    <a class="btn btn-primary" href="/OPMSAdmin/SocialWorker/Create">Créer un nouveau travailleur social</a>
+</p>
+<hr />
+<table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
+    <thead class="bg-primary">
+        <tr>
+            <th><i class="glyphicon glyphicon-align-center"></i> Nom du travailleur social</th>
+            <th><i class="glyphicon glyphicon-link"></i> Position</th>
+            <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
+        </tr>
+    </thead>
+</table>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#dataTable").DataTable({
+                "info": false,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "dom": "lfrtiBp",
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ],
+                "ajax": {
+                    "url": "/OPMSAdmin/SocialWorker/GetSocialWorkerData",
+                    "type": "Get",
+                    "dataType": "json"
+                },
+                "columns": [
+                    { "data": "FullName" },
+                    { "data": "Position" },
+                    {
+                        "data": "actions",
+                        "render": function (data, type, row, meta) {
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/SocialWorker/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Modifier</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/SocialWorker/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> <a class="btn btn-default btn-bg" href="/OPMSAdmin/SocialWorker/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
+                            //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
+                            return data;
+                        }
+                    },
+
+
+                ]
+            })
+        });
+    </script>
+}
+

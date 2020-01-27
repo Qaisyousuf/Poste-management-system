@@ -1,0 +1,24 @@
+﻿@model OPMS.ViewModels.BuildingAddressViewModel
+
+@{
+    ViewBag.Title = "Building";
+}
+<hr />
+<h4>Détails de l'adresse</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuildingName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" }) |
+    <a class="btn btn-primary" href="/OPMSAdmin/BuildingAddres/Index">Retour à la liste principale</a>
+</p>

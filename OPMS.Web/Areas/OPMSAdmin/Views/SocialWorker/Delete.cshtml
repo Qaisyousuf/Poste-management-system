@@ -1,0 +1,38 @@
+﻿@model OPMS.ViewModels.SocialWorkerViewModel
+
+@{
+    ViewBag.Title = "Social Workers";
+}
+<hr />
+<h4>Voulez-vous vraiment supprimer le <button disabled class="btn btn-danger">@Model.FullName</button> ?</h4>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a class="btn btn-primary" href="/OPMSAdmin/SocialWorker/Index">Retour à la liste principale</a>
+    </div>
+    }
+</div>

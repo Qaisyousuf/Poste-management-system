@@ -29,6 +29,11 @@ namespace OPMS.Data.Concrete
             return _context.Users.Where(x => x.UserName == username).Select(x => x.HashPassword).FirstOrDefault();
         }
 
+        public string GetPhoneNumber(string username)
+        {
+            return _context.Users.Where(x => x.UserName == username).Select(x => x.PhoneNumber).SingleOrDefault();
+        }
+
         public IEnumerable<RoleModel> GetRoles()
         {
             return _context.Roles.ToList();
@@ -38,6 +43,8 @@ namespace OPMS.Data.Concrete
         {
             return _context.Roles.Where(x => ids.Contains(x.Id)).ToList();
         }
+
+       
 
         public UserModel GetUserWithRoles(string username)
         {

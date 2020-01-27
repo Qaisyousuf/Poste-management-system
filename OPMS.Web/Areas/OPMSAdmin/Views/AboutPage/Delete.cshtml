@@ -1,0 +1,126 @@
+﻿=@model OPMS.ViewModels.AboutPageViewModel
+
+@{
+    ViewBag.Title = "About";
+}
+<hr />
+<h4>Voulez-vous vraiment supprimer le <button disabled class="btn btn-danger">@Model.Title</button> ?</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slug)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slug)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MainTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MainTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BannerImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BannerImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ButtonUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ButtonUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAboutMetaDataOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAboutMetaDataOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaKeywordseAbout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaKeywordseAbout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDescriptionAbout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescriptionAbout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsVisibleToSearchEngineAbout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsVisibleToSearchEngineAbout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SectoinId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SectoinId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortSectionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortSectionId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a class="btn btn-primary" href="/OPMSAdmin/AboutPage/Index">Retour à la liste principale</a>
+    </div>
+    }
+</div>

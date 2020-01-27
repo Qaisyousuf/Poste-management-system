@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "ShortSection";
+}
+<hr />
+<h4>Liste de la section À propos</h4>
+<p>
+    @*//<button class="btn btn-primary"><a href="/Pages/Create"></a>Create</button>*@
+    <a class="btn btn-primary" href="/OPMSAdmin/AboutShortSection/Create">Créer une courte section</a>
+</p>
+<hr />
+<table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
+    <thead class="bg-primary">
+        <tr>
+            <th><i class="glyphicon glyphicon-align-center"></i> Title</th>
+            <th><i class="glyphicon glyphicon-link"></i> SubTitle</th>
+            <th><i class="glyphicon glyphicon-menu-right"></i> Publish Date</th>
+            <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
+        </tr>
+    </thead>
+</table>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#dataTable").DataTable({
+                "info": false,
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                "dom": "lfrtiBp",
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ],
+                "ajax": {
+                    "url": "/OPMSAdmin/AboutShortSection/GetShortSectionData",
+                    "type": "Get",
+                    "dataType": "json"
+                },
+                "columns": [
+                    { "data": "Title" },
+                    { "data": "SubTitle" },
+                    { "data": "PublishDateTime" },
+                    {
+                        "data": "actions",
+                        "render": function (data, type, row, meta) {
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/AboutShortSection/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/AboutShortSection/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> <a class="btn btn-default btn-bg" href="/OPMSAdmin/AboutShortSection/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
+                            //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
+                            return data;
+                        }
+                    },
+
+
+                ]
+            })
+        });
+    </script>
+}
+

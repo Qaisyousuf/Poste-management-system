@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutPage.cs" />
+    <Compile Include="AboutSection.cs" />
+    <Compile Include="AboutShortSection.cs" />
     <Compile Include="BlogPost.cs" />
     <Compile Include="BuildingAddress.cs" />
     <Compile Include="Contact.cs" />
@@ -50,6 +53,7 @@
     <Compile Include="FloorsAddress.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MessageContainer.cs" />
+    <Compile Include="Messages.cs" />
     <Compile Include="Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleModel.cs" />

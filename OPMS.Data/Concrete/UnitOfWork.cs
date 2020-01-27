@@ -38,6 +38,16 @@ namespace OPMS.Data.Concrete
 
         public IRoomRepository RoomRepository => new RoomRepository(Context);
 
+        public IMessagesSendingRepository MessagesSendingRepository => new MessagesSendingRepository(Context);
+
+      
+
+        public IAboutSectionRepository AboutSectionRepository => new AboutSectionRepository(Context);
+
+        public IAboutShortSectionRepository AboutShortSectionRepository => new AboutShortSectionRepository(Context);
+
+        public IAboutRepository AboutPageRepository => new AboutRepository(Context);
+
         public void Commit()
         {
             Context.SaveChanges();

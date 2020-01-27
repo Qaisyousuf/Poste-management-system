@@ -6,6 +6,8 @@ namespace OPMS.Data.Interfaces
 {
     public interface IUserRepository:IRepository<UserModel>
     {
+        // UserModel GetUserWithMobile(string username);
+        string GetPhoneNumber(string username);
         UserModel GetUserWithRoles(string username);
         bool UserExists(string username);
         string GetPassword(string username);

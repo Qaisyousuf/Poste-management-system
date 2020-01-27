@@ -57,12 +57,23 @@
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
     <Reference Include="MvcCheckBoxList, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvcCheckBoxList.1.4.5\lib\net45\MvcCheckBoxList.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -89,6 +100,15 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Twilio, Version=5.33.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.33.1\lib\net451\Twilio.dll</HintPath>
+    </Reference>
+    <Reference Include="Twilio.AspNet.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.AspNet.Common.5.33.1\lib\net45\Twilio.AspNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Twilio.AspNet.Mvc, Version=5.33.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.AspNet.Mvc.5.33.1\lib\net451\Twilio.AspNet.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Abstractions, Version=5.11.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.Abstractions.5.11.3\lib\net46\Unity.Abstractions.dll</HintPath>
     </Reference>
@@ -546,6 +566,49 @@
     <Content Include="Scripts\ckeditor\skins\v2\skin.js" />
     <Content Include="Scripts\ckeditor\skins\v2\templates.css" />
     <Content Include="Scripts\ckeditor\themes\default\theme.js" />
+    <Content Include="Areas\OPMSAdmin\Views\MessageContainer\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\MessageContainer\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\MessageContainer\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\MessageContainer\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\MessageContainer\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\SocialWorker\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\SocialWorker\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\SocialWorker\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\SocialWorker\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\SocialWorker\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\BuildingAddres\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\BuildingAddres\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\BuildingAddres\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\BuildingAddres\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\BuildingAddres\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Rooms\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Rooms\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Rooms\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Rooms\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Rooms\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Floors\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Floors\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Floors\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Floors\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Floors\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Messages\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Messages\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AdminUser\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutPage\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutPage\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutPage\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutPage\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutPage\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutSections\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutSections\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutSections\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutSections\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutSections\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutShortSection\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutShortSection\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutShortSection\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutShortSection\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AboutShortSection\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -634,14 +697,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\AboutPageController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\AboutSectionsController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\AboutShortSectionController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\AdminUserController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\BlogPostsController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\BuildingAddresController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\ContactsController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\FloorsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\MenusController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\MessageContainerController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\MessagesController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\PagesController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\RolesController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\RoomsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SidebarsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SiteSettingsController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\SocialWorkerController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\TagsController.cs" />
     <Compile Include="Areas\OPMSAdmin\OPMSAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountsController.cs" />

@@ -1,0 +1,26 @@
+﻿@model OPMS.ViewModels.FloorsAddressViewModel
+
+@{
+    ViewBag.Title = "Floors";
+}
+<hr />
+<h4>Détails des sols</h4>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorsNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FloorsNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
+    <a class="btn btn-primary" href="/OPMSAdmin/Floors/Index">Retour à la liste principale</a>
+
+</p>
