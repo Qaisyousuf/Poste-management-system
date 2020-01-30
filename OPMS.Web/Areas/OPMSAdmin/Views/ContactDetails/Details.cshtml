@@ -1,0 +1,80 @@
+﻿@model OPMS.ViewModels.ContactDetailsVM
+
+@{
+    ViewBag.Title = "Details";
+}
+<hr />
+<h4>Détails du contact</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoogleAPIMap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoogleAPIMap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CenterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CenterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CenterEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CenterEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MobileNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
+    <a class="btn btn-primary" href="/OPMSAdmin/ContactDetails/Index">Retour à la liste principale</a>
+</p>

@@ -49,7 +49,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                     Content = viewmodel.Content,
                     ButtonUrl = viewmodel.ButtonUrl,
                     UrlImages = viewmodel.UrlImages,
-                    PulbishDateTime = DateTime.Now
+                    PublishDateTime = DateTime.Now
                 };
                 uow.AboutSectionRepository.Add(section);
                 uow.Commit();
@@ -71,7 +71,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Content=aboutSection.Content,
                 ButtonUrl=aboutSection.ButtonUrl,
                 UrlImages=aboutSection.UrlImages,
-                PublishDateTime=aboutSection.PulbishDateTime
+                PublishDateTime=aboutSection.PublishDateTime
             };
             return View(viewmodel);
         }
@@ -89,7 +89,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 sectionFromDb.Content = viewmodel.Content;
                 sectionFromDb.ButtonUrl = viewmodel.ButtonUrl;
                 sectionFromDb.UrlImages = viewmodel.UrlImages;
-                sectionFromDb.PulbishDateTime = DateTime.Now;
+                sectionFromDb.PublishDateTime = DateTime.Now;
 
                 uow.AboutSectionRepository.Update(sectionFromDb);
                 uow.Commit();
@@ -112,7 +112,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Content=sectionfromdb.Content,
                 ButtonUrl=sectionfromdb.ButtonUrl,
                 UrlImages=sectionfromdb.UrlImages,
-                PublishDateTime=sectionfromdb.PulbishDateTime,
+                PublishDateTime=sectionfromdb.PublishDateTime,
             };
             return View(viewmodel);
         }
@@ -131,7 +131,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Content=aboutSection.Content,
                 ButtonUrl=aboutSection.ButtonUrl,
                 UrlImages=aboutSection.UrlImages,
-                PublishDateTime=aboutSection.PulbishDateTime,
+                PublishDateTime=aboutSection.PublishDateTime,
             };
             uow.AboutSectionRepository.Remove(aboutSection);
             uow.Commit();
@@ -152,7 +152,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Content = sectionfromdb.Content,
                 ButtonUrl = sectionfromdb.ButtonUrl,
                 UrlImages = sectionfromdb.UrlImages,
-                PublishDateTime = sectionfromdb.PulbishDateTime,
+                PublishDateTime = sectionfromdb.PublishDateTime,
             };
             return View(viewmodel);
         }

@@ -24,6 +24,9 @@ namespace OPMS.Data.Interfaces
         IAboutRepository AboutPageRepository { get; }
         IAboutSectionRepository AboutSectionRepository { get; }
         IAboutShortSectionRepository AboutShortSectionRepository { get; }
+        IContactPageRepository ContactPageRepository { get; }
+        IContactDetailsRepository ContactDetailsRepoistory { get; }
+        IContactInfoRepository ContactInfoRepository { get; }
         void Commit();
     }
 }

@@ -42,13 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutMultiPages.cs" />
     <Compile Include="AboutPage.cs" />
     <Compile Include="AboutSection.cs" />
     <Compile Include="AboutShortSection.cs" />
     <Compile Include="BlogPost.cs" />
     <Compile Include="BuildingAddress.cs" />
     <Compile Include="Contact.cs" />
+    <Compile Include="ContactDetails.cs" />
+    <Compile Include="ContactInfo.cs" />
     <Compile Include="ContactMainPage.cs" />
+    <Compile Include="ContactMultiModel.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="FloorsAddress.cs" />
     <Compile Include="Menu.cs" />

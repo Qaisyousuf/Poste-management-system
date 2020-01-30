@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutMultiViewModel.cs" />
     <Compile Include="AboutPageViewModel.cs" />
     <Compile Include="AboutSectionViewModel.cs" />
     <Compile Include="BaseViewModel.cs" />
@@ -70,6 +71,10 @@
     <Compile Include="BuildingAddressViewModel.cs" />
     <Compile Include="CheckBoxViewModel.cs" />
     <Compile Include="AboutShortSectionVM.cs" />
+    <Compile Include="ContactDetailsVM.cs" />
+    <Compile Include="ContactInfoVM.cs" />
+    <Compile Include="ContactMultiVM.cs" />
+    <Compile Include="ContactPageViewModel.cs" />
     <Compile Include="ContactViewModel.cs" />
     <Compile Include="EditUserViewModel.cs" />
     <Compile Include="FloorsAddressViewModel.cs" />

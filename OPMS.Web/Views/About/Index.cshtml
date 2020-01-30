@@ -1,0 +1,73 @@
+﻿@model OPMS.ViewModels.AboutMultiViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AboutLayout.cshtml";
+}
+
+
+@foreach (var item in Model.AboutPageViewModels)
+{
+    <div class="jumbotron">
+        <img src="@item.BannerImage" />
+        <h1 class="display-4">@item.SubTitle</h1>
+        <p class="lead">@Html.Raw(item.Content)</p>
+        <hr class="my-4">
+        <p>
+            @Html.Raw(item.Title)
+        </p>
+        <a class="btn btn-primary btn-lg" href="@item.ButtonUrl" role="button">Home</a>
+    </div>
+
+}
+@if (Model?.AboutPageViewModels != null)
+{
+
+    foreach (var item in Model.AboutSectionViewModels)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card-group">
+                        <div class="card">
+                            <img src="@item.UrlImages" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.SubTitle</h5>
+                                <p class="card-text">@item.Title</p>
+                                <p class="card-text">@Html.Raw(item.Content)</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">@item.MainTitle</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+
+}
+@if (Model?.AboutShortSectionViewModels != null)
+{
+    foreach (var item in Model.AboutShortSectionViewModels)
+    {
+
+        <div class="card border-success mb-3" style="max-width: 18rem;">
+            <div class="card-header bg-transparent border-success">@item.Title</div>
+            <div class="card-header  border-success">@item.SubTitle</div>
+            <div class="card-body text-success">
+                <h5 class="card-title">@item.SubContent</h5>
+                <p class="card-text">@Html.Raw(item.Content)</p>
+            </div>
+            <div class="card-footer bg-transparent border-success"> Publish Date @item.PublishDateTime</div>
+        </div>
+
+    }
+
+
+
+
+
+}
+

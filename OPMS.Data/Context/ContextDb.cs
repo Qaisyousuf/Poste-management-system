@@ -24,6 +24,9 @@ namespace OPMS.Data.Context
         public DbSet<AboutPage> AboutPages { get; set; }
         public DbSet<AboutSection> AboutSections { get; set; }
         public DbSet<AboutShortSection> AboutShortSections { get; set; }
+        public DbSet<ContactMainPage> ContactPages { get; set; }
+        public DbSet<ContactDetails> ContactDetails { get; set; }
+        public DbSet<ContactInfo> ContactInfos { get; set; }
 
         //Message Models
         public DbSet<MessageContainer> MessageContainers { get; set; }

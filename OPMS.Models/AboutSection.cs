@@ -16,7 +16,7 @@ namespace OPMS.Models
 
         public string UrlImages { get; set; }
 
-        public DateTime PulbishDateTime { get; set; }
+        public DateTime PublishDateTime { get; set; }
 
     }
 }

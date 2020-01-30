@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+<hr />
+<h4>Informations de contact</h4>
+<p>
+    @*//<button class="btn btn-primary"><a href="/Pages/Create"></a>Create</button>*@
+    <a class="btn btn-primary" href="/OPMSAdmin/ContactInfo/Create">Créer des informations de contact</a>
+</p>
+<hr />
+<table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
+    <thead class="bg-primary">
+        <tr>
+            <th><i class="glyphicon glyphicon-align-center"></i> Title</th>
+            <th><i class="glyphicon glyphicon-menu-right"></i> Place Name</th>
+            <th><i class="glyphicon glyphicon-menu-right"></i> Place Address</th>
+            <th><i class="glyphicon glyphicon-menu-right"></i> Mobile Number</th>
+            <th><i class="glyphicon glyphicon-menu-right"></i> Postal Code</th>
+            <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
+        </tr>
+    </thead>
+</table>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#dataTable").DataTable({
+                "info": false,
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                "dom": "lfrtiBp",
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ],
+                "ajax": {
+                    "url": "/OPMSAdmin/ContactInfo/GetContactInfoData",
+                    "type": "Get",
+                    "dataType": "json"
+                },
+                "columns": [
+                    { "data": "Title" },
+                    { "data": "PlaceName" },
+                    { "data": "PlaceAddress" },
+                    { "data": "PlaceContactNumber" },
+                    { "data": "PostalCode" },
+                    {
+                        "data": "actions",
+                        "render": function (data, type, row, meta) {
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/ContactInfo/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/ContactInfo/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> <a class="btn btn-default btn-bg" href="/OPMSAdmin/ContactInfo/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
+                            //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
+                            return data;
+                        }
+                    },
+                    
+                ]
+            })
+        });
+    </script>
+}
+
+
+
+
+

@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "ThankYou";
+    Layout = "~/Views/Shared/_ContactLayout.cshtml";
+}
+
+@if (TempData["Message"] != null)
+{
+    <h4>Thank You : @TempData["Message"] for contacting us</h4>
+}
+

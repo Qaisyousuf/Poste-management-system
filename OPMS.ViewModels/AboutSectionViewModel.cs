@@ -21,7 +21,7 @@ namespace OPMS.ViewModels
         public string Content { get; set; }
 
         public string ButtonUrl { get; set; }
-
+        [AllowHtml]
         public string UrlImages { get; set; }
 
         public DateTime PublishDateTime { get; set; }

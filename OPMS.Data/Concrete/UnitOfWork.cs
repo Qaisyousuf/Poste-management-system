@@ -48,6 +48,12 @@ namespace OPMS.Data.Concrete
 
         public IAboutRepository AboutPageRepository => new AboutRepository(Context);
 
+        public IContactPageRepository ContactPageRepository => new ContactPageRepository(Context);
+
+        public IContactDetailsRepository ContactDetailsRepoistory => new ContactDetailsRepository(Context);
+
+        public IContactInfoRepository ContactInfoRepository => new ContactInfoRepository(Context);
+
         public void Commit()
         {
             Context.SaveChanges();

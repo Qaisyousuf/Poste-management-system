@@ -1,0 +1,272 @@
+﻿@model IEnumerable<OPMS.ViewModels.ContactViewModel>
+
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_ContactLayout.cshtml";
+}
+
+<h2>Contact</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteFooter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsRegister)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FavIcon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteOwner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsCustomCSSOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomCSS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsCustomJSOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomJs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteLastUpdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoogleSiteVerification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoogelAds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LayoutTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsMetaDataOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaKeywords)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaDescritpion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaOgImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVisibleToSearchEngine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeFooter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeUrlBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AboutFooter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AboutUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactFooterBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactUrlBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RolesFooterBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RolesUrlBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumberFooterBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailFooterBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddresFooterBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentFooterBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopyrightFooterBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoginUrlBase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoginFooter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IpAddres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactedLocation)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteFooter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsRegister)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FavIcon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteOwner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsCustomCSSOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomCSS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsCustomJSOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomJs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteLastUpdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoogleSiteVerification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoogelAds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LayoutTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsMetaDataOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaKeywords)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaDescritpion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaOgImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsVisibleToSearchEngine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeFooter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeUrlBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AboutFooter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AboutUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactFooterBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactUrlBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RolesFooterBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RolesUrlBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNumberFooterBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailFooterBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddresFooterBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContentFooterBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopyrightFooterBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoginUrlBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoginFooter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MobileNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IpAddres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactedLocation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

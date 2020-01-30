@@ -77,6 +77,9 @@
     <Compile Include="Concrete\AboutShortSectionRepository.cs" />
     <Compile Include="Concrete\BlogPostRepository.cs" />
     <Compile Include="Concrete\BuildingRepository.cs" />
+    <Compile Include="Concrete\ContactDetailsRepository.cs" />
+    <Compile Include="Concrete\ContactInfoRepository.cs" />
+    <Compile Include="Concrete\ContactPageRepository.cs" />
     <Compile Include="Concrete\ContactRepository.cs" />
     <Compile Include="Concrete\FloorsRepository.cs" />
     <Compile Include="Concrete\MenuRepository.cs" />
@@ -107,6 +110,9 @@
     <Compile Include="Interfaces\IAboutShortSectionRepository.cs" />
     <Compile Include="Interfaces\IBlogPostRepository.cs" />
     <Compile Include="Interfaces\IBuildingRepository.cs" />
+    <Compile Include="Interfaces\IContactDetailsRepository.cs" />
+    <Compile Include="Interfaces\IContactInfoRepository.cs" />
+    <Compile Include="Interfaces\IContactPageRepository.cs" />
     <Compile Include="Interfaces\IContactRepository.cs" />
     <Compile Include="Interfaces\IFloorsRepository.cs" />
     <Compile Include="Interfaces\IMenuRepository.cs" />
@@ -135,6 +141,26 @@
     <Compile Include="Migrations\202001272013428_AboutPageCreated.designer.cs">
       <DependentUpon>202001272013428_AboutPageCreated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001280904189_AboutCreated.cs" />
+    <Compile Include="Migrations\202001280904189_AboutCreated.designer.cs">
+      <DependentUpon>202001280904189_AboutCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001281440150_ContactpageAdded.cs" />
+    <Compile Include="Migrations\202001281440150_ContactpageAdded.designer.cs">
+      <DependentUpon>202001281440150_ContactpageAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001281455146_ContactModelChanged.cs" />
+    <Compile Include="Migrations\202001281455146_ContactModelChanged.designer.cs">
+      <DependentUpon>202001281455146_ContactModelChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001290918408_ContactInfoModelChanged.cs" />
+    <Compile Include="Migrations\202001290918408_ContactInfoModelChanged.designer.cs">
+      <DependentUpon>202001290918408_ContactInfoModelChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001290947481_ContentpropetyAddedToContactInfo.cs" />
+    <Compile Include="Migrations\202001290947481_ContentpropetyAddedToContactInfo.designer.cs">
+      <DependentUpon>202001290947481_ContentpropetyAddedToContactInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -157,6 +183,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001272013428_AboutPageCreated.resx">
       <DependentUpon>202001272013428_AboutPageCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001280904189_AboutCreated.resx">
+      <DependentUpon>202001280904189_AboutCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001281440150_ContactpageAdded.resx">
+      <DependentUpon>202001281440150_ContactpageAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001281455146_ContactModelChanged.resx">
+      <DependentUpon>202001281455146_ContactModelChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001290918408_ContactInfoModelChanged.resx">
+      <DependentUpon>202001290918408_ContactInfoModelChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001290947481_ContentpropetyAddedToContactInfo.resx">
+      <DependentUpon>202001290947481_ContentpropetyAddedToContactInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
