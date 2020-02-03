@@ -1,0 +1,72 @@
+﻿@model OPMS.ViewModels.SWBannerVM
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/OPMSAdmin/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<h4>êtes-vous sûr de vouloir supprimer le <button disabled class="btn btn-danger">@Model.BTitle</button></h4>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BSubTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BSubTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BButton)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BButton)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BButtonUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BButtonUrl)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a class="btn btn-primary" href="/OPMSAdmin/SWBanner/Index">Retour à la liste principale</a>
+
+    </div>
+    }
+</div>

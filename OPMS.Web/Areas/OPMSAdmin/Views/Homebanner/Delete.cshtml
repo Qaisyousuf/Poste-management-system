@@ -1,0 +1,70 @@
+﻿@model OPMS.ViewModels.HomeBannerVM
+
+@{
+    ViewBag.Title = "Delete";
+   
+}
+<hr />
+<h4>êtes-vous sûr de vouloir supprimer la bannière <button disabled class="btn btn-danger">@Model.Title</button></h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ButtonText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ButtonText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ButtonUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ButtonUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a class="btn btn-primary" href="/OPMSAdmin/Homebanner/Index">Retour à la liste principale</a>
+    </div>
+    }
+</div>

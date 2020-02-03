@@ -1,0 +1,109 @@
+﻿@model OPMS.ViewModels.SWorkerPageVM
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/OPMSAdmin/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<h4>Voulez-vous vraiment supprimer le <button disabled class="btn btn-danger">@Model.Title</button></h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ButtonUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ButtonUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ButtonText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ButtonText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoogleMapAPIUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoogleMapAPIUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsSWorkertMetaDataOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsSWorkertMetaDataOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaKeywordseSworker)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaKeywordseSworker)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDescriptionSworker)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescriptionSworker)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsVisibleToSearchEngineSworker)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsVisibleToSearchEngineSworker)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BannerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BannerId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a class="btn btn-primary" href="/OPMSAdmin/SWorkerPage/Index">Retour à la liste principale</a>
+    </div>
+    }
+</div>

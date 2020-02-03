@@ -22,52 +22,50 @@
 @if (Model?.AboutPageViewModels != null)
 {
 
-    foreach (var item in Model.AboutSectionViewModels)
-    {
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card-group">
-                        <div class="card">
-                            <img src="@item.UrlImages" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">@item.SubTitle</h5>
-                                <p class="card-text">@item.Title</p>
-                                <p class="card-text">@Html.Raw(item.Content)</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">@item.MainTitle</small>
-                            </div>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model.AboutSectionViewModels)
+            {
+                <div class="col-md-12">
+                    <div class="thumbnail">
+                        <img src="@item.UrlImages" alt="..." class="img-responsive">
+                        <div class="caption">
+                            <h4>@item.MainTitle</h4>
+                            <h6>@item.SubTitle</h6>
+                            <hr />
+                            <h5>@Html.Raw(item.Content)</h5>
+                           
                         </div>
-
+                        <hr />
+                        <button class="btn btn-primary"> @item.Title</button>
+                        <br />
+                        <span class="label label-primary">@item.PublishDateTime</span>
                     </div>
+                </div>
+            }
+        </div>
+    </div>
 
+}
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model.AboutShortSectionViewModels)
+        {
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h4>@item.MainTitle</h4>
+                        <h6>@item.SubTitle</h6>
+                        <hr />
+                        <h5>@Html.Raw(item.Content)</h5>
+                        <h6>@Html.Raw(item.SubContent)</h6>
+                    </div>
+                    <hr />
+                    <button class="btn btn-primary"> @item.Title</button>
+                    <br />
                 </div>
             </div>
-        </div>
-    }
-
-}
-@if (Model?.AboutShortSectionViewModels != null)
-{
-    foreach (var item in Model.AboutShortSectionViewModels)
-    {
-
-        <div class="card border-success mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-transparent border-success">@item.Title</div>
-            <div class="card-header  border-success">@item.SubTitle</div>
-            <div class="card-body text-success">
-                <h5 class="card-title">@item.SubContent</h5>
-                <p class="card-text">@Html.Raw(item.Content)</p>
-            </div>
-            <div class="card-footer bg-transparent border-success"> Publish Date @item.PublishDateTime</div>
-        </div>
-
-    }
-
-
-
-
-
-}
+        }
+    </div>
+</div>
 

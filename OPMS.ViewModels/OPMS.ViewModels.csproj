@@ -78,11 +78,16 @@
     <Compile Include="ContactViewModel.cs" />
     <Compile Include="EditUserViewModel.cs" />
     <Compile Include="FloorsAddressViewModel.cs" />
+    <Compile Include="HomeBannerVM.cs" />
+    <Compile Include="HomeContentVM.cs" />
+    <Compile Include="HomeRRViewModel.cs" />
     <Compile Include="InsertUserViewModel.cs" />
     <Compile Include="LoginViewModel.cs" />
     <Compile Include="MenuViewModel.cs" />
     <Compile Include="MessageContainerViewModel.cs" />
     <Compile Include="MessagesViewModel.cs" />
+    <Compile Include="NewsBannerVM.cs" />
+    <Compile Include="NewsInfoVM.cs" />
     <Compile Include="PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterViewModel.cs" />
@@ -90,7 +95,12 @@
     <Compile Include="RoomViewModel.cs" />
     <Compile Include="SidebarViewModel.cs" />
     <Compile Include="SiteSettingsViewModel.cs" />
+    <Compile Include="SocialWorkerProfileList.cs" />
     <Compile Include="SocialWorkerViewModel.cs" />
+    <Compile Include="SWBannerVM.cs" />
+    <Compile Include="SWorkerMultiVM.cs" />
+    <Compile Include="SWorkerPageVM.cs" />
+    <Compile Include="SWorkerProfileVM.cs" />
     <Compile Include="TagViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

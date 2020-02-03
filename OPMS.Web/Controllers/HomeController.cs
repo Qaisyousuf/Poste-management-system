@@ -30,6 +30,8 @@ namespace OPMS.Web.Controllers
 
             ViewBag.PageTitle = pageFromDb.Title;
             TempData["SidebarId"] = pageFromDb.SidebarId;
+            TempData["HomeBanner"] = pageFromDb.BannerId;
+            TempData["HomeContent"] = pageFromDb.HomeContentId;
 
             viewmodel = new PageViewModel
             {
@@ -78,6 +80,72 @@ namespace OPMS.Web.Controllers
                 Content=sidebar.Content
             };
             return PartialView(viewmodel);
+        }
+
+        [HttpGet]
+        [ChildActionOnly]
+        public ActionResult HomeBanner()
+        {
+            int id = (int)TempData["HomeBanner"];
+
+            var homebanner = _uow.HomeBannerRepository.GetById(id);
+
+            HomeBannerVM viewmodel = new HomeBannerVM
+            {
+                Id= homebanner.Id,
+                Title= homebanner.Title,
+                SubTitle= homebanner.SubTitle,
+                ImageUrl= homebanner.ImageUrl,
+                ButtonText= homebanner.ButtonText,
+                ButtonUrl= homebanner.ButtonUrl,
+                Content= homebanner.Content,
+            };
+            return PartialView(viewmodel);
+        }
+        [HttpGet]
+        [ChildActionOnly]
+        public ActionResult HomeContentData()
+        {
+            int id = (int)TempData["HomeContent"];
+            var homeContetnFromdb = _uow.HomeContentRepository.GetById(id);
+
+            HomeContentVM viewmodel = new HomeContentVM
+            {
+                Id=homeContetnFromdb.Id,
+                Title=homeContetnFromdb.Title,
+                SubTitle=homeContetnFromdb.SubTitle,
+                Content=homeContetnFromdb.Content,
+                SubContent=homeContetnFromdb.SubContent,
+                ButtonText=homeContetnFromdb.ButtonText,
+                ButtonUrl=homeContetnFromdb.ButtonUrl,
+                ImageUrl=homeContetnFromdb.ImageUrl
+            };
+            return PartialView(viewmodel);
+        }
+        [HttpGet]
+        [ChildActionOnly]
+        public ActionResult HomeRRData()
+        {
+            var homeRr = _uow.HomeRRepository.GetAll();
+
+            List<HomeRRViewModel> viewmodel = new List<HomeRRViewModel>();
+
+            foreach (var item in homeRr)
+            {
+                viewmodel.Add(new HomeRRViewModel
+                {
+                    Id=item.Id,
+                    Title=item.Title,
+                    Content=item.Content,
+                    IconUrl=item.IconUrl
+                });
+            }
+            SocialWorkerProfileList HomeDataList = new SocialWorkerProfileList
+            {
+                HomeRRVMs = viewmodel
+            };
+            return PartialView(HomeDataList);
+
         }
     }
 }

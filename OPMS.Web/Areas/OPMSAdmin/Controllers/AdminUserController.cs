@@ -41,7 +41,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            ViewBag.Addres = uow.BuildingRepository.GetAll();
+           
             InsertUserViewModel viewmodel = new InsertUserViewModel();
 
             List<CheckBoxViewModel> checkBox = new List<CheckBoxViewModel>();
@@ -65,7 +65,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         {
             if(ModelState.IsValid)
             {
-                ViewBag.Addres = uow.BuildingRepository.GetAll();
+               
                 bool registerSuccess = authService.Register
                     (viewmodel.Email, viewmodel.UserName, viewmodel.Password, viewmodel.PhoneNumber, out int? userId);
                 if(registerSuccess)

@@ -27,6 +27,14 @@ namespace OPMS.Data.Interfaces
         IContactPageRepository ContactPageRepository { get; }
         IContactDetailsRepository ContactDetailsRepoistory { get; }
         IContactInfoRepository ContactInfoRepository { get; }
+        ISWorkerPageRepository SWorkerPageRepository { get; }
+        ISWBannerRepository SWBaneerRepository { get; }
+        ISocialProfileRepository SocialProfileRepository { get; }
+        IHomeBannerRepository HomeBannerRepository { get; }
+        IHomeContentRepository HomeContentRepository { get; }
+        IHomeRRepository HomeRRepository { get; }
+        INewsInfoRepository NewInfoRepository { get; }
+        INewsBannerRepository NewsBannerRepoistory { get; }
         void Commit();
     }
 }

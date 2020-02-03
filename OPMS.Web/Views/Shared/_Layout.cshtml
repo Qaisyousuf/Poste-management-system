@@ -45,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Coallia OPMS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Coallia Online Post", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 @Html.Action("PagesMenuPartial", "Home")
@@ -56,12 +56,15 @@
 
     <div class="container body-content">
         <div class="row">
-            <div class="col-md-8">
+            @Html.Action("HomeBanner","Home")
+           
                 @RenderBody()
-            </div>
-            <div class="col-md-4">
+            <hr />
                 @Html.Action("SidbarPartial", "Home")
-            </div>
+            <hr />
+                @Html.Action("HomeContentData","Home")
+            <hr />
+                @Html.Action("HomeRRData","Home")
         </div>
         <hr />
         <footer>

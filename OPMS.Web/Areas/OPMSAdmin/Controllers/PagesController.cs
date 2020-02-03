@@ -1,12 +1,8 @@
 ﻿using OPMS.Data.Interfaces;
-using OPMS.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 using OPMS.Models;
 using OPMS.Services;
+using OPMS.ViewModels;
+using System.Web.Mvc;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
@@ -21,11 +17,14 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         public void GetSidebar()
         {
             ViewBag.SidebarDropDownList = uow.SidebarRepository.GetAll();
+            ViewBag.HomeBanner = uow.HomeBannerRepository.GetAll();
+            ViewBag.HomeContent = uow.HomeContentRepository.GetAll();
+            
         }
         public JsonResult GetPagesData()
         {
             //var pageFromdb = uow.Context.Pages.Include("Sidebars").ToList();
-            var pageFromdb = uow.PageRepository.GetAll("Sidebars");
+            var pageFromdb = uow.PageRepository.GetAll("Sidebars", "HomeBanner","HomeContent");
             return Json(new { data = pageFromdb }, JsonRequestBehavior.AllowGet);
         }
         public ActionResult Index()
@@ -63,6 +62,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         {
             if (!ModelState.IsValid)
             {
+                GetSidebar();
                 ViewBag.SidebarDropDownList = uow.SidebarRepository.GetAll();
                 // GetSidebar();
                 return View(viewmodel);
@@ -79,6 +79,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 
             if (uow.PageRepository.SlugExists(slug))
             {
+                GetSidebar();
                 ViewBag.SidebarDropDownList = uow.SidebarRepository.GetAll();
                 //GetSidebar();
                 ModelState.AddModelError("", "Le titre ou le slug existe déjà");
@@ -91,6 +92,10 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             page.IsPageMetaDataOn = viewmodel.IsPageMetaDataOn;
             page.SidebarId = viewmodel.SidebarId;
             page.Sidebars = viewmodel.Sidebars;
+            page.BannerId = viewmodel.BannerId;
+            page.HomeBanner = viewmodel.HomeBanner;
+            page.HomeContentId = viewmodel.HomeContentId;
+            page.HomeContent = viewmodel.HomeContent;
             page.IsVisibleToSearchEngine =( bool)viewmodel.IsVisibleToSearchEnginePage;
 
             uow.PageRepository.Add(page);
@@ -114,9 +119,14 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 IsPageMetaDataOn = page.IsPageMetaDataOn,
                 IsVisibleToSearchEnginePage = page.IsVisibleToSearchEngine,
                 SidebarId = page.SidebarId,
-                Sidebars = page.Sidebars
+                Sidebars = page.Sidebars,
+                BannerId=page.BannerId,
+                HomeBanner=page.HomeBanner,
+                HomeContentId=page.HomeContentId,
+                HomeContent=page.HomeContent,
 
             };
+            GetSidebar();
             ViewBag.SidebarDropDownList = uow.SidebarRepository.GetAll();
             //GetSidebar();
             return View(viewmodel);
@@ -126,6 +136,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         {
             if(!ModelState.IsValid)
             {
+                GetSidebar();
                 ViewBag.SidebarDropDownList = uow.SidebarRepository.GetAll();
                 return View(viewmodel);
             }
@@ -154,7 +165,10 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             page.IsPageMetaDataOn = viewmodel.IsPageMetaDataOn;
             page.SidebarId = viewmodel.SidebarId;
             page.Sidebars = viewmodel.Sidebars;
-
+            page.BannerId = viewmodel.BannerId;
+            page.HomeBanner = viewmodel.HomeBanner;
+            page.HomeContentId = viewmodel.HomeContentId;
+            page.HomeContent = viewmodel.HomeContent;
             uow.PageRepository.Update(page);
             uow.Commit();
             return RedirectToAction(nameof(Index));
@@ -176,7 +190,11 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 IsPageMetaDataOn=pageDelete.IsPageMetaDataOn,
                 IsVisibleToSearchEnginePage=pageDelete.IsVisibleToSearchEngine,
                 SidebarId=pageDelete.SidebarId,
-                Sidebars=pageDelete.Sidebars
+                Sidebars=pageDelete.Sidebars,
+                BannerId=pageDelete.BannerId,
+                HomeBanner=pageDelete.HomeBanner,
+                HomeContentId=pageDelete.HomeContentId,
+                HomeContent=pageDelete.HomeContent,
             };
             return View(viewmodel);
         }
@@ -196,7 +214,11 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 MetaKeywordsPage=page.MetaKeywordse,
                 MetaDescriptionPage=page.MetaKeywordse,
                 SidebarId=page.SidebarId,
-                Sidebars=page.Sidebars
+                Sidebars=page.Sidebars,
+                BannerId=page.BannerId,
+                HomeBanner=page.HomeBanner,
+                HomeContentId=page.HomeContentId,
+                HomeContent=page.HomeContent,
             };
             uow.PageRepository.Remove(page);
             uow.Commit();
@@ -218,7 +240,11 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 IsPageMetaDataOn = pageDelete.IsPageMetaDataOn,
                 IsVisibleToSearchEnginePage = pageDelete.IsVisibleToSearchEngine,
                 SidebarId = pageDelete.SidebarId,
-                Sidebars = pageDelete.Sidebars
+                Sidebars = pageDelete.Sidebars,
+                BannerId=pageDelete.BannerId,
+                HomeBanner=pageDelete.HomeBanner,
+                HomeContentId=pageDelete.HomeContentId,
+                HomeContent=pageDelete.HomeContent,
             };
             return View(viewmodel);
         }

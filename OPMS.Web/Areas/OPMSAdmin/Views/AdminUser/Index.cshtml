@@ -50,7 +50,7 @@
                     {
                         "data": "actions",
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/AdminUser/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/AdminUser/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> |<a class="btn btn-default btn-bg" href="/OPMSAdmin/AdminUser/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a> |<a class="btn btn-info btn-bg" href="/OPMSAdmin/AdminUser/Details/' + row.Id + '"><i class="glyphicon glyphicon-phone"></i> Send SMS</a>  ';
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/AdminUser/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/AdminUser/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> |<a class="btn btn-default btn-bg" href="/OPMSAdmin/AdminUser/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a> |<a class="btn btn-info btn-bg" href="/OPMSAdmin/Messages/Create/' + row.Id + '"><i class="glyphicon glyphicon-phone"></i> Send SMS</a>  ';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
                             return data;
                         }

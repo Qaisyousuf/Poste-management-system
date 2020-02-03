@@ -1,0 +1,120 @@
+﻿@model OPMS.ViewModels.NewsInfoVM
+
+@{
+    ViewBag.Title = "Details";
+}
+<hr />
+<h4></h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ButtonUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ButtonUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ButtonText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ButtonText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublishDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoogleMapAPIUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoogleMapAPIUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsNewInfotMetaDataOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsNewInfotMetaDataOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaKeywordseNewsInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaKeywordseNewsInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDescriptionNewsInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescriptionNewsInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsVisibleToSearchNewsInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsVisibleToSearchNewsInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewsBannerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewsBannerId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
+    <a class="btn btn-primary" href="/OPMSAdmin/NewsInfo/Index">Retour à la liste principale</a>
+</p>

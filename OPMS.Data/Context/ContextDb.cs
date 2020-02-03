@@ -27,6 +27,13 @@ namespace OPMS.Data.Context
         public DbSet<ContactMainPage> ContactPages { get; set; }
         public DbSet<ContactDetails> ContactDetails { get; set; }
         public DbSet<ContactInfo> ContactInfos { get; set; }
+        public DbSet<SWorkerPage> SWorkerPage { get; set; }
+        public DbSet<SWBanner> SWBanner { get; set; }
+        public DbSet<SWorkerProfile> SWorkerProfiles { get; set; }
+        public DbSet<HomeBanner> HomeBanners { get; set; }
+        public DbSet<HomeRR> HomeRolesResponsibilities { get; set; }
+        public DbSet<NewsInfo> NewsInfos { get; set; }
+        public DbSet<NewsBanner> NewsBanners { get; set; }
 
         //Message Models
         public DbSet<MessageContainer> MessageContainers { get; set; }

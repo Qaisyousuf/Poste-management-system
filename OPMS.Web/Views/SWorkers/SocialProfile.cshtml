@@ -1,0 +1,29 @@
+﻿@model OPMS.ViewModels.SocialWorkerProfileList
+
+
+@if (Model.SocialProfileVM != null)
+{   
+       <div class="container">
+           <div class="row">
+               @foreach (var item in Model.SocialProfileVM)
+               {
+               <div class="col-md-4">
+                   <div class="thumbnail">
+                       
+                       <img src="@item.ImageUrl" class="img-responsive img-circle img-thumbnail" />
+                       <div class="caption">
+                           <h4>@item.FullName</h4>
+                           <h6>@item.JobTitle</h6>
+                         <hr />
+                           <h5>@Html.Raw(item.Content)</h5>
+                       </div>
+                       <hr />
+                      <button class="btn btn-primary"> @item.Title</button>
+                       <br />
+                   </div>
+               </div>
+               }
+
+           </div>
+       </div>
+}

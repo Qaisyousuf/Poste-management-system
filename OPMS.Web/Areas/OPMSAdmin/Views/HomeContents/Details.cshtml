@@ -1,0 +1,73 @@
+﻿@model OPMS.ViewModels.HomeContentVM
+
+@{
+    ViewBag.Title = "Details";
+
+}
+<hr />
+<h4>Détails du contenu</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ButtonText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ButtonText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ButtonUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ButtonUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sauvegarder les modifications", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
+    <a class="btn btn-primary" href="/OPMSAdmin/HomeContents/Index">Retour à la liste principale</a>
+</p>

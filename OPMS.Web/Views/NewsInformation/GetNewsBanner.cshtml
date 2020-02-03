@@ -1,0 +1,32 @@
+﻿@model OPMS.ViewModels.AboutMultiViewModel
+
+
+
+
+@if (Model?.NewsBannerViewModel != null)
+{
+    foreach (var item in Model.NewsBannerViewModel)
+    {
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <img src="@item.ImageUrl" class="img-responsive" />
+                        <h4 class="display-4">@item.SubTitle</h4>
+                        <p class="lead">@Html.Raw(item.Content)</p>
+                        <hr class="my-4">
+                        <p>
+
+                        </p>
+                        <a class="btn btn-primary btn-lg" href="@item.ButtonUrl" role="button">Home</a>
+                        <br />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    }
+
+
+}

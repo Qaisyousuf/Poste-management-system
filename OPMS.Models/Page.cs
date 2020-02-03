@@ -13,9 +13,16 @@ namespace OPMS.Models
         public bool IsVisibleToSearchEngine { get; set; }
 
         public int SidebarId { get; set; }
-
         [ForeignKey("SidebarId")]
         public Sidebar Sidebars { get; set; }
+
+        public int BannerId { get; set; }
+        [ForeignKey("BannerId")]
+        public HomeBanner HomeBanner { get; set; }
+
+        public int HomeContentId { get; set; }
+        [ForeignKey("HomeContentId")]
+        public HomeContent HomeContent { get; set; }
 
 
     }

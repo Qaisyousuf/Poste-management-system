@@ -54,6 +54,24 @@ namespace OPMS.Data.Concrete
 
         public IContactInfoRepository ContactInfoRepository => new ContactInfoRepository(Context);
 
+        public ISWorkerPageRepository SWorkerPageRepository => new SWorkerPageRepository(Context);
+
+        public ISWBannerRepository SWBaneerRepository => new SWBannerRepository(Context);
+
+        public ISocialProfileRepository SocialProfileRepository => new SocialProfileRepository(Context);
+
+        public IHomeBannerRepository HomeBannerRepository => new HomeBannerRepository(Context);
+
+        public IHomeContentRepository HomeContentRepository => new HomeContentRepository(Context);
+
+        public IHomeRRepository HomeRRepository => new HomeRRepository(Context);
+
+        public INewsInfoRepository NewInfoRepository => new NewsInfoRepository(Context);
+
+
+
+        public INewsBannerRepository NewsBannerRepoistory => new NewsBannerRepository(Context);
+
         public void Commit()
         {
             Context.SaveChanges();

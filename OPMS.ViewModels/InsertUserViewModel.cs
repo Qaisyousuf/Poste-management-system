@@ -29,7 +29,7 @@ namespace OPMS.ViewModels
         [Display(Name = "Confirmez le mot de passe")]
         public string ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "Rôles requis")]
+        
         public List<CheckBoxViewModel> Roles { get; set; }
 
     }

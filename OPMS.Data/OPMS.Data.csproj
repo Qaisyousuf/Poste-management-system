@@ -82,16 +82,24 @@
     <Compile Include="Concrete\ContactPageRepository.cs" />
     <Compile Include="Concrete\ContactRepository.cs" />
     <Compile Include="Concrete\FloorsRepository.cs" />
+    <Compile Include="Concrete\HomeBannerRepository.cs" />
+    <Compile Include="Concrete\HomeContentRepository.cs" />
+    <Compile Include="Concrete\HomeRRepository.cs" />
     <Compile Include="Concrete\MenuRepository.cs" />
     <Compile Include="Concrete\MessageRepository.cs" />
     <Compile Include="Concrete\MessagesSendingRepository.cs" />
+    <Compile Include="Concrete\NewsBannerRepository.cs" />
+    <Compile Include="Concrete\NewsInfoRepository.cs" />
     <Compile Include="Concrete\PageRepository.cs" />
     <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Concrete\RolesRepository.cs" />
     <Compile Include="Concrete\RoomRepository.cs" />
     <Compile Include="Concrete\SidebarRepository.cs" />
     <Compile Include="Concrete\SiteSettingRepository.cs" />
+    <Compile Include="Concrete\SocialProfileRepository.cs" />
     <Compile Include="Concrete\SocialWorkerRepository.cs" />
+    <Compile Include="Concrete\SWBannerRepository.cs" />
+    <Compile Include="Concrete\SWorkerPageRepository.cs" />
     <Compile Include="Concrete\TagReposiitory.cs" />
     <Compile Include="Concrete\UnitOfWork.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
@@ -115,9 +123,14 @@
     <Compile Include="Interfaces\IContactPageRepository.cs" />
     <Compile Include="Interfaces\IContactRepository.cs" />
     <Compile Include="Interfaces\IFloorsRepository.cs" />
+    <Compile Include="Interfaces\IHomeBannerRepository.cs" />
+    <Compile Include="Interfaces\IHomeContentRepository.cs" />
+    <Compile Include="Interfaces\IHomeRRepository.cs" />
     <Compile Include="Interfaces\IMenuRepository.cs" />
     <Compile Include="Interfaces\IMessageRepository.cs" />
     <Compile Include="Interfaces\IMessagesSendingRepository.cs" />
+    <Compile Include="Interfaces\INewsBannerRepository.cs" />
+    <Compile Include="Interfaces\INewsInfoRepository.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRolesRepository.cs" />
@@ -125,7 +138,10 @@
     <Compile Include="Interfaces\ISidebarRepository.cs" />
     <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ISlug.cs" />
+    <Compile Include="Interfaces\ISocialProfileRepository.cs" />
     <Compile Include="Interfaces\ISocialWorkerRepository.cs" />
+    <Compile Include="Interfaces\ISWBannerRepository.cs" />
+    <Compile Include="Interfaces\ISWorkerPageRepository.cs" />
     <Compile Include="Interfaces\ITagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
@@ -160,6 +176,38 @@
     <Compile Include="Migrations\202001290947481_ContentpropetyAddedToContactInfo.cs" />
     <Compile Include="Migrations\202001290947481_ContentpropetyAddedToContactInfo.designer.cs">
       <DependentUpon>202001290947481_ContentpropetyAddedToContactInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001301445281_SworkerModelAdded.cs" />
+    <Compile Include="Migrations\202001301445281_SworkerModelAdded.designer.cs">
+      <DependentUpon>202001301445281_SworkerModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001310953312_RelationAddedToSocialWorkerModel.cs" />
+    <Compile Include="Migrations\202001310953312_RelationAddedToSocialWorkerModel.designer.cs">
+      <DependentUpon>202001310953312_RelationAddedToSocialWorkerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001311008488_TheSocialWorkerPageChaged.cs" />
+    <Compile Include="Migrations\202001311008488_TheSocialWorkerPageChaged.designer.cs">
+      <DependentUpon>202001311008488_TheSocialWorkerPageChaged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001311033070_SocialModelChnaged.cs" />
+    <Compile Include="Migrations\202001311033070_SocialModelChnaged.designer.cs">
+      <DependentUpon>202001311033070_SocialModelChnaged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001311549522_SocialProfileAdded.cs" />
+    <Compile Include="Migrations\202001311549522_SocialProfileAdded.designer.cs">
+      <DependentUpon>202001311549522_SocialProfileAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001311626488_ImageAddedToSocialProfile.cs" />
+    <Compile Include="Migrations\202001311626488_ImageAddedToSocialProfile.designer.cs">
+      <DependentUpon>202001311626488_ImageAddedToSocialProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002021008057_HomeRRAdd.cs" />
+    <Compile Include="Migrations\202002021008057_HomeRRAdd.designer.cs">
+      <DependentUpon>202002021008057_HomeRRAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002031100425_NewsInfoAdded.cs" />
+    <Compile Include="Migrations\202002031100425_NewsInfoAdded.designer.cs">
+      <DependentUpon>202002031100425_NewsInfoAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,6 +246,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001290947481_ContentpropetyAddedToContactInfo.resx">
       <DependentUpon>202001290947481_ContentpropetyAddedToContactInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001301445281_SworkerModelAdded.resx">
+      <DependentUpon>202001301445281_SworkerModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001310953312_RelationAddedToSocialWorkerModel.resx">
+      <DependentUpon>202001310953312_RelationAddedToSocialWorkerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311008488_TheSocialWorkerPageChaged.resx">
+      <DependentUpon>202001311008488_TheSocialWorkerPageChaged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311033070_SocialModelChnaged.resx">
+      <DependentUpon>202001311033070_SocialModelChnaged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311549522_SocialProfileAdded.resx">
+      <DependentUpon>202001311549522_SocialProfileAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311626488_ImageAddedToSocialProfile.resx">
+      <DependentUpon>202001311626488_ImageAddedToSocialProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002021008057_HomeRRAdd.resx">
+      <DependentUpon>202002021008057_HomeRRAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002031100425_NewsInfoAdded.resx">
+      <DependentUpon>202002031100425_NewsInfoAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
