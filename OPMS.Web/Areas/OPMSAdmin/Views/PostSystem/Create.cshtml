@@ -1,10 +1,10 @@
-﻿@model OPMS.ViewModels.MessageContainerViewModel
+﻿@model OPMS.ViewModels.PostSystemVM
 
 @{
-    ViewBag.Title = "Messages";
+    ViewBag.Title = "PostSystem";
 }
 <hr />
-<h4>Création de message</h4>
+<h4>Créer un nouveau message de poste</h4>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -37,16 +37,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.AppointmentDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.AppointmentDateTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AppointmentDateTime, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Créer" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" /> |
                 <a class="btn btn-primary" href="/OPMSAdmin/MessageContainer/Index">Retour à la liste principale</a>
             </div>
         </div>

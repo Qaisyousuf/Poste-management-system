@@ -85,12 +85,14 @@
     <Compile Include="Concrete\HomeBannerRepository.cs" />
     <Compile Include="Concrete\HomeContentRepository.cs" />
     <Compile Include="Concrete\HomeRRepository.cs" />
+    <Compile Include="Concrete\MainPostSystemRepository.cs" />
     <Compile Include="Concrete\MenuRepository.cs" />
     <Compile Include="Concrete\MessageRepository.cs" />
     <Compile Include="Concrete\MessagesSendingRepository.cs" />
     <Compile Include="Concrete\NewsBannerRepository.cs" />
     <Compile Include="Concrete\NewsInfoRepository.cs" />
     <Compile Include="Concrete\PageRepository.cs" />
+    <Compile Include="Concrete\PostSystemRepository.cs" />
     <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Concrete\RolesRepository.cs" />
     <Compile Include="Concrete\RoomRepository.cs" />
@@ -126,12 +128,14 @@
     <Compile Include="Interfaces\IHomeBannerRepository.cs" />
     <Compile Include="Interfaces\IHomeContentRepository.cs" />
     <Compile Include="Interfaces\IHomeRRepository.cs" />
+    <Compile Include="Interfaces\IMainPostSystemRepository.cs" />
     <Compile Include="Interfaces\IMenuRepository.cs" />
     <Compile Include="Interfaces\IMessageRepository.cs" />
     <Compile Include="Interfaces\IMessagesSendingRepository.cs" />
     <Compile Include="Interfaces\INewsBannerRepository.cs" />
     <Compile Include="Interfaces\INewsInfoRepository.cs" />
     <Compile Include="Interfaces\IPageRepository.cs" />
+    <Compile Include="Interfaces\IPostSystemRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRolesRepository.cs" />
     <Compile Include="Interfaces\IRoomRepository.cs" />
@@ -209,6 +213,18 @@
     <Compile Include="Migrations\202002031100425_NewsInfoAdded.designer.cs">
       <DependentUpon>202002031100425_NewsInfoAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002050927150_MessageModelChanged.cs" />
+    <Compile Include="Migrations\202002050927150_MessageModelChanged.designer.cs">
+      <DependentUpon>202002050927150_MessageModelChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002071027457_PostSystemModelAdd.cs" />
+    <Compile Include="Migrations\202002071027457_PostSystemModelAdd.designer.cs">
+      <DependentUpon>202002071027457_PostSystemModelAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002071524495_MainPostSystemAdded.cs" />
+    <Compile Include="Migrations\202002071524495_MainPostSystemAdded.designer.cs">
+      <DependentUpon>202002071524495_MainPostSystemAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -270,6 +286,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002031100425_NewsInfoAdded.resx">
       <DependentUpon>202002031100425_NewsInfoAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002050927150_MessageModelChanged.resx">
+      <DependentUpon>202002050927150_MessageModelChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002071027457_PostSystemModelAdd.resx">
+      <DependentUpon>202002071027457_PostSystemModelAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002071524495_MainPostSystemAdded.resx">
+      <DependentUpon>202002071524495_MainPostSystemAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

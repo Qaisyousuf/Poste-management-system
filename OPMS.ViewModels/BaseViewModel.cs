@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace OPMS.ViewModels
 {
@@ -20,6 +21,7 @@ namespace OPMS.ViewModels
         public bool? IsCustomJSOn { get; set; }
 
         public string CustomJs { get; set; }
+        [DisplayFormat(DataFormatString ="{0:d}")]
         public DateTime SiteLastUpdate { get; set; }
 
         public string GoogleSiteVerification { get; set; }

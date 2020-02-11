@@ -34,7 +34,8 @@ namespace OPMS.Data.Context
         public DbSet<HomeRR> HomeRolesResponsibilities { get; set; }
         public DbSet<NewsInfo> NewsInfos { get; set; }
         public DbSet<NewsBanner> NewsBanners { get; set; }
-
+        public DbSet<PostSystem> PostSystems { get; set; }
+        public DbSet<MainPostSystem> MainPostSystems { get; set; }
         //Message Models
         public DbSet<MessageContainer> MessageContainers { get; set; }
         public DbSet<SocialWorker> SocialWorkers { get; set; }

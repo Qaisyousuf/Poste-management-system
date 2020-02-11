@@ -17,6 +17,8 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
     {
         private readonly IUnitOfWork uow;
 
+        public object HtmlUtilities { get; private set; }
+
         public MessagesController(IUnitOfWork uow)
         {
             this.uow = uow;
@@ -25,169 +27,133 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         {
             var usermodel = uow.Context.Users.Select(x => x.PhoneNumber);
 
-            ViewBag.User = uow.UserRepository.GetAll();
             ViewBag.Messag = uow.MessageRepository.GetAll();
             ViewBag.Building = uow.BuildingRepository.GetAll();
-            ViewBag.Floors = uow.FloorsRepository.GetAll();
-            ViewBag.Rooms = uow.RoomRepository.GetAll();
             ViewBag.Social = uow.SocialWorkerRepository.GetAll();
 
-           
         }
 
         public ActionResult Index()
         {
-            return View();
-        }
-        public ActionResult Create()
-        {
-            RelatedData();
-            return View();
-        }
+            var userFromdb = uow.UserRepository.GetAll();
+            ViewBag.MessageContainer = uow.MessageRepository.GetAll();
+            List<UserSMSViewModel> viewmodel = new List<UserSMSViewModel>();
 
-        [HttpPost]
-        public ActionResult Create(MessagesViewModel viewmodel)
-        {
-            if(ModelState.IsValid)
+            foreach (var item in userFromdb)
             {
-                string userphone = uow.Context.Users.Select(x => x.PhoneNumber).FirstOrDefault();
-                Messages messageFromdb = new Messages
+                viewmodel.Add(new UserSMSViewModel
                 {
-                    Id = viewmodel.Id,
-                    Title = viewmodel.Title,
-                    SentDateTime = DateTime.Now,
-                    UserId = viewmodel.UserId,
-                    Users=viewmodel.Users,
-                    MessageContainerId=viewmodel.MessageContainerId,
-                    MessageContainer=viewmodel.MessageContainer,
-                    Building=viewmodel.Building,
-                    BuildingId=viewmodel.BuildingId,
-                    RoomId=viewmodel.RoomId,
-                    FloorId=viewmodel.FloorId,
-                    Florrs=viewmodel.Florrs,
-                    SocialId=viewmodel.SocialId,
-                    SocialWorker=viewmodel.SocialWorker,
-                };
-                uow.MessagesSendingRepository.Add(messageFromdb);
-                uow.Commit();
-               
-                var accountsid = ConfigurationManager.AppSettings["TwilioAccountSid"];
-                var authKey = ConfigurationManager.AppSettings["TwilioAuthToken"];
-                TwilioClient.Init(accountsid, authKey);
-
-                var to = new PhoneNumber(userphone);
-                var from = new PhoneNumber(ConfigurationManager.AppSettings["TwilioPhoneNumber"]);
-
-                var msgbody = viewmodel.MessageContainer.Content.ToString();
-
-
-
-               
-
-
-                var message = MessageResource.Create(to: to, from: from, body: msgbody);
-
-
-                //return Content(message.Sid);
-
-                return RedirectToAction(message.Sid,nameof(Index));
+                    Id = item.Id,
+                    PhoneNumber = item.PhoneNumber,
+                    UserName=item.UserName,
+          
+                });
             }
             return View(viewmodel);
         }
 
+        public JsonResult GetUserSMSData()
+        {
+            var userFromdb = uow.UserRepository.GetAll();
+
+            return Json(new { data = userFromdb }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
         public ActionResult Edit(int id)
         {
-            RelatedData();
-            var msg = uow.MessagesSendingRepository.GetById(id);
-            MessagesViewModel viewmdooel = new MessagesViewModel
+            ViewBag.MessageContainer = uow.MessageRepository.GetAll();
+            ViewBag.SocialWorker = uow.SocialWorkerRepository.GetAll();
+            ViewBag.Address = uow.BuildingRepository.GetAll();
+
+            var userfromdb = uow.UserRepository.GetById(id);
+
+            UserSMSViewModel viewmodel = new UserSMSViewModel
             {
-                Id=msg.Id,
-                Title=msg.Title,
-                SentDateTime=msg.SentDateTime,
-                UserId=msg.UserId,
-                Users=msg.Users,
-                MessageContainer=msg.MessageContainer,
-                MessageContainerId=msg.MessageContainerId,
-                Building=msg.Building,
-                BuildingId=msg.BuildingId,
-                RoomId=msg.RoomId,
-                Rooms=msg.Rooms,
-                FloorId=msg.FloorId,
-                Florrs=msg.Florrs,
-                SocialId=msg.SocialId,
-                SocialWorker=msg.SocialWorker,
-
-
+                Id=userfromdb.Id,
+                UserName=userfromdb.UserName,
+                PhoneNumber=userfromdb.PhoneNumber,
+                
             };
-            return View(viewmdooel);
+
+            return View(viewmodel);
         }
         [HttpPost]
-        public ActionResult Edit(MessagesViewModel viewmodel)
+        public ActionResult Edit(UserSMSViewModel viewmodel)
         {
-
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var messageFromdb = uow.MessagesSendingRepository.GetById(viewmodel.Id);
-
-                messageFromdb.Id = viewmodel.Id;
-                messageFromdb.Title = viewmodel.Title;
-                messageFromdb.SentDateTime = viewmodel.SentDateTime;
-                messageFromdb.MessageContainerId = viewmodel.MessageContainerId;
-                messageFromdb.MessageContainer = viewmodel.MessageContainer;
-                messageFromdb.BuildingId = viewmodel.BuildingId;
-                messageFromdb.Building = viewmodel.Building;
-                messageFromdb.RoomId = viewmodel.RoomId;
-                messageFromdb.Rooms = viewmodel.Rooms;
-                messageFromdb.FloorId = viewmodel.FloorId;
-                messageFromdb.Florrs = viewmodel.Florrs;
-                messageFromdb.SocialId = viewmodel.SocialId;
-                messageFromdb.SocialWorker = viewmodel.SocialWorker;
-
-                uow.MessagesSendingRepository.Update(messageFromdb);
-                uow.Commit();
-                var accountsid = ConfigurationManager.AppSettings["TwilioAccountSid"];
-                var authKey = ConfigurationManager.AppSettings["TwilioAuthToken"];
-                TwilioClient.Init(accountsid, authKey);
-
-                var to = new PhoneNumber(viewmodel.Users.PhoneNumber);
-                var from = new PhoneNumber(ConfigurationManager.AppSettings["TwilioPhoneNumber"]);
+                var mess = uow.MessageRepository.GetById(viewmodel.MessageContainerId);
 
 
+                var addres = uow.BuildingRepository.GetById(viewmodel.BuildingId);
+                var addresMsg =("Work Place"+ addres.BuildingName).ToUpper();
 
-                var msg = viewmodel.Users.UserName;
-                var mesg = viewmodel.MessageContainer.Content;
+                var socialWorker = uow.SocialWorkerRepository.GetById(viewmodel.SocialId);
 
-                var msgbody = mesg + msg;
+                var socialName = ("Sended By: " + socialWorker.FullName).ToUpper();
 
+                var messbody ="Work Time:" +viewmodel.AppointmentOrTaskDateTime+ mess.Title + mess.Content + "\n" + addresMsg+"\n"+socialName;
 
-                var message = MessageResource.Create(to: to, from: from, body: msgbody);
+                var userName = ("Bonjour Mr : " + viewmodel.UserName).ToUpper();
 
+                //var accountsid = ConfigurationManager.AppSettings["TwilioAccountSid"];
+                //var authKey = ConfigurationManager.AppSettings["TwilioAuthToken"];
+                //TwilioClient.Init(accountsid, authKey);
 
-                //return Content(message.Sid);
+                //var to = new PhoneNumber(viewmodel.PhoneNumber);
+                //var from = new PhoneNumber(ConfigurationManager.AppSettings["TwilioPhoneNumber"]);
 
-                return RedirectToAction(message.Sid, nameof(Index));
+                
+                //var message = MessageResource.Create(to: to, from: from, body: userName +"\n"+ messbody);
+
+                if (ModelState.IsValid)
+                {
+                    Messages msgViewModel = new Messages
+                    {
+                        Id = viewmodel.Id,
+                        Title = viewmodel.Title,
+                        SentDateTime = DateTime.Now,
+                        AppointmentOrTaskDateTime = viewmodel.AppointmentOrTaskDateTime,
+                        SendedBy = User.Identity.Name,
+                        UserId = viewmodel.Id,
+                        Users = viewmodel.Users,
+                        MessageContainer = viewmodel.MessageContainer,
+                        MessageContainerId = viewmodel.MessageContainerId,
+                        BuildingId = viewmodel.BuildingId,
+                        Building = viewmodel.Building,
+                        SocialId = viewmodel.SocialId,
+                        SocialWorker = viewmodel.SocialWorker,
+                    };
+
+                    uow.MessagesSendingRepository.Add(msgViewModel);
+                    uow.Commit();
+                   // var SS = message.Sid;
+                    TempData["Message"] = $"{viewmodel.UserName}";
+                    return RedirectToAction("ThankYou");
+                }
+
             }
             return View(viewmodel);
-
-            //var accountsid = ConfigurationManager.AppSettings["TwilioAccountSid"];
-            //var authKey = ConfigurationManager.AppSettings["TwilioAuthToken"];
-            //TwilioClient.Init(accountsid, authKey);
-
-            //var to = new PhoneNumber(viewmodel.Users.PhoneNumber);
-            //var from = new PhoneNumber(ConfigurationManager.AppSettings["TwilioPhoneNumber"]);
-
-
-
-            //var msg = viewmodel.Users.UserName;
-            //var mesg = viewmodel.MessageContainer.Content;
-
-            //var msgbody = mesg + msg;
-
-
-            //var message = MessageResource.Create(to: to, from: from, body: msgbody);
-
-
-            //return Content(message.Sid);
         }
+
+        [HttpGet]
+        public ActionResult ThankYou()
+        {
+            return View();
+        }
+        
+        public JsonResult SentSMSData()
+        {
+            var messFromdb = uow.MessagesSendingRepository.GetAll("Users", "MessageContainer", "Building", "SocialWorker");
+
+            return Json(new { data = messFromdb }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public ActionResult SMSRecords()
+        {
+            return View();
+        }
+
+       
     }
 }

@@ -8,34 +8,37 @@ using System.Threading.Tasks;
 
 namespace OPMS.Models
 {
-    public class Messages:EntityBase
+    public class MainPostSystem:EntityBase
     {
         public string Title { get; set; }
 
+       
         public DateTime SentDateTime { get; set; }
 
-        
-        public DateTime AppointmentOrTaskDateTime { get; set; }
+       
+        public DateTime PostExpirationDate { get; set; }
 
-
+      
         public string SendedBy { get; set; }
+       
+        public bool HasPost { get; set; }
 
         public int UserId { get; set; }
         [ForeignKey("UserId")]
         public UserModel Users { get; set; }
 
-
-        public int MessageContainerId { get; set; }
-        [ForeignKey("MessageContainerId")]
-        public MessageContainer MessageContainer { get; set; }
+        public string Name { get; set; }
 
 
-        public int BuildingId { get; set; }
-        [ForeignKey("BuildingId")]
-        public BuildingAddress Building { get; set; }
+        public int PostSystemId { get; set; }
+        [ForeignKey("PostSystemId")]
+       
+        public PostSystem PostSystems { get; set; }
+
 
         public int SocialId { get; set; }
         [ForeignKey("SocialId")]
+  
         public SocialWorker SocialWorker { get; set; }
     }
 }

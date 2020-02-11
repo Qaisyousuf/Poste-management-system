@@ -35,6 +35,8 @@ namespace OPMS.Data.Interfaces
         IHomeRRepository HomeRRepository { get; }
         INewsInfoRepository NewInfoRepository { get; }
         INewsBannerRepository NewsBannerRepoistory { get; }
+        IPostSystemRepository PostSystemRepository { get; }
+        IMainPostSystemRepository MainPostSystemRepository { get; }
         void Commit();
     }
 }

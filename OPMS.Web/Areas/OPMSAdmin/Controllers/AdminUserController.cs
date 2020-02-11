@@ -143,5 +143,10 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             return viewmodel;
 
         }
+        //[HttpGet]
+        //public ActionResult SendSMS()
+        //{
+            
+        //}
     }
 }

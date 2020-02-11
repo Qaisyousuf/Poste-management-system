@@ -68,9 +68,11 @@ namespace OPMS.Data.Concrete
 
         public INewsInfoRepository NewInfoRepository => new NewsInfoRepository(Context);
 
-
-
         public INewsBannerRepository NewsBannerRepoistory => new NewsBannerRepository(Context);
+
+        public IPostSystemRepository PostSystemRepository => new PostSystemRepository(Context);
+
+        public IMainPostSystemRepository MainPostSystemRepository => new MainPostSystemRepository(Context);
 
         public void Commit()
         {

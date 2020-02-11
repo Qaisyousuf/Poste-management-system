@@ -9,43 +9,53 @@ using System.Threading.Tasks;
 
 namespace OPMS.ViewModels
 {
-   public class MessagesViewModel
+    public class UserSMSViewModel
     {
         public int Id { get; set; }
 
         public string Title { get; set; }
+        [Required(ErrorMessage = "Nom d'utilisateur est nécessaire")]
+        [Display(Name = "Nom d'utilisateur")]
+        public string UserName { get; set; }
+
+        [Required(ErrorMessage = "Le numéro de téléphone est requis")]
+        [Display(Name = "Numéro de portable")]
+        [DataType(DataType.PhoneNumber)]
+        public string PhoneNumber { get; set; }
 
 
+       // [DisplayFormat(DataFormatString = "{0:d}")]
+        [DataType(DataType.Date)]
         public DateTime SentDateTime { get; set; }
 
+        [Display(Name = "Date de rendez-vous")]
+       // [DisplayFormat(DataFormatString ="{0:d}")]
+        [DataType(DataType.Time)]
         public DateTime AppointmentOrTaskDateTime { get; set; }
 
         public string SendedBy { get; set; }
 
 
-        [Display(Name ="Users")]
-        public int UserId { get; set; }
-        [ForeignKey("UserId")]
-        public UserModel Users { get; set; }
-
-
-        [Display(Name ="Messags Box")]
+        [Display(Name = "SMS BOX")]
         public int MessageContainerId { get; set; }
         [ForeignKey("MessageContainerId")]
         public MessageContainer MessageContainer { get; set; }
 
-
-
-        [Display(Name ="Building Address")]
+        [Display(Name = "Lieu de travail")]
         public int BuildingId { get; set; }
         [ForeignKey("BuildingId")]
         public BuildingAddress Building { get; set; }
 
 
 
-        [Display(Name ="Social Worker")]
+        [Display(Name = "SMS envoyé par")]
         public int SocialId { get; set; }
         [ForeignKey("SocialId")]
         public SocialWorker SocialWorker { get; set; }
+
+        [Display(Name = "Users")]
+        public int UserId { get; set; }
+        [ForeignKey("UserId")]
+        public UserModel Users { get; set; }
     }
 }

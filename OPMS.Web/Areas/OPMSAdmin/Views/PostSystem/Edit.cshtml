@@ -1,10 +1,10 @@
-﻿@model OPMS.ViewModels.MessageContainerViewModel
+﻿@model OPMS.ViewModels.PostSystemVM
 
 @{
-    ViewBag.Title = "Messages";
+    ViewBag.Title = "Edit";
 }
 <hr />
-<h4>Création de message</h4>
+<h4>Voulez-vous vraiment modifier le <button disabled class="btn btn-primary">@Model.Title</button> message</h4>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -12,6 +12,8 @@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -35,24 +37,14 @@
                 @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AppointmentDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.AppointmentDateTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AppointmentDateTime, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Créer" class="btn btn-primary" />
+                <input type="submit" value="Sauvegarder les modifications" class="btn btn-default" /> |
                 <a class="btn btn-primary" href="/OPMSAdmin/MessageContainer/Index">Retour à la liste principale</a>
             </div>
         </div>
     </div>
 }
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script src="~/Scripts/ckeditor/ckeditor.js"></script>

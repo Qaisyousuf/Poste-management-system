@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using OPMS.ViewModels;
 using OPMS.Models;
 using System;
+using System.Collections.Generic;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
@@ -17,8 +18,20 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 
         public ActionResult Index()
         {
+            var userFromdb = uow.UserRepository.GetAll();
 
-            return View();
+            List<EditUserViewModel> viewmodel = new List<EditUserViewModel>();
+
+            foreach (var item in userFromdb)
+            {
+                viewmodel.Add(new EditUserViewModel
+                {
+                    Id=item.Id,
+                    PhoneNumber=item.PhoneNumber,
+                });
+            }
+
+            return View(viewmodel);
         }
 
         //Code for Get data by Jquery Datatable
