@@ -66,7 +66,7 @@ namespace OPMS.Web.Controllers
             myCookie.Expires = DateTime.Now.AddMinutes(20);
 
             Response.Cookies.Add(myCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "AssignedPost");
 
         }
 

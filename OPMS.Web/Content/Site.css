@@ -1,6 +1,5 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+  background-color:cadetblue;
     
     
     
@@ -19,6 +18,4 @@ textarea {
     max-width: 280px;
 }
 .BackImg
-{
-    background-image:url(../Content/Img/paul-gaudriault-xzoD4P7Lu7M-unsplash.jpg);
-}
+

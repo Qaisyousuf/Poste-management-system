@@ -6,7 +6,7 @@
         using (Html.BeginForm("LogOut", "Accounts", new { Area = "" }, FormMethod.Post, new { id = "logoutForm" }))
         {
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="javascript:document.getElementById('logoutForm').submit();"> Bonjour  @User.Identity.Name  LogOut </a></li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit();"> Bonjour  @User.Identity.Name | <span class="btn btn-danger"> LogOut</span> </a></li>
             </ul>
         }
     }

@@ -10,5 +10,7 @@ namespace OPMS.ViewModels
 
         public List<NewsInfoVM> NewsInfoViewModel { get; set; }
         public List<NewsBannerVM> NewsBannerViewModel { get; set; }
+
+        public List<MainPostSystemVM> MainPostViewmodels { get; set; }
     }
 }

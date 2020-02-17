@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "UpdateThankYou";
+}
+<br />
+<hr />
+@if (TempData["UpdateMessage"] != null)
+{
+<div class="text-center">
+    <h5 class="">You have successfully updated the poste for resident: <button class="btn btn-primary">@TempData["UpdateMessage"]</button> </h5>
+    <br />
+    <a class="btn btn-primary" href="/OPMSAdmin/MainPostSystem/Index">Essayez un autre Poste</a>
+</div>
+}

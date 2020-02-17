@@ -1,0 +1,14 @@
+﻿body {
+    padding-top: 100px;
+    background-color: azure;
+    font-size:2rem;
+}
+.jumbotron
+{
+    background-color:red;
+    color:red;
+}
+.container-fluid .jumbotron
+{
+    color:red;
+}

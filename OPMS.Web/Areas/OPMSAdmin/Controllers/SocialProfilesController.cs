@@ -93,6 +93,40 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             return View(viewmodel);
 
         }
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            var userFromdb = uow.SocialProfileRepository.GetById(id);
+            SWorkerProfileVM viewmodel = new SWorkerProfileVM
+            {
+                Id = userFromdb.Id,
+                Title = userFromdb.Title,
+                ImageUrl = userFromdb.ImageUrl,
+                JobTitle = userFromdb.JobTitle,
+                FullName = userFromdb.FullName,
+                Content = userFromdb.Content,
+            };
+            return View(viewmodel);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult ConfirmDelete(int? id)
+        {
+            var userFromdb = uow.SocialProfileRepository.GetById(id);
+            SWorkerProfileVM viewmodel = new SWorkerProfileVM
+            {
+                Id = userFromdb.Id,
+                Title = userFromdb.Title,
+                ImageUrl = userFromdb.ImageUrl,
+                JobTitle = userFromdb.JobTitle,
+                FullName = userFromdb.FullName,
+                Content = userFromdb.Content,
+            };
+
+            uow.SocialProfileRepository.Remove(userFromdb);
+            uow.Commit();
+            return RedirectToAction(nameof(Index));
+        }
 
     }
 }

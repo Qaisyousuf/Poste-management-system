@@ -1,0 +1,62 @@
+﻿@model IEnumerable<OPMS.ViewModels.MainPostSystemVM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PosteLayout.cshtml";
+}
+<hr />
+<style>
+    .jumbotron .img-responsive
+    {
+        display:inline;
+        height:200px;
+        width:200px;
+      
+    }
+</style>
+@{
+    if (Request.IsAuthenticated)
+    {
+
+
+        foreach (var item in Model.Where(x => x.Users.UserName == User.Identity.Name))
+        {
+            if (item.HasPost)
+            {
+                <div class="jumbotron text-center">
+                    <h4>Bonjour, cher @User.Identity.Name</h4>
+                    <hr />
+                    <h2 class="label label-primary">You have Post</h2>
+                    <hr />
+                    <img src="~/Content/Img/Envelop.png" class="img-responsive" />
+                    <hr />
+                    <h5>Post: @item.Title</h5>
+                    <h5 class="label label-danger">Expiraton Date: @item.PostExpirationDate</h5>
+                    <h5>Assigned By: @item.SendedBy</h5>
+                    <h5 class="label label-primary">Sent Date: @item.SentDateTime</h5>
+                    <h5>Send By: @item.SocialWorker.FullName</h5>
+                    <h5>From: @item.PostSystems.Title</h5>
+                </div>
+
+            }
+            else
+            {
+                <div class="jumbotron">
+                    <h4>Bonjour, cher @User.Identity.Name</h4>
+                    <hr />
+                    <h3 class="label label-primary">You have no Post</h3>
+                    <hr />
+                    <img src="~/Content/Img/Envelop2.png" class="img-responsive" />
+                </div>
+              
+            }
+
+        }
+
+    }
+    else
+    {
+        <h1 class=" label label-primary">You have to login first</h1>
+    }
+}
+
+

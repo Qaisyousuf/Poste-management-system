@@ -3,13 +3,12 @@
     ViewBag.Title = "ThankYou";
 }
 
-<div class="view" style="background-image: url(~/Content/Img/paul-gaudriault-xzoD4P7Lu7M-unsplash.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <hr />
 
     @if (TempData["Message"] != null)
     {
         <h4 class="">Le poste attribué avec succès au résident: @TempData["Message"]</h4>
     }
+    <br />
     <a class="btn btn-primary" href="/OPMSAdmin/MainPostSystem/Index">Essayez un autre Poste</a>
 
-    </div>

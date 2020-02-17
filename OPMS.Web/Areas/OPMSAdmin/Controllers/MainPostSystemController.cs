@@ -96,8 +96,6 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                         SocialId=viewmodel.SocialId,
                         SocialWorker=viewmodel.SocialWorker
 
-                        
-                        
                     };
 
                     uow.MainPostSystemRepository.Add(postFromdb);
@@ -248,12 +246,19 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 
                     uow.MainPostSystemRepository.Update(userFromdb);
                     uow.Commit();
-                   
-                    return RedirectToAction(nameof(PostData));
+                    TempData["UpdateMessage"] = $"{viewmodel.UserName}";
+
+                    return RedirectToAction(nameof(UpdateThankYou));
                 }
             }
 
             return View(viewmodel);
+        }
+
+        [HttpGet]
+        public ActionResult UpdateThankYou()
+        {
+            return View();
         }
     }
 }

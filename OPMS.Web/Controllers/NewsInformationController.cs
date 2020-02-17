@@ -12,7 +12,6 @@ namespace OPMS.Web.Controllers
         [Route("News")]
         public ActionResult Index()
         {
-
             var newsInfo = _uow.NewInfoRepository.GetAll();
 
             List<NewsInfoVM> viewmodel = new List<NewsInfoVM>();

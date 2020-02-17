@@ -157,8 +157,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Img\paul-gaudriault-xzoD4P7Lu7M-unsplash.jpg" />
-    <Content Include="Content\Img\sean-pollock-PhYq704ffdA-unsplash.jpg" />
+    <Content Include="Content\CustomPostCSS.css" />
+    <Content Include="Content\Img\authentication.svg" />
+    <Content Include="Content\Img\Envelop.png" />
+    <Content Include="Content\Img\Envelop2.png" />
+    <Content Include="Content\Img\LogoCoallia_Couleur %282%29.png" />
+    <Content Include="Content\Img\rejected.jpg" />
+    <Content Include="Content\Img\undraw_my_password_d6kg.svg" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -676,6 +681,8 @@
     <Content Include="Areas\OPMSAdmin\Views\MainPostSystem\PostData.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\MainPostSystem\Delete.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\MainPostSystem\UpdatePost.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\MainPostSystem\UpdateThankYou.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\SocialProfiles\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -799,6 +806,7 @@
     <Compile Include="Areas\OPMSAdmin\OPMSAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\AssignedPostController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContactFormsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -850,6 +858,8 @@
     <Content Include="Views\NewsInformation\Index.cshtml" />
     <Content Include="Views\Shared\_NewsLayout.cshtml" />
     <Content Include="Views\NewsInformation\GetNewsBanner.cshtml" />
+    <Content Include="Views\AssignedPost\Index.cshtml" />
+    <Content Include="Views\Shared\_PosteLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

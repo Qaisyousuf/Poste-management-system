@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace OPMS.ViewModels
 {
-    public class PostSystemVM
+    public class PostSystemVM:BaseViewModel
     {
         public int Id { get; set; }
         [Required]

@@ -34,7 +34,7 @@
                             <h6>@item.SubTitle</h6>
                             <hr />
                             <h5>@Html.Raw(item.Content)</h5>
-                           
+
                         </div>
                         <hr />
                         <button class="btn btn-primary"> @item.Title</button>
@@ -69,3 +69,8 @@
     </div>
 </div>
 
+@section CustomCss{
+
+    <link href="~/Content/CustomPostCSS.css" rel="stylesheet" />
+
+}
