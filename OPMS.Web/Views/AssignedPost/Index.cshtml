@@ -4,13 +4,27 @@
     Layout = "~/Views/Shared/_PosteLayout.cshtml";
 }
 <hr />
+
 <style>
+  body
+  {
+      padding-top:0px;
+  }
+    .jumbotron
+    {
+        margin:0px;
+        padding-top:10px;
+    }
     .jumbotron .img-responsive
     {
         display:inline;
         height:200px;
         width:200px;
       
+    }
+    img#Login {
+        height:400px;
+        width:auto;
     }
 </style>
 @{
@@ -22,6 +36,7 @@
         {
             if (item.HasPost)
             {
+                <br />
                 <div class="jumbotron text-center">
                     <h4>Bonjour, cher @User.Identity.Name</h4>
                     <hr />
@@ -40,6 +55,7 @@
             }
             else
             {
+                <br />
                 <div class="jumbotron">
                     <h4>Bonjour, cher @User.Identity.Name</h4>
                     <hr />
@@ -55,7 +71,12 @@
     }
     else
     {
-        <h1 class=" label label-primary">You have to login first</h1>
+                <div   class="jumbotron">
+                    <h3>You have to login first</h3>
+                    <hr />
+                    <img src="~/Content/Img/undraw_access_account_99n5.svg" class="img-responsive"  id="Login" />
+                </div>
+       
     }
 }
 

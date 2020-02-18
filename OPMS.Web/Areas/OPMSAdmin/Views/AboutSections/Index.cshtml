@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "AboutSection";
+    ViewBag.Title = "About";
 }
 <hr />
 <h4>Liste de la section À propos</h4>
@@ -13,8 +13,8 @@
     <thead class="bg-primary">
         <tr>
             <th><i class="glyphicon glyphicon-align-center"></i> Title</th>
-            <th><i class="glyphicon glyphicon-link"></i> MainTitle</th>
-            <th><i class="glyphicon glyphicon-menu-right"></i> SubTitle</th>
+            <th><i class="glyphicon glyphicon-link"></i> Main Title</th>
+            <th><i class="glyphicon glyphicon-menu-right"></i> Sub Title</th>
             <th><i class="glyphicon glyphicon-menu-right"></i> Publish date</th>
             <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
         </tr>
@@ -24,27 +24,94 @@
     <script>
         $(document).ready(function () {
             $("#dataTable").DataTable({
+                "responsive": true,
                 "info": false,
                 "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
                 buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
+                    {
+                        extend: 'copyHtml5',
+                        text: '<i class="glyphicon glyphicon-file"> Copy</i>',
+                        titleAttr: 'Copy',
+
+
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> Excel</i>',
+                        titleAttr: 'Excel',
+
+
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> PDF</i>',
+                        titleAttr: 'PDF',
+
+
+                    },
+
+                    {
+                        extend: 'print',
+                        text: '<i class="glyphicon glyphicon-print"> Print</i>',
+                        titleAttr: 'PRINT',
+
+
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '<i class="glyphicon glyphicon-eye-open"> Visibilité des colonnes</i>',
+                        titleAttr: 'Columns Visiblty',
+
+
+                    },
                 ],
                 "ajax": {
                     "url": "/OPMSAdmin/AboutSections/GetAboutSectionData",
                     "type": "Get",
                     "dataType": "json"
                 },
-                "columns": [
-                    { "data": "Title" },
-                    { "data": "MainTitle" },
-                    { "data": "SubTitle" },
-                    { "data": "PublishDateTime" },
+                "columnDefs": [
+                    {
+                        "data": "Title",
+                        "targets": 0,
+
+                        "render": function (data, type, row, meta)
+                        {
+                            return data;
+                        }
+                    },
+                    {
+                        "data": "MainTitle",
+                        "targets": 1,
+
+                        "render": function (data, type, row, meta) {
+                            return data;
+                        }
+                    },
+                    {
+                        "data": "SubTitle",
+                        "targets": 2,
+
+                        "render": function (data, type, row, meta) {
+                            return data;
+                        }
+                    },
+                    {
+                        "data": "PublishDateTime",
+                        "targets": 3,
+
+                        "render": function (data, type, row, meta) {
+                            return moment(row.PublishDateTime).locale("fr").format('LLL');
+                        }
+                    },
                     {
                         "data": "actions",
+                        "targets": 4,
+                        "className": "dt-body-right",
                         "render": function (data, type, row, meta) {
                             data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/AboutSections/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/AboutSections/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> <a class="btn btn-default btn-bg" href="/OPMSAdmin/AboutSections/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
-                            //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
+                           
                             return data;
                         }
                     },

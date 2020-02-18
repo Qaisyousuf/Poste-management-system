@@ -163,6 +163,7 @@
     <Content Include="Content\Img\Envelop2.png" />
     <Content Include="Content\Img\LogoCoallia_Couleur %282%29.png" />
     <Content Include="Content\Img\rejected.jpg" />
+    <Content Include="Content\Img\undraw_access_account_99n5.svg" />
     <Content Include="Content\Img\undraw_my_password_d6kg.svg" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -179,11 +180,6 @@
     <Content Include="Areas\OPMSAdmin\Views\Sidebars\Edit.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Sidebars\Delete.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Sidebars\Details.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Tags\Create.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Tags\Index.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Tags\Edit.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Tags\Delete.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Tags\Details.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Pages\Create.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Pages\Index.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Pages\Edit.cshtml" />
@@ -193,10 +189,6 @@
     <Content Include="Areas\OPMSAdmin\Views\Menus\Edit.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Menus\Details.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Menus\Delete.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Create.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Index.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Edit.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Delete.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\SiteSettings\Create.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\SiteSettings\Index.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\SiteSettings\Edit.cshtml" />
@@ -228,7 +220,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\OPMSAdmin\Views\SiteSettings\Details.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\BlogPosts\Detials.cshtml" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
     <Content Include="Scripts\ckeditor\ckeditor_basic_source.js" />
@@ -776,7 +767,6 @@
     <Compile Include="Areas\OPMSAdmin\Controllers\AboutSectionsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\AboutShortSectionController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\AdminUserController.cs" />
-    <Compile Include="Areas\OPMSAdmin\Controllers\BlogPostsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\BuildingAddresController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\ContactDetailsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\ContactInfoController.cs" />
@@ -802,7 +792,6 @@
     <Compile Include="Areas\OPMSAdmin\Controllers\SocialWorkerController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SWBannerController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SWorkerPageController.cs" />
-    <Compile Include="Areas\OPMSAdmin\Controllers\TagsController.cs" />
     <Compile Include="Areas\OPMSAdmin\OPMSAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountsController.cs" />

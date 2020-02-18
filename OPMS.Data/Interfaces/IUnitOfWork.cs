@@ -7,8 +7,7 @@ namespace OPMS.Data.Interfaces
     {
         ContextDb Context { get; }
         IPageRepository PageRepository { get; }
-        IBlogPostRepository BlogPostRepository { get; }
-        ITagRepository TagRepository { get; }
+    
         IMenuRepository MenuRepository { get; }
         ISiteSettingsRepository SiteSettingsRepository { get; }
         ISidebarRepository SidebarRepository { get; }

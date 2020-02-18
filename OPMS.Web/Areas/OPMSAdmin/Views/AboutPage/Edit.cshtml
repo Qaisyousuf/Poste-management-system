@@ -4,7 +4,7 @@
     ViewBag.Title = "About";
 }
 <hr />
-<h4>Voulez-vous vraiment modifier le <button disabled class="btn btn-danger">@Model.Title</button></h4>
+<h4>Voulez-vous vraiment modifier le <button disabled class="btn btn-danger">@Model.Title</button> ?</h4>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()

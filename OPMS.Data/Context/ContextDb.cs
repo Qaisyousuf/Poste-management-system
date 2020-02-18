@@ -13,8 +13,6 @@ namespace OPMS.Data.Context
             
         }
         public DbSet<Page> Pages { get; set; }
-        public DbSet<BlogPost> BlogPosts { get; set; }
-        public DbSet<Tag> Tags { get; set;}
         public DbSet<Sidebar> Sidebars { get; set; }
         public DbSet<UserModel> Users { get; set; }
         public DbSet<Contact> Contacts { get; set; }

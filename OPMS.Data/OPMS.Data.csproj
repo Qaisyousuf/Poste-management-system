@@ -75,7 +75,6 @@
     <Compile Include="Concrete\AboutRepository.cs" />
     <Compile Include="Concrete\AboutSectionRepository.cs" />
     <Compile Include="Concrete\AboutShortSectionRepository.cs" />
-    <Compile Include="Concrete\BlogPostRepository.cs" />
     <Compile Include="Concrete\BuildingRepository.cs" />
     <Compile Include="Concrete\ContactDetailsRepository.cs" />
     <Compile Include="Concrete\ContactInfoRepository.cs" />
@@ -102,7 +101,6 @@
     <Compile Include="Concrete\SocialWorkerRepository.cs" />
     <Compile Include="Concrete\SWBannerRepository.cs" />
     <Compile Include="Concrete\SWorkerPageRepository.cs" />
-    <Compile Include="Concrete\TagReposiitory.cs" />
     <Compile Include="Concrete\UnitOfWork.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Context\ContextDb.cs" />
@@ -118,7 +116,6 @@
     <Compile Include="Interfaces\IAboutRepository.cs" />
     <Compile Include="Interfaces\IAboutSectionRepository.cs" />
     <Compile Include="Interfaces\IAboutShortSectionRepository.cs" />
-    <Compile Include="Interfaces\IBlogPostRepository.cs" />
     <Compile Include="Interfaces\IBuildingRepository.cs" />
     <Compile Include="Interfaces\IContactDetailsRepository.cs" />
     <Compile Include="Interfaces\IContactInfoRepository.cs" />
@@ -146,7 +143,6 @@
     <Compile Include="Interfaces\ISocialWorkerRepository.cs" />
     <Compile Include="Interfaces\ISWBannerRepository.cs" />
     <Compile Include="Interfaces\ISWorkerPageRepository.cs" />
-    <Compile Include="Interfaces\ITagRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Migrations\202001271055585_Initial.cs" />
@@ -225,6 +221,10 @@
     <Compile Include="Migrations\202002071524495_MainPostSystemAdded.designer.cs">
       <DependentUpon>202002071524495_MainPostSystemAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002181455065_BlogPostRemoved.cs" />
+    <Compile Include="Migrations\202002181455065_BlogPostRemoved.designer.cs">
+      <DependentUpon>202002181455065_BlogPostRemoved.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -295,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002071524495_MainPostSystemAdded.resx">
       <DependentUpon>202002071524495_MainPostSystemAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002181455065_BlogPostRemoved.resx">
+      <DependentUpon>202002181455065_BlogPostRemoved.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

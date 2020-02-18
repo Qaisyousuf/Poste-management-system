@@ -4,9 +4,9 @@
     ViewBag.Title = "Users";
 }
 <hr />
-<h4>Liste d'utilisateurs</h4>
+<h4>Liste du résident</h4>
 
-<a class="btn btn-primary" href="/OPMSAdmin/AdminUser/Create">Enregistrer un nouvel utilisateur</a>
+<a class="btn btn-primary" href="/OPMSAdmin/AdminUser/Create">Créer un nouvel utilisateur pour le résident</a>
 <hr />
 
 <div class="container">
@@ -32,10 +32,46 @@
         $(document).ready(function () {
             $('#dataTable').DataTable({
                 info: false,
-                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'All']],
+                responsive: true,
+                lengthMenu: [[5,10, 25, 50, -1], [5,10, 25, 50, 'All']],
                 dom: 'lfrtiBp',
                 buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
+                    {
+                        extend: 'copyHtml5',
+                        text: '<i class="glyphicon glyphicon-file"> Copy</i>',
+                        titleAttr: 'Copy',
+
+
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> Excel</i>',
+                        titleAttr: 'Excel',
+
+
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> PDF</i>',
+                        titleAttr: 'PDF',
+
+
+                    },
+
+                    {
+                        extend: 'print',
+                        text: '<i class="glyphicon glyphicon-print"> Print</i>',
+                        titleAttr: 'PRINT',
+
+
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '<i class="glyphicon glyphicon-eye-open"> Visibilité des colonnes</i>',
+                        titleAttr: 'Columns Visiblty',
+
+
+                    },
                 ],
                 ajax: {
                     url: '/OPMSAdmin/AdminUser/GetUserData',
@@ -49,9 +85,10 @@
                   
                     {
                         "data": "actions",
+                        "className": "dt-body-right",
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/AdminUser/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/AdminUser/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> |<a class="btn btn-default btn-bg" href="/OPMSAdmin/AdminUser/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a> |<a class="btn btn-info btn-bg" href="/OPMSAdmin/AdminUser/SendSMS/' + row.Id + '"><i class="glyphicon glyphicon-phone"></i> Send SMS</a>  ';
-                            //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/AdminUser/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/AdminUser/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> |<a class="btn btn-default btn-bg" href="/OPMSAdmin/AdminUser/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a> ';
+                           
                             return data;
                         }
                     },

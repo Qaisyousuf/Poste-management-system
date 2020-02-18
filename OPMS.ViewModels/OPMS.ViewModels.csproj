@@ -67,7 +67,6 @@
     <Compile Include="AboutPageViewModel.cs" />
     <Compile Include="AboutSectionViewModel.cs" />
     <Compile Include="BaseViewModel.cs" />
-    <Compile Include="BlogPostViewModel.cs" />
     <Compile Include="BuildingAddressViewModel.cs" />
     <Compile Include="CheckBoxViewModel.cs" />
     <Compile Include="AboutShortSectionVM.cs" />
@@ -103,7 +102,6 @@
     <Compile Include="SWorkerMultiVM.cs" />
     <Compile Include="SWorkerPageVM.cs" />
     <Compile Include="SWorkerProfileVM.cs" />
-    <Compile Include="TagViewModel.cs" />
     <Compile Include="UserSMSViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
