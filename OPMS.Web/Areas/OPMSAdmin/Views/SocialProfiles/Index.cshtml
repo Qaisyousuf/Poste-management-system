@@ -1,7 +1,7 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Areas/OPMSAdmin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Profile";
+   
 }
 <hr />
 <h4>Liste des travailleurs sociaux</h4>
@@ -29,7 +29,42 @@
                 "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
                 buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
+                    {
+                        extend: 'copyHtml5',
+                        text: '<i class="glyphicon glyphicon-file"> Copy</i>',
+                        titleAttr: 'Copy',
+
+
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> Excel</i>',
+                        titleAttr: 'Excel',
+
+
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> PDF</i>',
+                        titleAttr: 'PDF',
+
+
+                    },
+
+                    {
+                        extend: 'print',
+                        text: '<i class="glyphicon glyphicon-print"> Print</i>',
+                        titleAttr: 'PRINT',
+
+
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '<i class="glyphicon glyphicon-eye-open"> Visibilité des colonnes</i>',
+                        titleAttr: 'Columns Visiblty',
+
+
+                    },
                 ],
                 "ajax": {
                     "url": "/OPMSAdmin/SocialProfiles/GetSocialProfile",
@@ -43,6 +78,7 @@
                     { "data": "ImageUrl" },
                     {
                         "data": "actions",
+                        "className": "dt-body-right",
                         "render": function (data, type, row, meta) {
                             data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/SocialProfiles/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Modifier</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/SocialProfiles/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> <a class="btn btn-default btn-bg" href="/OPMSAdmin/SocialProfiles/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';

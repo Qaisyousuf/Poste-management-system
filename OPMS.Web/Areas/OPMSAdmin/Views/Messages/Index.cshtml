@@ -1,12 +1,9 @@
-﻿
-
-@{
+﻿@{
     ViewBag.Title = "Index";
 
 }
 <hr />
 <h4>Liste des résidents disponibles pour envoyer des SMS</h4>
-
 <p>
     <a class="btn btn-primary" href="/OPMSAdmin/MessageContainer/Create">Créer un nouveau type de message</a> |
     <a class="btn btn-primary" href="/OPMSAdmin/Messages/SMSRecords">SMS livré</a>
@@ -28,10 +25,46 @@
         $(document).ready(function () {
             $("#dataTable").DataTable({
                 "info": false,
+                "responsive": true,
                 "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
                 buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
+                    {
+                        extend: 'copyHtml5',
+                        text: '<i class="glyphicon glyphicon-file"> Copy</i>',
+                        titleAttr: 'Copy',
+
+
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> Excel</i>',
+                        titleAttr: 'Excel',
+
+
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> PDF</i>',
+                        titleAttr: 'PDF',
+
+
+                    },
+
+                    {
+                        extend: 'print',
+                        text: '<i class="glyphicon glyphicon-print"> Print</i>',
+                        titleAttr: 'PRINT',
+
+
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '<i class="glyphicon glyphicon-eye-open"> Visibilité des colonnes</i>',
+                        titleAttr: 'Columns Visiblty',
+
+
+                    },
                 ],
                 "ajax": {
                     "url": "/OPMSAdmin/Messages/GetUserSMSData",
@@ -43,8 +76,9 @@
                     { "data": "PhoneNumber" },
                     {
                         "data": "actions",
+                        "className": "dt-body-right",
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Messages/Edit/' + row.Id + '"><i class="glyphicon glyphicon-phone"></i> Envoyez un SMS</a>';
+                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Messages/Edit/' + row.Id + '"><i class="glyphicon glyphicon-phone"></i> Informer le résident en envoyant un SMS</a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
                             return data;
                         }

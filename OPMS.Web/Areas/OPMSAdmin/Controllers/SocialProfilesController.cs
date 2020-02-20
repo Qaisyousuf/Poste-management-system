@@ -127,6 +127,21 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             uow.Commit();
             return RedirectToAction(nameof(Index));
         }
+        [HttpGet]
+        public ActionResult Details(int? id)
+        {
+            var userFromdb = uow.SocialProfileRepository.GetById(id);
+            SWorkerProfileVM viewmodel = new SWorkerProfileVM
+            {
+                Id = userFromdb.Id,
+                Title = userFromdb.Title,
+                ImageUrl = userFromdb.ImageUrl,
+                JobTitle = userFromdb.JobTitle,
+                FullName = userFromdb.FullName,
+                Content = userFromdb.Content,
+            };
+            return View(viewmodel);
+        }
 
     }
 }

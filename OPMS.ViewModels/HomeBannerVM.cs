@@ -15,13 +15,17 @@ namespace OPMS.ViewModels
         [Required]
         public string Title { get; set; }
         [Required]
+        [Display(Name ="Sub Title")]
         public string SubTitle { get; set; }
         [Required]
         [AllowHtml]
+        [Display(Name = "Image Url")]
         public string ImageUrl { get; set; }
         [Required]
+        [Display(Name = "Button Text")]
         public string ButtonText { get; set; }
         [Required]
+        [Display(Name = "Button Url")]
         public string ButtonUrl { get; set; }
         [Required]
         [AllowHtml]

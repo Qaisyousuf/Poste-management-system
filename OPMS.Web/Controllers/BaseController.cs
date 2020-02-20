@@ -55,13 +55,8 @@ namespace OPMS.Web.Controllers
                     baseviewmodel.GoogleSiteVerification = siteSettings.GoogleSiteVerification;
                     baseviewmodel.GoogelAds = siteSettings.GoogelAds;
 
-                    
-
-                    
-                    
-
-
                 }
+               
             }
         }
     }

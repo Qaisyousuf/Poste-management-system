@@ -5,28 +5,7 @@
 }
 <hr />
 
-<style>
-  body
-  {
-      padding-top:0px;
-  }
-    .jumbotron
-    {
-        margin:0px;
-        padding-top:10px;
-    }
-    .jumbotron .img-responsive
-    {
-        display:inline;
-        height:200px;
-        width:200px;
-      
-    }
-    img#Login {
-        height:400px;
-        width:auto;
-    }
-</style>
+
 @{
     if (Request.IsAuthenticated)
     {
@@ -63,7 +42,7 @@
                     <hr />
                     <img src="~/Content/Img/Envelop2.png" class="img-responsive" />
                 </div>
-              
+
             }
 
         }
@@ -71,13 +50,17 @@
     }
     else
     {
-                <div   class="jumbotron">
-                    <h3>You have to login first</h3>
-                    <hr />
-                    <img src="~/Content/Img/undraw_access_account_99n5.svg" class="img-responsive"  id="Login" />
-                </div>
-       
+        <div class="jumbotron">
+            <h3>You have to login first</h3>
+            <hr />
+            <img src="~/Content/Img/undraw_access_account_99n5.svg" class="img-responsive" id="Login" />
+        </div>
+
     }
 }
+@section CustomCss{
 
+    <link href="~/Content/CustomPostCSS.css" rel="stylesheet" />
+
+}
 

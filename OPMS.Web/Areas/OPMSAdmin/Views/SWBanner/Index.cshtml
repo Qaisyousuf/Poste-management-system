@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Areas/OPMSAdmin/Views/Shared/_Layout.cshtml";
+   
 }
 <hr />
 <h4>Liste des travailleurs sociaux</h4>
@@ -13,9 +13,10 @@
     <thead class="bg-primary">
         <tr>
             <th><i class="glyphicon glyphicon-align-center"></i> Title</th>
-            <th><i class="glyphicon glyphicon-link"></i> SubTitle</th>
+            <th><i class="glyphicon glyphicon-link"></i> Sub Title</th>
             <th><i class="glyphicon glyphicon-link"></i> Button Text</th>
             <th><i class="glyphicon glyphicon-link"></i> Button Url</th>
+            <th><i class="glyphicon glyphicon-link"></i> Image Url</th>
             <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
         </tr>
     </thead>
@@ -28,7 +29,42 @@
                 "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
                 buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
+                    {
+                        extend: 'copyHtml5',
+                        text: '<i class="glyphicon glyphicon-file"> Copy</i>',
+                        titleAttr: 'Copy',
+
+
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> Excel</i>',
+                        titleAttr: 'Excel',
+
+
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> PDF</i>',
+                        titleAttr: 'PDF',
+
+
+                    },
+
+                    {
+                        extend: 'print',
+                        text: '<i class="glyphicon glyphicon-print"> Print</i>',
+                        titleAttr: 'PRINT',
+
+
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '<i class="glyphicon glyphicon-eye-open"> Visibilité des colonnes</i>',
+                        titleAttr: 'Columns Visiblty',
+
+
+                    },
                 ],
                 "ajax": {
                     "url": "/OPMSAdmin/SWBanner/SWBannerData",
@@ -40,8 +76,10 @@
                     { "data": "BSubTitle" },
                     { "data": "BButton" },
                     { "data": "BButtonUrl" },
+                    { "data": "BImage" },
                     {
                         "data": "actions",
+                        "className": "dt-body-right",
                         "render": function (data, type, row, meta) {
                             data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/SWBanner/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Modifier</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/SWBanner/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> <a class="btn btn-default btn-bg" href="/OPMSAdmin/SWBanner/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';

@@ -22,13 +22,7 @@ namespace OPMS.ViewModels
         [Display(Name = "Contenu du message")]
         public string Content { get; set; }
 
-        [Required(ErrorMessage = "L'envoi de DateTime est obligatoire")]
-        [Display(Name = "Envoi DateTimee")]
-        public DateTime SendingDateTime { get; set; }
-
-        [Required(ErrorMessage = "Rendez-vous DateTime est requiss")]
-        [Display(Name = "Heure de rendez-vous")]
-        public DateTime AppointmentDateTime { get; set; }
+        public string CreatedBy { get; set; }
 
     }
 }

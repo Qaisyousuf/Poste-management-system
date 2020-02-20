@@ -3,6 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1990 12:00:00 GMT" />
     <title>@ViewBag.Title - OPMS</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -109,7 +113,7 @@
                     <li class="dropdown">
                         <a title="Social Worker" href="#" class="dropdown-toggle" data-toggle="dropdown"> Social Worker <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Social Worker", "Index", "SWorkerPage", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Social Worker Page", "Index", "SWorkerPage", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Banner", "Index", "SWBanner", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Social Profile", "Index", "SocialProfiles", new { area = "OPMSAdmin" }, null)</li>
 
@@ -144,7 +148,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year- OPMS</p>
+            <h6 class="text-primary">&copy; @DateTime.Now.Year Designed By SeoSoft ApS</h6>
         </footer>
     </div>
 

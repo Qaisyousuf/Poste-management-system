@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<OPMS.ViewModels.PageViewModel>
 
 @{
-    ViewBag.Title = "";
+    ViewBag.Title = "Home";
 }
 <hr />
 <h4>Liste des pages</h4>
 <p>
-    @*//<button class="btn btn-primary"><a href="/Pages/Create"></a>Create</button>*@
+   
     <a class="btn btn-primary" href="/OPMSAdmin/Pages/Create">Créer une nouvelle page</a>
 </p>
 <hr />
@@ -27,10 +27,46 @@
         $(document).ready(function () {
             $("#dataTable").DataTable({
                 "info": false,
+                "responsive": true,
                 "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
                 buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
+                    {
+                        extend: 'copyHtml5',
+                        text: '<i class="glyphicon glyphicon-file"> Copy</i>',
+                        titleAttr: 'Copy',
+
+
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> Excel</i>',
+                        titleAttr: 'Excel',
+
+
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> PDF</i>',
+                        titleAttr: 'PDF',
+
+
+                    },
+
+                    {
+                        extend: 'print',
+                        text: '<i class="glyphicon glyphicon-print"> Print</i>',
+                        titleAttr: 'PRINT',
+
+
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '<i class="glyphicon glyphicon-eye-open"> Visibilité des colonnes</i>',
+                        titleAttr: 'Columns Visiblty',
+
+
+                    },
                 ],
                 "ajax": {
                     "url": "/OPMSAdmin/Pages/GetPagesData",
@@ -45,6 +81,7 @@
                     { "data": "HomeContent.Title" },
                     {
                         "data": "actions",
+                        "className": "dt-body-right",
                         "render": function (data, type, row, meta) {
                             data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Pages/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/Pages/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> | <a class="btn btn-default btn-bg" href="/OPMSAdmin/Pages/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
@@ -59,44 +96,3 @@
     </script>
 }
 
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Slug)
-            </th>
-
-
-            <th>
-                @Html.DisplayNameFor(model => model.SidebarId)
-            </th>
-            <th></th>
-        </tr>
-
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Slug)
-            </td>
-
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Sidebars.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
-        </tr>
-    }
-
-    </table>*@

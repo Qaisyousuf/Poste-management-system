@@ -8,8 +8,7 @@ namespace OPMS.Models
         public string Title { get; set; }
         public string SubTitle { get; set; }
         public string Content { get; set; }
-        public DateTime SendingDateTime { get; set; }
-        public DateTime AppointmentDateTime { get; set; }
+        public string CreatedBy { get; set; }
 
     }
 }

@@ -54,12 +54,12 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             {
                 MessageContainer messageContainer = new MessageContainer
                 {
-                    Id=viewmodel.Id,
-                    Title=viewmodel.Title,
-                    SubTitle=viewmodel.SubTitle,
-                    Content=viewmodel.Content,
-                    SendingDateTime=DateTime.Now,
-                    AppointmentDateTime=viewmodel.AppointmentDateTime
+                    Id = viewmodel.Id,
+                    Title = viewmodel.Title,
+                    SubTitle = viewmodel.SubTitle,
+                    Content = viewmodel.Content,
+                    CreatedBy = User.Identity.Name,
+                    
 
                 };
                 uow.MessageRepository.Add(messageContainer);
@@ -79,8 +79,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Title = messageFromDb.Title,
                 SubTitle = messageFromDb.SubTitle,
                 Content = messageFromDb.Content,
-                SendingDateTime =messageFromDb.SendingDateTime,
-                AppointmentDateTime = messageFromDb.AppointmentDateTime
+                CreatedBy = messageFromDb.CreatedBy,
             };
             return View(viewmodel);
         }
@@ -95,8 +94,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 messageFromDb.Title = viewmodel.Title;
                 messageFromDb.SubTitle = viewmodel.SubTitle;
                 messageFromDb.Content = viewmodel.Content;
-                messageFromDb.SendingDateTime = DateTime.Now;
-                messageFromDb.AppointmentDateTime = viewmodel.AppointmentDateTime;
+                messageFromDb.CreatedBy = User.Identity.Name;
 
                 uow.MessageRepository.Update(messageFromDb);
                 uow.Commit();
@@ -115,8 +113,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Title=messageFromdb.Title,
                 SubTitle=messageFromdb.SubTitle,
                 Content=messageFromdb.Content,
-                SendingDateTime=messageFromdb.SendingDateTime,
-                AppointmentDateTime=messageFromdb.AppointmentDateTime
+                CreatedBy=messageFromdb.CreatedBy,
             };
             return View(viewmodel);
         }
@@ -132,8 +129,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                     Title=messageFromdb.Title,
                     SubTitle=messageFromdb.SubTitle,
                     Content=messageFromdb.Content,
-                    SendingDateTime=messageFromdb.SendingDateTime,
-                    AppointmentDateTime=messageFromdb.AppointmentDateTime
+                    CreatedBy=messageFromdb.CreatedBy,
                 };
             uow.MessageRepository.Remove(messageFromdb);
             uow.Commit();
@@ -151,8 +147,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Title = messageFromdb.Title,
                 SubTitle = messageFromdb.SubTitle,
                 Content = messageFromdb.Content,
-                SendingDateTime = messageFromdb.SendingDateTime,
-                AppointmentDateTime = messageFromdb.AppointmentDateTime
+                CreatedBy=messageFromdb.CreatedBy,
             };
             return View(viewmodel);
         }

@@ -1,7 +1,7 @@
 ﻿@model OPMS.ViewModels.ContactInfoVM
 
 @{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "ContactInfo";
 }
 <hr />
 <h4>Voulez-vous vraiment supprimer le <button disabled class="btn btn-danger">@Model.Title</button> ?</h4>
@@ -18,11 +18,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Contact)
+            @Html.DisplayNameFor(model => model.Content)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Contact)
+            @Html.DisplayFor(model => model.Content)
         </dd>
 
         <dt>

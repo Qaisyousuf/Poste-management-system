@@ -30,6 +30,7 @@
         $(document).ready(function () {
             $("#dataTable").DataTable({
                 "info": false,
+                "responsive": true,
                 "lengthMenu": [[2,10, 25, 50, -1], [2,10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
                 buttons: [
@@ -112,7 +113,7 @@
                     {
                         "data": "PostExpirationDate",
                         "targets": 4,
-                        //"render": $.fn.dataTable.render.moment('YYYY/MM/DD', 'Do MMM YY', 'fr'),
+                      
                         "render": function (data, type, row, meta) {
                             return moment(row.PostExpirationDate).locale("fr").format('LLL');
 

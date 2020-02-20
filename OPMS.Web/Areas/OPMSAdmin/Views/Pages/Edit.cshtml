@@ -1,11 +1,10 @@
 ﻿@model OPMS.ViewModels.PageViewModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Home";
 }
 <hr />
-<h4>Modifier la page</h4>
-<h5>Voulez-vous vraiment modifier le <button class="btn btn-danger">@Model.Title </button> cela va changer la logique du système</h5>
+<h4>Voulez-vous vraiment modifier le <button disabled class="btn btn-primary">@Model.Title </button> ?</h4>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()

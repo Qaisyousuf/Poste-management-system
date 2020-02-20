@@ -30,27 +30,36 @@ namespace OPMS.ViewModels
         public string ImageUrl { get; set; }
 
         [AllowHtml]
+        [Display(Name = "Google API")]
         public string GoogleMapAPIUrl { get; set; }
 
+        [Display(Name ="Meta Data On")]
         public bool IsContactMetaDataOn { get; set; }
 
+        [Display(Name = "Meta Keywords")]
         public string MetaKeywordseContact { get; set; }
 
+        [Display(Name = "Meta Description")]
         public string MetaDescriptionContact { get; set; }
 
+        [Display(Name = "Search Engine")]
         public bool IsVisibleToSearchEngineContact { get; set; }
 
 
+
+        [Display(Name = "Contact Details")]
         public int ContactDetailsId { get; set; }
         [ForeignKey("ContactDetailsId")]
         public ContactDetails ContactDetails { get; set; }
 
 
+        [Display(Name = "Contact Info")]
         public int ContactInfoId { get; set; }
         [ForeignKey("ContactInfoId")]
         public ContactInfo ContactInfo { get; set; }
 
 
+        [Display(Name = "Contact Form")]
         public int ContactFormId { get; set; }
         [ForeignKey("ContactFormId")]
         public Contact ContactForms { get; set; }

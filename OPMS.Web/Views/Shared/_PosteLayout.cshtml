@@ -9,7 +9,7 @@
 
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    @Styles.Render("~/Content/css")
+   
     @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 
@@ -42,7 +42,7 @@
     <div class="container body-content text-center">
         <div class="row">
             @RenderBody()
-            @*@RenderSection("Styles", false)*@
+            @RenderSection("CustomCss", required: true)
 
         </div>
 

@@ -674,6 +674,7 @@
     <Content Include="Areas\OPMSAdmin\Views\MainPostSystem\UpdatePost.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\MainPostSystem\UpdateThankYou.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\SocialProfiles\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\SocialProfiles\Details.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

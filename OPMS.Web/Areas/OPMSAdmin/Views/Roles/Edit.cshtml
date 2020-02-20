@@ -1,10 +1,10 @@
 ﻿@model OPMS.ViewModels.RoleViewModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Roles";
 }
 <hr />
-<h5>Voulez-vous vraiment modifier le rôle de <button class="btn btn-danger">@Model.Name</button> cela changera la logique du système</h5>
+<h5>Voulez-vous vraiment modifier le rôle de <button disabled class="btn btn-danger">@Model.Name</button> ? Cela changera le réglage du système</h5>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()

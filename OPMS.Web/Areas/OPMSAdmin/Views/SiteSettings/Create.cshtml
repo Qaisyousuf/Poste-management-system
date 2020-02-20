@@ -1,14 +1,14 @@
-﻿@model OPMS.Models.SiteSettings
+﻿@model OPMS.ViewModels.SiteSettingsViewModel
 
 @{
     ViewBag.Title = "SiteSettings";
 }
 <hr />
 <h4>Création des paramètres du site</h4>
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -71,10 +71,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.GoogelAds, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.GoogleAds, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.GoogelAds, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.GoogelAds, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.GoogleAds, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GoogleAds, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -105,23 +105,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SiteLastUpdated, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SiteLastUpdated, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SiteLastUpdated, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.UpdateBy, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UpdateBy, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UpdateBy, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.HomeFooter, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -213,7 +196,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ContentFooter, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ContentFooter, new { htmlAttributes = new { @class = "form-control" } })
+               @Html.TextAreaFor(model=>model.ContentFooter)
                 @Html.ValidationMessageFor(model => model.ContentFooter, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -244,12 +227,17 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Créer" class="btn btn-primary" /> |
+                <a class="btn btn-primary" href="/OPMSAdmin/SiteSettings/Index">Retour à la liste principale</a>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("ContentFooter")
+    </script>
+}

@@ -1,10 +1,10 @@
 ﻿@model OPMS.ViewModels.SidebarViewModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Sidebar";
 }
 <hr />
-<h4>Voulez-vous vraiment modifier le <button class="btn btn-danger">@Model.Name</button> ? cela va changer la logique du système</h4>
+<h4>Voulez-vous vraiment modifier le <button disabled class="btn btn-danger">@Model.Name</button> ? </h4>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()

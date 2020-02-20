@@ -225,6 +225,10 @@
     <Compile Include="Migrations\202002181455065_BlogPostRemoved.designer.cs">
       <DependentUpon>202002181455065_BlogPostRemoved.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002191050025_PropertyRemovedInMessageContainer.cs" />
+    <Compile Include="Migrations\202002191050025_PropertyRemovedInMessageContainer.designer.cs">
+      <DependentUpon>202002191050025_PropertyRemovedInMessageContainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -298,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002181455065_BlogPostRemoved.resx">
       <DependentUpon>202002181455065_BlogPostRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002191050025_PropertyRemovedInMessageContainer.resx">
+      <DependentUpon>202002191050025_PropertyRemovedInMessageContainer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

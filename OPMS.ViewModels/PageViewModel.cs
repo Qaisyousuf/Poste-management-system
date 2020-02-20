@@ -8,41 +8,41 @@ namespace OPMS.ViewModels
     public class PageViewModel:BaseViewModel
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Le titre de la page est requis")]
-        [Display(Name = "Titre")]
+        [Required]
+        [Display(Name = "Title")]
         public string Title { get; set; }
 
-        [Display(Name = "Limace")]
+        [Display(Name = "Slug")]
         public string Slug { get; set; }
 
         [AllowHtml]
-        [Display(Name = "Contenu")]
-        [Required(ErrorMessage = "Le contenu de la page est requis")]
+        [Display(Name = "Content")]
+        [Required]
         public string Content { get; set; }
 
-        [Display(Name = "Page Métadonnées")]
+        [Display(Name = "Meta Data")]
         public bool IsPageMetaDataOn { get; set; }
 
-        [Display(Name = "Mots-clés Meta")]
+        [Display(Name = "Meta Keywords")]
         public string MetaKeywordsPage { get; set; }
 
-        [Display(Name = "Méta descriptions")]
+        [Display(Name = "Meta Description")]
         public string MetaDescriptionPage { get; set; }
 
-        [Display(Name = "IsVisibleToSearchEngine")]
+        [Display(Name = "Search Engine")]
         public bool IsVisibleToSearchEnginePage { get; set; }
 
-        [Display(Name = "Barre latérale")]
+        [Display(Name = "Sidbar Name")]
         public int SidebarId { get; set; }
-
         [ForeignKey("SidebarId")]
         public Sidebar Sidebars { get; set; }
 
-
+        [Display(Name ="Banner Name")]
         public int BannerId { get; set; }
         [ForeignKey("BannerId")]
         public HomeBanner HomeBanner { get; set; }
 
+        [Display(Name ="Home Content")]
         public int HomeContentId { get; set; }
         [ForeignKey("HomeContentId")]
         public HomeContent HomeContent { get; set; }
