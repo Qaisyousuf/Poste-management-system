@@ -1,0 +1,51 @@
+﻿@model List<OPMS.ViewModels.HelpSupportVM>
+@{
+    ViewBag.Title = "Index";
+         Layout = "~/Areas/OPMSAdmin/Views/Shared/_HelpLayout.cshtml";
+}
+@{
+
+    foreach (var item in Model.Take(1))
+    {
+<div class="jumbotron text-center">
+    <h3>@item.Title</h3>
+    <img src="~/Content/Img/undraw_online_discussion_5wgl.svg" class="img-responsive" />
+    <br />
+    
+    <p>@Html.Raw(item.Content)</p>
+    <h5>Company @item.CompanyName</h5>
+    <h5>Developers: @item.DeveloperName</h5>
+    <h5>Software Name: @item.SoftwareDownload</h5>
+    <h5>Designed By: @item.DesignedBy</h5>
+    <h5>Created Date: @item.CreatedDate</h5>
+    <h5>Support Email: @item.Email</h5>
+    <h5>Work Skype: @item.Skype</h5>
+    <div class="col-md-4">
+        <div class="thumbnail text-warning">
+
+            <img src="@item.ProiflePic" class="img-responsive img-circle img-thumbnail" />
+            <div class="caption">
+                <h4>@item.DesignedBy</h4>
+                <h6>@item.CompanyName</h6>
+                <hr />
+                
+            </div>
+            <hr />
+            <button class="btn btn-primary"> @item.Title</button>
+            <br />
+        </div>
+    </div>
+
+    <h5>For online support download the software </h5> <a class="btn btn-primary" href="https://www.teamviewer.com/en/teamviewer-automatic-download/">Download the Software</a>
+
+
+</div>
+    }
+
+}
+
+@section CustomCss{
+
+    <link href="~/Content/CustomPostCSS.css" rel="stylesheet" />
+
+}

@@ -1,4 +1,5 @@
 ﻿using OPMS.ViewModels;
+using OPMS.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace OPMS.Web.Controllers
 {
+    [ExceptionFilter]
     public class NewsInformationController : BaseController
     {
         [Route("News")]

@@ -7,7 +7,6 @@ namespace OPMS.Data.Interfaces
     {
         ContextDb Context { get; }
         IPageRepository PageRepository { get; }
-    
         IMenuRepository MenuRepository { get; }
         ISiteSettingsRepository SiteSettingsRepository { get; }
         ISidebarRepository SidebarRepository { get; }
@@ -36,6 +35,8 @@ namespace OPMS.Data.Interfaces
         INewsBannerRepository NewsBannerRepoistory { get; }
         IPostSystemRepository PostSystemRepository { get; }
         IMainPostSystemRepository MainPostSystemRepository { get; }
+        IHelpSupportRepository HelpSupportRepository { get; }
+
         void Commit();
     }
 }

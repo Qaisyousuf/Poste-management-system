@@ -7,9 +7,12 @@ using System.Web;
 using System.Web.Mvc;
 using OPMS.Models;
 using OPMS.Services;
+using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [ExceptionFilter]
     public class ContactPageController : Controller
     {
         private readonly IUnitOfWork uow;

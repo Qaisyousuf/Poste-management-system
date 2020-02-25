@@ -6,9 +6,12 @@ using System.Web;
 using System.Web.Mvc;
 using OPMS.ViewModels;
 using OPMS.Models;
+using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [ExceptionFilter]
     public class FloorsController : Controller
     {
         private readonly IUnitOfWork uow;

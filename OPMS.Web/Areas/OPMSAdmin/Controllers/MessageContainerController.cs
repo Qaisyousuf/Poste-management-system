@@ -4,9 +4,12 @@ using OPMS.ViewModels;
 using OPMS.Models;
 using System;
 using System.Collections.Generic;
+using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [ExceptionFilter]
     public class MessageContainerController : Controller
     {
         private readonly IUnitOfWork uow;

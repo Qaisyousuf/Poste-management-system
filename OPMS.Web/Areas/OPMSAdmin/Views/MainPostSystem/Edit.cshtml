@@ -35,6 +35,13 @@
         </div>
     </div>
     <div class="form-group">
+        @Html.LabelFor(model => model.PostExpirationTime, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PostExpirationTime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PostExpirationTime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
         @Html.LabelFor(model => model.HasPost, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             <div class="checkbox">
@@ -53,7 +60,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-          @Html.TextBoxFor(model=>model.UserId,new {@class="form-control" })
+            @Html.HiddenFor(model => model.UserId, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
         </div>
     </div>

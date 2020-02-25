@@ -89,8 +89,8 @@
                             <li>@Html.ActionLink("Mesage BOX", "Index", "MessageContainer", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Delivered SMS", "SMSRecords", "Messages", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Post Message Box", "Index", "PostSystem", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Attribuer un Poste", "Index", "MainPostSystem", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Livré Poste", "PostData", "MainPostSystem", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Assign a  post", "Index", "MainPostSystem", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Delivered Post", "PostData", "MainPostSystem", new { area = "OPMSAdmin" }, null)</li>
 
                         </ul>
                     </li>
@@ -116,18 +116,20 @@
                             <li>@Html.ActionLink("Social Worker Page", "Index", "SWorkerPage", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Banner", "Index", "SWBanner", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Social Profile", "Index", "SocialProfiles", new { area = "OPMSAdmin" }, null)</li>
-
+                            Helpsupport
                         </ul>
                     </li>
+                   
+                    <li>@Html.ActionLink("Help", "Index", "Help", new { area = "OPMSAdmin" }, null)</li>
+
                     <li class="dropdown">
                         <a title="About" href="#" class="dropdown-toggle" data-toggle="dropdown">Messages<b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Help & Support", "Index", "Helpsupport", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Social Workesr", "Index", "SocialWorker", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Blog Post", "Index", "BlogPosts", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Site Setting", "Index", "Sitesettings", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Users", "Index", "AdminUser", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Roles", "Index", "Roles", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Tag", "Index", "Tags", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Menus", "Index", "Menus", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Building", "Index", "BuildingAddres", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Rooms", "Index", "Rooms", new { area = "OPMSAdmin" }, null)</li>
@@ -146,6 +148,7 @@
 
     <div class="container body-content">
         @RenderBody()
+       
         <hr />
         <footer>
             <h6 class="text-primary">&copy; @DateTime.Now.Year Designed By SeoSoft ApS</h6>

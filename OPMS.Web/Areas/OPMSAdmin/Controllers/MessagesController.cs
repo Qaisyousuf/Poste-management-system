@@ -10,9 +10,15 @@ using System.Configuration;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
+using HtmlAgilityPack;
+using System.IO;
+using System.Text.RegularExpressions;
+using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [ExceptionFilter]
     public class MessagesController : Controller
     {
         private readonly IUnitOfWork uow;
@@ -82,38 +88,44 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
+                
+               
                 var mess = uow.MessageRepository.GetById(viewmodel.MessageContainerId);
-
+                var time = Convert.ToDateTime(viewmodel.AppointmentOrTime.ToShortTimeString());
+                var date = Convert.ToDateTime(viewmodel.AppointmentOrTaskDateTime.ToLongDateString());
+                var dtCOMPLTDTTM = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
 
                 var addres = uow.BuildingRepository.GetById(viewmodel.BuildingId);
-                var addresMsg =("Work Place"+ addres.BuildingName).ToUpper();
+                var addresMsg =("Work Place: " + addres.BuildingName).ToUpper();
 
                 var socialWorker = uow.SocialWorkerRepository.GetById(viewmodel.SocialId);
 
                 var socialName = ("Sended By: " + socialWorker.FullName).ToUpper();
 
-                var messbody ="Work Time:" +viewmodel.AppointmentOrTaskDateTime+ mess.Title + mess.Content + "\n" + addresMsg+"\n"+socialName;
+                var messbody ="Work Time:" + dtCOMPLTDTTM +"\n"+ mess.Title + mess.Content + "\n" + addresMsg+"\n"+socialName;
+
 
                 var userName = ("Bonjour Mr : " + viewmodel.UserName).ToUpper();
 
-                //var accountsid = ConfigurationManager.AppSettings["TwilioAccountSid"];
-                //var authKey = ConfigurationManager.AppSettings["TwilioAuthToken"];
-                //TwilioClient.Init(accountsid, authKey);
+                var accountsid = ConfigurationManager.AppSettings["TwilioAccountSid"];
+                var authKey = ConfigurationManager.AppSettings["TwilioAuthToken"];
+                TwilioClient.Init(accountsid, authKey);
 
-                //var to = new PhoneNumber(viewmodel.PhoneNumber);
-                //var from = new PhoneNumber(ConfigurationManager.AppSettings["TwilioPhoneNumber"]);
+                var to = new PhoneNumber(viewmodel.PhoneNumber);
+                var from = new PhoneNumber(ConfigurationManager.AppSettings["TwilioPhoneNumber"]);
 
-                
-                //var message = MessageResource.Create(to: to, from: from, body: userName +"\n"+ messbody);
+
+                var message = MessageResource.Create(to: to, from: from, body: userName + "\n" + messbody);
 
                 if (ModelState.IsValid)
                 {
+                   
                     Messages msgViewModel = new Messages
                     {
                         Id = viewmodel.Id,
                         Title = viewmodel.Title,
                         SentDateTime = DateTime.Now,
-                        AppointmentOrTaskDateTime = viewmodel.AppointmentOrTaskDateTime,
+                        AppointmentOrTaskDateTime =dtCOMPLTDTTM,
                         SendedBy = User.Identity.Name,
                         UserId = viewmodel.Id,
                         Users = viewmodel.Users,
@@ -146,7 +158,36 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         {
             var messFromdb = uow.MessagesSendingRepository.GetAll("Users", "MessageContainer", "Building", "SocialWorker");
 
-            return Json(new { data = messFromdb }, JsonRequestBehavior.AllowGet);
+
+            List<UserSMSViewModel> viewmodel = new List<UserSMSViewModel>();
+
+            foreach (var item in messFromdb)
+            {
+                var datatime = item.AppointmentOrTaskDateTime;
+                var time = Convert.ToDateTime(datatime.ToShortTimeString());
+                var date = Convert.ToDateTime(datatime.ToShortDateString());
+                viewmodel.Add(new UserSMSViewModel
+                {
+                    Id=item.Id,
+                    Title=item.Title,
+                    UserId=item.UserId,
+                    Users=item.Users,
+                    SentDateTime=item.SentDateTime,
+                    AppointmentOrTaskDateTime=date,
+                    AppointmentOrTime=time,
+                    SendedBy=item.SendedBy,
+                    MessageContainer=item.MessageContainer,
+                    MessageContainerId=item.MessageContainerId,
+                    Building=item.Building,
+                    BuildingId=item.BuildingId,
+                    SocialId=item.SocialId,
+                    SocialWorker=item.SocialWorker,
+
+                });
+            }
+ 
+
+            return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
         public ActionResult SMSRecords()

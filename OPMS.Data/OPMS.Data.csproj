@@ -81,6 +81,7 @@
     <Compile Include="Concrete\ContactPageRepository.cs" />
     <Compile Include="Concrete\ContactRepository.cs" />
     <Compile Include="Concrete\FloorsRepository.cs" />
+    <Compile Include="Concrete\HelpSupportRepository.cs" />
     <Compile Include="Concrete\HomeBannerRepository.cs" />
     <Compile Include="Concrete\HomeContentRepository.cs" />
     <Compile Include="Concrete\HomeRRepository.cs" />
@@ -104,14 +105,12 @@
     <Compile Include="Concrete\UnitOfWork.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Context\ContextDb.cs" />
-    <Compile Include="FluentAPI\BlogPostMapping.cs" />
     <Compile Include="FluentAPI\ContactMapping.cs" />
     <Compile Include="FluentAPI\MenuMapping.cs" />
     <Compile Include="FluentAPI\PageMapping.cs" />
     <Compile Include="FluentAPI\RoleMapping.cs" />
     <Compile Include="FluentAPI\SidebarMapping.cs" />
     <Compile Include="FluentAPI\SiteSettingsMapping.cs" />
-    <Compile Include="FluentAPI\TagMapping.cs" />
     <Compile Include="FluentAPI\UserMapping.cs" />
     <Compile Include="Interfaces\IAboutRepository.cs" />
     <Compile Include="Interfaces\IAboutSectionRepository.cs" />
@@ -122,6 +121,7 @@
     <Compile Include="Interfaces\IContactPageRepository.cs" />
     <Compile Include="Interfaces\IContactRepository.cs" />
     <Compile Include="Interfaces\IFloorsRepository.cs" />
+    <Compile Include="Interfaces\IHelpSupportRepository.cs" />
     <Compile Include="Interfaces\IHomeBannerRepository.cs" />
     <Compile Include="Interfaces\IHomeContentRepository.cs" />
     <Compile Include="Interfaces\IHomeRRepository.cs" />
@@ -221,13 +221,9 @@
     <Compile Include="Migrations\202002071524495_MainPostSystemAdded.designer.cs">
       <DependentUpon>202002071524495_MainPostSystemAdded.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002181455065_BlogPostRemoved.cs" />
-    <Compile Include="Migrations\202002181455065_BlogPostRemoved.designer.cs">
-      <DependentUpon>202002181455065_BlogPostRemoved.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002191050025_PropertyRemovedInMessageContainer.cs" />
-    <Compile Include="Migrations\202002191050025_PropertyRemovedInMessageContainer.designer.cs">
-      <DependentUpon>202002191050025_PropertyRemovedInMessageContainer.cs</DependentUpon>
+    <Compile Include="Migrations\202002240938230_TagModelRemoved.cs" />
+    <Compile Include="Migrations\202002240938230_TagModelRemoved.designer.cs">
+      <DependentUpon>202002240938230_TagModelRemoved.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -300,11 +296,8 @@
     <EmbeddedResource Include="Migrations\202002071524495_MainPostSystemAdded.resx">
       <DependentUpon>202002071524495_MainPostSystemAdded.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002181455065_BlogPostRemoved.resx">
-      <DependentUpon>202002181455065_BlogPostRemoved.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002191050025_PropertyRemovedInMessageContainer.resx">
-      <DependentUpon>202002191050025_PropertyRemovedInMessageContainer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002240938230_TagModelRemoved.resx">
+      <DependentUpon>202002240938230_TagModelRemoved.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

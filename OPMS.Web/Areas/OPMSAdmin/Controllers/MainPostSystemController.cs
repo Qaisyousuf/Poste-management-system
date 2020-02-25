@@ -6,9 +6,12 @@ using System.Web;
 using System.Web.Mvc;
 using OPMS.ViewModels;
 using OPMS.Models;
+using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [ExceptionFilter]
     public class MainPostSystemController : Controller
     {
         private readonly IUnitOfWork uow;
@@ -68,7 +71,11 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             var user = User.Identity.IsAuthenticated.ToString();
             var role = User.IsInRole("Admin").ToString();
             var username = User.Identity.Name;
-            if(ModelState.IsValid && User.IsInRole("Admin") && User.Identity.IsAuthenticated)
+
+            var EXTime = Convert.ToDateTime(viewmodel.PostExpirationTime);
+            var EXDate = Convert.ToDateTime(viewmodel.PostExpirationDate);
+            var dtCOMPLTDTTM = new DateTime(EXDate.Year, EXDate.Month, EXDate.Day, EXTime.Hour, EXTime.Minute, EXTime.Second);
+            if (ModelState.IsValid && User.IsInRole("Admin") && User.Identity.IsAuthenticated)
             {
                
                 var userName = uow.Context.Users.Where(x => x.UserName == viewmodel.UserName).FirstOrDefault();
@@ -85,7 +92,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                         Id = viewmodel.Id,
                         Title = viewmodel.Title,
                         SentDateTime = DateTime.Now,
-                        PostExpirationDate = viewmodel.PostExpirationDate,
+                        PostExpirationDate =dtCOMPLTDTTM,
                         SendedBy = User.Identity.Name,
                         HasPost = viewmodel.HasPost,
                         UserId=viewmodel.UserId,
@@ -118,9 +125,37 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         [HttpGet]
         public JsonResult GetPostRecrods()
         {
+
             var userFromdb = uow.MainPostSystemRepository.GetAll("Users", "SocialWorker", "PostSystems");
 
-            return Json(new { data = userFromdb }, JsonRequestBehavior.AllowGet);
+            List<MainPostSystemVM> viewmodel = new List<MainPostSystemVM>();
+
+            
+            
+            foreach (var item in userFromdb)
+            {
+                var datatime = item.PostExpirationDate;
+                var time =Convert.ToDateTime(datatime.ToShortTimeString());
+                var date = Convert.ToDateTime(datatime.ToShortDateString());
+                viewmodel.Add(new MainPostSystemVM
+                {
+                    Id = item.Id,
+                    Title = item.Title,
+                    SentDateTime = item.SentDateTime,
+                    PostExpirationDate = date,
+                    PostExpirationTime = time,
+                    SendedBy=item.SendedBy,
+                    HasPost=item.HasPost,
+                    UserId=item.UserId,
+                    Users=item.Users,
+                    PostSystemId=item.PostSystemId,
+                    PostSystems=item.PostSystems,
+                    SocialId=item.SocialId,
+                    SocialWorker=item.SocialWorker,
+                });
+            }
+
+            return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -189,6 +224,8 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         [HttpGet]
         public ActionResult UpdatePost(int? id)
         {
+
+           
             ViewBag.postSystem = uow.PostSystemRepository.GetAll();
             ViewBag.SocialWorker = uow.SocialWorkerRepository.GetAll();
             ViewBag.UserId = uow.UserRepository.GetAll();
@@ -198,7 +235,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             {
                 Id = userFromdDb.Id,
                 Title = userFromdDb.Title,
-                SentDateTime = userFromdDb.SentDateTime,
+                SentDateTime =DateTime.Now,
                 PostExpirationDate = userFromdDb.PostExpirationDate,
                 SendedBy = userFromdDb.SendedBy,
                 HasPost = userFromdDb.HasPost,
@@ -228,13 +265,17 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 
                 if (username != null && role != null && user != null)
                 {
+
+                    var EXTime = Convert.ToDateTime(viewmodel.PostExpirationTime);
+                    var EXDate = Convert.ToDateTime(viewmodel.PostExpirationDate);
+                    var dtCOMPLTDTTM = new DateTime(EXDate.Year, EXDate.Month, EXDate.Day, EXTime.Hour, EXTime.Minute, EXTime.Second);
                     var userFromdb = uow.MainPostSystemRepository.GetById(viewmodel.Id);
                     var usersFromdb = uow.UserRepository.GetById(viewmodel.Id);
 
                     userFromdb.Id = viewmodel.Id;
                     userFromdb.Title = viewmodel.Title;
-                    userFromdb.SentDateTime = viewmodel.SentDateTime;
-                    userFromdb.PostExpirationDate = viewmodel.PostExpirationDate;
+                    userFromdb.SentDateTime = DateTime.Now;
+                    userFromdb.PostExpirationDate = dtCOMPLTDTTM;
                     userFromdb.SendedBy = User.Identity.Name;
                     userFromdb.HasPost = viewmodel.HasPost;
                     userFromdb.UserId = viewmodel.UserId;

@@ -77,6 +77,7 @@
     <Compile Include="ContactViewModel.cs" />
     <Compile Include="EditUserViewModel.cs" />
     <Compile Include="FloorsAddressViewModel.cs" />
+    <Compile Include="HelpSupportVM.cs" />
     <Compile Include="HomeBannerVM.cs" />
     <Compile Include="HomeContentVM.cs" />
     <Compile Include="HomeRRViewModel.cs" />

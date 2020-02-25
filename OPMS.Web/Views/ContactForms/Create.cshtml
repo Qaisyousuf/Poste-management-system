@@ -8,10 +8,10 @@
 <hr />
 <h4>Get in touch with us</h4>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
 
         <hr />
@@ -72,3 +72,8 @@
 }
 
 
+@section ContactCustomCSS{
+
+    <link href="~/Content/ContactCustomCSS.css" rel="stylesheet" />
+
+}

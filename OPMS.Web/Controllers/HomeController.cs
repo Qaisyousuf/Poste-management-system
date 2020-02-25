@@ -6,10 +6,11 @@ using System.Linq;
 using System.Web;
 using OPMS.Models;
 using System.Web.Mvc;
+using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Controllers
 {
-   
+    [ExceptionFilter]
     public class HomeController :BaseController
     {
         //[Route("{slug}")]

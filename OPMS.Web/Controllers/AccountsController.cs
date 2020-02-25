@@ -1,5 +1,6 @@
 ﻿using OPMS.Services.Security;
 using OPMS.ViewModels;
+using OPMS.Web.Infrastructure;
 using System;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ using System.Web.Security;
 
 namespace OPMS.Web.Controllers
 {
+    [ExceptionFilter]
     public class AccountsController : BaseController
     {
         public ActionResult Index()
@@ -66,8 +68,9 @@ namespace OPMS.Web.Controllers
             myCookie.Expires = DateTime.Now.AddMinutes(20);
 
             Response.Cookies.Add(myCookie);
-            return RedirectToAction("Index", "AssignedPost");
+           
 
+            return RedirectToAction("Index", "AssignedPost");
         }
 
         [HttpGet]

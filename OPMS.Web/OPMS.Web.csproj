@@ -56,6 +56,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.21.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.21\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
@@ -152,20 +155,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AboutCustomCSS.css" />
+    <Content Include="Content\AccountsCustomCSS.css" />
     <Content Include="Content\boot.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ContactCustomCSS.css" />
     <Content Include="Content\CustomPostCSS.css" />
+    <Content Include="Content\HomeCustomCSS.css" />
     <Content Include="Content\Img\authentication.svg" />
-    <Content Include="Content\Img\Envelop.png" />
-    <Content Include="Content\Img\Envelop2.png" />
     <Content Include="Content\Img\LogoCoallia_Couleur %282%29.png" />
-    <Content Include="Content\Img\rejected.jpg" />
-    <Content Include="Content\Img\undraw_access_account_99n5.svg" />
-    <Content Include="Content\Img\undraw_my_password_d6kg.svg" />
+    <Content Include="Content\Img\No-Post.svg" />
+    <Content Include="Content\Img\undraw_Hello_qnas.svg" />
+    <Content Include="Content\Img\undraw_mail_2_tqip.svg" />
+    <Content Include="Content\Img\undraw_message_sent_1030.svg" />
+    <Content Include="Content\Img\undraw_newsletter_vovu.svg" />
+    <Content Include="Content\Img\undraw_online_discussion_5wgl.svg" />
+    <Content Include="Content\Img\undraw_page_not_found_su7k.svg" />
+    <Content Include="Content\Img\undraw_project_completed_w0oq.svg" />
+    <Content Include="Content\Img\undraw_referral_4ki4.svg" />
+    <Content Include="Content\Img\undraw_server_down_s4lk.svg" />
+    <Content Include="Content\NewsCustomCSS.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\SocialWorkerCustomCSS.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Areas\OPMSAdmin\Views\Shared\_LoginPartial.cshtml" />
@@ -675,6 +689,14 @@
     <Content Include="Areas\OPMSAdmin\Views\MainPostSystem\UpdateThankYou.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\SocialProfiles\Delete.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\SocialProfiles\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\HelpSupport\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\HelpSupport\Create.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\HelpSupport\Edit.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\HelpSupport\Details.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Help\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Shared\_HelpLayout.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Shared\_ErrorLayout.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -774,6 +796,8 @@
     <Compile Include="Areas\OPMSAdmin\Controllers\ContactPageController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\ContactsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\FloorsController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\HelpController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\HelpSupportController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\HomebannerController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\HomeContentsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\HomeRRController.cs" />
@@ -799,6 +823,7 @@
     <Compile Include="Controllers\AssignedPostController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContactFormsController.cs" />
+    <Compile Include="Controllers\CustomErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsInformationController.cs" />
     <Compile Include="Controllers\SWorkersController.cs" />
@@ -806,6 +831,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\ExceptionFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -850,6 +876,10 @@
     <Content Include="Views\NewsInformation\GetNewsBanner.cshtml" />
     <Content Include="Views\AssignedPost\Index.cshtml" />
     <Content Include="Views\Shared\_PosteLayout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_ErrorLayout.cshtml" />
+    <Content Include="Views\CustomErrors\PageNotFound.cshtml" />
+    <Content Include="Views\CustomErrors\Unauthorized.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

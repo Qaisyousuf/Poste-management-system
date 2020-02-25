@@ -19,6 +19,7 @@ namespace OPMS.ViewModels
         public DateTime SentDateTime { get; set; }
 
         public DateTime AppointmentOrTaskDateTime { get; set; }
+       
 
         public string SendedBy { get; set; }
 

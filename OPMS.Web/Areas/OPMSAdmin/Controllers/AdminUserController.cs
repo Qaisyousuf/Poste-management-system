@@ -8,10 +8,12 @@ using OPMS.ViewModels;
 using OPMS.Services;
 using OPMS.Models;
 using OPMS.Data.Context;
+using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
-    
+    [Authorize(Roles = "Admin")]
+    [ExceptionFilter]
     public class AdminUserController : Controller
     {
         private readonly IUnitOfWork uow;

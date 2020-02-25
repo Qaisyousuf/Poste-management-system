@@ -2,13 +2,54 @@
 @{
     ViewBag.Title = "UpdateThankYou";
 }
-<br />
+<style>
+
+    .jumbotron {
+        padding-top: 20px;
+        margin-top: 20px;
+        background-color: #33b5e5;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-content: flex-start;
+        -ms-flex-line-pack: center;
+        align-content: flex-start;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-shadow: 0px 1px 10px -1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 1px 10px -1px rgba(0,0,0,0.75);
+        box-shadow: 0px 1px 10px -1px rgba(0,0,0,0.75);
+    }
+
+    h5, h1, h3, h4, h2, p {
+        color: white;
+    }
+
+    .jumbotron .img-responsive {
+        height: auto;
+        width: 300px;
+    }
+</style>
 <hr />
 @if (TempData["UpdateMessage"] != null)
 {
-<div class="text-center">
-    <h5 class="">You have successfully updated the poste for resident: <button class="btn btn-primary">@TempData["UpdateMessage"]</button> </h5>
-    <br />
-    <a class="btn btn-primary" href="/OPMSAdmin/MainPostSystem/Index">Essayez un autre Poste</a>
-</div>
+
+
+    <div class="jumbotron">
+        <h4> You have successfully updated a post for: @TempData["UpdateMessage"]</h4>
+        <hr />
+        <img src="~/Content/Img/undraw_project_completed_w0oq.svg" class="img-responsive" />
+        <hr />
+        <a class="btn btn-primary" href="/OPMSAdmin/MainPostSystem/Index">Essayez un autre Poste</a>
+    </div>
+
 }

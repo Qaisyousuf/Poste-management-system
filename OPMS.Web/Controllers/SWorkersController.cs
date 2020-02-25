@@ -5,8 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using OPMS.ViewModels;
 using OPMS.Models;
+using OPMS.Web.Infrastructure;
+
 namespace OPMS.Web.Controllers
 {
+    [ExceptionFilter]
     public class SWorkersController : BaseController
     {
         

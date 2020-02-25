@@ -69,6 +69,8 @@ namespace OPMS.Data.Concrete
 
         public IMainPostSystemRepository MainPostSystemRepository => new MainPostSystemRepository(Context);
 
+        public IHelpSupportRepository HelpSupportRepository => new HelpSupportRepository(Context);
+
         public void Commit()
         {
             Context.SaveChanges();

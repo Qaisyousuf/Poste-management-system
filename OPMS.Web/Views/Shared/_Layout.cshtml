@@ -54,17 +54,18 @@
         </div>
     </div>
 
-    <div class="container body-content">
+    <div class="container-fluid body-content">
         <div class="row">
-            @Html.Action("HomeBanner","Home")
-           
-                @RenderBody()
+            @Html.Action("HomeBanner", "Home")
+
+            @RenderBody()
             <hr />
-                @Html.Action("SidbarPartial", "Home")
+            @Html.Action("SidbarPartial", "Home")
             <hr />
-                @Html.Action("HomeContentData","Home")
+            @Html.Action("HomeContentData", "Home")
             <hr />
-                @Html.Action("HomeRRData","Home")
+            @Html.Action("HomeRRData", "Home")
+            @RenderSection("HomeCustomCSS", required: true)
         </div>
         <hr />
         <footer>

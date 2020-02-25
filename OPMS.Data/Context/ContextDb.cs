@@ -34,13 +34,13 @@ namespace OPMS.Data.Context
         public DbSet<NewsBanner> NewsBanners { get; set; }
         public DbSet<PostSystem> PostSystems { get; set; }
         public DbSet<MainPostSystem> MainPostSystems { get; set; }
-        //Message Models
         public DbSet<MessageContainer> MessageContainers { get; set; }
         public DbSet<SocialWorker> SocialWorkers { get; set; }
         public DbSet<BuildingAddress> BuildingAddresses { get; set; }
         public DbSet<FloorsAddress> FloorsAddresses { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Messages> Messages { get; set; }
+        public DbSet<HelpSupport> HelpSupports { get; set; }
 
 
         
@@ -51,8 +51,6 @@ namespace OPMS.Data.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new PageMapping());
-            modelBuilder.Configurations.Add(new TagMapping());
-            modelBuilder.Configurations.Add(new BlogPostMapping());
             modelBuilder.Configurations.Add(new ContactMapping());
             modelBuilder.Configurations.Add(new RoleMapping());
             modelBuilder.Configurations.Add(new UserMapping());

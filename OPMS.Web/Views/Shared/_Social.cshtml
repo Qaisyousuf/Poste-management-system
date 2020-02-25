@@ -57,7 +57,7 @@
     <div class="container body-content text-center">
         <div class="row">
             @RenderBody()
-          
+            @RenderSection("SocialWorkerCustomCSS", required: true)
             @Html.Action("SocialProfile", "SWorkers")
         </div>
         <hr />

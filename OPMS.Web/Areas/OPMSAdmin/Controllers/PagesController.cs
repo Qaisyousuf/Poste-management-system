@@ -3,9 +3,13 @@ using OPMS.Models;
 using OPMS.Services;
 using OPMS.ViewModels;
 using System.Web.Mvc;
+using OPMS.Web.Infrastructure;
+
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [ExceptionFilter]
     public class PagesController : Controller
     {
         private readonly IUnitOfWork uow;
@@ -16,6 +20,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         }
         public void GetSidebar()
         {
+            
             ViewBag.SidebarDropDownList = uow.SidebarRepository.GetAll();
             ViewBag.HomeBanner = uow.HomeBannerRepository.GetAll();
             ViewBag.HomeContent = uow.HomeContentRepository.GetAll();
@@ -23,6 +28,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         }
         public JsonResult GetPagesData()
         {
+           
             //var pageFromdb = uow.Context.Pages.Include("Sidebars").ToList();
             var pageFromdb = uow.PageRepository.GetAll("Sidebars", "HomeBanner","HomeContent");
             return Json(new { data = pageFromdb }, JsonRequestBehavior.AllowGet);
@@ -248,6 +254,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             };
             return View(viewmodel);
         }
+       
     }
 
     

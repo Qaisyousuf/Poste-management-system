@@ -11,12 +11,13 @@
 <table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
     <thead class="bg-primary">
         <tr>
-            <th><i class="glyphicon glyphicon-align-center"></i> Nom</th>
-            <th><i class="glyphicon glyphicon-link"></i> Poste</th>
-            <th><i class="glyphicon glyphicon-link"></i> Envoyée par</th>
-            <th><i class="glyphicon glyphicon-link"></i> temps envoyé</th>
-            <th><i class="glyphicon glyphicon-link"></i> d'expiration du poste</th>
-            <th><i class="glyphicon glyphicon-link"></i> Statut de poste</th>
+            <th><i class="glyphicon glyphicon-align-center"></i> Name</th>
+            <th><i class="glyphicon glyphicon-link"></i> Post</th>
+            <th><i class="glyphicon glyphicon-link"></i> Sent by</th>
+            <th><i class="glyphicon glyphicon-link"></i> Sent Time</th>
+            <th><i class="glyphicon glyphicon-link"></i> Expiration Date</th>
+            <th><i class="glyphicon glyphicon-link"></i> Expiration Time</th>
+
 
             <th><i class="glyphicon glyphicon-"></i> Actions</th>
         </tr>
@@ -31,7 +32,7 @@
             $("#dataTable").DataTable({
                 "info": false,
                 "responsive": true,
-                "lengthMenu": [[2,10, 25, 50, -1], [2,10, 25, 50, "All"]],
+                "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
                 buttons: [
 
@@ -107,7 +108,7 @@
                         "data": "SentDateTime",
                         "targets": 3,
                         "render": function (data, type, row, meta) {
-                            return moment(row.SentDateTime).locale("fr").format('LLL');
+                            return moment(row.SentDateTime).locale("fr").format('LLLL');
                         }
                     },
                     {
@@ -115,19 +116,20 @@
                         "targets": 4,
                       
                         "render": function (data, type, row, meta) {
-                            return moment(row.PostExpirationDate).locale("fr").format('LLL');
+                            return moment(row.PostExpirationDate).locale("fr").format('DD-MMMM-YYYY');
 
                         }
 
 
                     },
                     {
-                        "data": "HasPost",
+                        "data": "PostExpirationTime",
                         "targets": 5,
 
                         "render": function (data, type, row, meta) {
-                            return '<input type="checkbox" checked = "' + data + '" >';
-                        },
+                            return moment(row.PostExpirationTime).locale("fr").format('HH:mm');
+
+                        }
 
 
                     },

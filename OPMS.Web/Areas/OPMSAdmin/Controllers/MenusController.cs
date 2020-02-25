@@ -7,9 +7,12 @@ using System.Web;
 using System.Web.Mvc;
 using OPMS.Models;
 using System.Data.Entity;
+using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [ExceptionFilter]
     public class MenusController : Controller
     {
         private readonly IUnitOfWork uow;

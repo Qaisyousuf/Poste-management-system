@@ -1,0 +1,15 @@
+﻿body {
+    background-color: #e0f2f1;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.homeBanner .thumbnail  {
+    background-color: #e0f2f1;
+    
+}
+.homeBanner .thumbnail img {
+    max-height:800px;
+    width:auto;
+}

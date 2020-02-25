@@ -40,20 +40,25 @@
 {
     foreach (var item in Model.ContactInfoViewModel)
     {
-<div class="jumbotron">
-    <h3>Title: @item.Title</h3>
-    <p> @Html.Raw(item.Content)</p>
-    <h5>Place Name: @item.PlaceName</h5>
-    <h5>Place Adress: @item.PlaceAddress</h5>
-    <h5>Mobile Number: @item.PlaceContactNumber</h5>
-    <h5>WebSite:@item.WebSite</h5>
-    <h5>Postal Code: @item.PostalCode</h5>
+        <div class="jumbotron">
+            <h3>Title: @item.Title</h3>
+            <p> @Html.Raw(item.Content)</p>
+            <h5>Place Name: @item.PlaceName</h5>
+            <h5>Place Adress: @item.PlaceAddress</h5>
+            <h5>Mobile Number: @item.PlaceContactNumber</h5>
+            <h5>WebSite:@item.WebSite</h5>
+            <h5>Postal Code: @item.PostalCode</h5>
 
-    <p>
-        <a class="btn btn-primary btn-lg" href="@item.AboutUrl" role="button">
-            About
-        </a>
-    </p>
-</div>
+            <p>
+                <a class="btn btn-primary btn-lg" href="@item.AboutUrl" role="button">
+                    About
+                </a>
+            </p>
+        </div>
     }
+}
+@section ContactCustomCSS{
+
+    <link href="~/Content/ContactCustomCSS.css" rel="stylesheet" />
+
 }

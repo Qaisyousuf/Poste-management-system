@@ -8,13 +8,15 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="javascript:document.getElementById('logoutForm').submit();"> Bonjour  @User.Identity.Name | <span class="btn btn-danger"> LogOut</span> </a></li>
             </ul>
+           
         }
     }
 }
 else
 {
             <ul class="nav navbar-nav navbar-right">
-           @*<li> @Html.ActionLink("Register", "Create", "AdminUsers", new { Area = "" }, null)</li>*@
-                <li>@Html.ActionLink("Login", "Login", "Accounts", new { Area = "" }, null)</li>
+
+                <li><a href="/Authorization"><span class="btn btn-primary"> LogIn </span></a></li>
             </ul>
+          
 }

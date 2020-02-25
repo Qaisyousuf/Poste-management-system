@@ -7,13 +7,13 @@ namespace OPMS.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class PropertyRemovedInMessageContainer : IMigrationMetadata
+    public sealed partial class TagModelRemoved : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PropertyRemovedInMessageContainer));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TagModelRemoved));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002191050025_PropertyRemovedInMessageContainer"; }
+            get { return "202002240938230_TagModelRemoved"; }
         }
         
         string IMigrationMetadata.Source

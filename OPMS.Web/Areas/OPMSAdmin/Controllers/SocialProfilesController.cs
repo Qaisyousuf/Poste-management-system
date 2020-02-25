@@ -6,9 +6,12 @@ using System.Web.Mvc;
 using OPMS.ViewModels;
 using OPMS.Models;
 using OPMS.Data.Interfaces;
+using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [ExceptionFilter]
     public class SocialProfilesController : Controller
     {
         private readonly IUnitOfWork uow;

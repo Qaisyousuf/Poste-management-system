@@ -11,12 +11,13 @@
 <table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
     <thead class="bg-primary">
         <tr>
-            <th><i class="glyphicon glyphicon-align-center"></i> Nom résident</th>
+            <th><i class="glyphicon glyphicon-align-center"></i> Name</th>
             <th><i class="glyphicon glyphicon-link"></i> Message</th>
-            <th><i class="glyphicon glyphicon-link"></i> Envoyée par</th>
-            <th><i class="glyphicon glyphicon-link"></i> Heure de la tâche</th>
-            <th><i class="glyphicon glyphicon-link"></i> Lieu de tâche</th>
-            <th><i class="glyphicon glyphicon-link"></i> Date d'envoi du SMS</th>
+            <th><i class="glyphicon glyphicon-link"></i> Sent By</th>
+            <th><i class="glyphicon glyphicon-link"></i> Task Time</th>
+            <th><i class="glyphicon glyphicon-link"></i> Task Date</th>
+            <th><i class="glyphicon glyphicon-link"></i> Task location</th>
+            <th><i class="glyphicon glyphicon-link"></i> Sent Date</th>
             <th><i class="glyphicon glyphicon-"></i> Actions</th>
         </tr>
     </thead>
@@ -100,17 +101,26 @@
                             return data;
                         }
                     },
+                   
                     {
                         "data": "AppointmentOrTaskDateTime",
                         "targets": 3,
 
                         "render": function (data, type, row, meta) {
-                            return moment(row.AppointmentOrTaskDateTime).locale("fr").format('LLL');
+                            return moment(row.AppointmentOrTime).locale("fr").format('HH:mm');
+                        }
+                    },
+                    {
+                        "data": "AppointmentOrTime",
+                        "targets": 4,
+
+                        "render": function (data, type, row, meta) {
+                            return moment(row.AppointmentOrTaskDateTime).locale("fr").format('DD-MMMM-YYYY');
                         }
                     },
                     {
                         "data": "Building.BuildingName",
-                        "targets": 4,
+                        "targets": 5,
 
                         "render": function (data, type, row, meta) {
                             return data;
@@ -118,7 +128,7 @@
                     },
                     {
                         "data": "SentDateTime",
-                        "targets": 5,
+                        "targets": 6,
 
                         "render": function (data, type, row, meta) {
                             return moment(row.SentDateTime).locale("fr").format('LLL');
@@ -126,7 +136,7 @@
                     },
                     {
                         "data": "actions",
-                        "targets": 6,
+                        "targets": 7,
                         "render": function (data, type, row, meta) {
                             data = '<a class="btn btn-danger btn-bg" href="/OPMSAdmin/Messages/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer </a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';

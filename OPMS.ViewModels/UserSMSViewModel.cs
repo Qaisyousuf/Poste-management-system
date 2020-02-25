@@ -30,9 +30,10 @@ namespace OPMS.ViewModels
 
         [Display(Name = "Date de rendez-vous")]
        // [DisplayFormat(DataFormatString ="{0:d}")]
-        [DataType(DataType.Time)]
+        [DataType(DataType.Date)]
         public DateTime AppointmentOrTaskDateTime { get; set; }
-
+        [DataType(DataType.Time)]
+        public DateTime AppointmentOrTime { get; set; }
         public string SendedBy { get; set; }
 
 

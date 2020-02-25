@@ -1,10 +1,13 @@
 ﻿using OPMS.Data.Interfaces;
 using OPMS.Models;
 using OPMS.ViewModels;
+using OPMS.Web.Infrastructure;
 using System.Web.Mvc;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [ExceptionFilter]
     public class HomeRRController : Controller
     {
         private readonly IUnitOfWork uow;

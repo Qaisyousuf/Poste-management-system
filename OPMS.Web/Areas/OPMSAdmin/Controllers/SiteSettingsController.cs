@@ -1,6 +1,7 @@
 ﻿using OPMS.Data.Interfaces;
 using OPMS.Models;
 using OPMS.ViewModels;
+using OPMS.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ using System.Web.Mvc;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [ExceptionFilter]
     public class SiteSettingsController : Controller
     {
         private readonly IUnitOfWork uow;

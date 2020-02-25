@@ -15,8 +15,12 @@ namespace OPMS.ViewModels
 
         [Display(Name = "La date d'expiration du poste")]
         [Required]
+        [DataType(DataType.Date)]
         public DateTime PostExpirationDate { get; set; }
 
+        [Required]
+        [DataType(DataType.Time)]
+        public DateTime PostExpirationTime { get; set; }
 
         [Display(Name = "poste envoyé par poste")]
         public string SendedBy { get; set; }
