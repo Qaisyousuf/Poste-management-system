@@ -7,11 +7,14 @@
 
 @foreach (var item in Model.AboutPageViewModels)
 {
-    <div class="jumbotron">
-        <img src="@item.BannerImage" />
-        <h1 class="display-4">@item.SubTitle</h1>
-        <p class="lead">@Html.Raw(item.Content)</p>
-        <hr class="my-4">
+    <div class="thumbnail">
+        <img src="@item.BannerImage" class="img-responsive" />
+        <div>
+            <h1 class="display-4">@item.SubTitle</h1>
+            <p class="lead">@Html.Raw(item.Content)</p>
+            <hr class="my-4">
+        </div>
+       
         <p>
             @Html.Raw(item.Title)
         </p>

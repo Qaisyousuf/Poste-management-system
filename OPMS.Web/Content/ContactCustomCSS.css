@@ -1,3 +1,16 @@
 ﻿body {
     background-color: #e0f2f1;
+    margin:0px;
+    padding:0px;
 }
+.thumbnail
+{
+    padding:0px;
+    margin:0px;
+}
+    .thumbnail img {
+        height: 100%;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }

@@ -3,9 +3,6 @@ using OPMS.Models;
 using OPMS.ViewModels;
 using OPMS.Web.Infrastructure;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
@@ -43,7 +40,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         [HttpPost]
         public ActionResult Create(SiteSettingsViewModel viewmodel)
         {
-          if(ModelState.IsValid && User.IsInRole("Admin"))
+          if(ModelState.IsValid)
             {
                 SiteSettings siteSettings = new SiteSettings
                 {
@@ -125,7 +122,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         [HttpPost]
         public ActionResult Edit(SiteSettingsViewModel viewmodel)
         {
-            if(ModelState.IsValid && User.IsInRole("Admin"))
+            if(ModelState.IsValid)
             {
                 var siteSetting = uow.SiteSettingsRepository.GetById(viewmodel.Id);
 

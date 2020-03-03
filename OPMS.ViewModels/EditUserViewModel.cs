@@ -14,21 +14,21 @@ namespace OPMS.ViewModels
             Roles = new List<CheckBoxViewModel>();
         }
         public int Id { get; set; }
-        [Required(ErrorMessage = "Nom d'utilisateur est nécessaire")]
-        [Display(Name = "Nom d'utilisateur")]
+        [Required]
+        [Display(Name = "Resident Name")]
         public string UserName { get; set; }
 
-        [EmailAddress(ErrorMessage = "Entrez le bon e-mail")]
-        [Display(Name = "E-mail(facultatif)")]
+        [EmailAddress(ErrorMessage ="Enter correct email")]
+        [Display(Name = "E-mail (Optional)")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Le numéro de téléphone est requis")]
-        [Display(Name = "Numéro de portable")]
+        [Required]
+        [Display(Name = "Mobile Number")]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
 
-        [Required(ErrorMessage = "Rôles requis")]
+        [Required]
         public List<CheckBoxViewModel> Roles { get; set; }
     }
 }

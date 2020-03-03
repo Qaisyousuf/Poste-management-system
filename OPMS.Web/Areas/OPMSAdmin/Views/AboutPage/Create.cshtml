@@ -105,7 +105,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.SectoinId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.SectoinId, new SelectList(ViewBag.aboutSetcon, "Id", "Title"), "-------Sélectionnez une section------", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.SectoinId, new SelectList(ViewBag.aboutSetcon, "Id", "Title"), "-------Select a section------", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.SectoinId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -113,7 +113,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ShortSectionId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ShortSectionId, new SelectList(ViewBag.shortSection, "Id", "Title"), "-----Sélectionnez une courte section ----", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.ShortSectionId, new SelectList(ViewBag.shortSection, "Id", "Title"), "-----Select a short section ----", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ShortSectionId, "", new { @class = "text-danger" })
             </div>
         </div>

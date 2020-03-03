@@ -9,13 +9,13 @@ namespace OPMS.ViewModels
 {
     public class LoginViewModel:BaseViewModel
     {
-        [Required(ErrorMessage = "Nom d'utilisateur est nécessaire")]
-        [Display(Name = "Nom d'utilisateur")]
+        [Required]
+        [Display(Name = "Resident Name")]
         public string UserName { get; set; }
 
 
-        [Required(ErrorMessage = "Mot de passe requis")]
-        [Display(Name = "Mot de passe")]
+        [Required]
+        [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
     }

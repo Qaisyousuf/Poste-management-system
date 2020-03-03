@@ -77,6 +77,7 @@
     <Compile Include="SWorkerMultiModel.cs" />
     <Compile Include="SWorkerPage.cs" />
     <Compile Include="SWorkerProfile.cs" />
+    <Compile Include="UserLocation.cs" />
     <Compile Include="UserModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

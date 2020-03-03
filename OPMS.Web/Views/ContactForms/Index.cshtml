@@ -2,16 +2,13 @@
 
 @foreach (var item in Model.ContactPageViewModel)
 {
-    <div class="panel panel-default text-center">
-        <div class="panel-heading">
+    <div class="thumbnail">
+        
             <img src="@item.ImageUrl" class="img-responsive" />
-            <h3 class="panel-title">@Html.Raw(item.SubContent)</h3>
-            <h4 class="panel-title">@Html.Raw(item.Description)</h4>
-
-        </div>
-        <div class="panel-body">
+            <h3 >@Html.Raw(item.SubContent)</h3>
+            <h4 >@Html.Raw(item.Description)</h4>
             <p class="panel-title">@Html.Raw(item.Content)</p>
-        </div>
+        
     </div>
 }
 <hr />

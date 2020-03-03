@@ -5,9 +5,9 @@
 }
 
 .jumbotron {
-    padding-top:20px;
-    margin-top:20px;
-    background-color: #33b5e5;
+    padding-top: 20px;
+    margin-top: 20px;
+    background-color: #bbdefb;
     display: -ms-flexbox;
     display: -webkit-flex;
     -webkit-flex-direction: column;
@@ -28,7 +28,6 @@
     -webkit-box-shadow: 0px 1px 10px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 1px 10px -1px rgba(0,0,0,0.75);
     box-shadow: 0px 1px 10px -1px rgba(0,0,0,0.75);
-   
 }
 h5,h1,h3,h4,h2,p
 {

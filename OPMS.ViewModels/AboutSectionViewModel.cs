@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace OPMS.ViewModels
@@ -16,9 +12,11 @@ namespace OPMS.ViewModels
         public string Title { get; set; }
 
         [Required]
+        [Display(Name ="Main Title")]
         public string MainTitle { get; set; }
 
         [Required]
+        [Display(Name = "Sub Title")]
         public string SubTitle { get; set; }
 
         [AllowHtml]
@@ -26,12 +24,15 @@ namespace OPMS.ViewModels
         public string Content { get; set; }
 
         [Required]
+        [Display(Name = "Button Url")]
         public string ButtonUrl { get; set; }
 
         [AllowHtml]
         [Required]
+        [Display(Name = "Button Url")]
         public string UrlImages { get; set; }
-   
+
+        [Display(Name = "Publish date")]
         public DateTime PublishDateTime { get; set; }
     }
 }

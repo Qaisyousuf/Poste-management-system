@@ -107,7 +107,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ContactDetailsId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ContactDetailsId, new SelectList(ViewBag.ConactDetails, "Id", "Title"), "-------Sélectionnez les coordonnées------", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.ContactDetailsId, new SelectList(ViewBag.ConactDetails, "Id", "Title"), "-------Select a contact details------", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ContactDetailsId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -115,7 +115,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ContactInfoId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ContactInfoId, new SelectList(ViewBag.ContactInfo, "Id", "Title"), "-------Sélectionnez les coordonnées------", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.ContactInfoId, new SelectList(ViewBag.ContactInfo, "Id", "Title"), "-------Select a contact info------", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ContactInfoId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -123,7 +123,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ContactFormId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ContactFormId, new SelectList(ViewBag.ContactFomrs, "Id", "FullName"), "-------Sélectionnez les formulaires------", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.ContactFormId, new SelectList(ViewBag.ContactFomrs, "Id", "FullName"), "-------Select a contact form------", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ContactFormId, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -11,29 +11,31 @@ namespace OPMS.ViewModels
     {
         public int Id { get; set; }
 
-        [Display(Name = "Nom complet")]
-        [Required(ErrorMessage ="Le nom est requis")]
+        [Display(Name = "Full Name")]
+        [Required]
         public string FullName { get; set; }
 
-        [Display(Name = "Adresse e-mail facultative")]
-        [EmailAddress(ErrorMessage = "adresse e-mail complète")]
+        [Display(Name = "Email (Optional)")]
+        [EmailAddress(ErrorMessage = "Enter correct email")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Display(Name = "Adresse")]
         public string Address { get; set; }
 
-        [Display(Name = "Numéro de mobile Facultatif")]
+        [Display(Name = "Mobile Number (Optional)")]
         [DataType(DataType.PhoneNumber)]
         public string MobileNumber { get; set; }
 
         public string IpAddres { get; set; }
 
+        [Display(Name ="Contacted Date")]
         public DateTime ContactedDate { get; set; }
 
-        [Display(Name = "Votre texte ici")]
+        [Display(Name = "Write more")]
         public string MessageText { get; set; }
 
+        [Display(Name ="Location")]
         public string ContactedLocation { get; set; }
     }
 }

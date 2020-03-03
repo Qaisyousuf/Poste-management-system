@@ -7,13 +7,13 @@ namespace OPMS.ViewModels
         public int Id { get; set; }
 
 
-        [Required(ErrorMessage = "Le nom du travailleur social est requis")]
-        [Display(Name = "Nom du travailleur social")]
+        [Required]
+        [Display]
         public string FullName { get; set; }
 
 
-        [Required(ErrorMessage = "Position de travail est requis")]
-        [Display(Name = "Position de travail")]
+        [Required]
+        [Display(Name = "Job Title")]
         public string Position { get; set; }
     }
 }

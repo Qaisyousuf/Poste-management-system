@@ -166,6 +166,7 @@
     <Content Include="Content\CustomPostCSS.css" />
     <Content Include="Content\HomeCustomCSS.css" />
     <Content Include="Content\Img\authentication.svg" />
+    <Content Include="Content\Img\Gif.gif" />
     <Content Include="Content\Img\LogoCoallia_Couleur %282%29.png" />
     <Content Include="Content\Img\No-Post.svg" />
     <Content Include="Content\Img\undraw_Hello_qnas.svg" />
@@ -697,6 +698,7 @@
     <Content Include="Areas\OPMSAdmin\Views\Shared\_HelpLayout.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Shared\Error.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Shared\_ErrorLayout.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\UserLocations\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -817,6 +819,7 @@
     <Compile Include="Areas\OPMSAdmin\Controllers\SocialWorkerController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SWBannerController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SWorkerPageController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\UserLocationsController.cs" />
     <Compile Include="Areas\OPMSAdmin\OPMSAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
@@ -832,6 +835,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\ExceptionFilter.cs" />
+    <Compile Include="Infrastructure\LoginInfoFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

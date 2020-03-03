@@ -1,0 +1,162 @@
+﻿
+@{
+    ViewBag.Title = "UserInfo";
+
+}
+<hr />
+<h4>liste des activités des utilisateurs</h4>
+
+<hr />
+<table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
+    <thead class="bg-primary">
+        <tr>
+            <th><i class="glyphicon glyphicon-align-center"></i> IP</th>
+            <th><i class="glyphicon glyphicon-link"></i> User</th>
+            <th><i class="glyphicon glyphicon-link"></i> Action</th>
+            <th><i class="glyphicon glyphicon-link"></i> Controller</th>
+            <th><i class="glyphicon glyphicon-link"></i> Browser</th>
+            <th><i class="glyphicon glyphicon-link"></i> Login Date</th>
+            <th><i class="glyphicon glyphicon-link"></i> Login Time</th>
+            <th><i class="glyphicon glyphicon-link"></i> User Location</th>
+            <th><i class="glyphicon glyphicon-"></i> Actions</th>
+        </tr>
+    </thead>
+</table>
+@section scripts{
+
+
+    <script>
+        $(document).ready(function () {
+            $("#dataTable").DataTable({
+                "info": false,
+                "responsive": true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "dom": "lfrtiBp",
+                buttons: [
+                    {
+                        extend: 'copyHtml5',
+                        text: '<i class="glyphicon glyphicon-file"> Copy</i>',
+                        titleAttr: 'Copy',
+
+
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> Excel</i>',
+                        titleAttr: 'Excel',
+
+
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> PDF</i>',
+                        titleAttr: 'PDF',
+
+
+                    },
+
+                    {
+                        extend: 'print',
+                        text: '<i class="glyphicon glyphicon-print"> Print</i>',
+                        titleAttr: 'PRINT',
+
+
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '<i class="glyphicon glyphicon-eye-open"> Visibilité des colonnes</i>',
+                        titleAttr: 'Columns Visiblty',
+
+
+                    },
+                ],
+                "ajax": {
+                    "url": "/OPMSAdmin/UserLocations/GetUserLocation",
+                    "type": "Get",
+                    "dataType": "json",
+
+                },
+                "columnDefs": [
+                    {
+                        "data": "Ip",
+                        "targets": 0,
+
+                        "render": function (data, type, row, meta) {
+                            return data;
+                        }
+                    },
+                    {
+                        "data": "LoginUser",
+                        "targets": 1,
+
+                        "render": function (data, type, row, meta) {
+                            return data;
+                        }
+                    },
+                    {
+                        "data": "ActionName",
+                        "targets": 2,
+
+                        "render": function (data, type, row, meta) {
+                            return data;
+                        }
+                    },
+                    {
+                        "data": "ControllerName",
+                        "targets": 3,
+
+                        "render": function (data, type, row, meta) {
+                            return data;
+                        }
+                    },
+                    {
+                        "data": "UserBrowser",
+                        "targets": 4,
+
+                        "render": function (data, type, row, meta) {
+                            return data;
+                        }
+                    },
+                    {
+                        "data": "Date",
+                        "targets": 5,
+
+                        "render": function (data, type, row, meta) {
+                            return moment(row.Date).locale("fr").format('DD-MMMM-YYYY');
+                        }
+                    },
+                    {
+                        "data": "Time",
+                        "targets": 6,
+
+                        "render": function (data, type, row, meta) {
+                            return moment(row.Time).locale("fr").format('HH:mm');
+                        }
+                    },
+                    {
+                        "data": "UserLocationInfo",
+                        "targets": 7,
+
+                        "render": function (data, type, row, meta) {
+                            return data;
+                        }
+                    },
+                   
+                    {
+                        "data": "actions",
+                        "targets": 8,
+                        "render": function (data, type, row, meta) {
+                            data = '<a class="btn btn-danger btn-bg" href="/OPMSAdmin/Messages/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer </a>';
+                           
+                            return data;
+                        }
+                    },
+
+
+                ]
+            })
+        });
+    </script>
+}
+
+

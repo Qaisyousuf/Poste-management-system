@@ -36,6 +36,7 @@ namespace OPMS.Data.Interfaces
         IPostSystemRepository PostSystemRepository { get; }
         IMainPostSystemRepository MainPostSystemRepository { get; }
         IHelpSupportRepository HelpSupportRepository { get; }
+        IUserLocationRepository UserLocationRepository { get; }
 
         void Commit();
     }

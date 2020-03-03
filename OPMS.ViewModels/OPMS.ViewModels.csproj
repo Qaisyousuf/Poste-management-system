@@ -103,6 +103,7 @@
     <Compile Include="SWorkerMultiVM.cs" />
     <Compile Include="SWorkerPageVM.cs" />
     <Compile Include="SWorkerProfileVM.cs" />
+    <Compile Include="UserLocationVM.cs" />
     <Compile Include="UserSMSViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

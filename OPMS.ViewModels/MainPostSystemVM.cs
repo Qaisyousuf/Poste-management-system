@@ -10,22 +10,23 @@ namespace OPMS.ViewModels
         public int Id { get; set; }
         public string Title { get; set; }
 
-        [Display(Name = "Date de soumission du poste")]
+        [Display(Name = "Sent Time")]
         public DateTime SentDateTime { get; set; }
 
-        [Display(Name = "La date d'expiration du poste")]
+        [Display(Name = "Expiration Date")]
         [Required]
         [DataType(DataType.Date)]
         public DateTime PostExpirationDate { get; set; }
 
         [Required]
         [DataType(DataType.Time)]
+        [Display(Name = "Expiration Time")]
         public DateTime PostExpirationTime { get; set; }
 
-        [Display(Name = "poste envoyé par poste")]
+        [Display(Name = "Sent By")]
         public string SendedBy { get; set; }
 
-        [Display(Name = "affectation de poste")]
+        [Display(Name = "Assign Post")]
         public bool HasPost { get; set; }
 
         public int UserId { get; set; }
@@ -33,19 +34,20 @@ namespace OPMS.ViewModels
         public UserModel Users { get; set; }
 
         [Required]
-        [Display(Name = "Nom du résident")]
+        [Display(Name = "Resident Name")]
         public string UserName { get; set; }
 
         [Required]
-        [Display(Name = "Type de poste")]
+        [Display(Name = "Post Type")]
         public int PostSystemId { get; set; }
+
+        [Display(Name = "Post")]
         [ForeignKey("PostSystemId")]
-       
         public PostSystem PostSystems { get; set; }
 
 
         [Required]
-        [Display(Name = "Nom du social worker")]
+        [Display(Name = "Social Worker Name")]
         public int SocialId { get; set; }
         [ForeignKey("SocialId")]
         

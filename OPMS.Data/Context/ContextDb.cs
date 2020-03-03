@@ -41,6 +41,7 @@ namespace OPMS.Data.Context
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Messages> Messages { get; set; }
         public DbSet<HelpSupport> HelpSupports { get; set; }
+        public DbSet<UserLocation> UserLocations { get; set; }
 
 
         

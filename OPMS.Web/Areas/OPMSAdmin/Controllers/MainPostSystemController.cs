@@ -231,12 +231,17 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             ViewBag.UserId = uow.UserRepository.GetAll();
             var userFromdDb = uow.MainPostSystemRepository.GetById(id);
 
+            var datatime = userFromdDb.PostExpirationDate;
+            var time = Convert.ToDateTime(datatime.ToShortTimeString());
+            var date = Convert.ToDateTime(datatime.ToShortDateString());
+
             MainPostSystemVM viewmodel = new MainPostSystemVM
             {
                 Id = userFromdDb.Id,
                 Title = userFromdDb.Title,
                 SentDateTime =DateTime.Now,
-                PostExpirationDate = userFromdDb.PostExpirationDate,
+                PostExpirationDate =date,
+                PostExpirationTime=time,
                 SendedBy = userFromdDb.SendedBy,
                 HasPost = userFromdDb.HasPost,
                 UserId = userFromdDb.UserId,

@@ -14,11 +14,16 @@ namespace OPMS.ViewModels
 
         [Required]
         public string Title { get; set; }
+
+
         [Required]
         [AllowHtml]
         public string Content { get; set; }
+
+
         [Required]
         [AllowHtml]
+        [Display(Name ="Icon Url")]
         public string IconUrl { get; set; }
     }
 }

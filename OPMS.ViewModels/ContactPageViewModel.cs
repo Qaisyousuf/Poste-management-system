@@ -20,6 +20,7 @@ namespace OPMS.ViewModels
 
         [AllowHtml]
         [Required]
+        [Display(Name ="Sub Content")]
         public string SubContent { get; set; }
 
         [Required]
@@ -27,13 +28,14 @@ namespace OPMS.ViewModels
 
         [AllowHtml]
         [Required]
+        [Display(Name = "Image Url")]
         public string ImageUrl { get; set; }
 
         [AllowHtml]
         [Display(Name = "Google API")]
         public string GoogleMapAPIUrl { get; set; }
 
-        [Display(Name ="Meta Data On")]
+        [Display(Name ="Meta Data")]
         public bool IsContactMetaDataOn { get; set; }
 
         [Display(Name = "Meta Keywords")]

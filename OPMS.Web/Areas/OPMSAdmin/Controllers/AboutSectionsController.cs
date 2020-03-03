@@ -3,9 +3,6 @@ using OPMS.Models;
 using OPMS.ViewModels;
 using OPMS.Web.Infrastructure;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
@@ -22,7 +19,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         }
         public ActionResult Index()
         {
-            int value = int.Parse("ddddd");
+           
             return View();
         }
 
@@ -36,7 +33,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            int value = int.Parse("ddddd");
+            
             return View();
         }
 

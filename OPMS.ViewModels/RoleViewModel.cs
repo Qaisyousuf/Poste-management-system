@@ -15,8 +15,8 @@ namespace OPMS.ViewModels
             Users = new List<UserModel>();
         }
         public int Id { get; set; }
-        [Required(ErrorMessage = "Le nom du rôle est requis")]
-        [Display(Name= "Nom de rôle")]
+        [Required]
+        [Display(Name= "Role Name")]
         public string Name { get; set; }
 
         public ICollection<UserModel> Users { get; set; }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace OPMS.ViewModels
 {
@@ -16,23 +11,30 @@ namespace OPMS.ViewModels
         public string Title { get; set; }
 
         [Required]
+        [Display(Name ="City Name")]
         public string CityName { get; set; }
 
         [Required]
+        [Display(Name = "Area Name")]
         public string AreaName { get; set; }
 
         [Required]
+        [Display(Name = "Street Name")]
         public string StreetName { get; set; }
 
+        [Display(Name ="Google API")]
         public string GoogleAPIMap { get; set; }
 
         [Required]
+        [Display(Name = "Center Name")]
         public string CenterName { get; set; }
 
         [Required]
+        [Display(Name = "Email")]
         public string CenterEmail { get; set; }
 
         [Required]
+        [Display(Name = "Mobile Number")]
         public string MobileNumber { get; set; }
     }
 }

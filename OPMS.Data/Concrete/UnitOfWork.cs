@@ -71,6 +71,8 @@ namespace OPMS.Data.Concrete
 
         public IHelpSupportRepository HelpSupportRepository => new HelpSupportRepository(Context);
 
+        public IUserLocationRepository UserLocationRepository => new UserLocationRepository(Context);
+
         public void Commit()
         {
             Context.SaveChanges();

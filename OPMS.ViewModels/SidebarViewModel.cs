@@ -9,16 +9,16 @@ namespace OPMS.ViewModels
     {
         public int Id { get; set; }
 
-        [Display(Name = "Nom de la barre latérale")]
-        [Required(ErrorMessage = "Le nom de la barre latérale est obligatoire")]
+        
+        [Required]
         public string Name { get; set; }
 
         [AllowHtml]
-        [Display(Name = "Contenu de la barre latérale")]
-        [Required(ErrorMessage = "Le contenu de la barre latérale est requis")]
+        
+        [Required]
         public string Content { get; set; }
 
-        [Display(Name = "Date de publication")]
+        [Display(Name = "Publish date")]
         public DateTime PublishDate { get; set; }
     }
 }

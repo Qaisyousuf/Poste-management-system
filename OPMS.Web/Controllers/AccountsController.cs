@@ -11,6 +11,7 @@ using System.Web.Security;
 namespace OPMS.Web.Controllers
 {
     [ExceptionFilter]
+    //[LoginInfoFilter]
     public class AccountsController : BaseController
     {
         public ActionResult Index()
@@ -19,6 +20,7 @@ namespace OPMS.Web.Controllers
         }
 
         [HttpPost]
+        [LoginInfoFilter]
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
@@ -33,6 +35,7 @@ namespace OPMS.Web.Controllers
 
         [HttpPost]
         [Route("Authorization")]
+        
         public ActionResult Login(LoginViewModel viewmodel)
         {
             if(!ModelState.IsValid)
@@ -63,9 +66,11 @@ namespace OPMS.Web.Controllers
 
             string encryptTicket = FormsAuthentication.Encrypt(authTicket);
 
-            HttpCookie myCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptTicket);
-            myCookie.HttpOnly = true;
-            myCookie.Expires = DateTime.Now.AddMinutes(20);
+            HttpCookie myCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptTicket)
+            {
+                HttpOnly = true,
+                Expires = DateTime.Now.AddMinutes(30)
+            };
 
             Response.Cookies.Add(myCookie);
            

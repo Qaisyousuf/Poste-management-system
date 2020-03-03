@@ -9,17 +9,17 @@ namespace OPMS.ViewModels
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Le titre du message est requis")]
-        [Display(Name = "Titre du message")]
+        [Required]
+        [Display(Name = "Title")]
         public string Title { get; set; }
 
-        [Required(ErrorMessage = "Le message Sous-titre est requis")]
-        [Display(Name = "Sous-titre de Message")]
+        [Required]
+        [Display(Name = "Sub Title")]
         public string SubTitle { get; set; }
 
         [AllowHtml]
-        [Required(ErrorMessage = "Le contenu du message est requis")]
-        [Display(Name = "Contenu du message")]
+        [Required]
+        [Display(Name = "Content")]
         public string Content { get; set; }
 
         public string CreatedBy { get; set; }

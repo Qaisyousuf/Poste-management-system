@@ -13,17 +13,12 @@ namespace OPMS.Web.Controllers
     [ExceptionFilter]
     public class AboutController : BaseController
     {
-        public ActionResult ErrorTest()
-        {
-            int value = int.Parse("ddddd");
-            return View();
-        }
 
         [Route("AboutUs")]
         [ExceptionFilter]
         public ActionResult Index()
         {
-            int value = int.Parse("ddddd");
+           
             var aboutPageFromDb = _uow.AboutPageRepository.GetAll();
 
             var aboutSection = _uow.AboutSectionRepository.GetAll();

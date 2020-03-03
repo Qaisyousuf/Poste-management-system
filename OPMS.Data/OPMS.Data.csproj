@@ -103,6 +103,7 @@
     <Compile Include="Concrete\SWBannerRepository.cs" />
     <Compile Include="Concrete\SWorkerPageRepository.cs" />
     <Compile Include="Concrete\UnitOfWork.cs" />
+    <Compile Include="Concrete\UserLocationRepository.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Context\ContextDb.cs" />
     <Compile Include="FluentAPI\ContactMapping.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Interfaces\ISWBannerRepository.cs" />
     <Compile Include="Interfaces\ISWorkerPageRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\IUserLocationRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Migrations\202001271055585_Initial.cs" />
     <Compile Include="Migrations\202001271055585_Initial.designer.cs">
@@ -225,6 +227,10 @@
     <Compile Include="Migrations\202002240938230_TagModelRemoved.designer.cs">
       <DependentUpon>202002240938230_TagModelRemoved.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003021629145_UserLocationModelAdded.cs" />
+    <Compile Include="Migrations\202003021629145_UserLocationModelAdded.designer.cs">
+      <DependentUpon>202003021629145_UserLocationModelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002240938230_TagModelRemoved.resx">
       <DependentUpon>202002240938230_TagModelRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021629145_UserLocationModelAdded.resx">
+      <DependentUpon>202003021629145_UserLocationModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

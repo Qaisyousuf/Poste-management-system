@@ -53,7 +53,7 @@
             <div class="jumbotron">
                 <a href="/Authorization" class="btn btn-primary">Login</a>
                 <hr />
-                <img src="~/Content/Img/undraw_referral_4ki4.svg" class="img-responsive" id="Login" />
+                <img src="~/Content/Img/Gif.gif" class="img-responsive" id="Login" />
             </div>
 
         }
@@ -61,10 +61,11 @@
     else if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
     {
             <div class="jumbotron">
-                <h4>Nous saluons le retour: @User.Identity.Name</h4>
+                <h4>Nous saluons le retour <br />@User.Identity.Name</h4>
+                
                 <img src="~/Content/Img/undraw_Hello_qnas.svg" class="img-responsive" id="Login" />
-               <hr />
-                <a href="/OPMSAdmin/Pages/Index" class="btn btn-primary" target="_blank"><i class="glyphicon glyphicon-wrench"></i> Go to Admin Panel</a>
+              <hr />
+                <a href="/OPMSAdmin/Messages/SMSRecords" class="btn btn-primary btn-lg" target="_blank"><i class="glyphicon glyphicon-wrench"></i> Go to Admin Panel</a>
             </div>
     }
     else

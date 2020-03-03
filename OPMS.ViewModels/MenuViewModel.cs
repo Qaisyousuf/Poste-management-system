@@ -13,18 +13,18 @@ namespace OPMS.ViewModels
         }
         public int Id { get; set; }
         
-        [Display(Name = "titre du menu")]
-        [Required(ErrorMessage = "Le titre du menu est obligatoire")]
+        [Display(Name = "Menu title")]
+        [Required]
         public string Title { get; set; }
 
-        [Display(Name = "Description du menu")]
+        [Display(Name = "Description")]
         public string Description { get; set; }
 
-        [Display(Name = "URL du menu")]
+        [Display(Name = "Menu Url")]
         public string Url { get; set; }
 
         [InverseProperty("SubMenus")]
-        [Display(Name = "Sous-menu")]
+        [Display(Name = "Sub Menu")]
         public int? ParentId { get; set; }
         public Menu Parent { get; set; }
 
