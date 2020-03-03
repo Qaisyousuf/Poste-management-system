@@ -17,7 +17,7 @@
             <th><i class="glyphicon glyphicon-link"></i> Browser</th>
             <th><i class="glyphicon glyphicon-link"></i> Login Date</th>
             <th><i class="glyphicon glyphicon-link"></i> Login Time</th>
-            <th><i class="glyphicon glyphicon-link"></i> User Location</th>
+            <th><i class="glyphicon glyphicon-link"></i> Activity</th>
             <th><i class="glyphicon glyphicon-"></i> Actions</th>
         </tr>
     </thead>
@@ -146,7 +146,7 @@
                         "data": "actions",
                         "targets": 8,
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-danger btn-bg" href="/OPMSAdmin/Messages/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer </a>';
+                            data = '<a class="btn btn-danger btn-bg" href="/OPMSAdmin/UserLocations/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer </a>';
                            
                             return data;
                         }

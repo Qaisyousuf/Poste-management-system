@@ -5,9 +5,8 @@
 }
 
 .jumbotron {
-    padding-top: 20px;
-    margin-top: 20px;
-    background-color: #bbdefb;
+    padding-top: 10px;
+    background-color: #90caf9;
     display: -ms-flexbox;
     display: -webkit-flex;
     -webkit-flex-direction: column;
@@ -44,3 +43,7 @@ img#Login {
     width: auto;
 
 }
+
+
+
+   

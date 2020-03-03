@@ -10,7 +10,7 @@ using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Controllers
 {
-    [ExceptionFilter]
+   [ExceptionFilter]
     public class HomeController :BaseController
     {
         //[Route("{slug}")]

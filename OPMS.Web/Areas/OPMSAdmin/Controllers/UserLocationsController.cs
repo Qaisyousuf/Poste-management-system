@@ -50,5 +50,51 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 
             return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
         }
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            var locationFromdb = uow.UserLocationRepository.GetById(id);
+            var datatime = locationFromdb.DateTime;
+            var time = Convert.ToDateTime(datatime.ToShortTimeString());
+            var date = Convert.ToDateTime(datatime.ToShortDateString());
+            UserLocationVM viewmodel = new UserLocationVM
+            {
+                Id=locationFromdb.Id,
+                Ip=locationFromdb.Ip,
+                UserAgint=locationFromdb.UserAgint,
+                ActionName=locationFromdb.ActionName,
+                ControllerName=locationFromdb.ControllerName,
+                LoginUser=locationFromdb.LoginUser,
+                UserBrowser=locationFromdb.UserBrowser,
+                Date=date,
+                Time=time,
+                UserLocationInfo=locationFromdb.UserLocationInfo,
+            };
+            return View(viewmodel);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirm(int? id)
+        {
+            var locationfromdb = uow.UserLocationRepository.GetById(id);
+
+            UserLocationVM viewmodel = new UserLocationVM
+            {
+                Id=locationfromdb.Id,
+                Ip=locationfromdb.Ip,
+                UserAgint=locationfromdb.UserAgint,
+                ActionName=locationfromdb.ActionName,
+                ControllerName=locationfromdb.ControllerName,
+                LoginUser=locationfromdb.LoginUser,
+                UserBrowser=locationfromdb.UserBrowser,
+                Date=locationfromdb.DateTime,
+                UserLocationInfo=locationfromdb.UserLocationInfo,
+            };
+
+            uow.UserLocationRepository.Remove(locationfromdb);
+            uow.Commit();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

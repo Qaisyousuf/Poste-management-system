@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace OPMS.Web.Controllers
 {
-    [ExceptionFilter]
+   
     public class CustomErrorsController : Controller
     {
         // GET: CustomErrors

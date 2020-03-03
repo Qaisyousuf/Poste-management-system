@@ -9,11 +9,11 @@ using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Controllers
 {
-    //[ExceptionFilter]
+    [ExceptionFilter]
     [LoginInfoFilter]
-    public class AssignedPostController : BaseController
+    public class CheckPostController : BaseController
     {
-        [Route("Post")]
+        [Route("CheckPost")]
         public ActionResult Index()
         {
 
@@ -45,31 +45,8 @@ namespace OPMS.Web.Controllers
             }
 
             return View(viewmodel);
-           // return View();
+          
         }
-        //[Route("Post/view")]
-        //[HttpGet]
-        //public ActionResult PostView(int? id)
-        //{
-
-        //    ViewBag.userFromdb = _uow.UserRepository.GetById(id);
-        //    ViewBag.socialFromdb = _uow.SocialWorkerRepository.GetById(id);
-        //    ViewBag.postSystem = _uow.PostSystemRepository.GetById(id);
-        //    var postFromdb = _uow.MainPostSystemRepository.GetById(id);
-
-        //    MainPostSystemVM viewmodel = new MainPostSystemVM();
-        //    postFromdb.Id = viewmodel.Id;
-        //    postFromdb.Title = viewmodel.Title;
-        //    postFromdb.SentDateTime = viewmodel.SentDateTime;
-        //    postFromdb.PostExpirationDate = viewmodel.PostExpirationDate;
-        //    postFromdb.HasPost = viewmodel.HasPost;
-        //    postFromdb.UserId = viewmodel.UserId;
-        //    postFromdb.Users = viewmodel.Users;
-        //    postFromdb.PostSystemId = viewmodel.PostSystemId;
-        //    postFromdb.PostSystems = viewmodel.PostSystems;
-        //    postFromdb.SocialId = viewmodel.SocialId;
-        //    postFromdb.SocialWorker = viewmodel.SocialWorker;
-        //    return View(viewmodel);
-        //}
+       
     }
 }

@@ -75,7 +75,7 @@ namespace OPMS.Web.Controllers
             Response.Cookies.Add(myCookie);
            
 
-            return RedirectToAction("Index", "AssignedPost");
+            return RedirectToAction("Index", "CheckPost");
         }
 
         [HttpGet]

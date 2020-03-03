@@ -1,10 +1,9 @@
 ﻿using OPMS.Data.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 using OPMS.Models;
+using System;
+using System.Net;
+using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace OPMS.Web.Infrastructure
 {
@@ -31,11 +30,13 @@ namespace OPMS.Web.Infrastructure
                 string IPaddress = filterContext.HttpContext.Request.UserHostAddress;
                 string UserName = filterContext.HttpContext.User.Identity.Name;
                 DateTime LoginDate = filterContext.HttpContext.Timestamp;
-                string BrowserName = filterContext.HttpContext.Request.Browser.Browser;
-                string userLocation = filterContext.HttpContext.Server.MachineName;
+                string BrowserName = filterContext.HttpContext.Server.MachineName;
+                string userLocation = filterContext.ActionDescriptor.ActionName.Replace("Index", "Login");
+                bool deviceName = filterContext.HttpContext.Request.Browser.IsMobileDevice;
 
+               
 
-                var UserLocationinfo = new UserLocation
+                var location = new UserLocation
                 {
                     Ip = IPaddress,
                     UserAgint = UserAgint,
@@ -47,7 +48,7 @@ namespace OPMS.Web.Infrastructure
                     UserLocationInfo = userLocation,
                 };
 
-                _Context.UserLocations.Add(UserLocationinfo);
+                _Context.UserLocations.Add(location);
                 _Context.SaveChanges();
             }
            

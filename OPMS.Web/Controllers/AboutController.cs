@@ -18,7 +18,7 @@ namespace OPMS.Web.Controllers
         [ExceptionFilter]
         public ActionResult Index()
         {
-           
+            //int number = int.Parse("hello");
             var aboutPageFromDb = _uow.AboutPageRepository.GetAll();
 
             var aboutSection = _uow.AboutSectionRepository.GetAll();

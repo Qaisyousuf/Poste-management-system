@@ -165,10 +165,9 @@
     <Content Include="Content\ContactCustomCSS.css" />
     <Content Include="Content\CustomPostCSS.css" />
     <Content Include="Content\HomeCustomCSS.css" />
-    <Content Include="Content\Img\authentication.svg" />
-    <Content Include="Content\Img\Gif.gif" />
     <Content Include="Content\Img\LogoCoallia_Couleur %282%29.png" />
     <Content Include="Content\Img\No-Post.svg" />
+    <Content Include="Content\Img\undraw_authentication_fsn5.svg" />
     <Content Include="Content\Img\undraw_Hello_qnas.svg" />
     <Content Include="Content\Img\undraw_mail_2_tqip.svg" />
     <Content Include="Content\Img\undraw_message_sent_1030.svg" />
@@ -699,6 +698,7 @@
     <Content Include="Areas\OPMSAdmin\Views\Shared\Error.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Shared\_ErrorLayout.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\UserLocations\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\UserLocations\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -823,7 +823,7 @@
     <Compile Include="Areas\OPMSAdmin\OPMSAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
-    <Compile Include="Controllers\AssignedPostController.cs" />
+    <Compile Include="Controllers\CheckPostController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContactFormsController.cs" />
     <Compile Include="Controllers\CustomErrorsController.cs" />
@@ -878,7 +878,7 @@
     <Content Include="Views\NewsInformation\Index.cshtml" />
     <Content Include="Views\Shared\_NewsLayout.cshtml" />
     <Content Include="Views\NewsInformation\GetNewsBanner.cshtml" />
-    <Content Include="Views\AssignedPost\Index.cshtml" />
+    <Content Include="Views\CheckPost\Index.cshtml" />
     <Content Include="Views\Shared\_PosteLayout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_ErrorLayout.cshtml" />
