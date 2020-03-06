@@ -12,6 +12,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
     [Authorize(Roles = "Admin")]
     [ExceptionFilter]
+    [AdminActivityFilter]
     public class SocialProfilesController : Controller
     {
         private readonly IUnitOfWork uow;

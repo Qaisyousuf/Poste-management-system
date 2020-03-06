@@ -13,10 +13,12 @@ namespace OPMS.Data.Concrete
 
         public IPageRepository PageRepository => new PageRepository(Context);
 
-       
         public ISidebarRepository SidebarRepository => new SidebarRepository(Context);
+
         public IMenuRepository MenuRepository => new MenuRepository(Context);
+
         public ISiteSettingsRepository SiteSettingsRepository => new SiteSettingRepository(Context);
+
         public IContactRepository ContactRepository => new ContactRepository(Context);
 
         public IUserRepository UserRepository => new UserRepository(Context);
@@ -27,15 +29,7 @@ namespace OPMS.Data.Concrete
 
         public ISocialWorkerRepository SocialWorkerRepository => new SocialWorkerRepository(Context);
 
-        public IBuildingRepository BuildingRepository => new BuildingRepository(Context);
-
-        public IFloorsRepository FloorsRepository => new FloorsRepository(Context);
-
-        public IRoomRepository RoomRepository => new RoomRepository(Context);
-
         public IMessagesSendingRepository MessagesSendingRepository => new MessagesSendingRepository(Context);
-
-      
 
         public IAboutSectionRepository AboutSectionRepository => new AboutSectionRepository(Context);
 
@@ -72,6 +66,8 @@ namespace OPMS.Data.Concrete
         public IHelpSupportRepository HelpSupportRepository => new HelpSupportRepository(Context);
 
         public IUserLocationRepository UserLocationRepository => new UserLocationRepository(Context);
+
+        public IAdminActivityRepository AdminActivityRepository => new AdminActivityRepository(Context);
 
         public void Commit()
         {

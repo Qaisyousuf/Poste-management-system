@@ -16,7 +16,6 @@
             <th><i class="glyphicon glyphicon-link"></i> Sent By</th>
             <th><i class="glyphicon glyphicon-link"></i> Task Time</th>
             <th><i class="glyphicon glyphicon-link"></i> Task Date</th>
-            <th><i class="glyphicon glyphicon-link"></i> Task location</th>
             <th><i class="glyphicon glyphicon-link"></i> Sent Date</th>
             <th><i class="glyphicon glyphicon-"></i> Actions</th>
         </tr>
@@ -28,7 +27,7 @@
     <script>
         $(document).ready(function () {
             $("#dataTable").DataTable({
-                "info": false,
+                "info": true,
                 "responsive": true,
                 "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
@@ -103,7 +102,7 @@
                     },
                    
                     {
-                        "data": "AppointmentOrTaskDateTime",
+                        "data": "AppointmentDate",
                         "targets": 3,
 
                         "render": function (data, type, row, meta) {
@@ -118,17 +117,10 @@
                             return moment(row.AppointmentOrTaskDateTime).locale("fr").format('DD-MMMM-YYYY');
                         }
                     },
-                    {
-                        "data": "Building.BuildingName",
-                        "targets": 5,
-
-                        "render": function (data, type, row, meta) {
-                            return data;
-                        }
-                    },
+                   
                     {
                         "data": "SentDateTime",
-                        "targets": 6,
+                        "targets": 5,
 
                         "render": function (data, type, row, meta) {
                             return moment(row.SentDateTime).locale("fr").format('LLL');
@@ -136,7 +128,7 @@
                     },
                     {
                         "data": "actions",
-                        "targets": 7,
+                        "targets": 6,
                         "render": function (data, type, row, meta) {
                             data = '<a class="btn btn-danger btn-bg" href="/OPMSAdmin/Messages/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer </a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';

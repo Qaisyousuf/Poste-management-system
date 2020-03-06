@@ -46,14 +46,13 @@
     <Compile Include="AboutPage.cs" />
     <Compile Include="AboutSection.cs" />
     <Compile Include="AboutShortSection.cs" />
-    <Compile Include="BuildingAddress.cs" />
+    <Compile Include="AdminActivity.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="ContactDetails.cs" />
     <Compile Include="ContactInfo.cs" />
     <Compile Include="ContactMainPage.cs" />
     <Compile Include="ContactMultiModel.cs" />
     <Compile Include="EntityBase.cs" />
-    <Compile Include="FloorsAddress.cs" />
     <Compile Include="HelpSupport.cs" />
     <Compile Include="HomeBanner.cs" />
     <Compile Include="HomeContent.cs" />
@@ -69,7 +68,6 @@
     <Compile Include="PostSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleModel.cs" />
-    <Compile Include="Room.cs" />
     <Compile Include="Sidebar.cs" />
     <Compile Include="SiteSettings.cs" />
     <Compile Include="SocialWorker.cs" />

@@ -1,0 +1,79 @@
+﻿@model OPMS.ViewModels.UserSMSViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+<hr />
+<h4>Voulez-vous vraiment supprimer le message</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+       
+        <dt>
+            @Html.DisplayNameFor(model => model.SentDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SentDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppointmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppointmentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppointmentOrTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppointmentOrTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SendedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SendedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageContainerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessageContainerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SocialId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SocialId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a class="btn btn-primary" href="/OPMSAdmin/Messages/SMSRecords">Retour à la liste principale</a>
+
+    </div>
+    }
+</div>

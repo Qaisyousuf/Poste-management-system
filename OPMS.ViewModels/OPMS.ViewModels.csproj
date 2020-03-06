@@ -66,8 +66,8 @@
     <Compile Include="AboutMultiViewModel.cs" />
     <Compile Include="AboutPageViewModel.cs" />
     <Compile Include="AboutSectionViewModel.cs" />
+    <Compile Include="AdminActivityVM.cs" />
     <Compile Include="BaseViewModel.cs" />
-    <Compile Include="BuildingAddressViewModel.cs" />
     <Compile Include="CheckBoxViewModel.cs" />
     <Compile Include="AboutShortSectionVM.cs" />
     <Compile Include="ContactDetailsVM.cs" />
@@ -76,7 +76,6 @@
     <Compile Include="ContactPageViewModel.cs" />
     <Compile Include="ContactViewModel.cs" />
     <Compile Include="EditUserViewModel.cs" />
-    <Compile Include="FloorsAddressViewModel.cs" />
     <Compile Include="HelpSupportVM.cs" />
     <Compile Include="HomeBannerVM.cs" />
     <Compile Include="HomeContentVM.cs" />
@@ -94,7 +93,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterViewModel.cs" />
     <Compile Include="RoleViewModel.cs" />
-    <Compile Include="RoomViewModel.cs" />
     <Compile Include="SidebarViewModel.cs" />
     <Compile Include="SiteSettingsViewModel.cs" />
     <Compile Include="SocialWorkerProfileList.cs" />

@@ -75,12 +75,11 @@
     <Compile Include="Concrete\AboutRepository.cs" />
     <Compile Include="Concrete\AboutSectionRepository.cs" />
     <Compile Include="Concrete\AboutShortSectionRepository.cs" />
-    <Compile Include="Concrete\BuildingRepository.cs" />
+    <Compile Include="Concrete\AdminActivityRepository.cs" />
     <Compile Include="Concrete\ContactDetailsRepository.cs" />
     <Compile Include="Concrete\ContactInfoRepository.cs" />
     <Compile Include="Concrete\ContactPageRepository.cs" />
     <Compile Include="Concrete\ContactRepository.cs" />
-    <Compile Include="Concrete\FloorsRepository.cs" />
     <Compile Include="Concrete\HelpSupportRepository.cs" />
     <Compile Include="Concrete\HomeBannerRepository.cs" />
     <Compile Include="Concrete\HomeContentRepository.cs" />
@@ -95,7 +94,6 @@
     <Compile Include="Concrete\PostSystemRepository.cs" />
     <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Concrete\RolesRepository.cs" />
-    <Compile Include="Concrete\RoomRepository.cs" />
     <Compile Include="Concrete\SidebarRepository.cs" />
     <Compile Include="Concrete\SiteSettingRepository.cs" />
     <Compile Include="Concrete\SocialProfileRepository.cs" />
@@ -116,12 +114,11 @@
     <Compile Include="Interfaces\IAboutRepository.cs" />
     <Compile Include="Interfaces\IAboutSectionRepository.cs" />
     <Compile Include="Interfaces\IAboutShortSectionRepository.cs" />
-    <Compile Include="Interfaces\IBuildingRepository.cs" />
+    <Compile Include="Interfaces\IAdminActivityRepository.cs" />
     <Compile Include="Interfaces\IContactDetailsRepository.cs" />
     <Compile Include="Interfaces\IContactInfoRepository.cs" />
     <Compile Include="Interfaces\IContactPageRepository.cs" />
     <Compile Include="Interfaces\IContactRepository.cs" />
-    <Compile Include="Interfaces\IFloorsRepository.cs" />
     <Compile Include="Interfaces\IHelpSupportRepository.cs" />
     <Compile Include="Interfaces\IHomeBannerRepository.cs" />
     <Compile Include="Interfaces\IHomeContentRepository.cs" />
@@ -136,7 +133,6 @@
     <Compile Include="Interfaces\IPostSystemRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRolesRepository.cs" />
-    <Compile Include="Interfaces\IRoomRepository.cs" />
     <Compile Include="Interfaces\ISidebarRepository.cs" />
     <Compile Include="Interfaces\ISiteSettingsRepository.cs" />
     <Compile Include="Interfaces\ISlug.cs" />
@@ -231,6 +227,18 @@
     <Compile Include="Migrations\202003021629145_UserLocationModelAdded.designer.cs">
       <DependentUpon>202003021629145_UserLocationModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003041058131_BuildingRemoveed.cs" />
+    <Compile Include="Migrations\202003041058131_BuildingRemoveed.designer.cs">
+      <DependentUpon>202003041058131_BuildingRemoveed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041434508_AddresModelRemoved.cs" />
+    <Compile Include="Migrations\202003041434508_AddresModelRemoved.designer.cs">
+      <DependentUpon>202003041434508_AddresModelRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041545189_AdminActivityAdded.cs" />
+    <Compile Include="Migrations\202003041545189_AdminActivityAdded.designer.cs">
+      <DependentUpon>202003041545189_AdminActivityAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -307,6 +315,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003021629145_UserLocationModelAdded.resx">
       <DependentUpon>202003021629145_UserLocationModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041058131_BuildingRemoveed.resx">
+      <DependentUpon>202003041058131_BuildingRemoveed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041434508_AddresModelRemoved.resx">
+      <DependentUpon>202003041434508_AddresModelRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041545189_AdminActivityAdded.resx">
+      <DependentUpon>202003041545189_AdminActivityAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,6 +11,7 @@ namespace OPMS.Web.Controllers
 {
     [ExceptionFilter]
     [LoginInfoFilter]
+    [AdminActivityFilter]
     public class CheckPostController : BaseController
     {
         [Route("CheckPost")]

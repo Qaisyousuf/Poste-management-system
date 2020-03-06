@@ -587,21 +587,6 @@
     <Content Include="Areas\OPMSAdmin\Views\SocialWorker\Edit.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\SocialWorker\Delete.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\SocialWorker\Details.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\BuildingAddres\Index.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\BuildingAddres\Create.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\BuildingAddres\Edit.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\BuildingAddres\Delete.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\BuildingAddres\Details.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Rooms\Index.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Rooms\Create.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Rooms\Edit.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Rooms\Delete.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Rooms\Details.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Floors\Index.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Floors\Create.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Floors\Edit.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Floors\Delete.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Floors\Details.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\AdminUser\Edit.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\AboutPage\Create.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\AboutPage\Index.cshtml" />
@@ -699,6 +684,7 @@
     <Content Include="Areas\OPMSAdmin\Views\Shared\_ErrorLayout.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\UserLocations\Index.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\UserLocations\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\Messages\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -792,12 +778,10 @@
     <Compile Include="Areas\OPMSAdmin\Controllers\AboutSectionsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\AboutShortSectionController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\AdminUserController.cs" />
-    <Compile Include="Areas\OPMSAdmin\Controllers\BuildingAddresController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\ContactDetailsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\ContactInfoController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\ContactPageController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\ContactsController.cs" />
-    <Compile Include="Areas\OPMSAdmin\Controllers\FloorsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\HelpController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\HelpSupportController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\HomebannerController.cs" />
@@ -812,7 +796,6 @@
     <Compile Include="Areas\OPMSAdmin\Controllers\PagesController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\PostSystemController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\RolesController.cs" />
-    <Compile Include="Areas\OPMSAdmin\Controllers\RoomsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SidebarsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SiteSettingsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\SocialProfilesController.cs" />
@@ -834,6 +817,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\AdminActivityFilter.cs" />
     <Compile Include="Infrastructure\ExceptionFilter.cs" />
     <Compile Include="Infrastructure\LoginInfoFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

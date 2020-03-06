@@ -15,9 +15,6 @@ namespace OPMS.Data.Interfaces
         IRolesRepository RolesRepository { get; }
         IMessageRepository MessageRepository { get; }
         ISocialWorkerRepository SocialWorkerRepository { get; }
-        IBuildingRepository BuildingRepository { get; }
-        IFloorsRepository FloorsRepository { get; }
-        IRoomRepository RoomRepository { get; }
         IMessagesSendingRepository MessagesSendingRepository { get; }
         IAboutRepository AboutPageRepository { get; }
         IAboutSectionRepository AboutSectionRepository { get; }
@@ -37,7 +34,7 @@ namespace OPMS.Data.Interfaces
         IMainPostSystemRepository MainPostSystemRepository { get; }
         IHelpSupportRepository HelpSupportRepository { get; }
         IUserLocationRepository UserLocationRepository { get; }
-
+        IAdminActivityRepository AdminActivityRepository { get; }
         void Commit();
     }
 }

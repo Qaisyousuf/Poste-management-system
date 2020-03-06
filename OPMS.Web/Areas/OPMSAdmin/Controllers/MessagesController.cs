@@ -1,19 +1,15 @@
 ﻿using OPMS.Data.Interfaces;
+using OPMS.Models;
+using OPMS.ViewModels;
+using OPMS.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using OPMS.ViewModels;
-using OPMS.Models;
 using System.Configuration;
+using System.Linq;
+using System.Web.Mvc;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
-using HtmlAgilityPack;
-using System.IO;
-using System.Text.RegularExpressions;
-using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
@@ -34,7 +30,6 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             var usermodel = uow.Context.Users.Select(x => x.PhoneNumber);
 
             ViewBag.Messag = uow.MessageRepository.GetAll();
-            ViewBag.Building = uow.BuildingRepository.GetAll();
             ViewBag.Social = uow.SocialWorkerRepository.GetAll();
 
         }
@@ -69,7 +64,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         {
             ViewBag.MessageContainer = uow.MessageRepository.GetAll();
             ViewBag.SocialWorker = uow.SocialWorkerRepository.GetAll();
-            ViewBag.Address = uow.BuildingRepository.GetAll();
+            
 
             var userfromdb = uow.UserRepository.GetById(id);
 
@@ -92,17 +87,17 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                
                 var mess = uow.MessageRepository.GetById(viewmodel.MessageContainerId);
                 var time = Convert.ToDateTime(viewmodel.AppointmentOrTime.ToShortTimeString());
-                var date = Convert.ToDateTime(viewmodel.AppointmentOrTaskDateTime.ToLongDateString());
+                var date = Convert.ToDateTime(viewmodel.AppointmentDate.ToLongDateString());
                 var dtCOMPLTDTTM = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
 
-                var addres = uow.BuildingRepository.GetById(viewmodel.BuildingId);
-                var addresMsg =("Work Place: " + addres.BuildingName).ToUpper();
+                //var addres = uow.BuildingRepository.GetById(viewmodel.BuildingId);
+                //var addresMsg =("Work Place: " + addres.BuildingName).ToUpper();
 
                 var socialWorker = uow.SocialWorkerRepository.GetById(viewmodel.SocialId);
 
                 var socialName = ("Sended By: " + socialWorker.FullName).ToUpper();
 
-                var messbody ="Work Time:" + dtCOMPLTDTTM +"\n"+ mess.Title + mess.Content + "\n" + addresMsg+"\n"+socialName;
+                var messbody ="Time: " + dtCOMPLTDTTM +"\n"+"Title: "+ mess.Title+"\n"+ "SMS:" + mess.Content + "\n"+socialName;
 
 
                 var userName = ("Bonjour Mr : " + viewmodel.UserName).ToUpper();
@@ -131,8 +126,6 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                         Users = viewmodel.Users,
                         MessageContainer = viewmodel.MessageContainer,
                         MessageContainerId = viewmodel.MessageContainerId,
-                        BuildingId = viewmodel.BuildingId,
-                        Building = viewmodel.Building,
                         SocialId = viewmodel.SocialId,
                         SocialWorker = viewmodel.SocialWorker,
                     };
@@ -156,7 +149,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         
         public JsonResult SentSMSData()
         {
-            var messFromdb = uow.MessagesSendingRepository.GetAll("Users", "MessageContainer", "Building", "SocialWorker");
+            var messFromdb = uow.MessagesSendingRepository.GetAll("Users", "MessageContainer", "SocialWorker");
 
 
             List<UserSMSViewModel> viewmodel = new List<UserSMSViewModel>();
@@ -173,13 +166,11 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                     UserId=item.UserId,
                     Users=item.Users,
                     SentDateTime=item.SentDateTime,
-                    AppointmentOrTaskDateTime=date,
+                    AppointmentDate=date,
                     AppointmentOrTime=time,
                     SendedBy=item.SendedBy,
                     MessageContainer=item.MessageContainer,
                     MessageContainerId=item.MessageContainerId,
-                    Building=item.Building,
-                    BuildingId=item.BuildingId,
                     SocialId=item.SocialId,
                     SocialWorker=item.SocialWorker,
 
@@ -193,6 +184,66 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         public ActionResult SMSRecords()
         {
             return View();
+        }
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            var smsFromdb = uow.MessagesSendingRepository.GetById(id);
+            var datatime = smsFromdb.AppointmentOrTaskDateTime;
+            var time = Convert.ToDateTime(datatime.ToShortTimeString());
+            var date = Convert.ToDateTime(datatime.ToShortDateString());
+            ViewBag.MessageContainer = uow.MessageRepository.GetAll();
+            ViewBag.SocialWorker = uow.SocialWorkerRepository.GetAll();
+
+          
+            UserSMSViewModel viewmodel = new UserSMSViewModel
+            {
+                Id = smsFromdb.Id,
+                Title = smsFromdb.Title,
+                UserId = smsFromdb.UserId,
+               
+                Users=smsFromdb.Users,
+                SentDateTime=smsFromdb.SentDateTime,
+                SendedBy=smsFromdb.SendedBy,
+                MessageContainer=smsFromdb.MessageContainer,
+                MessageContainerId=smsFromdb.MessageContainerId,
+                SocialId=smsFromdb.SocialId,
+                SocialWorker=smsFromdb.SocialWorker,
+                AppointmentOrTime=time,
+                AppointmentDate=date,
+            };
+            return View(viewmodel);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirm(int? id)
+        {
+          
+            var smsFromdb = uow.MessagesSendingRepository.GetById(id);
+            var datatime = smsFromdb.AppointmentOrTaskDateTime;
+            var time = Convert.ToDateTime(datatime.ToShortTimeString());
+            var date = Convert.ToDateTime(datatime.ToShortDateString());
+            UserSMSViewModel viewmodel = new UserSMSViewModel
+            {
+                Id = smsFromdb.Id,
+                Title = smsFromdb.Title,
+                UserId = smsFromdb.UserId,
+
+                Users = smsFromdb.Users,
+                SentDateTime = smsFromdb.SentDateTime,
+                SendedBy = smsFromdb.SendedBy,
+                MessageContainer = smsFromdb.MessageContainer,
+                MessageContainerId = smsFromdb.MessageContainerId,
+                SocialId = smsFromdb.SocialId,
+                SocialWorker = smsFromdb.SocialWorker,
+                AppointmentOrTime = time,
+                AppointmentDate = date,
+            };
+
+            uow.MessagesSendingRepository.Remove(smsFromdb);
+            uow.Commit();
+            return RedirectToAction(nameof(SMSRecords));
+
         }
 
        

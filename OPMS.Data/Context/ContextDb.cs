@@ -36,12 +36,10 @@ namespace OPMS.Data.Context
         public DbSet<MainPostSystem> MainPostSystems { get; set; }
         public DbSet<MessageContainer> MessageContainers { get; set; }
         public DbSet<SocialWorker> SocialWorkers { get; set; }
-        public DbSet<BuildingAddress> BuildingAddresses { get; set; }
-        public DbSet<FloorsAddress> FloorsAddresses { get; set; }
-        public DbSet<Room> Rooms { get; set; }
         public DbSet<Messages> Messages { get; set; }
         public DbSet<HelpSupport> HelpSupports { get; set; }
         public DbSet<UserLocation> UserLocations { get; set; }
+        public DbSet<AdminActivity> AdminActivities { get; set; }
 
 
         

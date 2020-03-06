@@ -40,7 +40,7 @@ namespace OPMS.ViewModels
         [Display(Name ="Building Address")]
         public int BuildingId { get; set; }
         [ForeignKey("BuildingId")]
-        public BuildingAddress Building { get; set; }
+
 
 
 
