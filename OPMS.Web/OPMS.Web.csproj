@@ -685,6 +685,7 @@
     <Content Include="Areas\OPMSAdmin\Views\UserLocations\Index.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\UserLocations\Delete.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Messages\Delete.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AdminUser\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

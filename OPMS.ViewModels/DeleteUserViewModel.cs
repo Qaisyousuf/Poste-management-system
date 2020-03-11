@@ -7,19 +7,21 @@ using System.Threading.Tasks;
 
 namespace OPMS.ViewModels
 {
-     public class EditUserViewModel
+   public class DeleteUserViewModel:BaseViewModel
     {
-        public EditUserViewModel()
+        public DeleteUserViewModel()
         {
             Roles = new List<CheckBoxViewModel>();
         }
+
         public int Id { get; set; }
+
         [Required]
         [Display(Name = "Resident Name")]
         public string UserName { get; set; }
 
-        [EmailAddress(ErrorMessage ="Enter correct email")]
-        [Display(Name = "E-mail (Optional)")]
+        [EmailAddress(ErrorMessage = "Enter correct email")]
+        [Display(Name = "E-mail(Optional)")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
@@ -33,7 +35,12 @@ namespace OPMS.ViewModels
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Required]
+        [Compare("Password", ErrorMessage = "Confirm password does not match")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
+        public string ConfirmPassword { get; set; }
+
+
         public List<CheckBoxViewModel> Roles { get; set; }
     }
 }

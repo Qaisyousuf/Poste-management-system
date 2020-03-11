@@ -13,7 +13,7 @@ using OPMS.Web.Infrastructure;
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
     [Authorize(Roles = "Admin")]
-    [ExceptionFilter]
+   // [ExceptionFilter]
     public class AdminUserController : Controller
     {
         private readonly IUnitOfWork uow;
@@ -97,6 +97,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             viewmodel.Roles = checkBoxs;
             return View(viewmodel);
         }
+        [HttpGet]
         public ActionResult Edit(int id)
         {
 
@@ -104,14 +105,50 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             return View(GetEdit);
            
         }     
+
+        [HttpPost]
+        public ActionResult Edit([Bind(Include = "UserName,PhoneNumber,Email")] EditUserViewModel viewmodel,int[] Roles)
+        {
+           if(ModelState.IsValid)
+            {
+                var dbUser = uow.UserRepository.GetById(viewmodel.Id);
+
+                if(dbUser !=null)
+                {
+                    int[] currentUserRoles = dbUser.Roles.Select(x => x.Id).ToArray();
+                    string[] roleName = uow.Context.Roles.Where(x => currentUserRoles.Contains(x.Id)).Select(x => x.Name).ToArray();
+
+                    uow.RolesRepository.RemoveById(currentUserRoles);
+                    uow.UserRepository.RemoveById(dbUser.Id);
+
+                    dbUser.Email = viewmodel.Email;
+                    dbUser.UserName = viewmodel.UserName;
+                    dbUser.PhoneNumber = viewmodel.PhoneNumber;
+
+                    uow.UserRepository.Update(dbUser);
+
+                    if(Roles !=null)
+                    {
+                        int[] RoleId = dbUser.Roles.Select(x => x.Id).ToArray();
+                       // string[] RolesName = uow.Context.Roles.Where(x => currentUserRoles.Contains(x.Id)).Select(x => x.Name).ToString();
+
+                        //uow.UserRepository.AddUserToRoles(dbUser.Id,RolesName,uow.Context);
+                        uow.Commit();
+                        
+                    }
+                }
+            } 
+            return RedirectToAction(nameof(Index));
+           
+        }
         private EditUserViewModel GetEditUser(int id)
         {
-            // var user = uow.UserRepository.GetById(id);
-            var userFromdb =_context.Users.Include("Roles").Where(x => x.Id == id).FirstOrDefault();
-            var Currentrole = uow.UserRepository.GetUserWithRoles(userFromdb.UserName);
-            var currentRoleFromdb = userFromdb.Roles.Select(x => x.Users.Select(u => u.Roles)).ToList();
+
+            var userFromdb = uow.Context.Users.Include("Roles").Where(x => x.Id == id).FirstOrDefault();
+            var Currentrole = userFromdb.Roles.Select(x => x.Id).ToList();
+            
             var RoleFromdb = uow.UserRepository.GetRoles();
-            //var roleByid = _context.Roles.Find(id);
+            var roleByid =uow.Context.Roles.Find(id);
 
             EditUserViewModel viewmodel = new EditUserViewModel
             {
@@ -123,7 +160,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 
             foreach (var role in RoleFromdb)
             {
-                if(RoleFromdb !=null)
+                if(Currentrole.Contains(role.Id))
                 {
                     viewmodel.Roles.Add(new CheckBoxViewModel
                     {
@@ -132,6 +169,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                         Checked = true
                     });
                 }
+
                 else
                 {
                     viewmodel.Roles.Add(new CheckBoxViewModel
@@ -145,10 +183,72 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             return viewmodel;
 
         }
-        //[HttpGet]
-        //public ActionResult SendSMS()
-        //{
-            
-        //}
+        private DeleteUserViewModel DeleteUser(int id)
+        {
+            var userFromdb = uow.Context.Users.Include("Roles").Where(x => x.Id == id).FirstOrDefault();
+            var Currentrole = userFromdb.Roles.Select(x => x.Id).ToList();
+
+          
+            var RoleFromdb = uow.UserRepository.GetRoles();
+            var roleByid = _context.Roles.Find(id);
+
+            DeleteUserViewModel viewmodelDelete = new DeleteUserViewModel
+            {
+                UserName = userFromdb.UserName,
+                Email = userFromdb.Email,
+                PhoneNumber = userFromdb.PhoneNumber,
+                Password=userFromdb.HashPassword,
+                ConfirmPassword=userFromdb.HashPassword,
+
+            };
+
+            foreach (var role in RoleFromdb)
+            {
+                if (Currentrole.Contains(role.Id))
+                {
+                    viewmodelDelete.Roles.Add(new CheckBoxViewModel
+                    {
+                        Id = role.Id,
+                        Text = role.Name,
+                        Checked = true
+                    });
+                }
+                else
+                {
+                    viewmodelDelete.Roles.Add(new CheckBoxViewModel
+                    {
+                        Id = role.Id,
+                        Text = role.Name,
+                        Checked = false
+                    });
+                }
+            }
+            return viewmodelDelete;
+
+        }
+
+
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var GetEdit = DeleteUser(id);
+
+
+            return View(GetEdit);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirm(int id)
+        {
+            var userFromdb = uow.UserRepository.GetById(id);
+
+            uow.UserRepository.Remove(userFromdb);
+            uow.Commit();
+            return RedirectToAction(nameof(Index));
+        }
+
+       
     }
 }

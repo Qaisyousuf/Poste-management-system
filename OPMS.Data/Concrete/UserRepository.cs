@@ -24,6 +24,17 @@ namespace OPMS.Data.Concrete
             }
         }
 
+        public void AddUserToRolesEdit(int? userId, int[] roleIds)
+        {
+            var user = _context.Users.Where(x => x.Id == userId).FirstOrDefault();
+            var rolesFromdb = GetRolesById(roleIds);
+
+            foreach (var role in rolesFromdb)
+            {
+                user.Roles.Add(role);
+            }
+        }
+
         public string GetPassword(string username)
         {
             return _context.Users.Where(x => x.UserName == username).Select(x => x.HashPassword).FirstOrDefault();
@@ -78,6 +89,18 @@ namespace OPMS.Data.Concrete
                 });
             }
             return userWithRoles;
+        }
+
+        public void RemoveFromeRoles(int? userId, int[] roleName, ContextDb context)
+        {
+            
+            var userFromdb =_context.Users.Include("Roles").Where(x => x.Id == userId).FirstOrDefault();
+            int[] rolefromdb = userFromdb.Roles.Select(x => x.Id).ToArray();
+            string[] roleNamefromdb = userFromdb.Roles.Where(x => rolefromdb.Contains(x.Id)).Select(x => x.Name).ToArray();
+            foreach (var role in roleNamefromdb)
+            {
+               //userFromdb.Roles.Remove(role);
+            }
         }
 
         public bool UserExists(string username)
