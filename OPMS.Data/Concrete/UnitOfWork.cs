@@ -69,6 +69,8 @@ namespace OPMS.Data.Concrete
 
         public IAdminActivityRepository AdminActivityRepository => new AdminActivityRepository(Context);
 
+        public IAdminPanelInfoReposiroty AdminPanelInfo => new AdminPanelInfoReposiroty(Context);
+
         public void Commit()
         {
             Context.SaveChanges();

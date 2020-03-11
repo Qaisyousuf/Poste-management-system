@@ -60,10 +60,11 @@
                 </button>
                 @*@Html.ActionLink("Administration", "Index", "Pages", new { area = "OPMSAdmin" }, new { @class = "navbar-brand" })*@
                 <img src="~/Content/Img/LogoCoallia_Couleur (2).png" class="navbar-brand" />
-              
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Dashboard", "Index", "Admin", new { area = "OPMSAdmin" }, null)</li>
                     <li class="dropdown">
                         <a title="Home" href="#" class="dropdown-toggle" data-toggle="dropdown"> Home <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -89,8 +90,8 @@
                             <li>@Html.ActionLink("Mesage BOX", "Index", "MessageContainer", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Delivered SMS", "SMSRecords", "Messages", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Post Message Box", "Index", "PostSystem", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Attribuer un Poste", "Index", "MainPostSystem", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Livré Poste", "PostData", "MainPostSystem", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Assign a  post", "Index", "MainPostSystem", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Delivered Post", "PostData", "MainPostSystem", new { area = "OPMSAdmin" }, null)</li>
 
                         </ul>
                     </li>
@@ -101,11 +102,6 @@
                             <li>@Html.ActionLink("Contact Details", "Index", "ContactDetails", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Contact Info", "Index", "ContactInfo", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Contact Forms", "Index", "Contacts", new { area = "OPMSAdmin" }, null)</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a title="NewsInfo" href="#" class="dropdown-toggle" data-toggle="dropdown"> News Infomation <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
                             <li>@Html.ActionLink("News Info", "Index", "NewsInfo", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("News Banner", "Index", "NewsBanner", new { area = "OPMSAdmin" }, null)</li>
                         </ul>
@@ -116,11 +112,11 @@
                             <li>@Html.ActionLink("Social Worker Page", "Index", "SWorkerPage", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Banner", "Index", "SWBanner", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Social Profile", "Index", "SocialProfiles", new { area = "OPMSAdmin" }, null)</li>
-                          
                         </ul>
                     </li>
-                  
+
                     <li>@Html.ActionLink("Help", "Index", "Help", new { area = "OPMSAdmin" }, null)</li>
+
                     <li class="dropdown">
                         <a title="About" href="#" class="dropdown-toggle" data-toggle="dropdown">Messages<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -133,6 +129,7 @@
                             <li>@Html.ActionLink("Building", "Index", "BuildingAddres", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("Rooms", "Index", "Rooms", new { area = "OPMSAdmin" }, null)</li>
                             <li>@Html.ActionLink("User Activity", "Index", "UserLocations", new { area = "OPMSAdmin" }, null)</li>
+                            <li>@Html.ActionLink("Admin", "Index", "AdminPanel", new { area = "OPMSAdmin" }, null)</li>
 
                         </ul>
                     </li>

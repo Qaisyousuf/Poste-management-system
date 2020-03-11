@@ -1,0 +1,58 @@
+﻿@model OPMS.ViewModels.AdminstratorPanelVM
+
+@{
+    ViewBag.Title = "Details";
+}
+<hr />
+<h4>Détails du <button disabled class="btn btn-info">@Model.SubContent</button></h4>
+
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthenticatedUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthenticatedUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id },new { @class="btn btn-default"}) |
+    <a class="btn btn-primary" href="/OPMSAdmin/AdminPanel/Index">Retour à la liste principale</a>
+</p>

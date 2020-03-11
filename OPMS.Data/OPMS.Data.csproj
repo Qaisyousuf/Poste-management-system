@@ -76,6 +76,7 @@
     <Compile Include="Concrete\AboutSectionRepository.cs" />
     <Compile Include="Concrete\AboutShortSectionRepository.cs" />
     <Compile Include="Concrete\AdminActivityRepository.cs" />
+    <Compile Include="Concrete\AdminPanelInfoReposiroty.cs" />
     <Compile Include="Concrete\ContactDetailsRepository.cs" />
     <Compile Include="Concrete\ContactInfoRepository.cs" />
     <Compile Include="Concrete\ContactPageRepository.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Interfaces\IAboutSectionRepository.cs" />
     <Compile Include="Interfaces\IAboutShortSectionRepository.cs" />
     <Compile Include="Interfaces\IAdminActivityRepository.cs" />
+    <Compile Include="Interfaces\IAdminPanelInfoReposiroty.cs" />
     <Compile Include="Interfaces\IContactDetailsRepository.cs" />
     <Compile Include="Interfaces\IContactInfoRepository.cs" />
     <Compile Include="Interfaces\IContactPageRepository.cs" />
@@ -239,6 +241,14 @@
     <Compile Include="Migrations\202003041545189_AdminActivityAdded.designer.cs">
       <DependentUpon>202003041545189_AdminActivityAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003111317089_AdminPanelAdded.cs" />
+    <Compile Include="Migrations\202003111317089_AdminPanelAdded.designer.cs">
+      <DependentUpon>202003111317089_AdminPanelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003111347059_AdminPanelUpdated.cs" />
+    <Compile Include="Migrations\202003111347059_AdminPanelUpdated.designer.cs">
+      <DependentUpon>202003111347059_AdminPanelUpdated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -324,6 +334,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003041545189_AdminActivityAdded.resx">
       <DependentUpon>202003041545189_AdminActivityAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003111317089_AdminPanelAdded.resx">
+      <DependentUpon>202003111317089_AdminPanelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003111347059_AdminPanelUpdated.resx">
+      <DependentUpon>202003111347059_AdminPanelUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

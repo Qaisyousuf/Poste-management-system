@@ -47,6 +47,7 @@
     <Compile Include="AboutSection.cs" />
     <Compile Include="AboutShortSection.cs" />
     <Compile Include="AdminActivity.cs" />
+    <Compile Include="AdminstratorPanel.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="ContactDetails.cs" />
     <Compile Include="ContactInfo.cs" />

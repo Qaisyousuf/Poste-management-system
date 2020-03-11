@@ -40,6 +40,7 @@ namespace OPMS.Data.Context
         public DbSet<HelpSupport> HelpSupports { get; set; }
         public DbSet<UserLocation> UserLocations { get; set; }
         public DbSet<AdminActivity> AdminActivities { get; set; }
+        public DbSet<AdminstratorPanel> AdminstratorPanels { get; set; }
 
 
         

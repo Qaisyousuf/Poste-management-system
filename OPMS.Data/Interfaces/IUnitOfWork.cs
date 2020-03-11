@@ -35,6 +35,7 @@ namespace OPMS.Data.Interfaces
         IHelpSupportRepository HelpSupportRepository { get; }
         IUserLocationRepository UserLocationRepository { get; }
         IAdminActivityRepository AdminActivityRepository { get; }
+        IAdminPanelInfoReposiroty AdminPanelInfo { get; }
         void Commit();
     }
 }

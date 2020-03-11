@@ -67,6 +67,7 @@
     <Compile Include="AboutPageViewModel.cs" />
     <Compile Include="AboutSectionViewModel.cs" />
     <Compile Include="AdminActivityVM.cs" />
+    <Compile Include="AdminstratorPanelVM.cs" />
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="CheckBoxViewModel.cs" />
     <Compile Include="AboutShortSectionVM.cs" />

@@ -1,0 +1,61 @@
+﻿@model OPMS.ViewModels.AdminstratorPanelVM
+
+@{
+    ViewBag.Title = "Delete";
+}
+<hr />
+<h4>Voulez-vous vraiment supprimer le <button disabled class="btn btn-danger">@Model.SubContent</button></h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthenticatedUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthenticatedUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a class="btn btn-primary" href="/OPMSAdmin/AdminPanel/Index">Retour à la liste principale</a>
+    </div>
+    }
+</div>
