@@ -30,7 +30,7 @@ namespace OPMS.Web.Infrastructure
                 string UserName = filterContext.HttpContext.User.Identity.Name;
                 DateTime LoginDate = filterContext.HttpContext.Timestamp;
                 string BrowserName = filterContext.HttpContext.Request.Browser.Browser;
-                // string userLocation = filterContext.ActionDescriptor.ActionName.Replace("Index", "Login");
+                string UserAction = filterContext.ActionDescriptor.ActionName.Replace("Index", "Login");
                 string deviceName = filterContext.HttpContext.Server.MachineName;
 
                 var adminActivity = new AdminActivity
@@ -43,6 +43,8 @@ namespace OPMS.Web.Infrastructure
                     UserBrowser = BrowserName,
                     DateTime = LoginDate,
                     DeviceName = deviceName,
+                   AuthenticationActivity=UserAction,
+                    
                 };
                 _context.AdminActivities.Add(adminActivity);
                 _context.SaveChanges();

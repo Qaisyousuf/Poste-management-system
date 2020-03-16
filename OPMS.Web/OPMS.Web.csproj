@@ -695,6 +695,8 @@
     <Content Include="Areas\OPMSAdmin\Views\AdminPanel\Details.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Admin\Index.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AdminActivity\Index.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AdminActivity\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -787,6 +789,7 @@
     <Compile Include="Areas\OPMSAdmin\Controllers\AboutPageController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\AboutSectionsController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\AboutShortSectionController.cs" />
+    <Compile Include="Areas\OPMSAdmin\Controllers\AdminActivityController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\AdminController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\AdminPanelController.cs" />
     <Compile Include="Areas\OPMSAdmin\Controllers\AdminUserController.cs" />

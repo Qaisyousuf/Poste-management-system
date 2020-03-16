@@ -11,30 +11,33 @@ namespace OPMS.ViewModels
         public string Ip { get; set; }
 
 
-        [Display(Name = "User Browser")]
+        [Display(Name = "User Agent")]
         public string UserAgint { get; set; }
 
 
-        [Display(Name = "Action Nmae")]
+        [Display(Name = "Link Nmae")]
         public string ActionName { get; set; }
 
 
-        [Display(Name = "Controller Name")]
+        [Display(Name = "Page Name")]
         public string ControllerName { get; set; }
 
         [Display(Name = "User")]
         public string LoginUser { get; set; }
 
-        [Display(Name = "User ISP")]
+        [Display(Name = "User Browser")]
         public string UserBrowser { get; set; }
 
-        [Display(Name = "logged in Date")]
+        [Display(Name = "Login time Date")]
         public DateTime Date { get; set; }
 
-        [Display(Name = "logged in Time")]
+        [Display(Name = "Login time")]
         public DateTime Time { get; set; }
 
         [Display(Name = "Device Name")]
-        public string UserLocationInfo { get; set; }
+        public string DeviceName { get; set; }
+
+        [Display(Name = "Authentcation Activity")]
+        public string AuthenticationActivity { get; set; }
     }
 }

@@ -11,7 +11,9 @@ namespace OPMS.Models
         public string LoginUser { get; set; }
         public string UserBrowser { get; set; }
         public DateTime DateTime { get; set; }
-        public string UserLocationInfo { get; set; }
+        public string DeviceName { get; set; }
+        public string AuthenticationActivity { get; set; }
+
 
 
     }

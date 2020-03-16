@@ -9,7 +9,8 @@ using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
-    [ExceptionFilter]
+    [Authorize(Roles = "Admin")]
+    //[ExceptionFilter]
     public class UserLocationsController : Controller
     {
         private readonly IUnitOfWork uow;
@@ -46,7 +47,8 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                     UserBrowser=item.UserBrowser,
                     Date=date,
                     Time=time,
-                    UserLocationInfo=item.UserLocationInfo,
+                    DeviceName=item.DeviceName,
+                    AuthenticationActivity=item.AuthenticationActivity,
                 });
             }
 
@@ -70,7 +72,8 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 UserBrowser=locationFromdb.UserBrowser,
                 Date=date,
                 Time=time,
-                UserLocationInfo=locationFromdb.UserLocationInfo,
+                DeviceName=locationFromdb.DeviceName,
+                AuthenticationActivity=locationFromdb.AuthenticationActivity,
             };
             return View(viewmodel);
         }
@@ -90,7 +93,8 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 LoginUser=locationfromdb.LoginUser,
                 UserBrowser=locationfromdb.UserBrowser,
                 Date=locationfromdb.DateTime,
-                UserLocationInfo=locationfromdb.UserLocationInfo,
+                DeviceName=locationfromdb.DeviceName,
+                AuthenticationActivity=locationfromdb.AuthenticationActivity,
             };
 
             uow.UserLocationRepository.Remove(locationfromdb);

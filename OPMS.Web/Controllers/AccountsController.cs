@@ -21,6 +21,7 @@ namespace OPMS.Web.Controllers
 
         [HttpPost]
         [LoginInfoFilter]
+        [AdminActivityFilter]
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
@@ -28,6 +29,8 @@ namespace OPMS.Web.Controllers
         }
         [HttpGet]
         [Route("Authorization")]
+        [LoginInfoFilter]
+        [AdminActivityFilter]
         public ActionResult Login()
         {
             return View(new LoginViewModel());

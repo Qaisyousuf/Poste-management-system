@@ -1,7 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "UserInfo";
-
+    ViewBag.Title = "Index";
 }
 <hr />
 <h4>liste des activités des utilisateurs</h4>
@@ -13,10 +12,11 @@
             <th><i class="glyphicon glyphicon-align-center"></i> IP</th>
             <th><i class="glyphicon glyphicon-link"></i> User</th>
             <th><i class="glyphicon glyphicon-link"></i> Page</th>
-            <th><i class="glyphicon glyphicon-link"></i>Login/Logout Date</th>
-            <th><i class="glyphicon glyphicon-link"></i>Login/logout Time</th>
+            <th><i class="glyphicon glyphicon-link"></i>Login /logout Date</th>
+            <th><i class="glyphicon glyphicon-link"></i>Login /logout Time</th>
             <th><i class="glyphicon glyphicon-link"></i> Device</th>
             <th><i class="glyphicon glyphicon-link"></i> Authentication</th>
+           
             <th><i class="glyphicon glyphicon-"></i> Actions</th>
         </tr>
     </thead>
@@ -70,7 +70,7 @@
                     },
                 ],
                 "ajax": {
-                    "url": "/OPMSAdmin/UserLocations/GetUserLocation",
+                    "url": "/OPMSAdmin/AdminActivity/GetAdminActivity",
                     "type": "Get",
                     "dataType": "json",
 
@@ -92,7 +92,6 @@
                             return data;
                         }
                     },
-                
                     {
                         "data": "ControllerName",
                         "targets": 2,
@@ -101,7 +100,7 @@
                             return data;
                         }
                     },
-                   
+                    
                     {
                         "data": "Date",
                         "targets": 3,
@@ -138,8 +137,8 @@
                         "data": "actions",
                         "targets": 7,
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-danger btn-bg" href="/OPMSAdmin/UserLocations/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer </a>';
-                           
+                            data = '<a class="btn btn-danger btn-bg" href="/OPMSAdmin/AdminActivity/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer </a>';
+
                             return data;
                         }
                     },

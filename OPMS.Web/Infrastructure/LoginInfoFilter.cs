@@ -30,9 +30,9 @@ namespace OPMS.Web.Infrastructure
                 string IPaddress = filterContext.HttpContext.Request.UserHostAddress;
                 string UserName = filterContext.HttpContext.User.Identity.Name;
                 DateTime LoginDate = filterContext.HttpContext.Timestamp;
-                string BrowserName = filterContext.HttpContext.Server.MachineName;
-                string userLocation = filterContext.ActionDescriptor.ActionName.Replace("Index", "Login");
-                bool deviceName = filterContext.HttpContext.Request.Browser.IsMobileDevice;
+                string BrowserName = filterContext.HttpContext.Request.Browser.Browser;
+                string UserAction = filterContext.ActionDescriptor.ActionName.Replace("Index", "Login");
+                string deviceName = filterContext.HttpContext.Server.MachineName;
 
                
 
@@ -45,7 +45,8 @@ namespace OPMS.Web.Infrastructure
                     LoginUser = UserName,
                     UserBrowser = BrowserName,
                     DateTime = LoginDate,
-                    UserLocationInfo = userLocation,
+                    DeviceName = deviceName,
+                    AuthenticationActivity=UserAction,
                 };
 
                 _Context.UserLocations.Add(location);

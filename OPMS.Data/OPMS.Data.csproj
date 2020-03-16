@@ -249,6 +249,14 @@
     <Compile Include="Migrations\202003111347059_AdminPanelUpdated.designer.cs">
       <DependentUpon>202003111347059_AdminPanelUpdated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003120948393_FilterActionUpdated.cs" />
+    <Compile Include="Migrations\202003120948393_FilterActionUpdated.designer.cs">
+      <DependentUpon>202003120948393_FilterActionUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003121021204_AdminFilterUpated.cs" />
+    <Compile Include="Migrations\202003121021204_AdminFilterUpated.designer.cs">
+      <DependentUpon>202003121021204_AdminFilterUpated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -340,6 +348,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003111347059_AdminPanelUpdated.resx">
       <DependentUpon>202003111347059_AdminPanelUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003120948393_FilterActionUpdated.resx">
+      <DependentUpon>202003120948393_FilterActionUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003121021204_AdminFilterUpated.resx">
+      <DependentUpon>202003121021204_AdminFilterUpated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

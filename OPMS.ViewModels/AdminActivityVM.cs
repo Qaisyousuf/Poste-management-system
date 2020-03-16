@@ -40,5 +40,9 @@ namespace OPMS.ViewModels
 
         [Display(Name = "Device Name")]
         public string DeviceName { get; set; }
+
+        [Display(Name = "Authentication Activity")]
+
+        public string AuthenticationActivity { get; set; }
     }
 }
