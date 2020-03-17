@@ -5,18 +5,18 @@
     {
         using (Html.BeginForm("LogOut", "Accounts", new { Area = "" }, FormMethod.Post, new { id = "logoutForm" }))
         {
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="javascript:document.getElementById('logoutForm').submit();"> Bonjour  @User.Identity.Name | <span class="btn btn-danger"> LogOut</span> </a></li>
+            <ul class="nav navbar-nav my-0">
+                <li class="nav-item ml-auto "><a class="nav-link ml-auto " href="javascript:document.getElementById('logoutForm').submit();"> Bonjour  @User.Identity.Name | <span class="btn btn-danger btn-rounded btn-sm"> Logout <i class="fas fa-lock"></i> </span></a></li>
             </ul>
            
         }
     }
 }
-else
-{
-            <ul class="nav navbar-nav navbar-right">
+        else
+        {
+                    <ul class="nav navbar-nav ml-auto">
 
-                <li><a href="/Authorization"><span class="btn btn-primary"> LogIn </span></a></li>
-            </ul>
+                        <li class="nav-item ml-auto"><a class="nav-link ml-auto" href="/Authorization"><span class="btn btn-deep-orange btn-rounded btn-sm"> LogIn <i class="fas fa-key"></i> </span></a></li>
+                    </ul>
           
-}
+        }

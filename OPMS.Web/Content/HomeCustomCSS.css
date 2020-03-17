@@ -1,19 +1,9 @@
 ﻿body {
     background-color: #f9f9f9;
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
+    padding-top:100px;
 }
-.homeBanner .thumbnail  {
-    background-color: #e0f2f1;
-    padding:0px;
-    margin:0px;
-    
-}
-.thumbnail img {
-    height:100%;
-    width:100%;
-    padding:0px;
-    margin:0px;
+.navbar-brand img {
+    height: 40px;
+    margin: 5px;
+    width: 100px;
 }
