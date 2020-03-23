@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace OPMS.Web.Controllers
 {
-   
+    [NoCacheFilter]
     public class CustomErrorsController : Controller
     {
         // GET: CustomErrors

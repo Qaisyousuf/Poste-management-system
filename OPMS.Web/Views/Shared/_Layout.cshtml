@@ -9,8 +9,11 @@
     <link href="@Model.LayoutTitle" rel="stylesheet" />
     <link href="@Model.GoogelAds" rel="stylesheet" />
     <link href="@Model.GoogleSiteVerification" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+  
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
 
     @if (Model.IsVisibleToSearchEngine == true)
     {
@@ -30,8 +33,8 @@
         <meta name="keywords" content="@Model.MetaKeywords" />
         <meta name="description" content="@Model.MetaDescritpion" />
     }
-    @*<link href="@Model.FavIcon" rel="icon" type="image/svg" sizes="16X16" />*@
-   
+
+
 </head>
 <body>
     <div class="navbar fixed-top navbar-expand-lg navbar-dark  blue lighten-1 scrolling-navbar">
@@ -41,7 +44,9 @@
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                @Html.ActionLink("Coallia", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                    <img src="~/Content/Img/LogoCoallia_Couleur (2).png" title="title" alt="additional title" />
+                </a>
 
 
             </div>
@@ -52,41 +57,114 @@
         </div>
     </div>
 
-    <div class="container-fluid body-content">
-        <div class="row">
+    <div class="">
+        
+
             @Html.Action("HomeBanner", "Home")
 
             @RenderBody()
-            <hr />
+            
             @Html.Action("SidbarPartial", "Home")
-            <hr />
+          
             @Html.Action("HomeContentData", "Home")
-            <hr />
+            
             @Html.Action("HomeRRData", "Home")
             @RenderSection("HomeCustomCSS", required: true)
-        </div>
-        <hr />
-        <footer>
-            <div class="card text-center">
-                <div class="card-header">
-                    Featured
+
+        <footer class="page-footer font-small blue pt-4">
+
+            <!-- Footer Links -->
+            <div class="container-fluid text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 mt-md-0 mt-3">
+
+                        <!-- Content -->
+                        <h4>@Model.SiteFooter</h4>
+                        <h5 class=" text-white">@Html.Raw(Model.ContentFooterBase)</h5>
+
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none pb-3">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+
+                        <!-- Links -->
+                        <h5 class="text-uppercase">Navigation</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="@Model.HomeUrlBase">@Model.HomeFooter</a>
+                            </li>
+                            <li>
+                                <a href="@Model.AboutUrl">@Model.AboutFooter</a>
+                            </li>
+                            <li>
+                                <a href="@Model.ContactUrlBase">@Model.ContactFooterBase</a>
+                            </li>
+                            <li>
+                                <a href="@Model.LoginUrlBase">@Model.LoginFooter</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+
+                        <!-- Links -->
+                        <h5 class="text-uppercase">Contact</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!">@Model.AddresFooterBase</a>
+                            </li>
+                            <li>
+                                <a href="#!">@Model.ContactNumberFooterBase</a>
+                            </li>
+                            <li>
+                                <a href="#!">@Model.EmailFooterBase</a>
+                            </li>
+                            <li>
+                                <a href="#!">@Model.SiteName</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">@Model.SiteFooter</h5>
-                    <p class="card-text">@Model.SiteName</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                <div class="card-footer text-muted">
-                    WebSiteLastUpdated @Model.SiteLastUpdate
-                </div>
+                <!-- Grid row -->
+
             </div>
-            <p><h3>@Model.AboutFooter</h3></p>
+            <!-- Footer Links -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center">
+                Site Last Update:@Model.SiteLastUpdate
+
+            </div>
+            <div class="footer-copyright text-center">
+                @Model.CopyrightFooterBase
+
+            </div>
+           
+
+            <!-- Copyright -->
+
         </footer>
-    </div>
+            <!-- Footer -->
+</div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    
 </body>
 </html>

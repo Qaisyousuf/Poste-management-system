@@ -20,7 +20,9 @@
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                @Html.ActionLink("Coallia", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                    <img src="~/Content/Img/LogoCoallia_Couleur (2).png" title="title" alt="additional title" />
+                </a>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 @Html.Action("PagesMenuPartial", "Home")
@@ -33,7 +35,7 @@
         <div class="row">
             @RenderBody()
 
-            @RenderSection("CustomCss", required: true)
+            @RenderSection("ErrorCustomCSS", required: true)
         </div>
         <hr />
         <footer>

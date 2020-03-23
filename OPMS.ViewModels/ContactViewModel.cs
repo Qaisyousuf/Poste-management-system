@@ -15,7 +15,7 @@ namespace OPMS.ViewModels
         [Required]
         public string FullName { get; set; }
 
-        [Display(Name = "Email (Optional)")]
+        [Display(Name = "Email")]
         [EmailAddress(ErrorMessage = "Enter correct email")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
@@ -23,8 +23,8 @@ namespace OPMS.ViewModels
         [Display(Name = "Adresse")]
         public string Address { get; set; }
 
-        [Display(Name = "Mobile Number (Optional)")]
-        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Mobile")]
+        
         public string MobileNumber { get; set; }
 
         public string IpAddres { get; set; }

@@ -167,22 +167,34 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ContactCustomCSS.css" />
     <Content Include="Content\CustomPostCSS.css" />
+    <Content Include="Content\ErrorCustom.css" />
     <Content Include="Content\HomeCustomCSS.css" />
     <Content Include="Content\Img\LogoCoallia_Couleur %282%29.png" />
     <Content Include="Content\Img\No-Post.svg" />
+    <Content Include="Content\Img\photo-of-eiffel-tower-with-lights-149637.jpg" />
     <Content Include="Content\Img\undraw_authentication_fsn5.svg" />
+    <Content Include="Content\Img\undraw_code_review_l1q9.svg" />
     <Content Include="Content\Img\undraw_dashboard_nklg.svg" />
+    <Content Include="Content\Img\undraw_delivery_address_03n0.svg" />
+    <Content Include="Content\Img\undraw_fill_forms_yltj.svg" />
     <Content Include="Content\Img\undraw_Hello_qnas.svg" />
+    <Content Include="Content\Img\undraw_interview_rmcf.svg" />
     <Content Include="Content\Img\undraw_mail_2_tqip.svg" />
+    <Content Include="Content\Img\undraw_manage_chats_ylx0.svg" />
     <Content Include="Content\Img\undraw_message_sent_1030.svg" />
+    <Content Include="Content\Img\undraw_mobile_testing_reah.svg" />
     <Content Include="Content\Img\undraw_newsletter_vovu.svg" />
     <Content Include="Content\Img\undraw_online_discussion_5wgl.svg" />
     <Content Include="Content\Img\undraw_page_not_found_su7k.svg" />
     <Content Include="Content\Img\undraw_project_completed_w0oq.svg" />
     <Content Include="Content\Img\undraw_referral_4ki4.svg" />
     <Content Include="Content\Img\undraw_server_down_s4lk.svg" />
+    <Content Include="Content\Img\undraw_social_notifications_ro8o.svg" />
+    <Content Include="Content\Img\undraw_web_devices_ad58.svg" />
+    <Content Include="Content\Img\undraw_work_chat_erdt.svg" />
     <Content Include="Content\mdb.min.css" />
     <Content Include="Content\NewsCustomCSS.css" />
+    <Content Include="Content\SideNavbar.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\SocialWorkerCustomCSS.css" />
     <Content Include="Global.asax" />
@@ -850,6 +862,7 @@
     <Compile Include="Infrastructure\AdminActivityFilter.cs" />
     <Compile Include="Infrastructure\ExceptionFilter.cs" />
     <Compile Include="Infrastructure\LoginInfoFilter.cs" />
+    <Compile Include="Infrastructure\NoCacheFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

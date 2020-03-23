@@ -10,6 +10,7 @@ using OPMS.Web.Infrastructure;
 namespace OPMS.Web.Controllers
 {
     [ExceptionFilter]
+    [NoCacheFilter]
     public class SWorkersController : BaseController
     {
         

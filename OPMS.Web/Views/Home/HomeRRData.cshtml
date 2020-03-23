@@ -2,28 +2,47 @@
 
 @if (Model.HomeRRVMs != null)
 {
-    <div class="container">
-        <div class="row">
-            @foreach (var item in Model.HomeRRVMs)
-            {
-                <div class="col-md-4">
-                    <div class="thumbnail">
+<div class="container">
+    <div class="row">
 
-                        <img src="@item.IconUrl" class="img-responsive img-circle img-thumbnail" />
-                        <div class="caption">
-                            <h4>@item.Title</h4>
-                            <hr />
-                            <h5>@Html.Raw(item.Content)</h5>
-                        </div>
-                        <hr />
-                        <button class="btn btn-primary"> @item.Title</button>
-                        <br />
+        @foreach (var item in Model.HomeRRVMs)
+        {
+
+            <div class="col-md-4 mb-4">
+
+                <div class="card card-cascade bg-transparent hoverable">
+
+                    <!-- Card image -->
+                    <div class="view img-fluid ">
+                        <img class="card-img-top" id="zoom" src="@item.IconUrl" alt="Card image cap" style="padding:20px;">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
                     </div>
-                </div>
-            }
 
-        </div>
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade dark-grey-text text-justify">
+
+                        <!-- Title -->
+                        <!-- Subtitle -->
+                        <h6 class="font-weight-bold text-primary py-2">@item.Title</h6>
+                        <!-- Text -->
+                        <p class=" dark-grey-text mb-1 pb-2">@Html.Raw(item.Content) </p>
+                    </div>
+
+                    <!-- Card footer -->
+                    <div class="card-footer">
+                        <a href="/contact" class="btn btn-primary btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-book-reader fa-lg pr-1"></i> Read More</a>
+                    </div>
+
+                </div>
+
+            </div>
+        }
     </div>
+</div>
+       
+   
 }
 @section HomeCustomCSS{
 

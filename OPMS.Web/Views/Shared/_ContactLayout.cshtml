@@ -42,7 +42,9 @@
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                @Html.ActionLink("Coallia", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                    <img src="~/Content/Img/LogoCoallia_Couleur (2).png" title="title" alt="additional title" />
+                </a>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 @Html.Action("PagesMenuPartial", "Home")
@@ -51,22 +53,98 @@
         </div>
     </div>
 
-    <div class="container-fuild body-content">
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-                @Html.Action("Index", "ContactForms")
-                @RenderBody()
-                @RenderSection("ContactCustomCSS", required: true)
-                <hr />
+    <div class="container-fuild ">
+        @Html.Action("Index", "ContactForms")
+        @RenderBody()
 
+        @RenderSection("ContactCustomCSS", required: true)
+
+        <footer class="page-footer font-small blue pt-4">
+
+            <!-- Footer Links -->
+            <div class="container-fluid text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 mt-md-0 mt-3">
+
+                        <!-- Content -->
+                        <h4>@Model.SiteFooter</h4>
+                        <h5 class=" text-white">@Html.Raw(Model.ContentFooterBase)</h5>
+
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none pb-3">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+
+                        <!-- Links -->
+                        <h5 class="text-uppercase">Navigation</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="@Model.HomeUrlBase">@Model.HomeFooter</a>
+                            </li>
+                            <li>
+                                <a href="@Model.AboutUrl">@Model.AboutFooter</a>
+                            </li>
+                            <li>
+                                <a href="@Model.ContactUrlBase">@Model.ContactFooterBase</a>
+                            </li>
+                            <li>
+                                <a href="@Model.LoginUrlBase">@Model.LoginFooter</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-3 mb-md-0 mb-3">
+
+                        <!-- Links -->
+                        <h5 class="text-uppercase">Contact</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!">@Model.AddresFooterBase</a>
+                            </li>
+                            <li>
+                                <a href="#!">@Model.ContactNumberFooterBase</a>
+                            </li>
+                            <li>
+                                <a href="#!">@Model.EmailFooterBase</a>
+                            </li>
+                            <li>
+                                <a href="#!">@Model.SiteName</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center">
+                Site Last Update:@Model.SiteLastUpdate
+
+            </div>
+            <div class="footer-copyright text-center">
+                @Model.CopyrightFooterBase
 
             </div>
 
-        </div>
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - @Model.SiteOwner</p>
+
+            <!-- Copyright -->
+
         </footer>
     </div>
 

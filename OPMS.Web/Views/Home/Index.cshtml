@@ -2,15 +2,48 @@
 @{
     ViewBag.Title = ViewBag.PageTitle;
 }
-<div class="BackImg">
+
+<div class="container py-5 z-depth-1 my-5" id="Home">
+
+
+    <!--Section: Content-->
+    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+
+        <!--Grid row-->
+        <div class="row">
+            <div class="col-md-6 mb-md-0">
+
+                <!--Image-->
+                <div class="view overlay">
+                    <img src="~/Content/Img/undraw_delivery_address_03n0.svg" class="img-fluid"
+                         alt="">
+                    <a href="#">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+            <div class="col-md-6 my-5 mb-md-0">
+
+                <h3 class="font-weight-bold"><span class="text-primary">@Model.Title</span></h3>
+
+                <p class="text-justify">@Html.Raw(Model.Content) </p>
+                <a href="/CheckPost" class="btn btn-primary btn-rounded waves-effect btn-md ml-lg-1"><i class="fa fa-check fa-lg pr-1"></i> Check The Post</a>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+
+    </section>
+    <!--Section: Content-->
+
 
 </div>
-<h1>@ViewBag.Title</h1>
-
-<hr />
-
-@Html.Raw(Model.Content)
-
 @section HomeCustomCSS{
 
     <link href="~/Content/HomeCustomCSS.css" rel="stylesheet" />

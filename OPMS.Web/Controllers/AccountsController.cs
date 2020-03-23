@@ -11,6 +11,7 @@ using System.Web.Security;
 namespace OPMS.Web.Controllers
 {
     [ExceptionFilter]
+    [NoCacheFilter]
     //[LoginInfoFilter]
     public class AccountsController : BaseController
     {

@@ -7,70 +7,151 @@
 
 @foreach (var item in Model.AboutPageViewModels)
 {
-    <div class="thumbnail">
-        <img src="@item.BannerImage" class="img-responsive" />
-        <div>
-            <h1 class="display-4">@item.SubTitle</h1>
-            <p class="lead">@Html.Raw(item.Content)</p>
-            <hr class="my-4">
+    <div class=" text-justify my-4">
+        <div class="" style="background-image: url(''); background-repeat: no-repeat; background-size: cover; background-position: center center;" id="sidebar">
+            <!-- Mask & flexbox options-->
+            <div class="mask blue-gradient d-flex justify-content-center align-items-center h-100">
+                <!-- Content -->
+                <div class="container">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class=" col-md-6 white-text text-center text-md-left mt-sm-5 mt-md-0 mb-5 my-5">
+                            <h1 class="h1-responsive mt-sm-5 font-weight-bold animated fadeInUp slower">@item.MainTitle </h1>
+                            <h3 class="animated fadeInUp slower">@item.SubTitle </h3>
+                            <hr class="hr-light">
+                            <p class="mb-4 text-justify text-white-50 ">@Html.Raw(item.Content)</p>
+                            <a href="/Contact" class="btn peach-gradient btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-phone-alt fa-lg pr-1"></i> Contact Us</a>
+                            <a href="/@item.AboutUrl" class="btn peach-gradient btn-rounded waves-effect btn-md"><i class="fas fa-home fa-lg pr-1 "></i> Home</a>
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-md-6 col-xl-5 mt-xl-5 wow fadeInRight" data-wow-delay="0.3s">
+                            <img src="~/Content/Img/undraw_mobile_testing_reah.svg" alt="" class="img-fluid" id="zoom">
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </div>
+                <!-- Content -->
+            </div>
+            <!-- Mask & flexbox options-->
         </div>
-       
-        <p>
-            @Html.Raw(item.Title)
-        </p>
-        <a class="btn btn-primary btn-lg" href="@item.ButtonUrl" role="button">Home</a>
+
     </div>
 
 }
 @if (Model?.AboutPageViewModels != null)
 {
 
-    <div class="container">
+    <div class="container my-5 h-100 mb-5">
         <div class="row">
             @foreach (var item in Model.AboutSectionViewModels)
             {
-                <div class="col-md-12">
-                    <div class="thumbnail">
-                        <img src="@item.UrlImages" alt="..." class="img-responsive">
-                        <div class="caption">
-                            <h4>@item.MainTitle</h4>
-                            <h6>@item.SubTitle</h6>
-                            <hr />
-                            <h5>@Html.Raw(item.Content)</h5>
+            <div class="col-md-12 my-5">
+                <section>
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-lg-7 mb-4 align-self-center text-center text-lg-left">
+
+                            <h2 class="h2 mb-1 font-weight-bold text-primary">@item.Title</h2>
+                            <h4 class="h4 mb-1">@item.SubTitle</h4>
+                            <p class="text-muted mb-4">@Html.Raw(item.Content)</p>
+
+                            <a href="/Contact" class="btn btn-primary btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-phone-alt fa-lg pr-1"></i> Contact Us</a>
+                            <a href="/SocialWokers" class="btn btn-primary btn-rounded waves-effect btn-md"><i class="fas fa-users fa-lg pr-1 "></i> Social Worker</a>
 
                         </div>
-                        <hr />
-                        <button class="btn btn-primary"> @item.Title</button>
-                        <br />
-                        <span class="label label-primary">@item.PublishDateTime</span>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-lg-5 mb-4 my-5">
+
+                            <!-- Featured image -->
+                            <div class="view overlay">
+                                <img class="img-fluid mx-auto" src="~/Content/Img/undraw_interview_rmcf.svg" alt="Sample image">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <!-- Grid column -->
+
                     </div>
-                </div>
+                    <!-- Grid row -->
+
+                </section>
+                <!--Section: Content-->
+
+
+
+            </div>
             }
         </div>
     </div>
 
 }
-<div class="container">
-    <div class="row">
+
+   
         @foreach (var item in Model.AboutShortSectionViewModels)
         {
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4>@item.MainTitle</h4>
-                        <h6>@item.SubTitle</h6>
-                        <hr />
-                        <h5>@Html.Raw(item.Content)</h5>
-                        <h6>@Html.Raw(item.SubContent)</h6>
+    <div class="container-fluid" >
+
+        <div class="container">
+
+
+            <!-- Section: Block Content -->
+            <section class="dark-grey-text">
+
+                <h3 class="text-center font-weight-bold mb-4 pb-2 mb-1">@item.Title</h3>
+                <p class="text-center text-muted w-responsive mx-auto mb-5">@Html.Raw(item.SubContent)</p>
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-lg-5 mb-lg-0 mb-5 my-5">
+
+                        <img src="~/Content/Img/undraw_work_chat_erdt.svg" class="img-fluid rounded " alt="Sample project image">
+
                     </div>
-                    <hr />
-                    <button class="btn btn-primary"> @item.Title</button>
-                    <br />
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-lg-7 my-5 ">
+
+                        <ul class="list-unstyled fa-ul mb-0">
+                            <li class="d-flex justify-content-center pl-4">
+                                <span class="fa-li"><i class="fas fa-book fa-2x text-primary"></i></span>
+                                <div>
+                                    <h5 class="font-weight-bold  text-left">@item.SubTitle</h5>
+                                    <p class="text-muted w-responsive mx-auto mb-5 text-left">@Html.Raw(item.Content)</p>
+                                </div>
+                            </li>
+                           
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
                 </div>
-            </div>
-        }
+                <!-- Grid row -->
+
+                <div class="my-5 mb-5"></div>
+
+            </section>
+            <!-- Section: Block Content -->
+
+
+        </div>
+
+
     </div>
-</div>
+        }
+   
+
 
 @section AboutCustomCSS{
 

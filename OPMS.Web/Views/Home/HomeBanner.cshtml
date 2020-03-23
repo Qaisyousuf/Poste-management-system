@@ -3,49 +3,40 @@
 
 @if (Model?.Id != null)
 {
+    <div class="container-fluid my-3">
 
-<div class="container my-5 z-depth-1">
-
-
-    <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-        <!-- Mask & flexbox options-->
-        <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
-            <!-- Content -->
-            <div class="container">
-                <!--Grid row-->
-                <div class="row">
-                    <!--Grid column-->
-                    <div class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s">
-                        <h1 class="h1-responsive font-weight-bold mt-sm-5">Make purchases with our app </h1>
-                        <hr class="hr-light">
-                        <h6 class="mb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi
-                            fuga nesciunt
-                            dolorum nulla magnam veniam sapiente! Commodi sequi non animi ea dolor molestiae
-                            iste.
-                        </h6>
-                        <a class="btn btn-white btn-rounded">Download</a>
-                        <a class="btn btn-outline-white btn-rounded">Learn more</a>
+        <div class="my-5">
+            <!-- Mask & flexbox options-->
+            <div class="mask my-5">
+                <!-- Content -->
+                <div class="container h-auto">
+                    <!--Grid row-->
+                    <div class="row align-items-center h-100">
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <h1 class="font-weight-bold mb-1 animated fadeInUp slower"><span class="text-primary">@Model.Title</span> </h1>
+                            <h3 class="mb-2 animated fadeInUp slower"><span class="deep-orange-text">@Model.SubTitle</span> </h3>
+                            <p class="text-justify mb-1 pb-2 deep-purple-text">@Html.Raw(Model.Content)</p>
+                            <a href="/CheckPost" class="btn peach-gradient btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-user-check fa-lg pr-1"></i> Get Started</a>
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-md-6 my-5">
+                            <img src="~/Content/Img/undraw_manage_chats_ylx0.svg" alt="" class="img-fluid" id="zoom">
+                        </div>
+                        <!--Grid column-->
                     </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                    <div class="col-md-6 col-xl-5 mt-xl-5 wow fadeInRight" data-wow-delay="0.3s">
-                        <img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/admin-new.png" alt="" class="img-fluid">
-                    </div>
-                    <!--Grid column-->
+                    <!--Grid row-->
                 </div>
-                <!--Grid row-->
+                <!-- Content -->
             </div>
-            <!-- Content -->
+            <!-- Mask & flexbox options-->
         </div>
-        <!-- Mask & flexbox options-->
     </div>
-    <!-- Full Page Intro -->
 
 
-</div>
-   
 }
+
 
 
 

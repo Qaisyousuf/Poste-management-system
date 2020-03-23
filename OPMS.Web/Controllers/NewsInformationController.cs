@@ -9,6 +9,7 @@ using System.Web.Mvc;
 namespace OPMS.Web.Controllers
 {
     [ExceptionFilter]
+    [NoCacheFilter]
     public class NewsInformationController : BaseController
     {
         [Route("News")]

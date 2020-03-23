@@ -36,4 +36,8 @@ img#Login {
     height: 380px;
     width: auto;
 }
-
+.navbar-brand img {
+    height: 40px;
+    margin: 5px;
+    width: 120px;
+}

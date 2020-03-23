@@ -115,7 +115,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 ContentFooter = siteSetting.ContentFooter,
                 CopyrightFooter = siteSetting.CopyrightFooter,
                 LoginFooter = siteSetting.LoginFooter,
-                LoginUrl = siteSetting.LoginFooter,
+                LoginUrl = siteSetting.LoginUrl,
             };
             return View(viewmodel);
         }
@@ -145,6 +145,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 siteSetting.AboutFooter = viewmodel.AboutFooter;
                 siteSetting.AboutUrl = viewmodel.AboutUrl;
                 siteSetting.ContentFooter = viewmodel.ContentFooter;
+                siteSetting.ContactFooter = viewmodel.ContactFooter;
                 siteSetting.ContactUrl = viewmodel.ContactUrl;
                 siteSetting.RolesFooter = viewmodel.RolesFooter;
                 siteSetting.RolesUrl = viewmodel.RolesUrl;

@@ -1,24 +1,14 @@
 ﻿body, html {
-    padding-top: 30px;
-  
+    margin: 0px;
+    padding: 0px;
+    background-color: #bbdefb !important;
 }
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-.thumbnail img {
-    height: auto;
-    width: auto;
+section .intro
+{
+    height:100%;
+    width:100%;
    
 }
+
 
 
