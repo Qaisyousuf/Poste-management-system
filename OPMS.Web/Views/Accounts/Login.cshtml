@@ -4,55 +4,75 @@
     ViewBag.Title = ViewBag.Title;
     Layout = "~/Views/Shared/_AuthrizationLayout.cshtml";
 }
-<hr />
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h4 class="col-md-offset-6">Zone de connexion</h4>
-            <hr />
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
+<div class=" my-3 py-3 h-100">
+    <!-- Mask & flexbox options-->
+    <div class="mask">
+        <!-- Content -->
+        <div class="container h-100 my-5">
+            <!--Grid row-->
+            <div class="row align-items-center h-100">
+                <!--Grid column-->
+                <div class="col-md-6 my-5 ">
+                   
+                   <div class="card card-cascade wider">
+                       <div class="view view-cascade gradient-card-header BackCOLOR">
+                           <h3 class="card-header-title text-uppercase font-weight-bold">Login</h3>
+                           <p class="mb-0"><i class="fas fa-calendar mr-2"></i>@DateTime.Now
+                       </div>
+                       <div class="card-body card-body-cascade bg-transparent">
+                           @using (Html.BeginForm())
+                           {
+                               @Html.AntiForgeryToken()
 
-                <div class="form-horizontal">
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-6" })
-                        <div class="col-md-6">
-                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", placeholder = "User Name" } })
-                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                               <div class="form-horizontal">
+                                 
+                                   @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                   <div class="form-group md-form col-md-10 offset-md-1 offset-sm-3">
+                                       @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label" })
+                                       <div class="offset-3">
+                                           <i class="fas fa-user prefix blue-text"></i>
+                                           @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control"} })
+                                           @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger offset-2" })
+                                       </div>
+                                   </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-6" })
-                        <div class="col-md-6">
-                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
-                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                                   <div class="form-group md-form col-md-10 offset-md-1 offset-sm-3">
+                                       @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label " })
+                                       <div class="offset-3">
+                                           <i class="fas fa-lock prefix blue-text"></i>
+                                           @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control"} })
+                                           @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger offset-2" })
+                                       </div>
+                                   </div>
+                                   <hr />
+                                   <div class="form-group">
+                                       <div class="offset-md-4 offset-sm-3">
+                                           @*<input type="submit" value="Login" class="btn btn-primary" />*@
+                                         
+                                           <button type="submit" class="btn btn-primary btn-rounded mx-0" value="Login"><i class="fas fa-key fa-lg pr-1"></i> Login</button>
+                                       </div>
+                                   </div>
+                               </div>
 
-                    <div class="form-group">
-                        <div class="col-md-offset-6 col-md-6">
-                            <input type="submit" value="Login" class="btn btn-primary" />
-                        </div>
-                    </div>
+                           }
+                       </div>
+                   </div>
                 </div>
-
-            }
-        </div>
-
-        <div class="col-md-6">
-            <div class="">
-                <img src="~/Content/Img/undraw_authentication_fsn5.svg" class="img-responsive" />
+                <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <img src="~/Content/Img/authentication.svg" alt="" class="img-fluid" id="zoom">
+                </div>
+                <!--Grid column-->
             </div>
-          
+            <!--Grid row-->
         </div>
+        <!-- Content -->
     </div>
+    <!-- Mask & flexbox options-->
 </div>
-
+<!-- Full Page Intro -->
 
 @section AccountCustomCSS{
 

@@ -105,6 +105,7 @@
     <Compile Include="Concrete\UserLocationRepository.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Context\ContextDb.cs" />
+    <Compile Include="Context\ContextDb.Views.cs" />
     <Compile Include="FluentAPI\ContactMapping.cs" />
     <Compile Include="FluentAPI\MenuMapping.cs" />
     <Compile Include="FluentAPI\PageMapping.cs" />

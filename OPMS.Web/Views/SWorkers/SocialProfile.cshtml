@@ -3,29 +3,90 @@
 
 @if (Model.SocialProfileVM != null)
 {
-    <div class="container">
+
+<div class="container my-5">
+
+
+    <!--Section: Content-->
+    <section class="team-section text-center dark-grey-text">
+
+        <!-- Section heading -->
+        <h3 class="font-weight-bold pb-2 mb-4">Our amazing team</h3>
+        <!-- Section description -->
+        <p class="text-muted w-responsive mx-auto mb-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
+            eum porro a pariatur veniam.
+        </p>
+
+        <!-- Grid row -->
         <div class="row">
             @foreach (var item in Model.SocialProfileVM)
             {
-                <div class="col-md-4">
-                    <div class="thumbnail">
+            
 
-                        <img src="@item.ImageUrl" class="img-responsive img-circle img-thumbnail" />
-                        <div class="caption">
-                            <h4>@item.FullName</h4>
-                            <h6>@item.JobTitle</h6>
-                            <hr />
-                            <h5>@Html.Raw(item.Content)</h5>
-                        </div>
-                        <hr />
-                        <button class="btn btn-primary"> @item.Title</button>
-                        <hr />
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card bg-transparent z-depth-1 mx-3">
+                    <div class="avatar mx-3 my-3 mt-md-4">
+                        <img src="@item.ImageUrl" class="rounded-circle z-depth-1"
+                             alt="Sample avatar">
                     </div>
+                    <h4 class="font-weight-bold text-uppercase mt-3 mb-3 mb-sm-3"><strong>@item.FullName</strong></h4>
+                    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">@item.JobTitle</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    @Html.Raw(item.Content)
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="font-weight-bold text-uppercase blue-text"><strong>@item.JobTitle</strong></p>
+
+                    <div class="card-body mt-0 mb-0 mb-sm-0">
+                        <p class="justify-content-center mb-0 mb-sm-0">
+
+                            @Html.Raw(item.Content)
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="/contact" class="btn btn-deep-orange btn-rounded waves-effect btn-md ml-lg-0" data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-eye fa-lg pr-1"></i> View Profile</a>
+                                <!-- Button trigger modal -->
+                                <!-- Modal -->
+
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
+            </div>
             }
+            <!-- Grid column -->
+            <!-- Grid column -->
 
         </div>
-    </div>
+        <!-- Grid row -->
+
+    </section>
+    <!--Section: Content-->
+
+
+</div>
+
+
 }
 @section SocialWorkerCustomCSS{
 

@@ -9,7 +9,7 @@ using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Controllers
 {
-    [ExceptionFilter]
+    //[ExceptionFilter]
     [NoCacheFilter]
     public class ContactFormsController : BaseController
     {

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace OPMS.ViewModels
 {
@@ -23,6 +24,7 @@ namespace OPMS.ViewModels
         public string StreetName { get; set; }
 
         [Display(Name ="Google API")]
+        [AllowHtml]
         public string GoogleAPIMap { get; set; }
 
         [Required]

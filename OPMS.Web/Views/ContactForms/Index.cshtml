@@ -13,7 +13,8 @@
                         <!--Grid column-->
                         <div class="col-md-12 white-text text-center my-5">
                             <h1 class="display-4 mb-0 pt-5 pb-md-0 pb-sm-3 pb-5 white-text font-weight-bold wow fadeInDown" data-wow-delay="0.3s"><span class="text-white text-uppercase">@item.Title</span></h1>
-                            <h5 class="text-uppercase  pt-5 pb-md-2 pb-sm-3 pb-5 white-text font-weight-bold wow fadeInDown"
+                            <hr class="hr-light w-50">
+                            <h5 class="text-uppercase  pt-3 pb-md-2 pb-sm-3 pb-5 white-text font-weight-bold wow fadeInDown"
                                 data-wow-delay="0.3s">
                                 <span class="text-white text-uppercase ">@item.SubContent</span>
                             </h5>
@@ -53,28 +54,16 @@
 
                     <a href="/SocialWokers" class="btn btn-primary btn-rounded waves-effect btn-md"><i class="fas fa-users fa-lg pr-1 "></i> Social Worker</a>
 
-                    <hr class="my-5">
 
-                    <p class="font-weight-bold">Follow us on:</p>
 
-                    <!--Facebook-->
-                    <!--Facebook-->
-                    <a class="btn-floating btn-lg btn-fb" role="button"><i class="fab fa-facebook-f"></i></a>
-                    <!--Twitter-->
-                    <a class="btn-floating btn-lg btn-tw" role="button"><i class="fab fa-twitter"></i></a>
-                    <!--Google +-->
-                    <!--Linkedin-->
-                    <a class="btn-floating btn-lg btn-li" role="button"><i class="fab fa-linkedin-in"></i></a>
-                    <!--Instagram-->
-                    <!--Youtube-->
-                    <a class="btn-floating btn-lg btn-yt" role="button"><i class="fab fa-youtube"></i></a>
+
                     <!--Slack-->
 
 
                 </div>
                 <!--Grid column-->
                 <!--Grid column-->
-                <div class="col-md-5 mb-4 mb-md-0 my-5 py-sm-0 py-md-5">
+                <div class="col-md-5 mb-4 mb-md-0  py-sm-0 py-md-5">
 
                     <img src="~/Content/Img/undraw_social_notifications_ro8o.svg" class="img-fluid" alt="">
 
@@ -82,8 +71,21 @@
                 <!--Grid column-->
 
             </div>
+            <hr class="my-5">
             <!--Grid row-->
+            <p class="font-weight-bold">Follow us on:</p>
 
+            <!--Facebook-->
+            <!--Facebook-->
+            <a class="btn-floating btn-lg btn-fb" role="button"><i class="fab fa-facebook-f"></i></a>
+            <!--Twitter-->
+            <a class="btn-floating btn-lg btn-tw" role="button"><i class="fab fa-twitter"></i></a>
+            <!--Google +-->
+            <!--Linkedin-->
+            <a class="btn-floating btn-lg btn-li" role="button"><i class="fab fa-linkedin-in"></i></a>
+            <!--Instagram-->
+            <!--Youtube-->
+            <a class="btn-floating btn-lg btn-yt" role="button"><i class="fab fa-youtube"></i></a>
 
         </section>
         <!--Section: Content-->
@@ -182,11 +184,10 @@
 
                         <!--Google map-->
                         <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 487px">
-                            <iframe src="https://maps.google.com/maps?q=Manhatan&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                                    style="border:0" allowfullscreen></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44092.59090383205!2d3.361300550456787!3d46.31406888932458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f1255dfbd3424f%3A0x79b25ab1393e8e35!2s03150%20Varennes-sur-Allier!5e0!3m2!1sen!2sfr!4v1584986457676!5m2!1sen!2sfr"  height="480" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                         </div>
                         <!-- Buttons-->
-                       
+
 
                     </div>
                     <!-- Grid column -->
@@ -205,23 +206,129 @@
 
 @if (Model?.ContactInfoViewModel != null)
 {
+        <div class="container">
+            <div class="form-header blue text-white">
+                <h3 class="mt-2"><i class="fas fa-map-marker-alt"></i> Find More Address</h3>
+            </div>
+
+        </div>
     foreach (var item in Model.ContactInfoViewModel)
     {
-        <div class="jumbotron">
-            <h3>Title: @item.Title</h3>
-            <p> @Html.Raw(item.Content)</p>
-            <h5>Place Name: @item.PlaceName</h5>
-            <h5>Place Adress: @item.PlaceAddress</h5>
-            <h5>Mobile Number: @item.PlaceContactNumber</h5>
-            <h5>WebSite:@item.WebSite</h5>
-            <h5>Postal Code: @item.PostalCode</h5>
+       <div class="container my-0">
 
-            <p>
-                <a class="btn btn-primary btn-lg" href="@item.AboutUrl" role="button">
-                    About
-                </a>
-            </p>
+            <!-- Section: Block Content -->
+            <section class="">
+
+                <style>
+                    .map-container {
+                        overflow: hidden;
+                        position: relative;
+                        height: 0;
+                    }
+
+                        .map-container iframe {
+                            left: 0;
+                            top: 0;
+                            height: 100%;
+                            width: 100%;
+                            position: absolute;
+                        }
+                </style>
+
+                <div class="card bg-transparent">
+                    <div class="card-header  text-center blue text-white">
+                        <div class="col-lg-12 col-md-12 ">
+                            <h4 class=" text-white "> 
+                              @Html.Raw(item.Content)
+                            </h4>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-lg-6 align-self-center py-4">
+
+                            <!--Google map-->
+                            <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 487px">
+                                @Html.Raw(item.GoogleMap)
+                            </div>
+                            <!-- Buttons-->
+
+
+                        </div>
+
+                        <div class=" col-md-6  align-self-center py-4">
+
+                            <div class="row ">
+
+                                <div class="col-lg-12 col-md-12 mb-1">
+                                    <h6 class="font-weight-bold mb-1">
+                                        <a class="btn-floating prefix text-left blue accent-1">
+                                            <i class="fas fa-clinic-medical"></i>
+                                        </a> Title: @Html.Raw(item.Title)
+                                    </h6>
+
+                                </div>
+                                <div class="col-lg-12 col-md-12 mb-1">
+                                    <h6 class="font-weight-bold mb-1">
+                                        <a class="btn-floating prefix text-left blue accent-1">
+
+                                            <i class="fas fa-archway"></i>
+                                        </a> City: @item.PlaceName
+                                    </h6>
+                                </div>
+                                <div class="col-lg-12 col-md-12 mb-1">
+                                    <h6 class="font-weight-bold mb-1">
+                                        <a class="btn-floating prefix text-left blue accent-1">
+                                            <i class="fas fa-road"></i>
+                                        </a> Add:@item.PlaceAddress
+                                    </h6>
+
+                                </div>
+
+
+                                <div class="col-lg-12 col-md-12 mb-1">
+                                    <h6 class="font-weight-bold mb-1">
+                                        <a class="btn-floating prefix text-left blue accent-1">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </a> Mobile: @item.PlaceContactNumber
+                                    </h6>
+
+                                </div>
+                                <div class="col-lg-12 col-md-12 mb-1">
+                                    <h6 class="font-weight-bold mb-1">
+                                        <a class="btn-floating prefix text-left blue accent-1">
+                                            <i class="fas fa-map-marked"></i>
+                                        </a> Area Code: @item.PostalCode
+                                    </h6>
+
+                                </div>
+                                <div class="col-lg-12 col-md-12 mb-1">
+                                    <h6 class="font-weight-bold mb-1">
+                                        <a class="btn-floating prefix text-left blue accent-1">
+                                            <i class="fas fa-map-marked"></i>
+
+                                        </a>
+                                        WebSite:
+                                        <a href="@item.WebSite" class="btn btn-primary btn-rounded waves-effect btn-md" target="_blank"><i class="fas fa-external-link-alt fa-lg pr-1 "></i> Viste Site</a>
+
+
+                                    </h6>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Section: Block Content -->
+
         </div>
+        <br />
     }
 }
 @section ContactCustomCSS{
@@ -229,6 +336,3 @@
     <link href="~/Content/ContactCustomCSS.css" rel="stylesheet" />
 
 }
-<script>
-    new WOW().init();
-</script>

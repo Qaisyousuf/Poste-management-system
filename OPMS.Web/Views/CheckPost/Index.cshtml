@@ -40,7 +40,7 @@
                     <div class="jumbotron">
                         <h3>Bonjour, cher @User.Identity.Name</h3>
                         <h5> <i class="glyphicon glyphicon-remove"></i> You have no Post</h5>
-                      
+
                         <img src="~/Content/Img/No-Post.svg" class="img-responsive" />
                         <hr />
                     </div>
@@ -64,22 +64,57 @@
     }
     else if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
     {
-            <div class="jumbotron">
-               <h4>Welcome Back <br /> @User.Identity.Name</h4>
-                
-                <img src="~/Content/Img/undraw_Hello_qnas.svg" class="img-responsive" id="Login" />
-             
-                <a href="/OPMSAdmin/Admin/Index" class="btn btn-primary btn-lg" target="_blank"><i class="glyphicon glyphicon-wrench"></i> Go to Admin Panel</a>
-            </div>
+        <div class="jumbotron">
+            <h4>Welcome Back <br /> @User.Identity.Name</h4>
+
+            <img src="~/Content/Img/undraw_Hello_qnas.svg" class="img-responsive" id="Login" />
+
+            <a href="/OPMSAdmin/Admin/Index" class="btn btn-primary btn-lg" target="_blank"><i class="glyphicon glyphicon-wrench"></i> Go to Admin Panel</a>
+        </div>
     }
     else
     {
-            <div class="jumbotron">
+        <div class="container my-5 py-4 ">
+
+            <div class="bg-transparent my-5">
+                <!-- Mask & flexbox options-->
+                <div class="mask">
+                    <!-- Content -->
+                    <div class="container h-100">
+                        <!--Grid row-->
+                        <div class="row align-items-center h-100">
+                            <!--Grid column-->
+                            <div class="col-md-6  text-center">
+                                <h3 class="blue-text mb-4 text-uppercase font-weight-bold mx-5">Authrization is required</h3>
+                                <hr class="hr-light my-4">
+                                <a href="/Authorization" class="btn btn-primary btn-rounded waves-effect btn-lg ml-lg-0"><i class="fas fa-key fa-lg pr-1"></i> Login</a>
+ 
+                            </div>
+                            <!--Grid column-->
+                            <!--Grid column-->
+                            <div class="col-md-6 my-3">
+                                <img src="~/Content/Img/undraw_authentication_fsn5.svg" alt="" class="img-fluid" id="zoom">
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </div>
+                    <!-- Content -->
+                </div>
+                <!-- Mask & flexbox options-->
+            </div>
+
+
+        </div>
+
+
+
+        @*<div class="jumbotron">
                 <h4>Authorization is required</h4>
                 <a href="/Authorization" class="btn btn-primary">Login</a>
                 <hr />
                 <img src="~/Content/Img/undraw_referral_4ki4.svg" class="img-responsive" id="Login" />
-            </div>
+            </div>*@
     }
 
 }
