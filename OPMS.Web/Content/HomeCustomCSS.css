@@ -88,6 +88,7 @@ sectin .intro {
     background-size: 400% 400%;
     -webkit-animation: gradientBG 10s ease infinite;
     animation: gradientBG 10s ease infinite;
+}
     .navbar-brand img {
     height: 40px;
     margin: 5px;

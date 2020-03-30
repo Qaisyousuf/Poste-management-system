@@ -18,32 +18,159 @@
             {
                 if (item.HasPost)
                 {
+                    <div class="container mt-5 py-2 pt-5 pr-3 pl-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Card Regular -->
+                                <div class="card  h-100 bg-transparent">
 
-                    <div class="jumbotron text-center">
+                                    <!-- Card image -->
+                                    <div class="view view-cascade overlay pr-3 pl-3 pt-2 pb-0 mb-0">
+                                        <img class="card-img-top " src="~/Content/Img/HavePost.svg" alt="Card image cap">
+                                        <a>
+                                            <div class="mask rgba-white-slight"></div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Card content -->
+                                    <div class="card-body card-body-cascade text-center  ml-md-0  ml-0 mr-0 pr-0 pl-0 pb-5">
+
+                                        <!-- Title -->
+                                        <h2 class="card-title font-weight-bold blue-text text-capitalize">hi, @User.Identity.Name </h2>
+
+                                        <h4 class=" blue-text pr-4   "> <i class="fas fa-check blue-text text-capitalize"></i> You Have Post </h4>
+                                        <h6 class=" blue-text  pt-2 text-capitalize ">  Get Your Post from The Office</h6>
 
 
-                        <h3> Bonjour, cher @User.Identity.Name</h3>
-                        <h5> <i class="glyphicon glyphicon-ok"></i> You have a Post</h5>
-                        <img src="~/Content/Img/undraw_message_sent_1030.svg" class="img-responsive" />
-                        <br />
-                        <h5> <i class="glyphicon glyphicon-envelope"></i> Post Title: @item.Title</h5>
-                        <h5> <i class="glyphicon glyphicon-flag"></i> Type of the post : @item.PostSystems.Title</h5>
-                        <h5> <i class="glyphicon glyphicon-tag"></i> Assigned By : @item.SendedBy</h5>
-                        <h5> <i class="glyphicon glyphicon-user"></i> Sent By : @item.SocialWorker.FullName</h5>
-                        <h5> <i class="glyphicon glyphicon-time"></i>  Sent Date:@item.SentDateTime</h5>
-                        <h5 class="label label-danger"> <i class="glyphicon glyphicon-warning-sign"> </i>  Expiration Date : @item.PostExpirationDate</h5>
+                                    </div>
+
+                                    <!-- Card footer -->
+                                    <div class="card-footer text-muted text-center">
+                                        @DateTime.Now
+                                    </div>
+
+                                </div>
+                                <!-- Card Regular -->
+
+                            </div>
+                            <div class="col-md-6 my-2 my-md-2 pr-md-3 pl-md-3 ">
+                                <div class="card card-cascade  pr-md-3 pl-md-3 blue lighten-5">
+
+                                    <!--Card image-->
+                                    <div class="view view-cascade gradient-card-header blue-gradient narrower py-lg-0   mb-0   mr-md-0 ml-md-0 mb-5 justify-content-between align-items-center">
+                                        <h5 class="font-weight-bold mt-3 mb-3 ">Post Details</h5>
+
+                                    </div>
+                                    <!--/Card image-->
+
+                                    <div class="">
+
+                                        <div class="table-wrapper table-responsive ">
+                                            <!--Table-->
+                                            <table class="table table-hover mb-0 ">
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                                        </th>
+                                                        <td class="font-weight-bold">Post Title</td>
+                                                        <td class="text-primary">@item.Title</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-envelope"></i></a>
+                                                        </th>
+                                                        <td class="font-weight-bold">Post type</td>
+
+                                                        <td class="text-primary">@item.PostSystems.Title</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-user-check"></i></a>
+                                                        </th>
+                                                        <td class="font-weight-bold">Assigned By</td>
+                                                        <td class="text-primary">@item.SendedBy</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-paper-plane"></i></a>
+                                                        </th>
+                                                        <td class="font-weight-bold">Sent by</td>
+                                                        <td class="text-primary">@item.SocialWorker.FullName</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-calendar-check"></i></a>
+                                                        </th>
+                                                        <td class="font-weight-bold">Sent Date</td>
+                                                        <td class="text-primary">@item.SentDateTime</td>
+                                                    </tr>
+                                                    <tr class="text-danger ">
+                                                        <th scope="row">
+                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-calendar-times"></i></a>
+                                                        </th>
+                                                        <td class="font-weight-bold">Expiration Date</td>
+                                                        <td class="text-danger">@item.PostExpirationDate</td>
+                                                    </tr>
+                                                </tbody>
+                                                <!--Table body-->
+                                            </table>
+                                            <!--Table-->
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <!-- Table with panel -->
+                            </div>
+
+                        </div>
                     </div>
 
                 }
                 else
                 {
-                    <div class="jumbotron">
-                        <h3>Bonjour, cher @User.Identity.Name</h3>
-                        <h5> <i class="glyphicon glyphicon-remove"></i> You have no Post</h5>
 
-                        <img src="~/Content/Img/No-Post.svg" class="img-responsive" />
-                        <hr />
+                    <div class="container mt-5 pt-5 py-2">
+                        <div class="row">
+
+                            <div class="col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3">
+                                <!-- Card Regular -->
+                                <div class="card  h-100   bg-transparent">
+
+                                    <!-- Card image -->
+                                    <div class="view view-cascade overlay pr-3 pl-3 pt-3">
+                                        <img class="card-img-top " src="~/Content/Img/No-Post-orginal.svg" alt="Card image cap">
+                                        <a>
+                                            <div class="mask rgba-white-slight"></div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Card content -->
+                                    <div class="card-body card-body-cascade text-center ml-md-0  ml-0 mr-0 pr-0 pl-0 pb-5">
+
+                                        <!-- Title -->
+                                        <h2 class="card-title font-weight-bold blue-text text-capitalize">hi, @User.Identity.Name </h2>
+
+                                        <h4 class="font-weight-bold blue-text pr-4  "> <i class="fas fa-times text-danger"></i> You Have No Post </h4>
+
+
+
+                                    </div>
+
+                                    <!-- Card footer -->
+                                    <div class="card-footer text-muted text-center">
+                                        @DateTime.Now
+                                    </div>
+
+                                </div>
+                                <!-- Card Regular -->
+
+                            </div>
+
+                        </div>
                     </div>
+
 
                 }
 
@@ -52,25 +179,65 @@
         }
         else
         {
-            <div class="jumbotron">
-                <h4>Authorization Required</h4>
-                <a href="/Authorization" class="btn btn-primary">Login</a>
-                <hr />
-                <img src="~/Content/Img/Gif.gif" class="img-responsive" id="Login" />
-                <hr />
-            </div>
+            
 
         }
     }
     else if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
     {
-        <div class="jumbotron">
-            <h4>Welcome Back <br /> @User.Identity.Name</h4>
+        <!-- Card -->
+        <div class="container mt-5 pt-5">
+            <div class="row">
+                <div class="col-sm-6 col-md-6   pt-3 pb-0 ">
+                    <div class="">
+                        <img src="~/Content/Img/WelcomeBack.svg" class="img-fluid img-responsive" />
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 mt-5">
+                    <div class="card card-cascade wider">
 
-            <img src="~/Content/Img/undraw_Hello_qnas.svg" class="img-responsive" id="Login" />
+                        <!-- Card image -->
+                        <div class="view view-cascade gradient-card-header blue-gradient">
 
-            <a href="/OPMSAdmin/Admin/Index" class="btn btn-primary btn-lg" target="_blank"><i class="glyphicon glyphicon-wrench"></i> Go to Admin Panel</a>
+                            <!-- Title -->
+                            <h2 class="card-header-title mb-3">Admin Authrization</h2>
+                            <!-- Text -->
+                            <p class="mb-0"><i class="fas fa-calendar mr-2"></i>@DateTime.Now</p>
+
+                        </div>
+
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade text-center bg-transparent pb-0 pt-5">
+
+                            
+
+                            <h2 class=" blue-text text-capitalize  pt-3"> Hi, @User.Identity.Name</h2>
+                            <h4 class="text-capitalize text-white pb-4 "> welcome back </h4>
+                            <!-- Link -->
+
+                            <div class="card-footer">
+                                <a href="/OPMSAdmin/Admin/Index" class="btn btn-rounded btn-primary btn-lg" target="_self"><i class="fas fa-cog fa-spin fa-x"></i>  Go to Admin Panel</a>
+                            </div>
+
+                        </div>
+                        <!-- Card content -->
+
+                    </div>
+                    <!-- Card -->
+                </div>
+
+            </div>
         </div>
+       
+        <!-- Card -->
+
+        @*<div class="jumbotron">
+                <h4>Welcome Back <br /> @User.Identity.Name</h4>
+
+                <img src="~/Content/Img/undraw_Hello_qnas.svg" class="img-responsive" id="Login" />
+
+                <a href="/OPMSAdmin/Admin/Index" class="btn btn-primary btn-lg" target="_blank"><i class="glyphicon glyphicon-wrench"></i> Go to Admin Panel</a>
+            </div>*@
     }
     else
     {
@@ -88,12 +255,12 @@
                                 <h3 class="blue-text mb-4 text-uppercase font-weight-bold mx-5">Authrization is required</h3>
                                 <hr class="hr-light my-4">
                                 <a href="/Authorization" class="btn btn-primary btn-rounded waves-effect btn-lg ml-lg-0"><i class="fas fa-key fa-lg pr-1"></i> Login</a>
- 
+
                             </div>
                             <!--Grid column-->
                             <!--Grid column-->
                             <div class="col-md-6 my-3">
-                                <img src="~/Content/Img/undraw_authentication_fsn5.svg" alt="" class="img-fluid" id="zoom">
+                                <img src="~/Content/Img/Login.svg" alt="" class="img-fluid" id="zoom">
                             </div>
                             <!--Grid column-->
                         </div>
@@ -109,12 +276,7 @@
 
 
 
-        @*<div class="jumbotron">
-                <h4>Authorization is required</h4>
-                <a href="/Authorization" class="btn btn-primary">Login</a>
-                <hr />
-                <img src="~/Content/Img/undraw_referral_4ki4.svg" class="img-responsive" id="Login" />
-            </div>*@
+
     }
 
 }
