@@ -3,26 +3,67 @@
 @{
     ViewBag.Title = "Home";
 }
-<hr />
-<h4>Liste des pages</h4>
-<p>
-   
-    <a class="btn btn-primary" href="/OPMSAdmin/Pages/Create">Créer une nouvelle page</a>
-</p>
-<hr />
-<table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
-    <thead class="bg-primary">
-        <tr>
-            <th><i class="glyphicon glyphicon-align-center"></i> Ttitle</th>
-            <th><i class="glyphicon glyphicon-link"></i> Slug</th>
-            <th><i class="glyphicon glyphicon-menu-right"></i> Sidebar Name</th>
-            <th><i class="glyphicon glyphicon-menu-right"></i> Banner Name</th>
-            <th><i class="glyphicon glyphicon-menu-right"></i> Content Name</th>
-            <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
-        </tr>
-    </thead>
-</table>
+
+            <div class="card card-cascade narrower blue lighten-5">
+
+                <!-- Card image -->
+                <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
+
+                    <!-- Title -->
+                    <h4 class="text-white">Liste des pages</h4>
+                    <!-- Subtitle -->
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+
+                    <!-- Text -->
+                    <div class="">
+
+                        <p>
+
+                            <a class="btn btn-primary align-left" href="/OPMSAdmin/Pages/Create">Créer une nouvelle page</a>
+                        </p>
+                        <hr />
+                        <table id="dataTable" class="table table-hover ">
+                            <thead class="blue white-text">
+                                <tr class="pt-2">
+                                    <th><i class="fas fa-hashtag"></i> Ttitle</th>
+                                    <th><i class="fas fa-link"></i> Slug</th>
+                                    <th><i class="fas fa-pager"></i> Sidebar</th>
+                                    <th><i class="far fa-image"></i> Banner</th>
+                                    <th><i class="fas fa-file-alt"></i> Content</th>
+                                    <th><i class="fas fa-wrench"></i> Actions</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+       
+      
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
 @section scripts{
+  <script>
+      $(document).ready(function () {
+          $(".button-collapse").sideNav({
+              breakpoint: 1200
+          });
+          
+          var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+          var ps = new PerfectScrollbar(sideNavScrollbar);
+          Ps.initialize(el);
+      });
+    </script>
     <script>
         $(document).ready(function () {
             $("#dataTable").DataTable({
@@ -83,7 +124,7 @@
                         "data": "actions",
                         "className": "dt-body-right",
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/Pages/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Éditer</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/Pages/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> | <a class="btn btn-default btn-bg" href="/OPMSAdmin/Pages/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
+                            data = '<a class="btn-floating  btn-default" href="/OPMSAdmin/Pages/Edit/' + row.Id + '"><i class="fas fa-edit"></i> Éditer</a> | <a class="btn-floating btn-danger" href="/OPMSAdmin/Pages/Delete/' + row.Id + '"><i class="fas fa-trash-alt"></i> Supprimer</a> | <a class="btn-floating btn-info" href="/OPMSAdmin/Pages/Details/' + row.Id + '"><i class="fas fa-info"></i> Détails</a>';
                             //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
                             return data;
                         }
@@ -94,5 +135,6 @@
             })
         });
     </script>
+
 }
 

@@ -2,36 +2,29 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <meta http-equiv="cache-control" content="max-age=0" />
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="expires" content="Tue, 01 Jan 1990 12:00:00 GMT" />
-    <title>@ViewBag.Title - OPMS</title>
-   
-    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
-    <script src="~/Content/SideNavbar.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-
-    @*<link href="https://icons8.com/icon/80410/link" rel="stylesheet" />*@
-    @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     @Scripts.Render("~/bundles/jquery")
     <script type="text/javascript" language="javascript" src="https://nightly.datatables.net/responsive/js/dataTables.responsive.min.js">
     </script>
     <script type="text/javascript" language="javascript" src="https://nightly.datatables.net/js/jquery.dataTables.min.js">
     </script>
-    <link href="https://bootswatch.com/3/paper/bootstrap.min.css" rel="stylesheet" />
+    
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" />
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.print.js"></script>
 
-    @*<script type="text/javascript" src=" https://code.jquery.com/jquery-3.3.1.js"></script>*@
 
     <script type="text/javascript" src=" https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
@@ -53,110 +46,246 @@
     <script src="https://cdn.datatables.net/plug-ins/1.10.19/dataRender/datetime.js"></script>
 
 
-
 </head>
-<body>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                
-                <img src="~/Content/Img/LogoCoallia_Couleur (2).png" class="navbar-brand" />
 
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Dashboard", "Index", "Admin", new { area = "OPMSAdmin" }, null)</li>
-                    <li class="dropdown">
-                        <a title="Home" href="#" class="dropdown-toggle" data-toggle="dropdown"> Home <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Home", "Index", "Pages", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Banner", "Index", "HomeBanner", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Content", "Index", "HomeContents", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Roles", "Index", "HomeRR", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Sidebar", "Index", "Sidebars", new { area = "OPMSAdmin" }, null)</li>
+
+    <body class="fixed-sn light-blue-skin">
+
+        <!--Double navigation-->
+        <header>
+            <!-- Sidebar navigation -->
+            <div id="slide-out" class="side-nav  fixed" style="background-image: url('https://i.ibb.co/B3f9WW9/Sidebar-Iimage.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+                <ul class="custom-scrollbar">
+                    <!-- Logo -->
+                    <li>
+                        <div class="logo-wrapper waves-light">
+                           
+                            <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                                <img src="~/Content/Img/LogoCoallia_Couleur (2).png" title="title" alt="additional title" class="img-fluid flex-center" />
+                            </a>
+                        </div>
+                    </li>
+                    <!--/. Logo -->
+                    <!--Social-->
+                    <li>
+                       
+                    </li>
+                    <!--/Social-->
+                    <!--Search Form-->
+                   
+                    <!--/.Search Form-->
+                    <!-- Side navigation links -->
+                    <li>
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="fas fa-chevron-right"></i> Home
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="/OPMSAdmin/Pages/Index" class="waves-effect">Home Page</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">Registration form</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="far fa-hand-pointer"></i>
+                                    Instruction<i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="waves-effect">For bloggers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">For authors</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="far fa-hand-pointer"></i>
+                                    Instruction<i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="waves-effect">For bloggers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">For authors</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="far fa-hand-pointer"></i>
+                                    Instruction<i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="waves-effect">For bloggers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">For authors</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="far fa-hand-pointer"></i>
+                                    Instruction<i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="waves-effect">For bloggers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">For authors</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+                      
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="far fa-hand-pointer"></i>
+                                    Instruction<i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="waves-effect">For bloggers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">For authors</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <li>
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="far fa-hand-pointer"></i>
+                                    Instruction<i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="waves-effect">For bloggers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">For authors</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+</li>
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r"><i class="far fa-eye"></i> About<i class="fas fa-angle-down rotate-icon"></i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="waves-effect">Introduction</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">Monthly meetings</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="far fa-envelope"></i> Contact me<i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="waves-effect">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">Write a message</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">Write a message</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">Write a message</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="waves-effect">Write a message</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a title="About" href="#" class="dropdown-toggle" data-toggle="dropdown"> About <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("About Page", "Index", "AboutPage", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("About Section", "Index", "AboutSections", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Short Section", "Index", "AboutShortSection", new { area = "OPMSAdmin" }, null)</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a title="Message" href="#" class="dropdown-toggle" data-toggle="dropdown"> SMS & Poste <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Send SMS", "Index", "Messages", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Mesage BOX", "Index", "MessageContainer", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Delivered SMS", "SMSRecords", "Messages", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Post Message Box", "Index", "PostSystem", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Assign a  post", "Index", "MainPostSystem", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Delivered Post", "PostData", "MainPostSystem", new { area = "OPMSAdmin" }, null)</li>
-
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a title="Contacts" href="#" class="dropdown-toggle" data-toggle="dropdown"> Contact <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Contact Page", "Index", "ContactPage", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Contact Details", "Index", "ContactDetails", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Contact Info", "Index", "ContactInfo", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Contact Forms", "Index", "Contacts", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("News Info", "Index", "NewsInfo", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("News Banner", "Index", "NewsBanner", new { area = "OPMSAdmin" }, null)</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a title="Social Worker" href="#" class="dropdown-toggle" data-toggle="dropdown"> Social Worker <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Social Worker Page", "Index", "SWorkerPage", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Banner", "Index", "SWBanner", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Social Profile", "Index", "SocialProfiles", new { area = "OPMSAdmin" }, null)</li>
-                        </ul>
-                    </li>
-
-                    <li>@Html.ActionLink("Help", "Index", "Help", new { area = "OPMSAdmin" }, null)</li>
-
-                    <li class="dropdown">
-                        <a title="About" href="#" class="dropdown-toggle" data-toggle="dropdown">Messages<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Help & Support", "Index", "Helpsupport", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Social Workesr", "Index", "SocialWorker", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Site Setting", "Index", "Sitesettings", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Users", "Index", "AdminUser", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Roles", "Index", "Roles", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Menus", "Index", "Menus", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("User Activity", "Index", "UserLocations", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Admin", "Index", "AdminPanel", new { area = "OPMSAdmin" }, null)</li>
-                            <li>@Html.ActionLink("Admin Activity", "Index", "AdminActivity", new { area = "OPMSAdmin" }, null)</li>
-
-                        </ul>
-                    </li>
-
-
-
+                    <!--/. Side navigation links -->
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <div class="sidenav-bg mask-strong"></div>
             </div>
-        </div>
-    </div>*@
+            <!--/. Sidebar navigation -->
+            <!-- Navbar -->
+            <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg double-nav">
+                <!-- SideNav slide-out button -->
+              
+                    <div class="float-left">
+                        <a href="#" data-activates="slide-out" class="button-collapse"></a>
+                    </div>
+                    <!-- Breadcrumb-->
+                    <div class="breadcrumb-dn mr-auto">
+                        <p>Online Post Managment System</p>
+                    </div>
+                    <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                        @Html.Partial("_LoginPartial")
 
-    <div class="container body-content">
-        @RenderBody()
-        
-        <hr />
-        <footer>
-            <h6 class="text-primary">&copy; @DateTime.Now.Year Designed By SeoSoft ApS</h6>
-        </footer>
-    </div>
+                    </ul>
+                
+               
+            </nav>
+            <!-- /.Navbar -->
+        </header>
+        <!--/.Double navigation-->
+        <!--Main Layout-->
+       
 
+            <div class="container-fluid BodyContent">
+                <div class="row">
+                    <div class="col-md-10 offset-2">
+                        @RenderBody()
+                        @RenderSection("AdminCustomCSS", required: true)
+                        <hr />
+                        <footer>
+                            <h6 class="text-primary">&copy; @DateTime.Now.Year Designed By SeoSoft ApS</h6>
+                        </footer>
+                    </div>
+                </div>
+              
+            </div>
+      
+        <!--Main Layout-->
 
+   
+      
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

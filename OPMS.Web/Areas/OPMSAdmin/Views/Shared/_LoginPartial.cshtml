@@ -4,9 +4,9 @@
     {
         using (Html.BeginForm("LogOut", "Accounts", new { Area = "" }, FormMethod.Post, new { id = "logoutForm" }))
         {
-            <ul class="nav navbar-nav navbar-right">
-                <li><a  href="javascript:document.getElementById('logoutForm').submit();"> Bonjour  @User.Identity.Name | <span class="btn btn-danger"> LogOut</span> </a></li>
-            </ul>
+<ul class="nav navbar-nav navbar-right">
+    <li class="nav-item ml-auto "><a class="nav-link ml-auto " href="javascript:document.getElementById('logoutForm').submit();"> Bonjour  @User.Identity.Name | <span class="btn btn-danger btn-rounded btn-sm"> Logout <i class="fas fa-lock"></i> </span></a></li>
+</ul>
         }
     }
 }
