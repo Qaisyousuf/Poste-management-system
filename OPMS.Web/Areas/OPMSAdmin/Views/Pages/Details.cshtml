@@ -3,92 +3,119 @@
 @{
     ViewBag.Title = "Home";
 }
-<hr />
-<h4>Détails de la page <button disabled class="btn btn-primary">@Model.Title</button></h4>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Slug)
-        </dt>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dd>
-            @Html.DisplayFor(model => model.Slug)
-        </dd>
+        <!-- Title -->
+        <h4 class="text-white">Details of the Page</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
+    <div class="card-body card-body-cascade text-center">
 
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
+        <hr />
+        <h4 class="text-info">Details of the <button disabled class="btn btn-info  btn-sm  btn-rounded"><i class="fas fa-info-circle pr-2"></i> @Model.Title</button> Page</h4>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaKeywordsPage)
-        </dt>
+        <hr />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <table class="table table-hover table-striped">
 
-        <dd>
-            @Html.DisplayFor(model => model.MetaKeywordsPage)
-        </dd>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="font-weight-bold">  @Html.DisplayNameFor(model => model.Title)</th>
+                            <td> @Html.DisplayFor(model => model.Title)</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaDescriptionPage)
-        </dt>
+                        </tr>
+                        <tr>
+                            <th scope="row"  class="font-weight-bold">  @Html.DisplayNameFor(model => model.Slug)</th>
+                            <td>   @Html.DisplayFor(model => model.Slug)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.MetaDescriptionPage)
-        </dd>
+                        </tr>
+                        <tr>
+                            <th scope="row"  class="font-weight-bold">  @Html.DisplayNameFor(model => model.Content)</th>
+                            <td>  @Html.DisplayFor(model => model.Content)</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsPageMetaDataOn)
-        </dt>
+                        </tr>
+                        <tr>
+                            <th scope="row"  class="font-weight-bold">  @Html.DisplayNameFor(model => model.MetaKeywordsPage)</th>
+                            <td> @Html.DisplayFor(model => model.MetaKeywordsPage)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsPageMetaDataOn)
-        </dd>
+                        </tr>
+                        <tr>
+                            <th scope="row"  class="font-weight-bold"> @Html.DisplayNameFor(model => model.MetaDescriptionPage)</th>
+                            <td>  @Html.DisplayFor(model => model.MetaDescriptionPage)</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsVisibleToSearchEnginePage)
-        </dt>
+                        </tr>
+                        <tr>
+                            <th scope="row"  class="font-weight-bold">   @Html.DisplayNameFor(model => model.IsPageMetaDataOn)</th>
+                            <td> @Html.CheckBoxFor(model => model.IsPageMetaDataOn, new { style = "opacity: 1" })</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsVisibleToSearchEnginePage)
-        </dd>
+                        </tr>
+                        <tr>
+                            <th scope="row"  class="font-weight-bold">  @Html.DisplayNameFor(model => model.IsVisibleToSearchEnginePage)</th>
+                            <td>  @Html.CheckBoxFor(model => model.IsVisibleToSearchEnginePage, new { style = "opacity: 1" })</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SidebarId)
-        </dt>
+                        </tr>
+                        <tr>
+                            <th scope="row"  class="font-weight-bold"> @Html.DisplayNameFor(model => model.SidebarId)</th>
+                            <td>  @Html.DisplayFor(model => model.SidebarId)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.SidebarId)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BannerId)
-        </dt>
+                        </tr>
+                        <tr>
+                            <th scope="row"  class="font-weight-bold"> @Html.DisplayNameFor(model => model.BannerId)</th>
+                            <td> @Html.DisplayFor(model => model.BannerId)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.BannerId)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.HomeContentId)
-        </dt>
+                        </tr>
+                        <tr>
+                            <th scope="row"  class="font-weight-bold"> @Html.DisplayNameFor(model => model.HomeContentId)</th>
+                            <td>  @Html.DisplayFor(model => model.HomeContentId)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.HomeContentId)
-        </dd>
+                        </tr>
 
-    </dl>
+                    </tbody>
+                </table>
+
+
+
+                <p>
+                    @Html.ActionLink("Update", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+                    <a class="btn btn-primary" href="/OPMSAdmin/Pages/Index"> <i class="fas fa-undo-alt pr-2"></i>Back to menu</a>
+                </p>
+            </div>
+
+        </div>
+
+
+    </div>
+
 </div>
-<p>
-    @Html.ActionLink("Éditer", "Edit", new { id = Model.Id },new { @class="btn btn-default"}) |
-    <a class="btn btn-primary" href="/OPMSAdmin/Pages/Index">Retour à la liste principale</a>
-</p>
+
+
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Content")
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
+    </script>
+}

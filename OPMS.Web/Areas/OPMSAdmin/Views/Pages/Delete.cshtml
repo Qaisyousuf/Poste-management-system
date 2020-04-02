@@ -3,98 +3,119 @@
 @{
     ViewBag.Title = "Home";
 }
-<hr />
-<h4>Voulez-vous vraiment supprimer le <button disabled class="btn btn-danger">@Model.Title Page</button> ?</h4>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Slug)
-        </dt>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dd>
-            @Html.DisplayFor(model => model.Slug)
-        </dd>
+        <!-- Title -->
+        <h4 class="text-white">Delete The Page</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
 
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
+        <hr />
+        <h4 class="text-danger">Are you sure you want to delete the <button disabled class="btn btn-danger btn-sm  btn-rounded"><i class="fas fa-trash-alt pr-2"></i> @Model.Title</button>  Page?</h4>
+        <hr />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <table class="table table-hover table-striped">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaKeywordsPage)
-        </dt>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="font-weight-bold">  @Html.DisplayNameFor(model => model.Title)</th>
+                            <td> @Html.DisplayFor(model => model.Title)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.MetaKeywordsPage)
-        </dd>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="font-weight-bold">  @Html.DisplayNameFor(model => model.Slug)</th>
+                            <td>   @Html.DisplayFor(model => model.Slug)</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaDescriptionPage)
-        </dt>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="font-weight-bold">  @Html.DisplayNameFor(model => model.Content)</th>
+                            <td>  @Html.DisplayFor(model => model.Content)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.MetaDescriptionPage)
-        </dd>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="font-weight-bold">  @Html.DisplayNameFor(model => model.MetaKeywordsPage)</th>
+                            <td> @Html.DisplayFor(model => model.MetaKeywordsPage)</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsPageMetaDataOn)
-        </dt>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="font-weight-bold"> @Html.DisplayNameFor(model => model.MetaDescriptionPage)</th>
+                            <td>  @Html.DisplayFor(model => model.MetaDescriptionPage)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsPageMetaDataOn)
-        </dd>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="font-weight-bold">   @Html.DisplayNameFor(model => model.IsPageMetaDataOn)</th>
+                            <td> @Html.CheckBoxFor(model => model.IsPageMetaDataOn, new { style = "opacity: 1" })</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsVisibleToSearchEnginePage)
-        </dt>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="font-weight-bold">  @Html.DisplayNameFor(model => model.IsVisibleToSearchEnginePage)</th>
+                            <td>  @Html.CheckBoxFor(model => model.IsVisibleToSearchEnginePage, new { style = "opacity: 1" })</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsVisibleToSearchEnginePage)
-        </dd>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="font-weight-bold"> @Html.DisplayNameFor(model => model.SidebarId)</th>
+                            <td>  @Html.DisplayFor(model => model.SidebarId)</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SidebarId)
-        </dt>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="font-weight-bold"> @Html.DisplayNameFor(model => model.BannerId)</th>
+                            <td> @Html.DisplayFor(model => model.BannerId)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.SidebarId)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BannerId)
-        </dt>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="font-weight-bold"> @Html.DisplayNameFor(model => model.HomeContentId)</th>
+                            <td>  @Html.DisplayFor(model => model.HomeContentId)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.BannerId)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.HomeContentId)
-        </dt>
+                        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.HomeContentId)
-        </dd>
+                    </tbody>
+                </table>
 
-    </dl>
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Supprimer" class="btn btn-danger" /> |
-            <a class="btn btn-primary" href="/OPMSAdmin/Pages/Index">Retour à la liste principale</a>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color col-md-9 offset-2 ">
+                        <button type="submit" value="Delete" class="btn btn-danger"><i class="fas fa-trash-alt pr-2"></i> Delete</button> |
+                        <a class="btn btn-primary" href="/OPMSAdmin/Pages/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                    </div>
+                }
+            </div>
+          
         </div>
-    }
+
+
+    </div>
+
 </div>
+
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+            $(document).ready(function () {
+                $(".button-collapse").sideNav({
+                    breakpoint: 1200
+                });
+
+                var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+                var ps = new PerfectScrollbar(sideNavScrollbar);
+                Ps.initialize(el);
+            });
+    </script>
+}

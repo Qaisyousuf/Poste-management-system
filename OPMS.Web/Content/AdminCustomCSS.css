@@ -1,17 +1,25 @@
 ﻿html,
 body,
 header {
-    padding-top: -100px;
-    margin-top: -200px;
+    
+    margin-top: -220px;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1rem;
 }
-.BodyContent
+table.dataTable tbody th, table.dataTable tbody td
 {
-    margin-top:-100px;
-    padding-top:-100px;
-    margin-right:10px;
-    padding-left:40px;
+    
+    padding-bottom:10px;
+    padding-top:10px;
+    font-size:small;
+
+}
+
+.BodyContent {
+    margin-top: -100px;
+    padding-top: -100px;
+    margin-right: 10px;
+    padding-left: 40px;
 }
 .side-nav .logo-wrapper img {
     height: auto;
@@ -40,3 +48,12 @@ header {
     }
 }
 
+input[type=text], input[type=email], input[type=number],input[type=checkbox] {
+    box-shadow: 0 1px 0 0 #42a5f5 !important;
+    border-bottom: 1px 1px 1px 1px solid #42a5f5 !important;
+}
+
+    input[type=number]:focus:not([readonly]), input[type=checkbox]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=search-md]:focus:not([readonly]), input[type=search]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=url]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
+        box-shadow: 0 1px 0 0 #42a5f5 !important;
+        border-bottom: 1px 1px 1px 1px solid #42a5f5 !important;
+    }

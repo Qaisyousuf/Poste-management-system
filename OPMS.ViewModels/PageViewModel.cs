@@ -30,6 +30,7 @@ namespace OPMS.ViewModels
         public string MetaDescriptionPage { get; set; }
 
         [Display(Name = "Search Engine")]
+        
         public bool IsVisibleToSearchEnginePage { get; set; }
 
         [Display(Name = "Sidbar Name")]
