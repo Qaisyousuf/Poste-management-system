@@ -14,15 +14,15 @@ namespace OPMS.Models
 
         public int SidebarId { get; set; }
         [ForeignKey("SidebarId")]
-        public Sidebar Sidebars { get; set; }
+        public virtual Sidebar Sidebars { get; set; }
 
         public int BannerId { get; set; }
         [ForeignKey("BannerId")]
-        public HomeBanner HomeBanner { get; set; }
+        public virtual HomeBanner HomeBanner { get; set; }
 
         public int HomeContentId { get; set; }
         [ForeignKey("HomeContentId")]
-        public HomeContent HomeContent { get; set; }
+        public virtual HomeContent HomeContent { get; set; }
 
 
     }

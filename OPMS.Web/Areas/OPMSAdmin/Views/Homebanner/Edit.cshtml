@@ -10,7 +10,7 @@
     <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
         <!-- Title -->
-        <h4 class="text-white">Update The Page</h4>
+        <h4 class="text-white">Update The Banner</h4>
         <!-- Subtitle -->
     </div>
 
@@ -19,7 +19,7 @@
 
         <hr />
 
-        <h4 class="light-blue-text  ">Are you sure you want to update the <button class="btn btn-info btn-sm  btn-rounded"><i class="fas fa-edit pr-2"></i> @Model.Title </button> Page ?</h4>
+        <h4 class="light-blue-text  ">Are you sure you want to update the <button class="btn btn-info btn-sm  btn-rounded"><i class="fas fa-edit pr-2"></i> @Model.Title </button> Banner ?</h4>
 
 
         @using (Html.BeginForm())
@@ -27,8 +27,6 @@
             @Html.AntiForgeryToken()
 
             <div class="form-horizontal">
-
-                <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.Id)
 

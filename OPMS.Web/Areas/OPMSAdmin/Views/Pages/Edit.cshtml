@@ -27,7 +27,7 @@
             @Html.AntiForgeryToken()
 
             <div class="form-horizontal">
-                <hr />
+              
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.Id)
 
@@ -102,6 +102,7 @@
                         <label>@Html.CheckBoxFor(x => x.IsPageMetaDataOn, new { style = "opacity: 1" })<br />@Html.DisplayNameFor(x => x.IsVisibleToSearchEnginePage)</label>
                     </div>
                 </div>
+                <hr />
                 <div class="form-group md-form offset-3 col-md-8">
                     <div class="col-md-offset-2 col-md-10">
 

@@ -208,6 +208,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         [ActionName("Delete")]
         public ActionResult DeleteConfirm(int id)
         {
+            
             var page = uow.PageRepository.GetById(id);
             PageViewModel viewmodel = new PageViewModel
             {

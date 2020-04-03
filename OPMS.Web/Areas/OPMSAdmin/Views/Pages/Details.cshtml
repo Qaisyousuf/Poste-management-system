@@ -18,73 +18,110 @@
 
         <hr />
         <h4 class="text-info">Details of the <button disabled class="btn btn-info  btn-sm  btn-rounded"><i class="fas fa-info-circle pr-2"></i> @Model.Title</button> Page</h4>
-
-        <hr />
+        <br />
         <div>
             <div class="col-md-8 offset-2 text-left">
-                <table class="table table-hover table-striped">
+                <div class="table-wrapper table-responsive table-bordered table-striped ">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.Title)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-link"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Slug)</td>
 
-                    <tbody>
-                        <tr>
-                            <th scope="row" class="font-weight-bold">  @Html.DisplayNameFor(model => model.Title)</th>
-                            <td> @Html.DisplayFor(model => model.Title)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.Slug)</td>
+                            </tr>
 
-                        </tr>
-                        <tr>
-                            <th scope="row"  class="font-weight-bold">  @Html.DisplayNameFor(model => model.Slug)</th>
-                            <td>   @Html.DisplayFor(model => model.Slug)</td>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-search-plus"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.MetaKeywordsPage)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.MetaKeywordsPage)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.MetaDescriptionPage)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.MetaDescriptionPage)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tags"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.IsPageMetaDataOn)</td>
+                                <td class="text-primary">@Html.CheckBoxFor(model => model.IsPageMetaDataOn, new { style = "opacity: 1" }) </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-search"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.IsVisibleToSearchEnginePage)</td>
+                                <td class="text-primary">@Html.CheckBoxFor(model => model.IsVisibleToSearchEnginePage, new { style = "opacity: 1" }) </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-pager"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.SidebarId) </td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.SidebarId)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.BannerId) </td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.BannerId)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.HomeContentId)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.HomeContentId)</td>
+                            </tr>
 
-                        </tr>
-                        <tr>
-                            <th scope="row"  class="font-weight-bold">  @Html.DisplayNameFor(model => model.Content)</th>
-                            <td>  @Html.DisplayFor(model => model.Content)</td>
+                           
 
-                        </tr>
-                        <tr>
-                            <th scope="row"  class="font-weight-bold">  @Html.DisplayNameFor(model => model.MetaKeywordsPage)</th>
-                            <td> @Html.DisplayFor(model => model.MetaKeywordsPage)</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row"  class="font-weight-bold"> @Html.DisplayNameFor(model => model.MetaDescriptionPage)</th>
-                            <td>  @Html.DisplayFor(model => model.MetaDescriptionPage)</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row"  class="font-weight-bold">   @Html.DisplayNameFor(model => model.IsPageMetaDataOn)</th>
-                            <td> @Html.CheckBoxFor(model => model.IsPageMetaDataOn, new { style = "opacity: 1" })</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row"  class="font-weight-bold">  @Html.DisplayNameFor(model => model.IsVisibleToSearchEnginePage)</th>
-                            <td>  @Html.CheckBoxFor(model => model.IsVisibleToSearchEnginePage, new { style = "opacity: 1" })</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row"  class="font-weight-bold"> @Html.DisplayNameFor(model => model.SidebarId)</th>
-                            <td>  @Html.DisplayFor(model => model.SidebarId)</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row"  class="font-weight-bold"> @Html.DisplayNameFor(model => model.BannerId)</th>
-                            <td> @Html.DisplayFor(model => model.BannerId)</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row"  class="font-weight-bold"> @Html.DisplayNameFor(model => model.HomeContentId)</th>
-                            <td>  @Html.DisplayFor(model => model.HomeContentId)</td>
-
-                        </tr>
-
-                    </tbody>
-                </table>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold">  @Html.DisplayNameFor(model => model.Content)</td>
+                                <td class="collapse" id="collapseExample">@Html.Raw(Model.Content)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
 
 
+                            </tr>
 
-                <p>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+               
+                <div class="col-md-9 offset-3 pt-4">
                     @Html.ActionLink("Update", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
                     <a class="btn btn-primary" href="/OPMSAdmin/Pages/Index"> <i class="fas fa-undo-alt pr-2"></i>Back to menu</a>
-                </p>
+                </div>
+               
+                  
+               
             </div>
 
         </div>
