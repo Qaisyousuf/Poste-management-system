@@ -29,7 +29,7 @@ namespace OPMS.ViewModels
 
         [AllowHtml]
         [Required]
-        [Display(Name = "Button Url")]
+        [Display(Name = "Image Url")]
         public string UrlImages { get; set; }
 
         [Display(Name = "Publish date")]

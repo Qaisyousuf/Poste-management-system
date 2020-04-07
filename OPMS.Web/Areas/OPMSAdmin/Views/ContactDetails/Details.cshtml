@@ -3,78 +3,136 @@
 @{
     ViewBag.Title = "ContactDetails";
 }
-<hr />
-<h4>Détails du contact</h4>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CityName)
-        </dt>
+        <!-- Title -->
+        <h4 class="text-white">Details of the contact details</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CityName)
-        </dd>
+    <div class="card-body card-body-cascade text-center">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AreaName)
-        </dt>
+        <hr />
+        <h4 class="text-info">Details of the <button disabled class="btn btn-info  btn-sm  btn-rounded"><i class="fas fa-info-circle pr-2"></i> @Model.Title</button> contact detials</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped ">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 table-striped ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-hashtag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Title)</td>
+                            </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.AreaName)
-        </dd>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-city"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.CityName)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.CityName)</td>
+                            </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StreetName)
-        </dt>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-map-signs"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.AreaName)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.AreaName)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-road"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.StreetName) </td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.StreetName)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-warehouse"></i></a>
+                                </th>
+                                <td class="font-weight-bold">   @Html.DisplayNameFor(model => model.CenterName)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.CenterName)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-at"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.CenterEmail)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.CenterEmail)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-phone-square"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.MobileNumber)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.MobileNumber)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-map-marked"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.GoogleAPIMap)</td>
+                                <td class="collapse" id="collapseExample">@Html.Raw(Model.GoogleAPIMap)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
 
-        <dd>
-            @Html.DisplayFor(model => model.StreetName)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GoogleAPIMap)
-        </dt>
+                            </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.GoogleAPIMap)
-        </dd>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CenterName)
-        </dt>
+                <div class="col-md-9 offset-3 pt-4">
+                    @Html.ActionLink("Update", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+                    <a class="btn btn-primary" href="/OPMSAdmin/ContactDetails/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CenterName)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CenterEmail)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CenterEmail)
-        </dd>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MobileNumber)
-        </dt>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.MobileNumber)
-        </dd>
 
-    </dl>
+    </div>
+
 </div>
-<p>
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
-    <a class="btn btn-primary" href="/OPMSAdmin/ContactDetails/Index">Retour à la liste principale</a>
-</p>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Content")
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
+    </script>
+}

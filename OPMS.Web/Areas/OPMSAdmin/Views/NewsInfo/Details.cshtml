@@ -1,120 +1,183 @@
 ﻿@model OPMS.ViewModels.NewsInfoVM
 
 @{
-    ViewBag.Title = "Details";
+                /**/
+
+                ViewBag.Title = "Details";
 }
-<hr />
-<h4>Détails de la page d'informations</h4>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
+        <!-- Title -->
+        <h4 class="text-white">Details of the news info page</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
+    <div class="card-body card-body-cascade text-center">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ButtonUrl)
-        </dt>
+        <hr />
+        <h4 class="text-info">Details of the <button disabled class="btn btn-info  btn-sm  btn-rounded"><i class="fas fa-info-circle pr-2"></i> @Model.Title</button> news info Page</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped ">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 table-striped ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Title)</td>
+                            </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.ButtonUrl)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ButtonText)
-        </dt>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-search-plus"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.MetaKeywordseNewsInfo)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.MetaKeywordseNewsInfo)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.MetaDescriptionNewsInfo)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.MetaDescriptionNewsInfo)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tags"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.IsNewInfotMetaDataOn)</td>
+                                <td class="text-primary"> @Html.CheckBoxFor(model => model.IsNewInfotMetaDataOn, new { style = "opacity: 1" })</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-search"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.IsVisibleToSearchNewsInfo)</td>
+                                <td class="text-primary"> @Html.CheckBoxFor(model => model.IsVisibleToSearchNewsInfo, new { style = "opacity: 1" })</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-pager"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.NewsBannerId)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.NewsBannerId)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ButtonText)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ButtonText)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ButtonUrl)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ButtonUrl)</td>
+                            </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.ButtonText)
-        </dd>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.PublishDate)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.PublishDate)</td>
+                            </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SubContent)
-        </dt>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ImageUrl)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ImageUrl)</td>
+                            </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.SubContent)
-        </dd>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.GoogleMapAPIUrl)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.GoogleMapAPIUrl)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SubContent)</td>
+                                <td class="collapse" id="collapseExample1">@Html.Raw(Model.SubContent)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample1"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PublishDate)
-        </dt>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Content)</td>
+                                <td class="collapse" id="collapseExample">@Html.Raw(Model.Content)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
 
-        <dd>
-            @Html.DisplayFor(model => model.PublishDate)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
+                <div class="col-md-9 offset-3 pt-4">
+                    @Html.ActionLink("Update", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+                    <a class="btn btn-primary" href="/OPMSAdmin/NewsInfo/Index"> <i class="fas fa-undo-alt pr-2"></i>Back to menu</a>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GoogleMapAPIUrl)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.GoogleMapAPIUrl)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsNewInfotMetaDataOn)
-        </dt>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsNewInfotMetaDataOn)
-        </dd>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaKeywordseNewsInfo)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MetaKeywordseNewsInfo)
-        </dd>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaDescriptionNewsInfo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MetaDescriptionNewsInfo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsVisibleToSearchNewsInfo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsVisibleToSearchNewsInfo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NewsBannerId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NewsBannerId)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
-    <a class="btn btn-primary" href="/OPMSAdmin/NewsInfo/Index">Retour à la liste principale</a>
-</p>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Content")
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
+    </script>
+}

@@ -21,6 +21,7 @@ namespace OPMS.ViewModels
 
 
         [Required]
+        [AllowHtml]
         [Display(Name = "Sub Content")]
         public string SubContent { get; set; }
 

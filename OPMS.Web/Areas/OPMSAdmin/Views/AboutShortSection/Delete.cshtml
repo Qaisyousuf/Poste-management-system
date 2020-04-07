@@ -3,68 +3,133 @@
 @{
     ViewBag.Title = "About";
 }
-<hr />
-<h4>Voulez-vous vraiment supprimer le <button disabled class="btn btn-danger">@Model.Title</button> ?</h4>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SubTitle)
-        </dt>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dd>
-            @Html.DisplayFor(model => model.SubTitle)
-        </dd>
+        <!-- Title -->
+        <h4 class="text-white">Delete The short section</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MainTitle)
-        </dt>
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
 
-        <dd>
-            @Html.DisplayFor(model => model.MainTitle)
-        </dd>
+        <hr />
+        <h4 class="text-danger">Are you sure you want to delete the <button disabled class="btn btn-danger btn-sm  btn-rounded"><i class="fas fa-trash-alt pr-2"></i> @Model.Title</button> short section?</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
+                <div class="table-wrapper table-responsive table-bordered">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 table-striped ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Title)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tags"></i></a>
+                                </th>
+                                <td class="font-weight-bold">  @Html.DisplayNameFor(model => model.MainTitle)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.MainTitle)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SubTitle)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.SubTitle)</td>
+                            </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SubContent)
-        </dt>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-calendar-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">   @Html.DisplayNameFor(model => model.PublishDateTime) </td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.PublishDateTime)</td>
+                            </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.SubContent)
-        </dd>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Content)</td>
+                                <td class="collapse" id="collapseExample">@Html.Raw(Model.Content)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PublishDateTime)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PublishDateTime)
-        </dd>
+                            </tr>
 
-    </dl>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SubContent)</td>
+                                <td class="collapse" id="collapseExample1">@Html.Raw(Model.SubContent)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample1"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
 
-    <div class="form-actions no-color">
-        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
-        <a class="btn btn-primary" href="/OPMSAdmin/AboutShortSection/Index">Retour à la liste principale</a>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+                <br />
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color col-md-9 offset-2 ">
+                        <button type="submit" value="Delete" class="btn btn-danger"><i class="fas fa-trash-alt pr-2"></i> Delete</button> |
+                        <a class="btn btn-primary" href="/OPMSAdmin/AboutShortSection/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                    </div>
+                }
+            </div>
+
+        </div>
+
 
     </div>
-    }
+
 </div>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+            $(document).ready(function () {
+                $(".button-collapse").sideNav({
+                    breakpoint: 1200
+                });
+
+                var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+                var ps = new PerfectScrollbar(sideNavScrollbar);
+                Ps.initialize(el);
+            });
+    </script>
+}

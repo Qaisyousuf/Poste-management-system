@@ -3,92 +3,130 @@
     ViewBag.Title = "Index";
 
 }
-<hr />
-<h4>Contenu de la page d'accueil</h4>
-<p>
-    <a class="btn btn-primary" href="/OPMSAdmin/HomeRR/Create">Créer un nouveau contenu</a>
-</p>
-<hr />
-<table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
-    <thead class="bg-primary">
-        <tr>
-            <th><i class="glyphicon glyphicon-align-center"></i> Title</th>
-            <th><i class="glyphicon glyphicon-link"></i> Image Url</th>
-           
-            <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
-        </tr>
-    </thead>
-</table>
+<div class="card card-cascade narrower blue lighten-5">
+
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
+
+        <!-- Title -->
+        <h4 class="text-white">List of the Roles and responsibilities </h4>
+        <!-- Subtitle -->
+    </div>
+
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
+
+        <!-- Text -->
+        <div class="">
+
+            <p>
+                <a class="btn btn-rounded  btn-outline-primary" href="/OPMSAdmin/HomeRR/Create"><i class="fas fa-plus-circle pr-2 fa-1x" aria-hidden="true"></i> Create New Roles and responsibility </a>
+
+            </p>
+            <hr />
+            <table id="dataTable" class="table table-bordered table-hover table-striped ">
+                <thead class=" blue lighten-1 white-text">
+                    <tr>
+                        <th><i class="fas fa-hashtag"></i> Title</th>
+                        <th><i class="far fa-image"></i> Image Url</th>
+                        <th><i class="fas fa-wrench"></i> Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
 @section scripts{
     <script>
-    $(document).ready(function () {
-        $("#dataTable").DataTable({
-            "info": true,
-            "responsive": true,
-            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-            "dom": "lfrtiBp",
-            buttons: [
-                {
-                    extend: 'copyHtml5',
-                    text: '<i class="glyphicon glyphicon-file"> Copy</i>',
-                    titleAttr: 'Copy',
-
-
-                },
-                {
-                    extend: 'excelHtml5',
-                    text: '<i class="glyphicon glyphicon-save-file"> Excel</i>',
-                    titleAttr: 'Excel',
-
-
-                },
-                {
-                    extend: 'pdfHtml5',
-                    text: '<i class="glyphicon glyphicon-save-file"> PDF</i>',
-                    titleAttr: 'PDF',
-
-
-                },
-
-                {
-                    extend: 'print',
-                    text: '<i class="glyphicon glyphicon-print"> Print</i>',
-                    titleAttr: 'PRINT',
-
-
-                },
-                {
-                    extend: 'colvis',
-                    text: '<i class="glyphicon glyphicon-eye-open"> Visibilité des colonnes</i>',
-                    titleAttr: 'Columns Visiblty',
-
-
-                },
-            ],
-            "ajax": {
-                "url": "/OPMSAdmin/HomeRR/GetHomeRRData",
-                "type": "Get",
-                "dataType": "json"
-            },
-            "columns": [
-                { "data": "Title" },
-                { "data": "IconUrl" },
-                {
-                    "data": "actions",
-                    "className": "dt-body-right",
-                    "render": function (data, type, row, meta) {
-                        data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/HomeRR/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Modifier</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/HomeRR/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> <a class="btn btn-default btn-bg" href="/OPMSAdmin/HomeRR/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
-                        //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
-                        return data;
-                    }
-                },
-
-
-            ]
-        })
-    });
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+            // SideNav Scrollbar Initialization
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+        });
     </script>
-    }
+    <script>
+        $(document).ready(function () {
+            $("#dataTable").DataTable({
+                "info": false,
+                "responsive": true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "dom": "lfrtiBp",
+                buttons: [
+                    {
+                        extend: 'copyHtml5',
+                        text: '<i class="glyphicon glyphicon-file"> Copy</i>',
+                        titleAttr: 'Copy',
+
+
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> Excel</i>',
+                        titleAttr: 'Excel',
+
+
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="glyphicon glyphicon-save-file"> PDF</i>',
+                        titleAttr: 'PDF',
+
+
+                    },
+
+                    {
+                        extend: 'print',
+                        text: '<i class="glyphicon glyphicon-print"> Print</i>',
+                        titleAttr: 'PRINT',
+
+
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '<i class="glyphicon glyphicon-eye-open"> Visibilité des colonnes</i>',
+                        titleAttr: 'Columns Visiblty',
+
+
+                    },
+                ],
+                "ajax": {
+                    "url": "/OPMSAdmin/HomeRR/GetHomeRRData",
+                    "type": "Get",
+                    "dataType": "json"
+                },
+                "columns": [
+                    { "data": "Title" },
+                    { "data": "IconUrl" },
+                    {
+                        "data": "actions",
+                        "className": "dt-body-right",
+                        "render": function (data, type, row, meta) {
+                            data = '<a class="btn-floating  btn-default" href="/OPMSAdmin/HomeRR/Edit/' + row.Id + '"><i class="fas fa-edit"></i></a> | <a class="btn-floating btn-danger" href="/OPMSAdmin/HomeRR/Delete/' + row.Id + '"><i class="fas fa-trash-alt"></i></a> | <a class="btn-floating btn-info" href="/OPMSAdmin/HomeRR/Details/' + row.Id + '"><i class="fas fa-info"></i></a>';
+                            //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
+                            return data;
+                        }
+                    },
+
+
+                ]
+            })
+        });
+    </script>
+}
 
 
 

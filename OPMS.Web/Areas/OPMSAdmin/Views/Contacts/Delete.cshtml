@@ -3,83 +3,140 @@
 @{
     ViewBag.Title = "Delete";
 }
-<hr />
-<h4>Etes-vous sûr que vous voulez supprimer <button class="btn btn-danger">@Model.FullName Contact</button> ?</h4>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FullName)
-        </dt>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dd>
-            @Html.DisplayFor(model => model.FullName)
-        </dd>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MobileNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MobileNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IpAddres)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IpAddres)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactedDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactedDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MessageText)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MessageText)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactedLocation)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactedLocation)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-    <div class="form-actions no-color">
-        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
-        <a class="btn btn-primary" href="/OPMSAdmin/Contacts/Index">Retour à la liste principale</a>
+        <!-- Title -->
+        <h4 class="text-white">Delete The Contact</h4>
+        <!-- Subtitle -->
     </div>
-    }
+
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
+
+        <hr />
+        <h4 class="text-danger">Are you sure you want to delete the <button disabled class="btn btn-danger btn-sm  btn-rounded"><i class="fas fa-trash-alt pr-2"></i> @Model.FullName</button> contact form?</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+
+                <div class="table-wrapper table-responsive table-bordered">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 table-striped ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-id-card"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.FullName)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.FullName)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-at"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.Email)</td>
+
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Email)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-map-pin"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Address)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.Address)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-phone"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.MobileNumber)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.MobileNumber)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-map-marked"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.IpAddres)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.IpAddres)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-calendar-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ContactedDate)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ContactedDate)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.ContactedLocation)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ContactedLocation)</td>
+                            </tr>
+
+
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.MessageText)</td>
+                                <td class="collapse" id="collapseExample">@Html.Raw(Model.MessageText)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+                <br />
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color col-md-9 offset-2 ">
+                        <button type="submit" value="Delete" class="btn btn-danger"><i class="fas fa-trash-alt pr-2"></i> Delete</button> |
+                        <a class="btn btn-primary" href="/OPMSAdmin/Contacts/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+
+    </div>
+
 </div>
+
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+            $(document).ready(function () {
+                $(".button-collapse").sideNav({
+                    breakpoint: 1200
+                });
+
+                var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+                var ps = new PerfectScrollbar(sideNavScrollbar);
+                Ps.initialize(el);
+            });
+    </script>
+}

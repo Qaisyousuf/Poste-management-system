@@ -63,7 +63,7 @@
     <script>
         $(document).ready(function () {
             $("#dataTable").DataTable({
-                "info": true,
+                "info": false,
                 "responsive": true,
                 "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
@@ -119,8 +119,8 @@
                         "data": "actions",
                         "className": "dt-body-right",
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn-floating  btn-default" href="/OPMSAdmin/Homebanner/Edit/' + row.Id + '"><i class="fas fa-edit"></i></a> | <a class="btn-floating btn-danger" href="/OPMSAdmin/Homebanner/Delete/' + row.Id + '"><i class="fas fa-trash-alt"></i></a> | <a class="btn-floating btn-info" href="/OPMSAdmin/Homebanner/Details/' + row.Id + '"><i class="fas fa-info"></i> Détails</a>';
-                            //  data = '<a class="btn btn-info btn-sm" href="/Users/Edit/' + row.Id + '">Edit</a> | <button class="btn btn-danger btn-sm" onclick="return Delete(' + row.Id + ')">DeletePage</button>';
+                            data = '<a class="btn-floating  btn-default" href="/OPMSAdmin/Homebanner/Edit/' + row.Id + '"><i class="fas fa-edit"></i></a> | <a class="btn-floating btn-danger" href="/OPMSAdmin/Homebanner/Delete/' + row.Id + '"><i class="fas fa-trash-alt"></i></a> | <a class="btn-floating btn-info" href="/OPMSAdmin/Homebanner/Details/' + row.Id + '"><i class="fas fa-info"></i></a>';
+                            
                             return data;
                         }
                     },

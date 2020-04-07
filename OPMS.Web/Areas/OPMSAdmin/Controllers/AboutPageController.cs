@@ -180,7 +180,9 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 IsVisibleToSearchEngineAbout = aboutPage.IsVisibleToSearchEngine,
                 SectoinId = aboutPage.SectoinId,
                 AboutSection = aboutPage.AboutSection,
-                AboutShortSection = aboutPage.AboutShortSection
+                AboutShortSection = aboutPage.AboutShortSection,
+                ShortSectionId=aboutPage.ShortSectionId
+                
             };
 
             return View(viewmodel);
@@ -240,7 +242,8 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 IsVisibleToSearchEngineAbout = aboutPage.IsVisibleToSearchEngine,
                 SectoinId = aboutPage.SectoinId,
                 AboutSection = aboutPage.AboutSection,
-                AboutShortSection = aboutPage.AboutShortSection
+                AboutShortSection = aboutPage.AboutShortSection,
+                ShortSectionId=aboutPage.ShortSectionId,
             };
 
             return View(viewmodel);

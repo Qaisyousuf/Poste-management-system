@@ -12,7 +12,8 @@ namespace OPMS.Web.Controllers
 {
     [ExceptionFilter]
     [NoCacheFilter]
-    //[LoginInfoFilter]
+    [LoginInfoFilter]
+    [AdminActivityFilter]
     public class AccountsController : BaseController
     {
         public ActionResult Index()

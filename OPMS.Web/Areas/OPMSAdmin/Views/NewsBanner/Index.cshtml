@@ -2,28 +2,64 @@
 @{
     ViewBag.Title = "Index";
 }
-<hr />
-<h4>Liste des bannières d'actualités</h4>
-<p>
-    <a class="btn btn-primary" href="/OPMSAdmin/NewsBanner/Create">Créer une bannière pour la maison</a>
-</p>
-<hr />
-<table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
-    <thead class="bg-primary">
-        <tr>
-            <th><i class="glyphicon glyphicon-align-center"></i> Title</th>
-            <th><i class="glyphicon glyphicon-link"></i> SubTitle</th>
-            <th><i class="glyphicon glyphicon-link"></i> Button Text</th>
-            <th><i class="glyphicon glyphicon-link"></i> Button Url</th>
-            <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
-        </tr>
-    </thead>
-</table>
+<div class="card card-cascade narrower blue lighten-5">
+
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
+
+        <!-- Title -->
+        <h4 class="text-white">List of the news & info banners</h4>
+        <!-- Subtitle -->
+    </div>
+
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
+
+        <!-- Text -->
+        <div class="">
+
+            <p>
+
+                <a class="btn btn-rounded  btn-outline-primary" href="/OPMSAdmin/NewsBanner/Create"><i class="fas fa-plus-circle pr-2 fa-1x" aria-hidden="true"></i>Create New info Banner</a>
+            </p>
+            <hr />
+            <table id="dataTable" class="table table-bordered table-hover table-striped ">
+                <thead class=" blue lighten-1 white-text">
+                    <tr class="pt-2">
+                        <th><i class="fas fa-hashtag"></i> Ttitle</th>
+                        <th><i class="fas fa-align-center"></i> SubTitle</th>
+                        <th><i class="fas fa-check-square"></i> Button Text</th>
+                        <th><i class="fas fa-link"></i> Button Url</th>
+                        <th><i class="fas fa-wrench"></i> Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
 @section scripts{
     <script>
         $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+            // SideNav Scrollbar Initialization
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
             $("#dataTable").DataTable({
-                "info": true,
+                "info": false,
                 "responsive": true,
                 "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
@@ -79,8 +115,8 @@
                         "data": "actions",
                         "className": "dt-body-right",
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-primary btn-bg" href="/OPMSAdmin/NewsBanner/Edit/' + row.Id + '"><i class="glyphicon glyphicon-edit"></i> Modifier</a> | <a class="btn btn-danger btn-bg" href="/OPMSAdmin/NewsBanner/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer</a> <a class="btn btn-default btn-bg" href="/OPMSAdmin/NewsBanner/Details/' + row.Id + '"><i class="glyphicon glyphicon-info-sign"></i> Détails</a>';
-                           
+                            data = '<a class="btn-floating  btn-default" href="/OPMSAdmin/NewsBanner/Edit/' + row.Id + '"><i class="fas fa-edit"></i></a> | <a class="btn-floating btn-danger" href="/OPMSAdmin/NewsBanner/Delete/' + row.Id + '"><i class="fas fa-trash-alt"></i></a> | <a class="btn-floating btn-info" href="/OPMSAdmin/NewsBanner/Details/' + row.Id + '"><i class="fas fa-info"></i></a>';
+
                             return data;
                         }
                     },

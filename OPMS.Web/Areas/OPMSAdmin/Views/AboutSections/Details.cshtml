@@ -3,70 +3,131 @@
 @{
     ViewBag.Title = "About";
 }
-<hr />
-<h4>Détails de la section</h4>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MainTitle)
-        </dt>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dd>
-            @Html.DisplayFor(model => model.MainTitle)
-        </dd>
+        <!-- Title -->
+        <h4 class="text-white">Details of the about section</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SubTitle)
-        </dt>
+    <div class="card-body card-body-cascade text-center">
 
-        <dd>
-            @Html.DisplayFor(model => model.SubTitle)
-        </dd>
+        <hr />
+        <h4 class="text-info">Details of the <button disabled class="btn btn-info  btn-sm  btn-rounded"><i class="fas fa-info-circle pr-2"></i> @Model.Title</button> about section</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped ">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 table-striped ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Title)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-link"></i></a>
+                                </th>
+                                <td class="font-weight-bold">  @Html.DisplayNameFor(model => model.MainTitle)</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.MainTitle)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SubTitle)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.SubTitle)</td>
+                            </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ButtonUrl) </td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ButtonUrl)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.UrlImages)</td>
+                                <td class="text-primary">   @Html.DisplayFor(model => model.UrlImages)</td>
+                            </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ButtonUrl)
-        </dt>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-external-link-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">   @Html.DisplayNameFor(model => model.PublishDateTime) </td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.PublishDateTime)</td>
+                            </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.ButtonUrl)
-        </dd>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Content)</td>
+                                <td class="collapse" id="collapseExample">@Html.Raw(Model.Content)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UrlImages)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.UrlImages)
-        </dd>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PublishDateTime)
-        </dt>
+                <div class="col-md-9 offset-3 pt-4">
+                    @Html.ActionLink("Update", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+                    <a class="btn btn-primary" href="/OPMSAdmin/AboutSections/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.PublishDateTime)
-        </dd>
 
-    </dl>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
 </div>
-<p>
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
-    <a class="btn btn-primary" href="/OPMSAdmin/AboutSections/Index">Retour à la liste principale</a>
-</p>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Content")
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
+    </script>
+}

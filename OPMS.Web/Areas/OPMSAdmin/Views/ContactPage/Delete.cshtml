@@ -3,132 +3,192 @@
 @{
     ViewBag.Title = "Contact";
 }
-<hr />
-<h4>Voulez-vous vraiment supprimer le <button disabled class="btn btn-danger" >@Model.Title</button> ?</h4>
-<div>
-    
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Slug)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Slug)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SubContent)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SubContent)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GoogleMapAPIUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GoogleMapAPIUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsContactMetaDataOn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsContactMetaDataOn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaKeywordseContact)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MetaKeywordseContact)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaDescriptionContact)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MetaDescriptionContact)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsVisibleToSearchEngineContact)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsVisibleToSearchEngineContact)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactDetailsId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactDetailsId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactInfoId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactInfoId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactFormId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactFormId)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-    <div class="form-actions no-color">
-        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
-        <a class="btn btn-primary" href="/OPMSAdmin/ContactPage/Index">Retour à la liste principale</a>
+        <!-- Title -->
+        <h4 class="text-white">Delete The contact page</h4>
+        <!-- Subtitle -->
     </div>
-    }
+
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
+
+        <hr />
+        <h4 class="text-danger">Are you sure you want to delete the <button disabled class="btn btn-danger btn-sm  btn-rounded"><i class="fas fa-trash-alt pr-2"></i> @Model.Title</button> contact page?</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+
+                <div class="table-wrapper table-responsive table-bordered">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 table-striped ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Title)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-link"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Slug)</td>
+
+                                <td class="text-primary">@Html.DisplayFor(model => model.Slug)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Description)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Description)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ImageUrl)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.ImageUrl)</td>
+                            </tr>
+
+
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-search-plus"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.MetaKeywordseContact)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.MetaKeywordseContact)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.MetaDescriptionContact)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.MetaDescriptionContact)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.GoogleMapAPIUrl)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.GoogleMapAPIUrl)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ContactDetailsId)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ContactDetailsId)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.ContactInfoId)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.ContactInfoId)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ContactFormId)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ContactFormId)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tags"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.IsContactMetaDataOn)</td>
+                                <td class="text-primary"> @Html.CheckBoxFor(model => model.IsContactMetaDataOn, new { style = "opacity: 1" })</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-search"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.IsVisibleToSearchEngineContact)</td>
+                                <td class="text-primary"> @Html.CheckBoxFor(model => model.IsVisibleToSearchEngineContact, new { style = "opacity: 1" })</td>
+                            </tr>
+
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Content)</td>
+                                <td class="collapse" id="collapseExample">@Html.Raw(Model.Content)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
+
+
+                            </tr>
+
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SubContent)</td>
+                                <td class="collapse" id="collapseExample1">@Html.Raw(Model.SubContent)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample1"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
+
+
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+                <br />
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color col-md-9 offset-2 ">
+                        <button type="submit" value="Delete" class="btn btn-danger"><i class="fas fa-trash-alt pr-2"></i> Delete</button> |
+                        <a class="btn btn-primary" href="/OPMSAdmin/ContactPage/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+
+    </div>
+
 </div>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+            $(document).ready(function () {
+                $(".button-collapse").sideNav({
+                    breakpoint: 1200
+                });
+
+                var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+                var ps = new PerfectScrollbar(sideNavScrollbar);
+                Ps.initialize(el);
+            });
+    </script>
+}

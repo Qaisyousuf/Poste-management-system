@@ -2,7 +2,7 @@
 body,
 header {
     
-    margin-top: -220px;
+    margin-top: -265px;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1rem;
 }
@@ -16,8 +16,7 @@ table.dataTable tbody th, table.dataTable tbody td
 }
 
 .BodyContent {
-    margin-top: -100px;
-    padding-top: -100px;
+    /*margin-top:-270px;*/
     margin-right: 10px;
     padding-left: 40px;
 }
