@@ -4,103 +4,163 @@
     ViewBag.Title = "Details";
     Layout = "~/Areas/OPMSAdmin/Views/Shared/_Layout.cshtml";
 }
-<hr />
-<h4>Détails de la page</h4>
+<div class="card card-cascade narrower blue lighten-5">
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+        <!-- Title -->
+        <h4 class="text-white">Details of the social worker page</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
+    <div class="card-body card-body-cascade text-center">
 
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
+        <hr />
+        <h4 class="text-info">Details of the <button disabled class="btn btn-info  btn-sm  btn-rounded"><i class="fas fa-info-circle pr-2"></i> @Model.Title</button> social worker page</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped ">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 table-striped ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Title)</td>
+                            </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ButtonUrl)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ButtonUrl)
-        </dd>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-search-plus"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.MetaKeywordseSworker)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.MetaKeywordseSworker)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.MetaDescriptionSworker)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.MetaKeywordseSworker)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tags"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.IsSWorkertMetaDataOn)</td>
+                                <td class="text-primary"> @Html.CheckBoxFor(model => model.IsSWorkertMetaDataOn, new { style = "opacity: 1" })</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-search"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.IsVisibleToSearchEngineSworker)</td>
+                                <td class="text-primary"> @Html.CheckBoxFor(model => model.IsVisibleToSearchEngineSworker, new { style = "opacity: 1" })</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-pager"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.BannerId)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.BannerId)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ButtonText)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ButtonText)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ButtonUrl)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ButtonUrl)</td>
+                            </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ButtonText)
-        </dt>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.GoogleMapAPIUrl)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.GoogleMapAPIUrl)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SubContent)</td>
+                                <td class="collapse" id="collapseExample1">@Html.Raw(Model.SubContent)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample1"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
 
-        <dd>
-            @Html.DisplayFor(model => model.ButtonText)
-        </dd>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Content)</td>
+                                <td class="collapse" id="collapseExample">@Html.Raw(Model.Content)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SubContent)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SubContent)
-        </dd>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GoogleMapAPIUrl)
-        </dt>
+                <div class="col-md-9 offset-3 pt-4">
+                    @Html.ActionLink("Update", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+                    <a class="btn btn-primary" href="/OPMSAdmin/SWorkerPage/Index"> <i class="fas fa-undo-alt pr-2"></i>Back to menu</a>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.GoogleMapAPIUrl)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsSWorkertMetaDataOn)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsSWorkertMetaDataOn)
-        </dd>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaKeywordseSworker)
-        </dt>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.MetaKeywordseSworker)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaDescriptionSworker)
-        </dt>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.MetaDescriptionSworker)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsVisibleToSearchEngineSworker)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsVisibleToSearchEngineSworker)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BannerId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BannerId)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
-    <a class="btn btn-primary" href="/OPMSAdmin/SWorkerPage/Index">Retour à la liste principale</a>
-</p>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Content")
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
+    </script>
+}

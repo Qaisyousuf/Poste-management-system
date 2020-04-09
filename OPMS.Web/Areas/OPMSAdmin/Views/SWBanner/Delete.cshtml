@@ -2,71 +2,123 @@
 
 @{
     ViewBag.Title = "Social Worker Page";
-  
+
 }
-<hr />
-<h4>êtes-vous sûr de vouloir supprimer le <button disabled class="btn btn-danger">@Model.BTitle</button></h4>
-<div>
-  
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BTitle)
-        </dt>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dd>
-            @Html.DisplayFor(model => model.BTitle)
-        </dd>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BSubTitle)
-        </dt>
+        <!-- Title -->
+        <h4 class="text-white">Delete the banner</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.BSubTitle)
-        </dd>
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BContent)
-        </dt>
+        <hr />
+        <h4 class="text-danger">Are you sure you want to delete the <button disabled class="btn btn-danger btn-sm  btn-rounded"><i class="fas fa-trash-alt pr-2"></i> @Model.BTitle</button>  banner?</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.BTitle)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.BTitle)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-align-center"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.BSubTitle)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.BContent)
-        </dd>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.BSubTitle)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-image"></i> </a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.BImage)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.BImage)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-spell-check"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.BButton)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.BButton)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-external-link-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">   @Html.DisplayNameFor(model => model.BButtonUrl)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.BButtonUrl)</td>
+                            </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BImage)
-        </dt>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold">  @Html.DisplayNameFor(model => model.BContent)</td>
+                                <td class="collapse" id="collapseExample"> @Html.Raw(Model.BContent)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        Read more
+                                    </button>
+                                </td>
 
-        <dd>
-            @Html.DisplayFor(model => model.BImage)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BButton)
-        </dt>
+                            </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.BButton)
-        </dd>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BButtonUrl)
-        </dt>
+                    <div class="form-actions no-color col-md-9 offset-2 ">
+                        <button type="submit" value="Delete" class="btn btn-danger"><i class="fas fa-trash-alt pr-2"></i> Delete</button> |
+                        <a class="btn btn-primary" href="/OPMSAdmin/SWBanner/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                    </div>
+                }
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.BButtonUrl)
-        </dd>
+        </div>
 
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-    <div class="form-actions no-color">
-        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
-        <a class="btn btn-primary" href="/OPMSAdmin/SWBanner/Index">Retour à la liste principale</a>
 
     </div>
-    }
+
 </div>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+            $(document).ready(function () {
+                $(".button-collapse").sideNav({
+                    breakpoint: 1200
+                });
+
+                var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+                var ps = new PerfectScrollbar(sideNavScrollbar);
+                Ps.initialize(el);
+            });
+    </script>
+}

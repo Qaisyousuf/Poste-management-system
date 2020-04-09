@@ -20,6 +20,11 @@
         </tr>
     </thead>
 </table>
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
 @section scripts{
     <script>
         $(document).ready(function () {
@@ -75,7 +80,7 @@
                     { "data": "SubContent" },
                     { "data": "AuthenticatedUser" },
                     { "data": "ImageUrl" },
-                   
+
                     {
                         "data": "actions",
                         "className": "dt-body-right",

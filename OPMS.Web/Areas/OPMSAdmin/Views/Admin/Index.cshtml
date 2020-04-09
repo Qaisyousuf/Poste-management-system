@@ -1,5 +1,7 @@
 ﻿@model List<OPMS.ViewModels.AdminstratorPanelVM>
 @{
+    /**/
+
     ViewBag.Title = "Index";
     Layout = "~/Areas/OPMSAdmin/Views/Shared/_AdminLayout.cshtml";
 }
@@ -13,19 +15,78 @@
 
             foreach (var item in Model)
             {
+        <div class=" my-0 py-0">
+    <div class="container z-depth-1 blue lighten-5">
 
 
-                <div class="jumbotron text-center">
+        <!--Section: Content-->
+        <section class="px-md-3 mx-md-3 text-center dark-grey-text">
 
-                    <h3> Bonjour, @User.Identity.Name <br /> Your in the Dashboard Area </h3>
-                
-                   
-                    <br />
-                    <h4>@item.Title</h4>
-                    <h5> @item.SubContent</h5>
-                    <p>@Html.Raw(item.Content)</p>
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-6 mb-3 mb-md-0 my-3 py-3">
+
+                    <h3 class="font-weight-bold">@item.Title</h3>
+
+                    <p class="text-muted">
+                        @Html.Raw(item.SubContent)
+                    </p>
+                    <hr />
+                    <p class="text-muted">
+                        @Html.Raw(item.Content)
+                    </p>
+                    
+
+                    <hr class="pt-2">
+
+                    <h3 class="font-weight-bold justify-content-center">@item.AuthenticatedUser, <small> You're in the dashboard</small></h3>
+                    <div class="social pb-2">
+                        <a class="btn-floating btn-sm  btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
+                        <!--Twitter-->
+                        <a class="btn-floating btn-sm  btn-tw" type="button" role="button"><i class="fab fa-twitter"></i></a>
+                        <!--Google +-->
+                        <a class="btn-floating btn-sm  btn-gplus" type="button" role="button"><i class="fab fa-google-plus-g"></i></a>
+                        <!--Linkedin-->
+                        <a class="btn-floating btn-sm btn-li" type="button" role="button"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <!--Facebook-->
+                  
 
                 </div>
+                <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-md-6 mt-4 mb-md-0 my-5 pt-5 mt-5">
+
+                    <img src="~/Content/Img/dashboard_nklg.svg" class="img-fluid" alt="" id="zoom">
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+
+        </section>
+        <!--Section: Content-->
+
+
+    </div>
+</div>
+              
+
+                @*<div class="jumbotron text-center">
+
+                        <h3> @User.Identity.Name, <br /> Your in the Dashboard Area </h3>
+
+
+                        <br />
+                        <h4>@item.Title</h4>
+                        <h5> @item.SubContent</h5>
+                        <p>@Html.Raw(item.Content)</p>
+
+                    </div>*@
 
 
 
@@ -38,4 +99,17 @@
 
     <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
 
+}
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+            // SideNav Scrollbar Initialization
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+        });
+    </script>
 }

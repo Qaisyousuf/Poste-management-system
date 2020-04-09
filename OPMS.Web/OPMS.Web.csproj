@@ -169,6 +169,7 @@
     <Content Include="Content\CustomPostCSS.css" />
     <Content Include="Content\ErrorCustom.css" />
     <Content Include="Content\HomeCustomCSS.css" />
+    <Content Include="Content\Img\dashboard_nklg.svg" />
     <Content Include="Content\Img\HavePost.svg" />
     <Content Include="Content\Img\Login.svg" />
     <Content Include="Content\Img\LogoCoallia_Couleur %282%29.png" />
@@ -713,7 +714,6 @@
     <Content Include="Areas\OPMSAdmin\Views\AdminPanel\Delete.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\AdminPanel\Details.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\Admin\Index.cshtml" />
-    <Content Include="Areas\OPMSAdmin\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\AdminActivity\Index.cshtml" />
     <Content Include="Areas\OPMSAdmin\Views\AdminActivity\Delete.cshtml" />
     <Content Include="Scripts\bootstrap.min.js.map" />
@@ -726,6 +726,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Areas\OPMSAdmin\Views\Shared\_AdminLayout.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
