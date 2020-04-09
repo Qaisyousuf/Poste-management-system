@@ -21,81 +21,81 @@
         {
             @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
+            <div class="form-horizontal">
 
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group md-form offset-1 col-md-9">
-                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label offset-1" })
-                <div class="offset-3">
-                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label offset-1" })
+                    <div class="offset-3">
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group md-form offset-1 col-md-9">
-                @Html.LabelFor(model => model.Slug, htmlAttributes: new { @class = "control-label offset-1" })
-                <div class="offset-3">
-                    @Html.EditorFor(model => model.Slug, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Slug, "", new { @class = "text-danger" })
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.Slug, htmlAttributes: new { @class = "control-label offset-1" })
+                    <div class="offset-3">
+                        @Html.EditorFor(model => model.Slug, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Slug, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group md-form offset-1 col-md-9">
-                @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label offset-1" })
-                <div class="offset-3">
-                    @Html.TextAreaFor(model => model.Content)
-                    @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label offset-1" })
+                    <div class="offset-3">
+                        @Html.TextAreaFor(model => model.Content)
+                        @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
 
 
-            <div class="form-group md-form offset-1 col-md-9">
-                @Html.LabelFor(model => model.MetaKeywordsPage, htmlAttributes: new { @class = "control-label offset-1" })
-                <div class="offset-3">
-                    @Html.EditorFor(model => model.MetaKeywordsPage, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.MetaKeywordsPage, "", new { @class = "text-danger" })
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.MetaKeywordsPage, htmlAttributes: new { @class = "control-label offset-1" })
+                    <div class="offset-3">
+                        @Html.EditorFor(model => model.MetaKeywordsPage, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MetaKeywordsPage, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group md-form offset-1 col-md-9">
-                @Html.LabelFor(model => model.MetaDescriptionPage, htmlAttributes: new { @class = "control-label offset-1" })
-                <div class="offset-3">
-                    @Html.EditorFor(model => model.MetaDescriptionPage, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.MetaDescriptionPage, "", new { @class = "text-danger" })
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.MetaDescriptionPage, htmlAttributes: new { @class = "control-label offset-1" })
+                    <div class="offset-3">
+                        @Html.EditorFor(model => model.MetaDescriptionPage, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MetaDescriptionPage, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
 
 
-            <div class="form-group md-form offset-1 col-md-9">
-                @Html.LabelFor(model => model.SidebarId, htmlAttributes: new { @class = "control-label offset-1" })
-                <div class="offset-3">
-                    @Html.DropDownListFor(model => model.SidebarId, new SelectList(ViewBag.SidebarDropDownList, "Id", "name"), "-------Select the Sidebar Name------", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.SidebarId, "", new { @class = "text-danger" })
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.SidebarId, htmlAttributes: new { @class = "control-label offset-1" })
+                    <div class="offset-3">
+                        @Html.DropDownListFor(model => model.SidebarId, new SelectList(ViewBag.SidebarDropDownList, "Id", "name"), "-------Select the Sidebar Name------", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SidebarId, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group md-form offset-1 col-md-9">
-                @Html.LabelFor(model => model.BannerId, htmlAttributes: new { @class = "control-label offset-1" })
-                <div class="offset-3">
-                    @Html.DropDownListFor(model => model.BannerId, new SelectList(ViewBag.HomeBanner, "Id", "Title"), "-------Select the banner name------", new { @class = "form-control" })
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.BannerId, htmlAttributes: new { @class = "control-label offset-1" })
+                    <div class="offset-3">
+                        @Html.DropDownListFor(model => model.BannerId, new SelectList(ViewBag.HomeBanner, "Id", "Title"), "-------Select the banner name------", new { @class = "form-control" })
 
-                    @Html.ValidationMessageFor(model => model.BannerId, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.BannerId, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group md-form offset-1 col-md-9">
-                @Html.LabelFor(model => model.HomeContentId, htmlAttributes: new { @class = "control-label offset-1" })
-                <div class="offset-3">
-                    @Html.DropDownListFor(model => model.HomeContentId, new SelectList(ViewBag.HomeContent, "Id", "Title"), "-------Select the banner name------", new { @class = "form-control" })
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.HomeContentId, htmlAttributes: new { @class = "control-label offset-1" })
+                    <div class="offset-3">
+                        @Html.DropDownListFor(model => model.HomeContentId, new SelectList(ViewBag.HomeContent, "Id", "Title"), "-------Select the banner name------", new { @class = "form-control" })
 
-                    @Html.ValidationMessageFor(model => model.HomeContentId, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.HomeContentId, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
-            
-                <div class="form-group ">
+
+                <div class="form-group  ">
                     <div class="checkbox">
                         <label>@Html.CheckBoxFor(x => x.IsVisibleToSearchEnginePage, new { style = "opacity: 1" })<br />@Html.DisplayNameFor(x => x.IsPageMetaDataOn)</label>
                     </div>
@@ -105,16 +105,16 @@
                         <label>@Html.CheckBoxFor(x => x.IsPageMetaDataOn, new { style = "opacity: 1" })<br />@Html.DisplayNameFor(x => x.IsVisibleToSearchEnginePage)</label>
                     </div>
                 </div>
-          
-           
-            <div class="form-group md-form offset-3 col-md-8">
-                <div class="col-md-offset-2 col-md-10">
-                   
-                    <button type="submit" value="Create" class="btn btn-primary"><i class="fas fa-save pr-2"></i> Save</button>  |
-                    <a class="btn btn-primary" href="/OPMSAdmin/Pages/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+
+
+                <div class="form-group md-form offset-3 col-md-8">
+                    <div class="col-md-offset-2 col-md-10">
+
+                        <button type="submit" value="Create" class="btn btn-primary"><i class="fas fa-save pr-2"></i> Save</button>  |
+                        <a class="btn btn-primary" href="/OPMSAdmin/Pages/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
         }
@@ -126,12 +126,13 @@
 
 
 @section AdminCustomCSS{
-
+    
     <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
 
 }
 @section Scripts
 {
+   
     @Scripts.Render("~/bundles/jqueryval")
     <script src="~/Scripts/ckeditor/ckeditor.js"></script>
     <script>

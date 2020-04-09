@@ -3,92 +3,136 @@
 @{
     ViewBag.Title = "Delete";
 }
-<hr />
-<h4>Voulez-vous vraiment supprimer le message attribué pour <button disabled class="btn btn-danger">@Model.UserName</button></h4>
-<div>
 
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SentDateTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SentDateTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PostExpirationDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PostExpirationDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SendedBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SendedBy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HasPost)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HasPost)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PostSystemId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PostSystemId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SocialId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SocialId)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-    <div class="form-actions no-color">
-        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
-        <a class="btn btn-primary" href="/OPMSAdmin/MainPostSystem/PostData">Revenir à la liste principale</a>
+        <!-- Title -->
+        <h4 class="text-white">Delete the post</h4>
+        <!-- Subtitle -->
     </div>
-    }
+
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
+
+        <hr />
+        <h4 class="text-danger">Are you sure you want to delete the assigned message for <button disabled class="btn btn-danger btn-sm  btn-rounded"><i class="fas fa-trash-alt pr-2"></i> @Model.UserName</button> ?</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Title)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-calendar-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SentDateTime)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.SentDateTime)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-calendar-times"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.PostExpirationDate)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.PostExpirationDate)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-paper-plane"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.SendedBy)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.SendedBy)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-user-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.UserId)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.UserId)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-user"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.UserName)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.UserName)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-envelope"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.PostSystemId) </td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.PostSystemId)</td>
+                            </tr>
+                          
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-check-circle"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.HasPost)</td>
+                                <td class="text-primary"> @Html.CheckBoxFor(model => model.HasPost, new { style = "opacity: 1" })</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-users"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.SocialId)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.SocialId)</td>
+                            </tr>
+
+
+
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+                
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color col-md-9 offset-2 ">
+                    <button type="submit" value="Delete" class="btn btn-danger"><i class="fas fa-trash-alt pr-2"></i> Delete</button> |
+                    <a class="btn btn-primary" href="/OPMSAdmin/MainPostSystem/PostData"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                </div>
+                }
+            </div>
+
+        </div>
+
+
+    </div>
+
 </div>
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+            $(document).ready(function () {
+                $(".button-collapse").sideNav({
+                    breakpoint: 1200
+                });
+
+                var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+                var ps = new PerfectScrollbar(sideNavScrollbar);
+                Ps.initialize(el);
+            });
+    </script>
+}

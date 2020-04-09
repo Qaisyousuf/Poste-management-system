@@ -3,59 +3,97 @@
     ViewBag.Title = "ThankYou";
 }
 
-<hr />
-
-
-<style>
-
-    .jumbotron {
-        padding-top: 20px;
-        margin-top: 20px;
-        background-color: #33b5e5;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-align-content: flex-start;
-        -ms-flex-line-pack: center;
-        align-content: flex-start;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-shadow: 0px 1px 10px -1px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 1px 10px -1px rgba(0,0,0,0.75);
-        box-shadow: 0px 1px 10px -1px rgba(0,0,0,0.75);
-    }
-
-    h5, h1, h3, h4, h2, p {
-        color: white;
-    }
-
-    .jumbotron .img-responsive {
-        height: auto;
-        width: 300px;
-    }
-</style>
 
 @if (TempData["Message"] != null)
 {
-   
 
-    <div class="jumbotron">
-        <h4> You have successfully assigned a post to: @TempData["Message"]</h4>
-        <hr />
-        <img src="~/Content/Img/undraw_newsletter_vovu.svg" class="img-responsive" />
-        <hr />
-        <a class="btn btn-primary" href="/OPMSAdmin/MainPostSystem/Index">Essayez un autre Poste</a>
+    <div class="card card-cascade wider">
+
+        <!-- Card image -->
+        <div class="view view-cascade gradient-card-header blue-gradient">
+
+            <!-- Title -->
+            <h4 class="card-header-title mb-3">You have successfully assigned a post to<button disabled class="btn btn-info btn-rounded">@TempData["Message"]</button></h4>
+            <!-- Text -->
+            
+
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center  bg-transparent">
+            <div class="row">
+                <div class="col-md-6 ">
+                    <img src="~/Content/Img/sentPost.svg" />
+                    <!-- Link -->
+                
+                    
+                </div>
+                <div class="col-md-6  my-5">
+                    <div class="card card-cascade narrower  blue lighten-5">
+
+                        <!-- Card image -->
+                        <div class="view view-cascade gradient-card-header blue-gradient">
+
+                            <!-- Title -->
+                            <h5 class="card-header-title">Sucess Message</h5>
+                            <!-- Subtitle -->
+                          
+                        </div>
+
+                        <!-- Card content -->
+                        <div class="card-body-cascade text-center bg-transparent">
+
+                            <!-- Text -->
+                            <h3 class="card-text pt-3 mt-3 pb-2">
+                                The resident @TempData["Message"] will receiv a notification
+                            </h3>
+                            <hr />
+
+                            <div class="pb-3">
+                                <a class="btn btn-primary btn-rounded waves-effecttext-capitalize" href="/OPMSAdmin/MainPostSystem/Index"><i class="fas fa-paper-plane pr-2"></i> Try another post</a>
+                            </div>
+
+                        </div>
+                       
+
+                    </div>
+                    <!-- Card -->
+
+                   
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Card content -->
+
     </div>
-}
-<br />
 
+  
+}
+
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+
+}
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
+    </script>
+}
 

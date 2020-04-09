@@ -47,7 +47,7 @@ namespace OPMS.ViewModels
 
 
         [Required]
-        [Display(Name = "Social Worker Name")]
+        [Display(Name = "Sent By")]
         public int SocialId { get; set; }
         [ForeignKey("SocialId")]
         

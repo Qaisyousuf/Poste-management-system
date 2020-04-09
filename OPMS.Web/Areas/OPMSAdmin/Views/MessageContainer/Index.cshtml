@@ -14,12 +14,27 @@
             <th><i class="glyphicon glyphicon-align-center"></i> Titre</th>
             <th><i class="glyphicon glyphicon-link"></i> Sous-titre</th>
             <th><i class="glyphicon glyphicon-menu-right"></i> Créé par</th>
-            
+
             <th><i class="glyphicon glyphicon-wrench"></i> Actions</th>
         </tr>
     </thead>
 </table>
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
 @section scripts{
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+            // SideNav Scrollbar Initialization
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+        });
+    </script>
     <script>
         $(document).ready(function () {
             $("#dataTable").DataTable({
@@ -74,7 +89,7 @@
                     { "data": "Title" },
                     { "data": "SubTitle" },
                     { "data": "CreatedBy" },
-                    
+
                     {
                         "data": "actions",
                         "className": "dt-body-right",

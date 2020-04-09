@@ -59,7 +59,7 @@
                     <!-- Logo -->
                     <li>
                         <div class="logo-wrapper waves-light">
-                           
+
                             <a href="@Url.Action("Index", "admin")" class="navbar-brand">
                                 <img src="~/Content/Img/LogoCoallia_Couleur (2).png" title="title" alt="additional title" class="img-fluid flex-center" />
                             </a>
@@ -68,11 +68,15 @@
                     <!--/. Logo -->
                     <!--Social-->
                     <li>
-                       
+                        <ul class="social">
+                            <li><a href="#" class="icons-sm fb-ic"><i class="fab fa-facebook"> </i></a></li>
+                            <li><a href="#" class="icons-sm pin-ic"><i class="fab fa-pinterest"> </i></a></li>
+                            <li><a href="#" class="icons-sm gplus-ic"><i class="fab fa-google-plus"> </i></a></li>
+                            <li><a href="#" class="icons-sm tw-ic"><i class="fab fa-twitter"> </i></a></li>
+                        </ul>
                     </li>
                     <!--/Social-->
                     <!--Search Form-->
-                   
                     <!--/.Search Form-->
                     <!-- Side navigation links -->
                     <li>
@@ -197,6 +201,29 @@
                                         <li>
                                             <a href="/OPMSAdmin/SocialWorker/Index" class="waves-effect"><i class="fas fa-user-cog"></i>Social Worker</a>
                                         </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="collapsible collapsible-accordion mt-1">
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="fas fa-paper-plane"></i> Post
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="/OPMSAdmin/MainPostSystem/Index" class="waves-effect"><i class="far fa-envelope"></i>Send Post</a>
+                                        </li>
+                                        <li>
+                                            <a href="/OPMSAdmin/MainPostSystem/PostData" class="waves-effect"><i class="fas fa-check-square"></i>Update Post</a>
+                                        </li>
+                                        <li>
+                                            <a href="/OPMSAdmin/PostSystem/Index" class="waves-effect"><i class="fas fa-archive"></i>Post Box</a>
+                                        </li>
+
                                     </ul>
                                 </div>
                             </li>

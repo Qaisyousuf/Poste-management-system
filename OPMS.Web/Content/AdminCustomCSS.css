@@ -41,7 +41,8 @@ table.dataTable tbody th, table.dataTable tbody td
 }
 .side-nav .logo-wrapper img {
     height: auto;
-    margin: 5px;
+   
+    padding-top:40px;
     width: auto;
 }
 .navbar {
