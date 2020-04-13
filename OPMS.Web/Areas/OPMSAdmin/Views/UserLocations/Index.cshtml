@@ -3,31 +3,64 @@
     ViewBag.Title = "UserInfo";
 
 }
-<hr />
-<h4>liste des activités des utilisateurs</h4>
 
-<hr />
-<table id="dataTable" class="table table-bordered table-hover table-responsive table-striped">
-    <thead class="bg-primary">
-        <tr>
-            <th><i class="glyphicon glyphicon-align-center"></i> IP</th>
-            <th><i class="glyphicon glyphicon-link"></i> User</th>
-            <th><i class="glyphicon glyphicon-link"></i> Page</th>
-            <th><i class="glyphicon glyphicon-link"></i>Login/Logout Date</th>
-            <th><i class="glyphicon glyphicon-link"></i>Login/logout Time</th>
-            <th><i class="glyphicon glyphicon-link"></i> Device</th>
-            <th><i class="glyphicon glyphicon-link"></i> Authentication</th>
-            <th><i class="glyphicon glyphicon-"></i> Actions</th>
-        </tr>
-    </thead>
-</table>
+<div class="card card-cascade narrower blue lighten-5">
+
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
+
+        <!-- Title -->
+        <h4 class="text-white">List of the resident  activity</h4>
+        <!-- Subtitle -->
+    </div>
+
+
+    <div class="card-body card-body-cascade text-center">
+
+        <!-- Text -->
+        <div class="">
+            <hr />
+            <table id="dataTable" class="table table-bordered table-hover table-striped ">
+                <thead class=" blue lighten-1 white-text">
+                    <tr class="pt-2">
+                        <th><i class="fas fa-map-marked-alt"></i> IP</th>
+                        <th><i class="fas fa-user"></i> User</th>
+                        <th><i class="fas fa-pager"></i> Page</th>
+                        <th><i class="fas fa-calendar-alt"></i> Login /logout Date</th>
+                        <th><i class="fas fa-clock"></i> Login /logout Time</th>
+                        <th><i class="fas fa-tablet-alt"></i> Device</th>
+                        <th><i class="fas fa-sign-in-alt"></i> Authentication</th>
+                        <th><i class="fas fa-wrench"></i> Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
 @section scripts{
-
 
     <script>
         $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+            // SideNav Scrollbar Initialization
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
             $("#dataTable").DataTable({
-                "info": true,
+                "info": false,
                 "responsive": true,
                 "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "dom": "lfrtiBp",
@@ -36,7 +69,6 @@
                         extend: 'copyHtml5',
                         text: '<i class="glyphicon glyphicon-file"> Copy</i>',
                         titleAttr: 'Copy',
-
 
                     },
                     {
@@ -92,7 +124,7 @@
                             return data;
                         }
                     },
-                
+
                     {
                         "data": "ControllerName",
                         "targets": 2,
@@ -101,7 +133,7 @@
                             return data;
                         }
                     },
-                   
+
                     {
                         "data": "Date",
                         "targets": 3,
@@ -138,8 +170,8 @@
                         "data": "actions",
                         "targets": 7,
                         "render": function (data, type, row, meta) {
-                            data = '<a class="btn btn-danger btn-bg" href="/OPMSAdmin/UserLocations/Delete/' + row.Id + '"><i class="glyphicon glyphicon-trash"></i> Supprimer </a>';
-                           
+                            data = '<a class="btn-floating btn-danger" href="/OPMSAdmin/UserLocations/Delete/' + row.Id + '"><i class="fas fa-trash-alt"></i> Supprimer </a>';
+
                             return data;
                         }
                     },

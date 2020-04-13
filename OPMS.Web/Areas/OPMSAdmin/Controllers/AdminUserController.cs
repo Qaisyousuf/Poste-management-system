@@ -226,7 +226,49 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             return viewmodelDelete;
 
         }
+        private DetailsUserViewModel DetailsUser(int id)
+        {
+            var userFromdb = uow.Context.Users.Include("Roles").Where(x => x.Id == id).FirstOrDefault();
+            var Currentrole = userFromdb.Roles.Select(x => x.Id).ToList();
 
+
+            var RoleFromdb = uow.UserRepository.GetRoles();
+            var roleByid = _context.Roles.Find(id);
+
+            DetailsUserViewModel viewmodelDelete = new DetailsUserViewModel
+            {
+                UserName = userFromdb.UserName,
+                Email = userFromdb.Email,
+                PhoneNumber = userFromdb.PhoneNumber,
+                Password = userFromdb.HashPassword,
+                
+
+            };
+
+            foreach (var role in RoleFromdb)
+            {
+                if (Currentrole.Contains(role.Id))
+                {
+                    viewmodelDelete.Roles.Add(new CheckBoxViewModel
+                    {
+                        Id = role.Id,
+                        Text = role.Name,
+                        Checked = true
+                    });
+                }
+                else
+                {
+                    viewmodelDelete.Roles.Add(new CheckBoxViewModel
+                    {
+                        Id = role.Id,
+                        Text = role.Name,
+                        Checked = false
+                    });
+                }
+            }
+            return viewmodelDelete;
+
+        }
 
 
         [HttpGet]
@@ -248,7 +290,14 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             uow.Commit();
             return RedirectToAction(nameof(Index));
         }
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var GetEdit = DetailsUser(id);
 
-       
+
+            return View(GetEdit);
+        }
+
     }
 }

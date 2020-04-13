@@ -15,7 +15,7 @@ namespace OPMS.ViewModels
         public string Ip { get; set; }
 
 
-        [Display(Name = "User Browser")]
+        [Display(Name = "User Agent")]
         public string UserAgint { get; set; }
 
 
@@ -29,13 +29,15 @@ namespace OPMS.ViewModels
         [Display(Name = "User")]
         public string LoginUser { get; set; }
 
-        [Display(Name = "User ISP")]
+        [Display(Name = "User Browser")]
         public string UserBrowser { get; set; }
 
-        [Display(Name = "logged in Date")]
+        [Display(Name = "login Date")]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
-        [Display(Name = "logged in Time")]
+        [Display(Name = "login Time")]
+        [DataType(DataType.Time)]
         public DateTime Time { get; set; }
 
         [Display(Name = "Device Name")]

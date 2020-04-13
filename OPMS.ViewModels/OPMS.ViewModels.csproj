@@ -77,6 +77,7 @@
     <Compile Include="ContactPageViewModel.cs" />
     <Compile Include="ContactViewModel.cs" />
     <Compile Include="DeleteUserViewModel.cs" />
+    <Compile Include="DetailsUserViewModel.cs" />
     <Compile Include="EditUserViewModel.cs" />
     <Compile Include="HelpSupportVM.cs" />
     <Compile Include="HomeBannerVM.cs" />

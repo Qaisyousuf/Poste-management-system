@@ -3,70 +3,117 @@
 @{
     ViewBag.Title = "Edit";
 }
-<hr />
-<h5>Vous avez choisi d'envoyer des SMS pour un résident <button disabled class="btn btn-primary">@Model.UserName</button> 
-    veuillez choisir un type de SMS</h5>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-<div class="form-horizontal">
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.Id)
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-        </div>
+<div class="card card-cascade narrower blue lighten-5">
+
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
+
+        <!-- Title -->
+        <h4>You have selected  resident <button disabled class="btn btn-outline-white btn-rounded waves-effect btn-white">@Model.UserName</button>  to send SMS</h4>
+        <!-- Subtitle -->
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.AppointmentDate, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.AppointmentDate, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.AppointmentDate, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.AppointmentOrTime, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.AppointmentOrTime, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.AppointmentOrTime, "", new { @class = "text-danger" })
-        </div>
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label " })
+                    <div class="offset-3">
+                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label " })
+                    <div class="offset-3">
+                        @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.AppointmentDate, htmlAttributes: new { @class = "control-label " })
+                    <div class="offset-3">
+                        @Html.EditorFor(model => model.AppointmentDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                        @Html.ValidationMessageFor(model => model.AppointmentDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.AppointmentTime, htmlAttributes: new { @class = "control-label " })
+                    <div class="offset-3">
+                        @Html.EditorFor(model => model.AppointmentTime, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AppointmentTime, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.MessageContainerId, htmlAttributes: new { @class = "control-label " })
+                    <div class="offset-3">
+                        @Html.DropDownListFor(model => model.MessageContainerId, new SelectList(ViewBag.MessageContainer, "Id", "Title"), "Select SMS Type", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MessageContainerId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group md-form offset-1 col-md-9">
+                    @Html.LabelFor(model => model.SocialId, htmlAttributes: new { @class = "control-label " })
+                    <div class="offset-3">
+                        @Html.DropDownListFor(model => model.SocialId, new SelectList(ViewBag.SocialWorker, "Id", "FullName"), "Select a social worker name", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SocialId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group md-form offset-3 col-md-9">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" value="save" class="btn btn-primary"><i class="fas fa-sms pr-2"></i> Send SMS</button> |
+                        <a class="btn btn-primary" href="/OPMSAdmin/Messages/Index"><i class="fas fa-undo-alt pr-2"></i>Back to Menu</a>
+                    </div>
+                </div>
+            </div>
+        }
+
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.MessageContainerId, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.MessageContainerId, new SelectList(ViewBag.MessageContainer, "Id", "Title"), "Select SMS Type", new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.MessageContainerId, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    
-    <div class="form-group">
-        @Html.LabelFor(model => model.SocialId, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.SocialId, new SelectList(ViewBag.SocialWorker, "Id", "FullName"), "Select a social worker name", new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.SocialId, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Send SMS" class="btn btn-primary" /> |
-            <a class="btn btn-primary" href="/OPMSAdmin/Messages/Index">Retour à la liste principale</a>
-        </div>
-    </div>
 </div>
-}
 
+
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+
+}
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Content")
+        CKEDITOR.replace("SubContent")
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+            $('#input_starttime').pickatime({});
+            $('.datepicker').pickadate();
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
+    </script>
+}
 

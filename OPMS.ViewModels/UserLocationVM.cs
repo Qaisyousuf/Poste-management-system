@@ -28,10 +28,12 @@ namespace OPMS.ViewModels
         [Display(Name = "User Browser")]
         public string UserBrowser { get; set; }
 
+        [DataType(DataType.Date)]
         [Display(Name = "Login time Date")]
         public DateTime Date { get; set; }
 
         [Display(Name = "Login time")]
+        [DataType(DataType.Time)]
         public DateTime Time { get; set; }
 
         [Display(Name = "Device Name")]

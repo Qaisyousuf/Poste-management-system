@@ -15,12 +15,18 @@ namespace OPMS.ViewModels
 
         public string Title { get; set; }
 
-
+        [Display(Name = "Sent DateTime")]
         public DateTime SentDateTime { get; set; }
 
-        public DateTime AppointmentOrTaskDateTime { get; set; }
-       
+        [DataType(DataType.Time)]
+        [Display(Name = "Appointment Time")]
+        public DateTime AppointmentTime { get; set; }
 
+        [Display(Name = "Appointment Date")]
+        [DataType(DataType.Date)]
+        public DateTime AppointmentDate { get; set; }
+       
+        [Display(Name ="Sent By")]
         public string SendedBy { get; set; }
 
 

@@ -7,10 +7,38 @@ header
     font-size: 1rem;
    
 }
+.btn-primary {
+    color: #fff;
+    background-color: #42a5f5 !important;
+
+}
+.custom-scrollbar {
+    overflow-y: scroll;
+    height: auto;
+    max-height: 100px;
+    -webkit-overflow-y: scroll;
+    -webkit-height: auto;
+    -webkit-max-height: 100px;
+    -moz-overflow-y: scroll;
+    -moz-height: auto;
+    -moz-max-height: 100px;
+    -o-overflow-y: scroll;
+    -o-height: auto;
+    -o-max-height: 100px;
+}
 #zoom {
     animation: move 7s infinite ease-in-out;
 }
-
+.side-nav .collapsible a {
+    height: 36px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: .9rem;
+    font-weight: 300;
+    line-height: 36px;
+    font:small
+    
+    color: #fff;
+}
 @keyframes move {
     0% {
         transform: scale(0.9,0.9);

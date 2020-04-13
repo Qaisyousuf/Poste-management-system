@@ -1,7 +1,7 @@
-﻿@model OPMS.ViewModels.DeleteUserViewModel
+﻿@model OPMS.ViewModels.DetailsUserViewModel
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
 }
 <div class="card card-cascade narrower blue lighten-5">
 
@@ -9,20 +9,18 @@
     <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
         <!-- Title -->
-        <h4 class="text-white">Delete The user account</h4>
+        <h4 class="text-white">Details user account</h4>
         <!-- Subtitle -->
     </div>
 
-    <!-- Card content -->
     <div class="card-body card-body-cascade text-center">
 
         <hr />
-        <h4 class="text-danger">Are you sure you want to delete the <button disabled class="btn btn-danger btn-sm  btn-rounded"><i class="fas fa-trash-alt pr-2"></i> @Model.UserName</button>?</h4>
+        <h4 class="text-info">Details of the <button disabled class="btn btn-info  btn-sm  btn-rounded"><i class="fas fa-info-circle pr-2"></i> @Model.UserName</button> account</h4>
         <br />
         <div>
-            <div class="col-md-9 offset-2 text-left">
-
-                <div class="table-wrapper table-responsive table-bordered">
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped ">
                     <!--Table-->
                     <table class="table table-hover mb-0 table-striped ">
                         <tbody>
@@ -54,41 +52,25 @@
                                 <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Password)</td>
                                 <td class="text-primary"> @Html.DisplayFor(model => model.Password)</td>
                             </tr>
-                           
-                            <tr>
-                                <th scope="row">
-                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-key"></i></a>
-                                </th>
-                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ConfirmPassword)</td>
-                                <td class="text-primary"> @Html.DisplayFor(model => model.ConfirmPassword)</td>
-                            </tr>
                             <tr>
                                 <th scope="row">
                                     <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-sign-in-alt"></i></a>
                                 </th>
                                 <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Roles)</td>
-                                <td class="text-primary">  @Html.CheckBoxListFor(model => model.Roles, model => model.Roles, model => model.Id, model => model.Text, model => model.Checked, model => new { @class = "checkbox-inline", @style= "opacity: 1; margin:10px; padding:20px;" })</td>
+                                <td class="text-primary">  @Html.CheckBoxListFor(model => model.Roles, model => model.Roles, model => model.Id, model => model.Text, model => model.Checked, model => new { @class = "checkbox-inline", @style = "opacity: 1; margin:10px; padding:20px;" })</td>
                             </tr>
-
-
-
-
                         </tbody>
                         <!--Table body-->
                     </table>
                     <!--Table-->
                 </div>
-                <br />
 
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
+                <div class="col-md-9 offset-3 pt-4">
+                    <a class="btn btn-primary" href="/OPMSAdmin/adminuser/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                </div>
 
-                    <div class="form-actions no-color col-md-9 offset-2 ">
-                        <button type="submit" value="Delete" class="btn btn-danger"><i class="fas fa-trash-alt pr-2"></i> Delete account</button> |
-                        <a class="btn btn-primary" href="/OPMSAdmin/adminuser/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
-                    </div>
-                }
+
+
             </div>
 
         </div>
@@ -103,17 +85,22 @@
     <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
 
 }
-@section Scripts {
+@section Scripts
+{
     @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
     <script>
-            $(document).ready(function () {
-                $(".button-collapse").sideNav({
-                    breakpoint: 1200
-                });
-
-                var sideNavScrollbar = document.querySelector('.custom-scrollbar');
-                var ps = new PerfectScrollbar(sideNavScrollbar);
-                Ps.initialize(el);
+        CKEDITOR.replace("Content")
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
             });
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
     </script>
 }

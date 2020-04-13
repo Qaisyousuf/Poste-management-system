@@ -30,9 +30,6 @@ namespace OPMS.Models
         public MessageContainer MessageContainer { get; set; }
 
 
-        //public int BuildingId { get; set; }
-        //[ForeignKey("BuildingId")]
-        //public BuildingAddress Building { get; set; }
 
         public int SocialId { get; set; }
         [ForeignKey("SocialId")]

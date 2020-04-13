@@ -23,11 +23,11 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 
         public JsonResult GetAdminActivity()
         {
-            var adminfromdb = uow.AdminActivityRepository.GetAll();
+            var adminuser = uow.AdminActivityRepository.GetAll();
 
             List<AdminActivityVM> viewmodel = new List<AdminActivityVM>();
 
-            foreach (var item in adminfromdb)
+            foreach (var item in adminuser)
             {
                 var datatime = item.DateTime;
                 var time = Convert.ToDateTime(datatime.ToShortTimeString());
@@ -48,7 +48,33 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 });
             }
 
-            return Json(new { data = adminfromdb }, JsonRequestBehavior.AllowGet);
+            return Json(new { data = viewmodel }, JsonRequestBehavior.AllowGet);
+            //var adminfromdb = uow.AdminActivityRepository.GetAll();
+
+            //List<AdminActivityVM> viewmodel = new List<AdminActivityVM>();
+
+            //foreach (var item in adminfromdb)
+            //{
+            //    var datatime = item.DateTime;
+            //    var time = Convert.ToDateTime(datatime.ToShortTimeString());
+            //    var date = Convert.ToDateTime(datatime.ToShortDateString());
+            //    viewmodel.Add(new AdminActivityVM
+            //    {
+            //        Id = item.Id,
+            //        Ip = item.Ip,
+            //        UserAgint = item.UserAgint,
+            //        ActionName = item.ActionName,
+            //        ControllerName = item.ControllerName,
+            //        LoginUser = item.LoginUser,
+            //        UserBrowser = item.UserBrowser,
+            //        Date = date,
+            //        Time = time,
+            //        DeviceName = item.DeviceName,
+            //        AuthenticationActivity = item.AuthenticationActivity,
+            //    });
+            //}
+
+            //return Json(new { data = adminfromdb }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -69,7 +95,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 UserBrowser = adminactivity.UserBrowser,
                 Date = date,
                 Time = time,
-                DeviceName = adminactivity.ToString(),
+                DeviceName = adminactivity.DeviceName,
                 AuthenticationActivity = adminactivity.AuthenticationActivity,
             };
             return View(viewmodel);

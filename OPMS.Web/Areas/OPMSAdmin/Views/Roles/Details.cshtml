@@ -2,22 +2,80 @@
 @{
     ViewBag.Title = "Roles";
 }
-<hr />
-<h4>Détails du rôle <button disabled class="btn btn-primary">@Model.Name </button></h4>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+<div class="card card-cascade narrower blue lighten-5">
 
-    </dl>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
+
+        <!-- Title -->
+        <h4 class="text-white">Details user role</h4>
+        <!-- Subtitle -->
+    </div>
+
+    <div class="card-body card-body-cascade text-center">
+
+        <hr />
+        <h4 class="text-info">Details of the <button disabled class="btn btn-info  btn-sm  btn-rounded"><i class="fas fa-info-circle pr-2"></i> @Model.Name</button> role</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped ">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 table-striped ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-user-circle"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Name)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Name)</td>
+                            </tr>
+                           
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+
+                <div class="col-md-9 offset-3 pt-4">
+                    @Html.ActionLink("Update", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+                    <a class="btn btn-primary" href="/OPMSAdmin/Roles/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
 </div>
-<p>
-    @Html.ActionLink("Éditer", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
-    <a class="btn btn-primary" href="/OPMSAdmin/Roles/Index">Retour à la liste principale</a>
-</p>
+
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Content")
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
+    </script>
+}

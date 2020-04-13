@@ -4,98 +4,145 @@
     ViewBag.Title = "Delete";
 }
 
-<div>
-  
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Ip)
-        </dt>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dd>
-            @Html.DisplayFor(model => model.Ip)
-        </dd>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserAgint)
-        </dt>
+        <!-- Title -->
+        <h4 class="text-white">Delete the user activity</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserAgint)
-        </dd>
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ActionName)
-        </dt>
+        <hr />
+        <h4 class="text-danger">Are you sure you want to delete the <button disabled class="btn btn-danger btn-sm  btn-rounded"><i class="fas fa-trash-alt pr-2"></i> @Model.LoginUser</button>  activity?</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-user"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.LoginUser)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.LoginUser)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-map-marked-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.Ip)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.ActionName)
-        </dd>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Ip)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-pager"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ActionName)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.ActionName)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-pager"></i></a>
+                                </th>
+                                <td class="font-weight-bold">   @Html.DisplayNameFor(model => model.ControllerName)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.ControllerName)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fab fa-chrome"></i></a>
+                                </th>
+                                <td class="font-weight-bold">   @Html.DisplayNameFor(model => model.UserBrowser)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.UserBrowser)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-calendar-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">   @Html.DisplayNameFor(model => model.Date)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.Date)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-clock"></i></a>
+                                </th>
+                                <td class="font-weight-bold">   @Html.DisplayNameFor(model => model.Time)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.Time)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tablet-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">   @Html.DisplayNameFor(model => model.DeviceName)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.DeviceName)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-sign-in-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">   @Html.DisplayNameFor(model => model.AuthenticationActivity)</td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.AuthenticationActivity)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fab fa-chrome"></i> </a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.UserAgint)</td>
+                                <td class="collapse" id="collapseExample">@Html.Raw(Model.UserAgint)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+              <br />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ControllerName)
-        </dt>
+                    <div class="form-actions no-color col-md-9 offset-2 ">
+                        <button type="submit" value="Delete" class="btn btn-danger"><i class="fas fa-trash-alt pr-2"></i> Delete</button> |
+                        <a class="btn btn-primary" href="/OPMSAdmin/AdminActivity/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                    </div>
+                }
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ControllerName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoginUser)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoginUser)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserBrowser)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserBrowser)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Time)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Time)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DeviceName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DeviceName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AuthenticationActivity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AuthenticationActivity)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            
         </div>
-    }
+
+
+    </div>
+
 </div>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+            $(document).ready(function () {
+                $(".button-collapse").sideNav({
+                    breakpoint: 1200
+                });
+
+                var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+                var ps = new PerfectScrollbar(sideNavScrollbar);
+                Ps.initialize(el);
+            });
+    </script>
+}

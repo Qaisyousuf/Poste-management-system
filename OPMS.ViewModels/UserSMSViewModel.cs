@@ -26,6 +26,7 @@ namespace OPMS.ViewModels
 
       
         [DataType(DataType.Date)]
+        [Display(Name = "Sent Date")]
         public DateTime SentDateTime { get; set; }
 
 
@@ -36,7 +37,9 @@ namespace OPMS.ViewModels
 
         [DataType(DataType.Time)]
         [Display(Name = "Appointment Time")]
-        public DateTime AppointmentOrTime { get; set; }
+        public DateTime AppointmentTime { get; set; }
+
+        [Display(Name ="Sent By")]
         public string SendedBy { get; set; }
 
 
@@ -45,12 +48,12 @@ namespace OPMS.ViewModels
         [ForeignKey("MessageContainerId")]
         public MessageContainer MessageContainer { get; set; }
 
-        [Display(Name = "SMS Sending By")]
+        [Display(Name = "Social Worker")]
         public int SocialId { get; set; }
         [ForeignKey("SocialId")]
         public SocialWorker SocialWorker { get; set; }
 
-        [Display(Name = "Users")]
+        
         public int UserId { get; set; }
         [ForeignKey("UserId")]
         public UserModel Users { get; set; }

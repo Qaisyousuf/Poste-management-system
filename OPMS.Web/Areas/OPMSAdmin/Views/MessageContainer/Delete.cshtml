@@ -3,51 +3,111 @@
 @{
     ViewBag.Title = "Messages";
 }
-<hr />
-<h4>Voulez-vous vraiment supprimer le <button disabled class="btn btn-danger">@Model.Title</button> ?</h4>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SubTitle)
-        </dt>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dd>
-            @Html.DisplayFor(model => model.SubTitle)
-        </dd>
+        <!-- Title -->
+        <h4 class="text-white">Delete the message box</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
 
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
+        <hr />
+        <h4 class="text-danger">Are you sure you want to delete the <button disabled class="btn btn-danger btn-sm  btn-rounded"><i class="fas fa-trash-alt pr-2"></i> @Model.Title</button>  message box ?</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Title)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-align-center"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SubTitle)</td>
 
-        <dt>
-            @Html.DisplayNameFor(model=>model.CreatedBy)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model=>model.CreatedBy)
-        </dd>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.SubTitle)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-plus-circle"></i> </a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.CreatedBy)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.CreatedBy)</td>
+                            </tr>
 
-    </dl>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold">  @Html.DisplayNameFor(model => model.Content)</td>
+                                <td class="collapse" id="collapseExample"> @Html.Raw(Model.Content)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        Read more
+                                    </button>
+                                </td>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
 
-    <div class="form-actions no-color">
-        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
-        <a class="btn btn-primary" href="/OPMSAdmin/MessageContainer/Index">Retour à la liste principale</a>
+                            </tr>
+
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+            
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color col-md-9 offset-2 ">
+                        <button type="submit" value="Delete" class="btn btn-danger"><i class="fas fa-trash-alt pr-2"></i> Delete</button> |
+                        <a class="btn btn-primary" href="/OPMSAdmin/MessageContainer/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                    </div>
+                }
+            </div>
+
+        </div>
+
 
     </div>
-    }
+
 </div>
+
+
+
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
+    </script>
+}

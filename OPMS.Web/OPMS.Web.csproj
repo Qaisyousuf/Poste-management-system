@@ -179,12 +179,12 @@
     <Content Include="Content\Img\sentPost.svg" />
     <Content Include="Content\Img\SidebarIimage.jpg" />
     <Content Include="Content\Img\SignIn.svg" />
+    <Content Include="Content\Img\SMSThankYou.svg" />
     <Content Include="Content\Img\undraw_code_review_l1q9.svg" />
     <Content Include="Content\Img\undraw_dashboard_nklg.svg" />
     <Content Include="Content\Img\undraw_delivery_address_03n0.svg" />
     <Content Include="Content\Img\undraw_fill_forms_yltj.svg" />
     <Content Include="Content\Img\undraw_interview_rmcf.svg" />
-    <Content Include="Content\Img\undraw_mail_2_tqip.svg" />
     <Content Include="Content\Img\undraw_manage_chats_ylx0.svg" />
     <Content Include="Content\Img\undraw_mobile_testing_reah.svg" />
     <Content Include="Content\Img\undraw_newsletter_vovu.svg" />
@@ -729,6 +729,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Areas\OPMSAdmin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\OPMSAdmin\Views\AdminUser\Details.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />

@@ -14,7 +14,7 @@ using Twilio.Types;
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
     [Authorize(Roles = "Admin")]
-    [ExceptionFilter]
+    //[ExceptionFilter]
     public class MessagesController : Controller
     {
         private readonly IUnitOfWork uow;
@@ -86,7 +86,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 
                
                 var mess = uow.MessageRepository.GetById(viewmodel.MessageContainerId);
-                var time = Convert.ToDateTime(viewmodel.AppointmentOrTime.ToShortTimeString());
+                var time = Convert.ToDateTime(viewmodel.AppointmentTime.ToShortTimeString());
                 var date = Convert.ToDateTime(viewmodel.AppointmentDate.ToLongDateString());
                 var dtCOMPLTDTTM = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
 
@@ -167,7 +167,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                     Users=item.Users,
                     SentDateTime=item.SentDateTime,
                     AppointmentDate=date,
-                    AppointmentOrTime=time,
+                    AppointmentTime=time,
                     SendedBy=item.SendedBy,
                     MessageContainer=item.MessageContainer,
                     MessageContainerId=item.MessageContainerId,
@@ -209,7 +209,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 MessageContainerId=smsFromdb.MessageContainerId,
                 SocialId=smsFromdb.SocialId,
                 SocialWorker=smsFromdb.SocialWorker,
-                AppointmentOrTime=time,
+                AppointmentTime=time,
                 AppointmentDate=date,
             };
             return View(viewmodel);
@@ -236,7 +236,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 MessageContainerId = smsFromdb.MessageContainerId,
                 SocialId = smsFromdb.SocialId,
                 SocialWorker = smsFromdb.SocialWorker,
-                AppointmentOrTime = time,
+                AppointmentTime = time,
                 AppointmentDate = date,
             };
 
