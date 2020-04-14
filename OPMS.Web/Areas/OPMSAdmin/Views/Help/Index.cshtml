@@ -1,51 +1,209 @@
 ﻿@model List<OPMS.ViewModels.HelpSupportVM>
 @{
+    /**/
+
+    /**/
+
     ViewBag.Title = "Index";
-         Layout = "~/Areas/OPMSAdmin/Views/Shared/_HelpLayout.cshtml";
+    Layout = "~/Areas/OPMSAdmin/Views/Shared/_HelpLayout.cshtml";
 }
 @{
 
     foreach (var item in Model.Take(1))
     {
-<div class="jumbotron text-center">
-    <h3>@item.Title</h3>
-    <img src="~/Content/Img/undraw_online_discussion_5wgl.svg" class="img-responsive" />
-    <br />
-    
-    <p>@Html.Raw(item.Content)</p>
-    <h5>Company @item.CompanyName</h5>
-    <h5>Developers: @item.DeveloperName</h5>
-    <h5>Software Name: @item.SoftwareDownload</h5>
-    <h5>Designed By: @item.DesignedBy</h5>
-    <h5>Created Date: @item.CreatedDate</h5>
-    <h5>Support Email: @item.Email</h5>
-    <h5>Work Skype: @item.Skype</h5>
-    <div class="col-md-4">
-        <div class="thumbnail text-warning">
+        <div class="container mt-lg-5 pt-md-4 mt-md-4 mt-sm-5">
 
-            <img src="@item.ProiflePic" class="img-responsive img-circle img-thumbnail" />
-            <div class="caption">
-                <h4>@item.DesignedBy</h4>
-                <h6>@item.CompanyName</h6>
-                <hr />
-                
-            </div>
-            <hr />
-            <button class="btn btn-primary"> @item.Title</button>
-            <br />
+
+            <!--Section: Content-->
+            <section class="">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-lg-5 col-md-12 mb-lg-0 mb-4">
+
+                        <!-- Featured image -->
+                        <div class=" mb-lg-0 mb-4">
+                            <img class="img-fluid" src="~/Content/Img/help.svg" alt="Sample image">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-lg-7 col-md-6 mb-md-0 mb-4 mt-xl-4">
+
+                        <h3 class="font-weight-normal mb-4">@item.Title</h3>
+                        <p class="text-muted">@Html.Raw(item.Content)</p>
+                        <a class="btn btn-primary mt-4" href="https://www.teamviewer.com/en/teamviewer-automatic-download/" target="_blank"><i class="fas fa-cloud-download-alt pr-2"></i> Download the support Software</a>
+                      
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </section>
+            <!--Section: Content-->
+
+
         </div>
-    </div>
+        <div class="row  my-5 my-md-5 pr-md-3  pt-5">
+            <div class="col-md-6 col-sm-12 z-depth-0 ">
+                <div class="card card-cascade  pr-md-3 pl-md-3 blue lighten-5">
 
-    <h5>For online support download the software </h5> <a class="btn btn-primary" href="https://www.teamviewer.com/en/teamviewer-automatic-download/">Download the Software</a>
+                    <!--Card image-->
+                    <div class="view view-cascade gradient-card-header  blue lighten-1 text-center narrower pt-2 mb-2">
+
+                        <img src="@item.ProiflePic" class="z-depth-0 p-3 pt-4" width="300" alt="avatar image" id="Seosoft">
+
+                    </div>
+                    <!--/Card image-->
+
+                    <div class=" bg-transparent">
+
+                        <div class="table-wrapper table-responsive bg-transparent ">
+                            <!--Table-->
+                            <table class="table table-hover mb-0 bg-transparent ">
+                                <tbody>
+                                    <tr class="text-primary ">
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm  blue lighten-1"><i class="far fa-building"></i></a>
+                                        </th>
+                                        <td class="font-weight-normal pt-4">Company Name</td>
+                                        <td class="text-primary font-weight-normal  pt-4"><span class="badge badge-primary badge-pill p-2"> @item.CompanyName</span></td>
+                                    </tr>
+                                    <tr class="text-primary ">
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm  blue lighten-1"><i class="fas fa-laptop-code"></i></a>
+                                        </th>
+                                        <td class="font-weight-normal pt-4">Developers</td>
+
+                                        <td class="text-primary font-weight-normal"> <span class="badge badge-primary badge-pill p-2"> @item.DeveloperName</span> </td>
+                                    </tr>
+                                    <tr class="text-primary ">
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm  blue lighten-1"><i class="fas fa-file-code"></i></a>
+                                        </th>
+                                        <td class="font-weight-normal pt-4">Application Name</td>
+                                        <td class="text-primary font-weight-normal "> <span class="badge badge-primary badge-pill p-2">@item.SoftwareDownload</span></td>
+                                    </tr>
+                                    <tr class="text-primary ">
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm  blue lighten-1"><i class="fas fa-pencil-alt"></i></a>
+                                        </th>
+                                        <td class="font-weight-normal pt-4">Designed By</td>
+                                        <td class="text-primary"><span class="badge badge-primary badge-pill p-2">@item.DesignedBy</span></td>
+                                    </tr>
+                                    <tr class="text-primary ">
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm  blue lighten-1"><i class="fas fa-at"></i></a>
+                                        </th>
+                                        <td class="font-weight-normal pt-4">Email</td>
+                                        <td class="text-primary  font-weight-normal"><span class="badge badge-primary badge-pill p-2">@item.Email</span></td>
+                                    </tr>
+                                    <tr class="text-primary ">
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm  blue lighten-1"><i class="fab fa-skype"></i></a>
+                                        </th>
+                                        <td class="font-weight-normal pt-4">Skype</td>
+                                        <td class="text-primary"><span class="badge badge-primary badge-pill p-2">@item.Skype</span></td>
+                                    </tr>
+                                    <tr class="text-primary ">
+                                        <th scope="row">
+                                            <a class="btn-floating btn-sm  blue lighten-1"><i class="far fa-calendar-check"></i></a>
+                                        </th>
+                                        <td class="font-weight-normal pt-4">Created Date</td>
+                                        <td class="text-primary font-weight-normal "><span class="badge badge-primary badge-pill p-2">@item.CreatedDate.ToLongDateString()</span></td>
+                                    </tr>
+                                </tbody>
+                                <!--Table body-->
+                            </table>
+                            <!--Table-->
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Table with panel -->
+            </div>
+            <div class="col-md-6  pt-2 mt-2 ">
+
+                <!-- Featured image -->
+                <div class=" mb-lg-0">
+                    <img class="img-fluid" src="~/Content/Img/seosoftprofile.svg" alt="Sample image">
+                    <br />
+                    <div class="social text-center mt-4">
+                        <a class="btn-floating btn-md btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
+                        <!--Twitter-->
+                        <a class="btn-floating btn-md btn-tw" type="button" role="button"><i class="fab fa-twitter"></i></a>
+                        <!--Google +-->
+                        <a class="btn-floating btn-md btn-gplus" type="button" role="button"><i class="fab fa-google-plus-g"></i></a>
+                        <!--Linkedin-->
+                        <a class="btn-floating btn-md btn-li" type="button" role="button"><i class="fab fa-linkedin-in"></i></a>
+                        <!--Instagram-->
+                      
+                    </div>
+                </div>
+
+            </div>
+        </div>
+     
+        @*<div class="jumbotron text-center">
+                <h3>@item.Title</h3>
+                <img src="~/Content/Img/undraw_online_discussion_5wgl.svg" class="img-responsive" />
+                <br />
+
+                <p>@Html.Raw(item.Content)</p>
+                <h5>Company @item.CompanyName</h5>
+                <h5>Developers: @item.DeveloperName</h5>
+                <h5>Software Name: @item.SoftwareDownload</h5>
+                <h5>Designed By: @item.DesignedBy</h5>
+                <h5>Created Date: @item.CreatedDate</h5>
+                <h5>Support Email: @item.Email</h5>
+                <h5>Work Skype: @item.Skype</h5>
+                <div class="col-md-4">
+                    <div class="thumbnail text-warning">
+
+                        <img src="@item.ProiflePic" class="img-responsive img-circle img-thumbnail" />
+                        <div class="caption">
+                            <h4>@item.DesignedBy</h4>
+                            <h6>@item.CompanyName</h6>
+                            <hr />
+
+                        </div>
+                        <hr />
+                        <button class="btn btn-primary"> @item.Title</button>
+                        <br />
+                    </div>
+                </div>
+
+                <h5>For online support download the software </h5> <a class="btn btn-primary" href="https://www.teamviewer.com/en/teamviewer-automatic-download/">Download the Software</a>
 
 
-</div>
+            </div>*@
     }
 
 }
 
-@section CustomCss{
+@section HelpCustomCSS{
 
-    <link href="~/Content/CustomPostCSS.css" rel="stylesheet" />
+    <link href="~/Content/HelpCustomCSS.css" rel="stylesheet" />
 
+}
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+            // SideNav Scrollbar Initialization
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+        });
+    </script>
 }

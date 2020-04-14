@@ -25,7 +25,7 @@
                                 <a class="btn btn-rounded  btn-outline-primary" href="/OPMSAdmin/Pages/Create"><i class="fas fa-plus-circle pr-2 fa-1x" aria-hidden="true"></i> Create page</a>
                         </p>
                         <hr />
-                        <table id="dataTable" class="table table-bordered table-hover table-striped ">
+                        <table id="dataTable" class="table table-bordered table-hover table-striped table-responsive-md table-responsive-sm">
                             <thead class=" blue lighten-1 white-text">
                                 <tr class="pt-2">
                                     <th><i class="fas fa-hashtag"></i> Ttitle</th>
@@ -53,6 +53,7 @@
 
 }
 @section scripts{
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
   <script>
       $(document).ready(function () {
           $(".button-collapse").sideNav({

@@ -59,7 +59,6 @@
                     <!-- Logo -->
                     <li>
                         <div class="logo-wrapper waves-light">
-
                             <a href="@Url.Action("Index", "admin")" class="navbar-brand">
                                 <img src="~/Content/Img/LogoCoallia_Couleur (2).png" title="title" alt="additional title" class="img-fluid flex-center" />
                             </a>
@@ -69,14 +68,10 @@
                     <!--Social-->
                     <li>
                         <ul class="social">
-
-                            <!--Twitter-->
-
                             <li><a href="#" class="icons-sm fb-ic"><i class="fab fa-facebook"> </i></a></li>
                             <li><a href="#" class="icons-sm pin-ic"><i class="fab fa-pinterest"> </i></a></li>
                             <li><a href="#" class="icons-sm gplus-ic"><i class="fab fa-google-plus"> </i></a></li>
                             <li><a href="#" class="icons-sm tw-ic"><i class="fab fa-twitter"> </i></a></li>
-
                         </ul>
                     </li>
                     <!--/Social-->
@@ -84,6 +79,23 @@
                     <!--/.Search Form-->
                     <!-- Side navigation links -->
                     <li>
+                        <ul class="collapsible collapsible-accordion mb-0 pb-0">
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="/OPMSAdmin/Admin/Index" class="waves-effect"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
                         <ul class="collapsible collapsible-accordion">
                             <li>
                                 <a class="collapsible-header waves-effect arrow-r">
@@ -107,6 +119,9 @@
                                         </li>
                                         <li>
                                             <a href="/OPMSAdmin/HomeRR/Index" class="waves-effect"><i class="fas fa-sliders-h"></i>responsibility </a>
+                                        </li>
+                                        <li>
+                                            <a href="/OPMSAdmin/HelpSupport/Index" class="waves-effect"><i class="fas fa-headset"></i>Help & Support </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -255,6 +270,97 @@
                                 </div>
                             </li>
                         </ul>
+                        <ul class="collapsible collapsible-accordion mt-1">
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="fas fa-users-cog"></i> User Registration
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="/OPMSAdmin/AdminUser/Index" class="waves-effect"><i class="fas fa-user-edit"></i>Register User</a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="collapsible collapsible-accordion mt-1">
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="fas fa-sliders-h"></i> Roles Registration
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="/OPMSAdmin/Roles/Index" class="waves-effect"><i class="fas fa-user-edit"></i>Register Role</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="collapsible collapsible-accordion mt-1">
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="fas fa-tools"></i> Panel Settings
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="/OPMSAdmin/AdminPanel/Index" class="waves-effect"><i class="fas fa-cog"></i>Settings</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="collapsible collapsible-accordion mt-1 ">
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="fas fa-search-location"></i>User Activity
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="/OPMSAdmin/AdminActivity/Index" class="waves-effect"><i class="fas fa-user-cog"></i>Admin Activity</a>
+                                        </li>
+                                        <li>
+                                            <a href="/OPMSAdmin/UserLocations/Index" class="waves-effect"><i class="fas fa-user-cog"></i>Resident Activity</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="collapsible collapsible-accordion mt-1 ">
+                            <li>
+                                <a class="collapsible-header waves-effect arrow-r">
+                                    <i class="fas fa-question-circle"></i>Help & Support
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                </a>
+
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a href="/OPMSAdmin/Help/Index" class="waves-effect"> <i class="fas fa-question-circle"></i>Help & Support</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     </li>
                     <!--/. Side navigation links -->
                 </ul>
@@ -264,20 +370,20 @@
             <!-- Navbar -->
             <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg double-nav">
                 <!-- SideNav slide-out button -->
-              
-                    <div class="float-left">
-                        <a href="#" data-activates="slide-out" class="btn-floating sunny-morning-gradient button-collapse"><i class="fa fa-bars"></i></a>
-                    </div>
-                    <!-- Breadcrumb-->
-                    <div class="breadcrumb-dn mr-auto">
-                        <p>Online Post Managment System</p>
-                    </div>
-                    <ul class="nav navbar-nav nav-flex-icons ml-auto">
-                        @Html.Partial("_LoginPartial")
 
-                    </ul>
-                
-               
+                <div class="float-left">
+                    <a href="#" data-activates="slide-out" class="btn-floating sunny-morning-gradient button-collapse"><i class="fa fa-bars"></i></a>
+                </div>
+                <!-- Breadcrumb-->
+                <div class="breadcrumb-dn mr-auto">
+                    <p>Online Post Managment System</p>
+                </div>
+                <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                    @Html.Partial("_LoginPartial")
+
+                </ul>
+
+
             </nav>
             <!-- /.Navbar -->
         </header>
@@ -287,12 +393,12 @@
 
             <div class="container-fluid BodyContent">
                 <div class="row">
-                    <div class="col-md-10 offset-2">
+                    <div class="col-md-10 offset-md-2 col-sm-12">
                         @RenderBody()
                         @RenderSection("AdminCustomCSS", required: true)
                         <hr />
                         <footer>
-                            <h6 class="text-primary font-weight-lighter">&copy; @DateTime.Now.Year Designed By SeoSoft ApS</h6>
+                            <h6 class="text-primary font-weight-light">&copy; @DateTime.Now.Year Designed By SeoSoft ApS</h6>
                         </footer>
                     </div>
                 </div>

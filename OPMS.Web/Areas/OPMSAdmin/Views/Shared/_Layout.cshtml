@@ -59,7 +59,6 @@
                 <!-- Logo -->
                 <li>
                     <div class="logo-wrapper waves-light">
-
                         <a href="@Url.Action("Index", "admin")" class="navbar-brand">
                             <img src="~/Content/Img/LogoCoallia_Couleur (2).png" title="title" alt="additional title" class="img-fluid flex-center" />
                         </a>
@@ -120,6 +119,9 @@
                                     </li>
                                     <li>
                                         <a href="/OPMSAdmin/HomeRR/Index" class="waves-effect"><i class="fas fa-sliders-h"></i>responsibility </a>
+                                    </li>
+                                    <li>
+                                        <a href="/OPMSAdmin/HelpSupport/Index" class="waves-effect"><i class="fas fa-headset"></i>Help & Support </a>
                                     </li>
                                 </ul>
                             </div>
@@ -285,7 +287,7 @@
                                 </ul>
                             </div>
                         </li>
-                    </ul> 
+                    </ul>
                     <ul class="collapsible collapsible-accordion mt-1">
                         <li>
                             <a class="collapsible-header waves-effect arrow-r">
@@ -337,9 +339,28 @@
                             </div>
                         </li>
                     </ul>
-                    <br />
-                    <br />
+                    <ul class="collapsible collapsible-accordion mt-1 ">
+                        <li>
+                            <a class="collapsible-header waves-effect arrow-r">
+                                <i class="fas fa-question-circle"></i>Help & Support
+                                <i class="fas fa-angle-down rotate-icon"></i>
+                            </a>
 
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                        <a href="/OPMSAdmin/Help/Index" class="waves-effect"> <i class="fas fa-question-circle"></i>Help & Support</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </li>
                 <!--/. Side navigation links -->
             </ul>
@@ -372,7 +393,7 @@
 
     <div class="container-fluid BodyContent">
         <div class="row">
-            <div class="col-md-10 offset-2">
+            <div class="col-md-10 offset-md-2 col-sm-12">
                 @RenderBody()
                 @RenderSection("AdminCustomCSS", required: true)
                 <hr />

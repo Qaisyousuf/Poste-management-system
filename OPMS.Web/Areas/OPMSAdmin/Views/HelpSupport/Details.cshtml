@@ -2,97 +2,147 @@
 
 @{
     ViewBag.Title = "Support";
-    
+
 }
-<hr />
-<h4>Détails du <button disabled class="btn btn-primary">@Model.Title</button></h4>
-<div>
-   
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyName)
-        </dt>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dd>
-            @Html.DisplayFor(model => model.CompanyName)
-        </dd>
+        <!-- Title -->
+        <h4 class="text-white">Details help and support</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
+    <div class="card-body card-body-cascade text-center">
 
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
+        <hr />
+        <h4 class="text-info">Details of the <button disabled class="btn btn-info  btn-sm  btn-rounded"><i class="fas fa-info-circle pr-2"></i> @Model.Title</button></h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped ">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 table-striped ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-hashtag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Title)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Title)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-building"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.CompanyName)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.CompanyName)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-laptop-code"></i> </a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.DeveloperName)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.DeveloperName)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-project-diagram"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SoftwareDownload)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.SoftwareDownload)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ProiflePic)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ProiflePic)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-pencil-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.DesignedBy)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.DesignedBy)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-calendar-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.CreatedDate)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.CreatedDate)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-at"></i>></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Email)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Email)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fab fa-skype"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Skype)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Skype)</td>
+                            </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DeveloperName)
-        </dt>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Content)</td>
+                                <td class="collapse" id="collapseExample1">@Html.Raw(Model.Content)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample1"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+                <div class="col-md-9 offset-3 pt-4">
+                    @Html.ActionLink("Update", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+                    <a class="btn btn-primary" href="/OPMSAdmin/Helpsupport/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DeveloperName)
-        </dd>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SoftwareDownload)
-        </dt>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.SoftwareDownload)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProiflePic)
-        </dt>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProiflePic)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DesignedBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DesignedBy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Skype)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Skype)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id },new { @class="btn btn-primary"}) |
-    <a class="btn btn-primary" href="/OPMSAdmin/Helpsupport/Index">Retour à la liste principale</a>
-</p>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Content")
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
+    </script>
+}

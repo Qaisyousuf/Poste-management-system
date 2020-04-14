@@ -1,0 +1,113 @@
+﻿html,
+body,
+header {
+    margin-top: -265px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+}
+#Seosoft
+{
+    position:relative;
+    display:initial !important;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #42a5f5 !important;
+}
+.badge-primary {
+    color: #fff;
+    background-color: #42a5f5 !important;
+}
+.text-primary {
+    color: #42a5f5 !important;
+}
+
+.custom-scrollbar {
+    overflow-y: scroll;
+    height: auto;
+    max-height: 100px;
+    -webkit-overflow-y: scroll;
+    -webkit-height: auto;
+    -webkit-max-height: 100px;
+    -moz-overflow-y: scroll;
+    -moz-height: auto;
+    -moz-max-height: 100px;
+    -o-overflow-y: scroll;
+    -o-height: auto;
+    -o-max-height: 100px;
+}
+
+#zoom {
+    animation: move 7s infinite ease-in-out;
+}
+
+.side-nav .collapsible a {
+    height: 36px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: .9rem;
+    font-weight: 300;
+    line-height: 36px;
+    font: small color: #fff;
+}
+
+@keyframes move {
+    0% {
+        transform: scale(0.9,0.9);
+    }
+
+    50% {
+        transform: scale(1.1,1.1);
+    }
+
+    100% {
+        transform: scale(0.9,0.9);
+    }
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: small;
+}
+
+.BodyContent {
+    /*margin-top:-270px;*/
+    margin-right: 10px;
+    padding-left: 40px;
+}
+
+.side-nav .logo-wrapper img {
+    height: auto;
+    padding-top: 40px;
+    width: auto;
+}
+
+.navbar {
+    z-index: 1040;
+}
+
+
+.side-nav {
+    margin-top: 74px !important;
+}
+
+.double-nav .breadcrumb-dn p {
+    color: #fff;
+}
+
+@media (min-width: 1200px) {
+    .fixed-sn main {
+        margin-left: 20% !important;
+        margin-right: 20% !important;
+    }
+}
+
+input[type=text], input[type=email], input[type=number], input[type=checkbox] {
+    box-shadow: 0 1px 0 0 #42a5f5 !important;
+    border-bottom: 1px 1px 1px 1px solid #42a5f5 !important;
+}
+
+    input[type=number]:focus:not([readonly]), input[type=checkbox]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=search-md]:focus:not([readonly]), input[type=search]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=url]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
+        box-shadow: 0 1px 0 0 #42a5f5 !important;
+        border-bottom: 1px 1px 1px 1px solid #42a5f5 !important;
+    }
