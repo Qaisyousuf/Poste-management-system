@@ -11,55 +11,56 @@
 
     foreach (var item in Model.Take(1))
     {
-        <div class="container mt-lg-5 pt-md-4 mt-md-4 mt-sm-5">
+      
+<div class="container my-5 pt-5 mt-5 ">
 
+  
+    <!--Section: Content-->
+    <section class="">
 
-            <!--Section: Content-->
-            <section class="">
+        <!-- Grid row -->
+        <div class="row">
 
-                <!-- Grid row -->
-                <div class="row">
+            <!-- Grid column -->
+            <div class="col-lg-5 col-md-12">
 
-                    <!-- Grid column -->
-                    <div class="col-lg-5 col-md-12 mb-lg-0 mb-4">
-
-                        <!-- Featured image -->
-                        <div class=" mb-lg-0 mb-4">
-                            <img class="img-fluid" src="~/Content/Img/help.svg" alt="Sample image">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                    </div>
-                    <!-- Grid column -->
-                    <!-- Grid column -->
-                    <div class="col-lg-7 col-md-6 mb-md-0 mb-4 mt-xl-4">
-
-                        <h3 class="font-weight-normal mb-4">@item.Title</h3>
-                        <p class="text-muted">@Html.Raw(item.Content)</p>
-                        <a class="btn btn-primary mt-4" href="https://www.teamviewer.com/en/teamviewer-automatic-download/" target="_blank"><i class="fas fa-cloud-download-alt pr-2"></i> Download the support Software</a>
-                      
-
-                    </div>
-                    <!-- Grid column -->
-
+                <!-- Featured image -->
+                <div class=" mb-lg-0 mb-4">
+                    <img class="img-fluid" src="~/Content/Img/help.svg" alt="Sample image">
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
                 </div>
-                <!-- Grid row -->
 
-            </section>
-            <!--Section: Content-->
+            </div>
+            <!-- Grid column -->
+            <!-- Grid column -->
+            <div class="col-lg-7 col-md-6 mb-1 mb-4 mt-xl-4">
 
+                <h2 class="font-weight-bold mb-4">@item.Title</h2>
+                <p class="text-muted">@Html.Raw(item.Content)</p>
+                <a class="btn btn-primary mt-4" href="https://www.teamviewer.com/en/teamviewer-automatic-download/" target="_blank"><i class="fas fa-cloud-download-alt pr-2"></i> Download the support Software</a>
+
+
+            </div>
+            <!-- Grid column -->
 
         </div>
-        <div class="row  my-5 my-md-5 pr-md-3  pt-5">
-            <div class="col-md-6 col-sm-12 z-depth-0 ">
+        <!-- Grid row -->
+
+    </section>
+    <!--Section: Content-->
+
+
+</div>
+        <div class="row mt-md-5 mt-lg-5 pt-md-5  mt-sm-0 pt-sm-0 mr-sm-4 mr-md-0 mr-lg-0">
+            <div class="col-md-6 z-depth-0 pr-sm-3 pb-3">
                 <div class="card card-cascade  pr-md-3 pl-md-3 blue lighten-5">
 
                     <!--Card image-->
                     <div class="view view-cascade gradient-card-header  blue lighten-1 text-center narrower pt-2 mb-2">
 
-                        <img src="@item.ProiflePic" class="z-depth-0 p-3 pt-4" width="300" alt="avatar image" id="Seosoft">
+                        <img src="@item.ProiflePic" class="z-depth-0  pt-4" width="300" alt="avatar image" id="Seosoft">
 
                     </div>
                     <!--/Card image-->
@@ -146,46 +147,14 @@
                         <!--Linkedin-->
                         <a class="btn-floating btn-md btn-li" type="button" role="button"><i class="fab fa-linkedin-in"></i></a>
                         <!--Instagram-->
-                      
+
                     </div>
                 </div>
 
             </div>
         </div>
-     
-        @*<div class="jumbotron text-center">
-                <h3>@item.Title</h3>
-                <img src="~/Content/Img/undraw_online_discussion_5wgl.svg" class="img-responsive" />
-                <br />
-
-                <p>@Html.Raw(item.Content)</p>
-                <h5>Company @item.CompanyName</h5>
-                <h5>Developers: @item.DeveloperName</h5>
-                <h5>Software Name: @item.SoftwareDownload</h5>
-                <h5>Designed By: @item.DesignedBy</h5>
-                <h5>Created Date: @item.CreatedDate</h5>
-                <h5>Support Email: @item.Email</h5>
-                <h5>Work Skype: @item.Skype</h5>
-                <div class="col-md-4">
-                    <div class="thumbnail text-warning">
-
-                        <img src="@item.ProiflePic" class="img-responsive img-circle img-thumbnail" />
-                        <div class="caption">
-                            <h4>@item.DesignedBy</h4>
-                            <h6>@item.CompanyName</h6>
-                            <hr />
-
-                        </div>
-                        <hr />
-                        <button class="btn btn-primary"> @item.Title</button>
-                        <br />
-                    </div>
-                </div>
-
-                <h5>For online support download the software </h5> <a class="btn btn-primary" href="https://www.teamviewer.com/en/teamviewer-automatic-download/">Download the Software</a>
 
 
-            </div>*@
     }
 
 }

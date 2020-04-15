@@ -1,11 +1,48 @@
 ﻿html,
 body,
-header
- {
-    margin-top: -265px;
+header {
+    /*margin-top: -265px;*/
+    height: auto;
+    padding-top:30px;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1rem;
-   
+}
+
+@media (max-width: 740px) {
+    html, body, header, .view {
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    html,
+    body,
+    header {
+        height: auto;
+        width: 100%;
+        padding-right: 10px !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    html,
+    body,
+    header {
+        height: auto;
+        width: 100%;
+        padding-right: 10px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    html,
+    body,
+    header {
+        height: auto;
+        width: 100%;
+        padding-right: 10px !important;
+    }
 }
 .btn-primary {
     color: #fff;
