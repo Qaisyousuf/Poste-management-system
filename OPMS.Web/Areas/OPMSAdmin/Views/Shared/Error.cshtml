@@ -10,19 +10,94 @@
     <title>Error</title>
 </head>
 <body>
-    <div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-cascade bg-transparent">
+
+                <!-- Card image -->
+                <div class="view view-cascade gradient-card-header  blue lighten-1">
+
+                    <!-- Title -->
+                    <h3 class="card-header-title text-warning mb-3">Oops! Something went wrong.</h3>
+                    <!-- Subtitle -->
+                    
+
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center bg-transparent">
+                    <div class="row">
+
+                        <!-- Text -->
+                        <div class="col-md-6">
+                            <div class="card-img">
+                                <img src="~/Content/Img/ServerDown.svg" class="img-responsive" id="Login" />
+                            </div>
+                        </div>
+                        <div class="col-md-5 pt-5">
+                            <div class="card card-cascade narrower  blue lighten-5">
+
+                                <!-- Card image -->
+                                <div class="view view-cascade gradient-card-header  blue lighten-1">
+
+                                    <!-- Title -->
+                                    <h5 class="card-header-title text-warning">Error Message</h5>
+                                    <!-- Subtitle -->
+
+                                </div>
+
+                                <!-- Card content -->
+                                <div class="card-body-cascade text-center ">
+
+                                    <!-- Text -->
+                                    <h3 class="card-text pt-3 mt-3 pb-2">
+                                         Please contact with the admin
+                                    </h3>
+                                    <hr />
+
+                                    <div class="pb-3">
+                                        <a class="btn btn-primary btn-rounded waves-effecttext-capitalize" href="/OPMSAdmin/Help/Index"><i class="fas fa-headset mr-2"></i> Get Online Help</a>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+
+            </div>
+            <!-- Card -->
+
+        </div>
+    </div>
+    @*<div>
         <div class="jumbotron">
             <h4 class="text-danger">Oops! Something went wrong. Error</h4>
             <hr />
-            <img src="~/Content/Img/undraw_server_down_s4lk.svg" class="img-responsive" id="Login" />
-            
+           
+
             <h4>Contact with the administrator Mr, Jeremi</h4>
         </div>
-    </div>
+    </div>*@
 </body>
 </html>
-@section CustomCss{
+@section AdminCustomCSS{
 
-    <link href="~/Content/CustomPostCSS.css" rel="stylesheet" />
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
 
+}
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+            // SideNav Scrollbar Initialization
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+        });
+    </script>
 }

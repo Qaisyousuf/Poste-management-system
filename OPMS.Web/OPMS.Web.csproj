@@ -170,6 +170,7 @@
     <Content Include="Content\ErrorCustom.css" />
     <Content Include="Content\HelpCustomCSS.css" />
     <Content Include="Content\HomeCustomCSS.css" />
+    <Content Include="Content\Img\AnimationFigmasvg.svg" />
     <Content Include="Content\Img\dashboard_nklg.svg" />
     <Content Include="Content\Img\HavePost.svg" />
     <Content Include="Content\Img\help.svg" />
@@ -181,6 +182,7 @@
     <Content Include="Content\Img\PostUpdated.svg" />
     <Content Include="Content\Img\sentPost.svg" />
     <Content Include="Content\Img\seosoftprofile.svg" />
+    <Content Include="Content\Img\ServerDown.svg" />
     <Content Include="Content\Img\SidebarIimage.jpg" />
     <Content Include="Content\Img\SignIn.svg" />
     <Content Include="Content\Img\SMSThankYou.svg" />
@@ -199,7 +201,6 @@
     <Content Include="Content\Img\undraw_page_not_found_su7k.svg" />
     <Content Include="Content\Img\undraw_project_completed_w0oq.svg" />
     <Content Include="Content\Img\undraw_referral_4ki4.svg" />
-    <Content Include="Content\Img\undraw_server_down_s4lk.svg" />
     <Content Include="Content\Img\undraw_social_notifications_ro8o.svg" />
     <Content Include="Content\Img\undraw_status_update_jjgk.svg" />
     <Content Include="Content\Img\undraw_web_devices_ad58.svg" />

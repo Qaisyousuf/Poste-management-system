@@ -3,239 +3,274 @@
 @{
     ViewBag.Title = "SiteSettings";
 }
-<hr />
-<h4>Détails des paramètres du site</h4>
-<div>
- 
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SiteName)
-        </dt>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dd>
-            @Html.DisplayFor(model => model.SiteName)
-        </dd>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsRegister)
-        </dt>
+        <!-- Title -->
+        <h4 class="text-white">Details of the sitesetting</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsRegister)
-        </dd>
+    <div class="card-body card-body-cascade text-center">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SiteFooter)
-        </dt>
+        <hr />
+        <h4 class="text-info">Details of the <button disabled class="btn btn-info  btn-sm  btn-rounded"><i class="fas fa-info-circle pr-2"></i> @Model.SiteFooter</button> setting</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped ">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 table-striped ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SiteName)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.SiteName)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-link"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SiteFooter)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.SiteFooter)
-        </dd>
+                                <td class="text-primary">@Html.DisplayFor(model => model.SiteFooter)</td>
+                            </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FavIconURL)
-        </dt>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-search-plus"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.FavIconURL)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.FavIconURL)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.SiteOwner)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.SiteOwner)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.CustomCSS)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.CustomCSS)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.CustomJS)</td>
+                                <td class="text-primary">@Html.DisplayFor(model => model.CustomJS)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tags"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.IsCustomCSSOn)</td>
+                                <td class="text-primary"> @Html.CheckBoxFor(model => model.IsCustomCSSOn, new { style = "opacity: 1" })</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-search"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.IsCustomJsOn)</td>
+                                <td class="text-primary"> @Html.CheckBoxFor(model => model.IsCustomJsOn, new { style = "opacity: 1" })</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-search"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.IsRegister)</td>
+                                <td class="text-primary"> @Html.CheckBoxFor(model => model.IsRegister, new { style = "opacity: 1" })</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-pager"></i></a>
+                                </th>
+                                <td class="font-weight-bold">@Html.DisplayNameFor(model => model.GoogleSiteVerification)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.GoogleSiteVerification)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-image"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.GoogleAds)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.GoogleAds)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.UpdateBy)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.UpdateBy)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.SiteLastUpdated)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.SiteLastUpdated)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.HomeFooter)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.HomeFooter)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.HomeUrl)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.HomeUrl)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.AboutFooter)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.AboutFooter)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.AboutUrl)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.AboutUrl)</td>
+                            </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.FavIconURL)
-        </dd>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ContactUrl)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ContactUrl)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ContactFooter)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ContactFooter)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.RolesFooter)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.RolesFooter)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.RolesUrl)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.RolesUrl)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ContactNumberFooter)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ContactNumberFooter)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.EmailFooter)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.EmailFooter)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.AddresFooter)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.AddresFooter)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.CopyrightFooter)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.CopyrightFooter)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.LoginFooter)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.LoginFooter)</td>
+                            </tr>
+                            <tr class=" ">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-file-alt"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.LoginUrl)</td>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.LoginUrl)</td>
+                            </tr>
+                            <tr class="">
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="far fa-newspaper"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ContentFooter)</td>
+                                <td class="collapse" id="collapseExample">@Html.Raw(Model.ContentFooter)</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                            aria-expanded="false" aria-controls="collapseExample">
+                                        View Content
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SiteOwner)
-        </dt>
+                <div class="col-md-9 offset-3 pt-4">
+                    @Html.ActionLink("Update", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) |
+                    <a class="btn btn-primary" href="/OPMSAdmin/SiteSettings/Index"> <i class="fas fa-undo-alt pr-2"></i>Back to menu</a>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.SiteOwner)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomCSS)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomCSS)
-        </dd>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GoogleSiteVerification)
-        </dt>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.GoogleSiteVerification)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GoogleAds)
-        </dt>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.GoogleAds)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsCustomCSSOn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsCustomCSSOn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomJS)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CustomJS)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsCustomJsOn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsCustomJsOn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SiteLastUpdated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SiteLastUpdated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UpdateBy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UpdateBy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HomeFooter)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HomeFooter)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HomeUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HomeUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AboutFooter)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AboutFooter)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AboutUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AboutUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactFooter)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactFooter)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RolesFooter)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RolesFooter)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RolesUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RolesUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactNumberFooter)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactNumberFooter)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailFooter)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailFooter)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AddresFooter)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AddresFooter)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContentFooter)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContentFooter)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CopyrightFooter)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CopyrightFooter)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoginFooter)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoginFooter)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoginUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoginUrl)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.Id },new { @class="btn btn-default"}) |
-    <a class="btn btn-primary" href="/OPMSAdmin/SiteSettings/Index">Retour à la liste principale</a>
-</p>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Content")
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+            Ps.initialize(el);
+        });
+    </script>
+}

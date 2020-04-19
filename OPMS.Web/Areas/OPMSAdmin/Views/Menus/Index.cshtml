@@ -2,55 +2,93 @@
 @{
     ViewBag.Title = "Index";
 }
-<hr />
-<h4>Liste de déroute</h4>
-<p>
-    <a class="btn btn-primary" href="/OPMSAdmin/Menus/Create">Créer un menu</a>
-</p>
-<hr />
-<table class="table table-responsive table-striped table-hover">
-    <thead class="bg-primary">
-        <tr>
-            <th>
-                <i class="glyphicon glyphicon-minus"></i> @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                <i class="glyphicon glyphicon-list"></i> @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                <i class="glyphicon glyphicon-link"></i> @Html.DisplayNameFor(model => model.Url)
-            </th>
-            <th>
-                <i class="glyphicon glyphicon-list-alt"></i> @Html.DisplayNameFor(model => model.ParentId)
-            </th>
-            <th>
-                <i class="glyphicon glyphicon-wrench"></i> Actions
-            </th>
-        </tr>
-    </thead>
+<div class="card card-cascade narrower blue lighten-5">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Url)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Parent.Title)
-        </td>
-        <td>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
+
+        <!-- Title -->
+        <h4 class="text-white">List of the Navigation </h4>
+        <!-- Subtitle -->
+    </div>
+
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
+
+        <!-- Text -->
+        <div class="">
+
+            <p>
+                <a class="btn btn-rounded  btn-outline-primary" href="/OPMSAdmin/Menus/Create"><i class="fas fa-plus-circle pr-2 fa-1x" aria-hidden="true"></i> Create New Menu </a>
+
+            </p>
+            <hr />
+            <table id="dataTable" class="table table-bordered table-hover table-striped table-responsive-sm ">
+                <thead class=" blue lighten-1 white-text">
+                    <tr>
+                        <th>
+                            <i class="fas fa-bars"></i> @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            <i class="fas fa-sort-amount-up"></i> @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            <i class="fas fa-link"></i> @Html.DisplayNameFor(model => model.Url)
+                        </th>
+                        <th>
+                            <i class="fas fa-th-list"></i> @Html.DisplayNameFor(model => model.ParentId)
+                        </th>
+                        <th>
+                            <i class="fas fa-wrench"></i> Actions
+                        </th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Url)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Parent.Title)
+                        </td>
+                        <td>
 
 
-            @Html.ActionLink("Éditer", "Edit", new { id = item.Id}, new { @class = "btn btn-primary" }) |
-            @Html.ActionLink("Détails", "Details", new { id = item.Id }, new { @class = "btn btn-default" }) |
-            @Html.ActionLink("Supprimer", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
-        </td>
-    </tr>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-default" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
 }
-
-</table>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav({
+                breakpoint: 1200
+            });
+            // SideNav Scrollbar Initialization
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+        });
+    </script>
+   
+}

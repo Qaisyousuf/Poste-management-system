@@ -8,7 +8,7 @@ using System.Web.Mvc;
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
     [Authorize(Roles = "Admin")]
-    [ExceptionFilter]
+    //[ExceptionFilter]
     public class SiteSettingsController : Controller
     {
         private readonly IUnitOfWork uow;

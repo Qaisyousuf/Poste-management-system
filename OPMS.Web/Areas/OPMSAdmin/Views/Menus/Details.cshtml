@@ -2,46 +2,97 @@
 @{
     ViewBag.Title = "Details";
 }
-<hr />
-<h4>Détails du menu</h4>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+<div class="card card-cascade narrower blue lighten-5">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+    <!-- Card image -->
+    <div class="view view-cascade gradient-card-header  blue lighten-1 text-white">
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+        <!-- Title -->
+        <h4 class="text-white">Details of the navigation</h4>
+        <!-- Subtitle -->
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Url)
-        </dt>
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
 
-        <dd>
-            @Html.DisplayFor(model => model.Url)
-        </dd>
+        <hr />
+        <h4 class="text-info">Details of the  <button disabled class="btn btn-info btn-sm  btn-rounded"><i class="fas fa-info-alt pr-2"></i><i class="fas fa-info-circle pr-2"></i> @Model.Title</button> menu</h4>
+        <br />
+        <div>
+            <div class="col-md-8 offset-2 text-left">
+                <div class="table-wrapper table-responsive table-bordered table-striped ">
+                    <!--Table-->
+                    <table class="table table-hover mb-0 ">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                </th>
+                                <td class="font-weight-bold">   @Html.DisplayNameFor(model => model.Title) </td>
+                                <td class="text-primary">  @Html.DisplayFor(model => model.Title)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-align-center"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Description)</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ParentId)
-        </dt>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Description) </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-align-center"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.Url)</td>
 
-        <dd>
-            @Html.DisplayFor(model => model.ParentId)
-        </dd>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.Url) </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-align-center"></i></a>
+                                </th>
+                                <td class="font-weight-bold"> @Html.DisplayNameFor(model => model.ParentId)</td>
 
-    </dl>
+                                <td class="text-primary"> @Html.DisplayFor(model => model.ParentId) </td>
+                            </tr>
+
+
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+
+                <div class="col-md-9 offset-3 pt-4">
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = " btn btn-info" }) |
+                    <a class="btn btn-primary" href="/OPMSAdmin/Menus/Index"><i class="fas fa-undo-alt pr-2"></i> Back to Menu</a>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
 </div>
-<p>
-    @Html.ActionLink("Éditer", "Edit", new { id = Model.Id },new { @class="btn btn-default"}) |
-    <a class="btn btn-primary" href="/OPMSAdmin/Menus/Index">Retour à la liste principale</a>
-</p>
+
+@section AdminCustomCSS{
+
+    <link href="~/Content/AdminCustomCSS.css" rel="stylesheet" />
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+            $(document).ready(function () {
+                $(".button-collapse").sideNav({
+                    breakpoint: 1200
+                });
+
+                var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+                var ps = new PerfectScrollbar(sideNavScrollbar);
+                Ps.initialize(el);
+            });
+    </script>
+}

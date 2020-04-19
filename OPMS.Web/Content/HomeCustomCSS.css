@@ -7,6 +7,25 @@ header
     padding-top:30px;
     height:100%;
 }
+.btn-primary {
+    color: #fff;
+    background-color: #42a5f5 !important;
+}
+#Weel {
+    -webkit-animation: Well 2s infinite linear;
+    -webkit-transform-origin: center;
+    transform-box: fill-box;
+}
+
+@-webkit-keyframes Well {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
 #sidebar
 {
     background-image:url(Img/photo-of-eiffel-tower-with-lights-149637.jpg);
