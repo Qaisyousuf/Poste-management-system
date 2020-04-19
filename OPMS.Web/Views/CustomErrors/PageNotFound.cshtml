@@ -4,16 +4,83 @@
     Layout = "~/Views/Shared/_ErrorLayout.cshtml";
 
 }
-<br />
-<div class="jumbotron">
-    <hr />
-    <h5 class="">This page isn't available. Sorry about that</h5>
-  
-    <img src="~/Content/Img/undraw_page_not_found_su7k.svg" class="img-responsive" id="Login" />
- <hr />
-    <a href="/Home" class="btn btn-primary">Take me back</a>
+<body>
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card  card-cascade wider bg-transparent">
 
-</div>
+                    <!-- Card image -->
+                    <div class="view view-cascade gradient-card-header  blue lighten-1">
+
+                        <!-- Title -->
+                        <h3 class="card-header-title text-warning mb-3">This page isn't available. sorry about that</h3>
+                        <!-- Subtitle -->
+
+
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade text-center bg-transparent">
+                        <div class="row">
+
+                            <!-- Text -->
+                            <div class="col-md-6">
+                                <div class="card-img">
+                                    <img src="~/Content/Img/PageNotFound.svg" class="img-responsive" id="Login" />
+                                </div>
+                            </div>
+                            <div class="col-md-6  pt-6 my-5">
+                                <div class="card card-cascade narrower  blue lighten-5">
+
+                                    <!-- Card image -->
+                                    <div class="view view-cascade gradient-card-header  blue lighten-1">
+
+                                        <!-- Title -->
+                                        <h5 class="card-header-title text-warning">Error Message</h5>
+                                        <!-- Subtitle -->
+
+                                    </div>
+
+                                    <!-- Card content -->
+                                    <div class="card-body-cascade text-center ">
+
+                                        <!-- Text -->
+                                        <h3 class="card-text pt-3 mt-3 pb-2">
+                                            Please contact with the admin
+                                        </h3>
+                                        <hr />
+
+                                        <div class="pb-3">
+                                            <a class="btn btn-primary btn-rounded waves-effecttext-capitalize" href="/Home"><i class="fas fa-home mr-2"></i> Take me back</a>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Card -->
+
+            </div>
+        </div>
+    </div>
+   
+    @*<div>
+            <div class="jumbotron">
+                <h4 class="text-danger">Oops! Something went wrong. Error</h4>
+                <hr />
+
+
+                <h4>Contact with the administrator Mr, Jeremi</h4>
+            </div>
+        </div>*@
+</body>
 
 @section ErrorCustomCSS{
 

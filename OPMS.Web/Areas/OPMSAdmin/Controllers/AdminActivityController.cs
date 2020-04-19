@@ -1,5 +1,6 @@
 ﻿using OPMS.Data.Interfaces;
 using OPMS.ViewModels;
+using OPMS.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -7,7 +8,7 @@ using System.Web.Mvc;
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
     [Authorize(Roles = "Admin")]
-    //[ExceptionFilter]
+    [ExceptionFilter]
     public class AdminActivityController : Controller
     {
         private readonly IUnitOfWork uow;

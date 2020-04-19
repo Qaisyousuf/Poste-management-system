@@ -178,6 +178,7 @@
     <Content Include="Content\Img\logo.png" />
     <Content Include="Content\Img\LogoCoallia_Couleur %282%29.png" />
     <Content Include="Content\Img\No-Post-orginal.svg" />
+    <Content Include="Content\Img\PageNotFound.svg" />
     <Content Include="Content\Img\photo-of-eiffel-tower-with-lights-149637.jpg" />
     <Content Include="Content\Img\PostUpdated.svg" />
     <Content Include="Content\Img\sentPost.svg" />
@@ -198,7 +199,6 @@
     <Content Include="Content\Img\undraw_online_articles_79ff.svg" />
     <Content Include="Content\Img\undraw_online_discussion_5wgl.svg" />
     <Content Include="Content\Img\undraw_online_information_4ui6.svg" />
-    <Content Include="Content\Img\undraw_page_not_found_su7k.svg" />
     <Content Include="Content\Img\undraw_project_completed_w0oq.svg" />
     <Content Include="Content\Img\undraw_referral_4ki4.svg" />
     <Content Include="Content\Img\undraw_social_notifications_ro8o.svg" />

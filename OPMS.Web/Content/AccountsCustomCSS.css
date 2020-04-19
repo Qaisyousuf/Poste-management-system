@@ -10,11 +10,6 @@ sectin .intro {
     padding: 0px;
 }
 
-
-}
-
-
-
 @media (max-width: 740px) {
     html, body, header, .view {
         height: 100vh;

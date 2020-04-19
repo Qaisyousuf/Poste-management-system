@@ -9,13 +9,14 @@ using OPMS.Web.Infrastructure;
 
 namespace OPMS.Web.Controllers
 {
-    //[ExceptionFilter]
+    [ExceptionFilter]
     [NoCacheFilter]
     public class ContactFormsController : BaseController
     {
         [Route("Contact")]
         public ActionResult Index()
         {
+            
             var contactDetailsFromdb = _uow.ContactDetailsRepoistory.GetAll();
 
             List<ContactDetailsVM> viewmodel = new List<ContactDetailsVM>();

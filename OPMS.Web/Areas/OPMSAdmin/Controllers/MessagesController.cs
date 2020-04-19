@@ -14,7 +14,7 @@ using Twilio.Types;
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
     [Authorize(Roles = "Admin")]
-    //[ExceptionFilter]
+    [ExceptionFilter]
     public class MessagesController : Controller
     {
         private readonly IUnitOfWork uow;

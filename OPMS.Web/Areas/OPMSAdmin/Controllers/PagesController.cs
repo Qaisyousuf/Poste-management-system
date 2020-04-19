@@ -9,7 +9,7 @@ using OPMS.Web.Infrastructure;
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
     [Authorize(Roles = "Admin")]
-    //[ExceptionFilter]
+    [ExceptionFilter]
     public class PagesController : Controller
     {
         private readonly IUnitOfWork uow;

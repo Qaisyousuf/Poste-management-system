@@ -10,7 +10,7 @@ using OPMS.Web.Infrastructure;
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
     [Authorize(Roles = "Admin")]
-    //[ExceptionFilter]
+    [ExceptionFilter]
     public class UserLocationsController : Controller
     {
         private readonly IUnitOfWork uow;
