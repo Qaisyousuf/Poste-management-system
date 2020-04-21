@@ -3,6 +3,7 @@
 @if (Model.HomeRRVMs != null)
 {
 <div class="container">
+    
     <div class="row">
 
         @foreach (var item in Model.HomeRRVMs)
@@ -13,26 +14,52 @@
                 <div class="card card-cascade bg-transparent hoverable">
 
                     <!-- Card image -->
-                    <div class="view img-fluid ">
-                        <img class="card-img-top" id="zoom" src="@item.IconUrl" alt="Card image cap" style="padding:20px;">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
+                    <div class="view px-4 pt-3">
+                        <img class="card-img-top img-fluid" id="zoom" src="@item.IconUrl" alt="Card image cap">
                     </div>
 
                     <!-- Card content -->
-                    <div class="card-body card-body-cascade dark-grey-text text-justify">
+                    <div class="card-body card-body-cascade dark-grey-text text-justify mx-3 my-2">
 
                         <!-- Title -->
                         <!-- Subtitle -->
-                        <h6 class="font-weight-bold text-primary py-2">@item.Title</h6>
+                        <h4 class="font-weight-bold text-primary py-2 text-center">@item.Title</h4>
+                        <hr />
                         <!-- Text -->
                         <p class=" dark-grey-text mb-1 pb-2">@Html.Raw(item.Content) </p>
                     </div>
 
-                    <!-- Card footer -->
-                    <div class="card-footer">
-                        <a href="/contact" class="btn btn-primary btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-book-reader fa-lg pr-1"></i> Read More</a>
+                    
+                    <div class="card-footer pl-4">
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#basicExampleModal"> <i class="fas fa-book-open mr-2"></i>
+                            Read More
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Roles and Responsibility</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                       @Html.Raw(item.Content)
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
                     </div>
 
                 </div>

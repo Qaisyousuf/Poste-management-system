@@ -3,30 +3,28 @@
     ViewBag.Title = ViewBag.PageTitle;
 }
 
-<div class="container py-5 z-depth-1 my-5" id="Home">
+<div class="container-fluid py-md-4  my-md-4 px-5 py-sm-3 my-sm-3">
 
 
     <!--Section: Content-->
-    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+    <section class=" text-center text-lg-left dark-grey-text">
 
         <!--Grid row-->
         <div class="row">
-            <div class="col-md-6 mb-md-0">
+            <div class="col-md-5 offset-1">
 
                 <!--Image-->
                 <div class="view overlay">
-                    <img src="~/Content/Img/undraw_delivery_address_03n0.svg" class="img-fluid"
-                         alt="">
-                    <a href="#">
-                        <div class="mask rgba-white-light"></div>
-                    </a>
+                    <img src="~/Content/Img/undraw_delivery_address_03n0.svg" class="img-fluid" alt="HomeBanner" id="zoom">
+                    
                 </div>
 
             </div>
             <!--Grid column-->
-            <div class="col-md-6 my-5 mb-md-0">
+            <div class="col-md-6 my-5 pt-md-4">
 
-                <h3 class="font-weight-bold"><span class="text-primary">@Model.Title</span></h3>
+                <h1 class="font-weight-bold"><span class="text-primary">@Model.Title</span></h1>
+                <hr />
 
                 <p class="text-justify">@Html.Raw(Model.Content) </p>
                 <a href="/CheckPost" class="btn btn-primary btn-rounded waves-effect btn-md ml-lg-1"><i class="fa fa-check fa-lg pr-1"></i> Check The Post</a>

@@ -1,31 +1,21 @@
 ﻿html,
 body,
-header
-
-{
-    margin-top:20px;
-    padding-top:30px;
-    height:100%;
+header {
+    margin-top: 20px;
+    padding-top: 30px;
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
 }
 .btn-primary {
     color: #fff;
     background-color: #42a5f5 !important;
 }
-#Weel {
-    -webkit-animation: Well 2s infinite linear;
-    -webkit-transform-origin: center;
-    transform-box: fill-box;
+.text-primary {
+    color: #42a5f5 !important;
 }
 
-@-webkit-keyframes Well {
-    from {
-        transform: rotateZ(0deg);
-    }
 
-    to {
-        transform: rotateZ(360deg);
-    }
-}
 #sidebar
 {
     background-image:url(Img/photo-of-eiffel-tower-with-lights-149637.jpg);
@@ -51,14 +41,71 @@ sectin .intro {
     margin: 0px;
     padding: 0px;
 }
-@media (max-width: 740px) {
+@media (max-width: 940px) {
     html, body, header, .view {
         height:100vh;
         width:100%;
+        margin-top:30px;
+       
         
     }
 }
+@media(min-width: 300px) and (max-width: 567px) {
+    h3 {
+        font-size: 1rem;
+    }
+}
 
+@media(min-width: 567px) and (max-width: 767px) {
+    h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media(min-width: 767px) and (max-width: 867px) {
+    h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media(min-width: 867px) and (max-width: 1000px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+@media(min-width: 300px) and (max-width: 567px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+}
+@media(min-width: 567px) and (max-width: 767px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+@media(min-width: 767px) and (max-width: 867px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+@media(min-width: 867px) and (max-width: 1000px) {
+    h1 {
+        font-size: 1.9rem;
+    }
+}
+/*@media(min-width: 576px) and (max-width: 767px) {
+    h1 {
+        font-size: .5rem;
+    }
+}
+@media(min-width: 767px) and (max-width: 900px) {
+    h1 {
+        font-size: 1rem;
+    }
+}*/
 .top-nav-collapse {
     background-color: #42a5f5 !important;
 }
@@ -124,7 +171,7 @@ sectin .intro {
     }
 
     50% {
-        transform: scale(1.1,1.1);
+        transform: scale(1,1);
     }
 
     100% {

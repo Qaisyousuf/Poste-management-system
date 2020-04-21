@@ -172,8 +172,11 @@
     <Content Include="Content\HomeCustomCSS.css" />
     <Content Include="Content\Img\AnimationFigmasvg.svg" />
     <Content Include="Content\Img\dashboard_nklg.svg" />
+    <Content Include="Content\Img\Footersvg.svg" />
     <Content Include="Content\Img\HavePost.svg" />
     <Content Include="Content\Img\help.svg" />
+    <Content Include="Content\Img\HomeBannerImage.svg" />
+    <Content Include="Content\Img\HowOPMSWorks.svg" />
     <Content Include="Content\Img\Login.svg" />
     <Content Include="Content\Img\logo.png" />
     <Content Include="Content\Img\LogoCoallia_Couleur %282%29.png" />
@@ -187,7 +190,6 @@
     <Content Include="Content\Img\SidebarIimage.jpg" />
     <Content Include="Content\Img\SignIn.svg" />
     <Content Include="Content\Img\SMSThankYou.svg" />
-    <Content Include="Content\Img\undraw_code_review_l1q9.svg" />
     <Content Include="Content\Img\undraw_dashboard_nklg.svg" />
     <Content Include="Content\Img\undraw_delivery_address_03n0.svg" />
     <Content Include="Content\Img\undraw_fill_forms_yltj.svg" />
