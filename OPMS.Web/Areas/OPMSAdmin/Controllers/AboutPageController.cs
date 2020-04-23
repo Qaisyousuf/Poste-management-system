@@ -20,7 +20,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
         }
         public ActionResult Index()
         {
-            int number = int.Parse("hello");
+            
             return View();
         }
 
