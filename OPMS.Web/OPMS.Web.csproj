@@ -184,12 +184,14 @@
     <Content Include="Content\Img\PageNotFound.svg" />
     <Content Include="Content\Img\photo-of-eiffel-tower-with-lights-149637.jpg" />
     <Content Include="Content\Img\PostUpdated.svg" />
+    <Content Include="Content\Img\Response.svg" />
     <Content Include="Content\Img\sentPost.svg" />
     <Content Include="Content\Img\seosoftprofile.svg" />
     <Content Include="Content\Img\ServerDown.svg" />
     <Content Include="Content\Img\SidebarIimage.jpg" />
     <Content Include="Content\Img\SignIn.svg" />
     <Content Include="Content\Img\SMSThankYou.svg" />
+    <Content Include="Content\Img\ThanksContact.svg" />
     <Content Include="Content\Img\undraw_dashboard_nklg.svg" />
     <Content Include="Content\Img\undraw_delivery_address_03n0.svg" />
     <Content Include="Content\Img\undraw_fill_forms_yltj.svg" />
@@ -203,7 +205,6 @@
     <Content Include="Content\Img\undraw_online_information_4ui6.svg" />
     <Content Include="Content\Img\undraw_project_completed_w0oq.svg" />
     <Content Include="Content\Img\undraw_referral_4ki4.svg" />
-    <Content Include="Content\Img\undraw_social_notifications_ro8o.svg" />
     <Content Include="Content\Img\undraw_status_update_jjgk.svg" />
     <Content Include="Content\Img\undraw_web_devices_ad58.svg" />
     <Content Include="Content\Img\undraw_work_chat_erdt.svg" />

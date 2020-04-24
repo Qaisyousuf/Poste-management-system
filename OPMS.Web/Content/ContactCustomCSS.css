@@ -3,8 +3,130 @@ body,
 header {
     padding-top: 15px;
     height: 100%;
-   
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
 }
+.btn-primary {
+    color: #fff;
+    background-color: #42a5f5 !important;
+}
+
+.btn-outline-primary {
+    color: #fff;
+}
+
+.text-primary {
+    color: #42a5f5 !important;
+}
+
+@media(min-width: 300px) and (max-width: 567px) {
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media(min-width: 567px) and (max-width: 767px) {
+    h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media(min-width: 767px) and (max-width: 867px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 867px) and (max-width: 1000px) {
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
+.text-body p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+
+
+@media(min-width: 300px) and (max-width: 567px) {
+    h3 {
+        font-size: 1rem;
+    }
+}
+
+@media(min-width: 567px) and (max-width: 767px) {
+    h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media(min-width: 767px) and (max-width: 867px) {
+    h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media(min-width: 867px) and (max-width: 1000px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+@media(min-width: 300px) and (max-width: 567px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media(min-width: 567px) and (max-width: 767px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media(min-width: 767px) and (max-width: 867px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media(min-width: 867px) and (max-width: 1000px) {
+    h1 {
+        font-size: 1.9rem;
+    }
+}
+
+
+
+
+@media(min-width: 300px) and (max-width: 567px) {
+     .display-4 {
+        font-size: 2rem !important;
+    }
+}
+
+@media(min-width: 567px) and (max-width: 767px) {
+    .display-4 {
+        font-size: 2.2rem !important ;
+    }
+}
+
+@media(min-width: 767px) and (max-width: 867px) {
+    .display-4 {
+        font-size: 2.5rem!important ;
+    }
+}
+
+@media(min-width: 867px) and (max-width: 1000px) {
+  .display-4 {
+        font-size: 3rem !important;
+    }
+}
+
 .map-container-section {
     overflow: hidden;
     padding-bottom: 56.25%;
@@ -98,15 +220,15 @@ sectin .intro {
 }
 
 .BackCOLOR {
-    background: -moz-linear-gradient(316deg, rgba(69,171,255,0.9) 0%, rgba(255,152,25,0.7) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(69,171,255,0.9)), color-stop(100%, rgba(255,152,25,0.7))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(316deg, rgba(69,171,255,0.9) 0%, rgba(255,152,25,0.7) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(316deg, rgba(69,171,255,0.9) 0%, rgba(255,152,25,0.7) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(316deg, rgba(69,171,255,0.9) 0%, rgba(255,152,25,0.7) 100%); /* ie10+ */
-    background: linear-gradient(134deg, rgba(69,171,255,0.9) 0%, rgba(255,152,25,0.7) 100%); /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ABFF', endColorstr='#FF9819',GradientType=1 ); /* ie6-9 */
+    background: -moz-linear-gradient(45deg, rgba(66,165,245,0.85) 0%, rgba(187,222,251,0.55) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(66,165,245,0.85)), color-stop(100%, rgba(187,222,251,0.55))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(66,165,245,0.85) 0%, rgba(187,222,251,0.55) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(66,165,245,0.85) 0%, rgba(187,222,251,0.55) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(66,165,245,0.85) 0%, rgba(187,222,251,0.55) 100%); /* ie10+ */
+    background: linear-gradient(45deg, rgba(66,165,245,0.85) 0%, rgba(187,222,251,0.55) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbdefb', endColorstr='#42a5f5',GradientType=1 ); /* ie6-9 */
     background-size: 400% 400%;
-    -webkit-animation: gradientBG 10s ease infinite;
+    -webkit-animation: gradientBG 6s ease infinite;
     animation: gradientBG 10s ease infinite;
 }
 

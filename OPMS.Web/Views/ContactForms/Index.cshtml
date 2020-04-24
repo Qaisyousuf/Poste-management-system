@@ -11,16 +11,16 @@
                     <!--Grid row-->
                     <div class="row">
                         <!--Grid column-->
-                        <div class="col-md-12 white-text text-center my-5">
-                            <h1 class="display-4 mb-0 pt-5 pb-md-0 pb-sm-3 pb-5 white-text font-weight-bold wow fadeInDown" data-wow-delay="0.3s"><span class="text-white text-uppercase">@item.Title</span></h1>
+                        <div class="col-md-12 white-text text-center my-md-5 my-sm-1">
+                            <h1 class="display-4 mb-md-0 mb-sm-2  pt-md-5 pt-sm-2 pb-md-0 pb-sm-0 pb-sm-1 pb-md-2 white-text font-weight-bold wow fadeInDown" data-wow-delay="0.3s"><span class="text-white text-uppercase">@item.Title</span></h1>
                             <hr class="hr-light w-50">
-                            <h5 class="text-uppercase  pt-3 pb-md-2 pb-sm-3 pb-5 white-text font-weight-bold wow fadeInDown"
+                            <h5 class="text-uppercase  pt-md-3 pt-sm-2 pb-md-2 pb-sm-4 white-text font-weight-bold wow fadeInDown"
                                 data-wow-delay="0.3s">
                                 <span class="text-white text-uppercase ">@item.SubContent</span>
                             </h5>
                             <div class="wow fadeInDown" data-wow-delay="0.3s">
-                                <a href="/AboutUs" class="btn peach-gradient btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-building fa-lg pr-1"></i> About </a>
-                                <a href="/Home" class="btn peach-gradient btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-home fa-lg pr-1"></i> Home</a>
+                                <a href="/AboutUs" class="btn btn-primary btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-building fa-lg pr-1"></i> About </a>
+                                <a href="/Home" class="btn btn-primary btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-home fa-lg pr-1"></i> Home</a>
                             </div>
                         </div>
                         <!--Grid column-->
@@ -34,64 +34,51 @@
         </div>
     </div>
 
-    <div class="container my-5 py-5 z-depth-1">
+
+    <div class="container mt-4 pt-4">
 
 
         <!--Section: Content-->
-        <section class="px-md-5 mx-md-5 text-center dark-grey-text">
+        <section class="">
 
-            <!--Grid row-->
-            <div class="row">
+            <!-- Grid row -->
+            <div class="row mx-2">
 
-                <!--Grid column-->
-                <div class="col-md-6 mb-4 mb-md-0">
+                <!-- Grid column -->
+                <div class="col-md-5 mb-lg-0 mb-4">
 
-                    <h3 class="font-weight-bold">@item.Description</h3>
+                    <!-- Featured image -->
+                    <div class=" rounded  mb-lg-0 mb-4">
+                        <img class="img-fluid" src="~/Content/Img/Response.svg" alt="Sample image">
+
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-7 mb-md-0 mb-4 mt-xl-4">
 
 
-
-                    <p class="text-muted">@Html.Raw(item.Content)</p>
-
+                    <h2 class="font-weight-bold text-primary text-sm-center text-md-left text-lg-left mb-4">@item.Description</h2>
+                    <p class="">@Html.Raw(item.Content)</p>
                     <a href="/SocialWokers" class="btn btn-primary btn-rounded waves-effect btn-md"><i class="fas fa-users fa-lg pr-1 "></i> Social Worker</a>
 
-
-
-
-                    <!--Slack-->
-
-
                 </div>
-                <!--Grid column-->
-                <!--Grid column-->
-                <div class="col-md-5 mb-4 mb-md-0  py-sm-0 py-md-5">
-
-                    <img src="~/Content/Img/undraw_social_notifications_ro8o.svg" class="img-fluid" alt="">
-
-                </div>
-                <!--Grid column-->
+                <!-- Grid column -->
 
             </div>
-            <hr class="my-5">
-            <!--Grid row-->
-            <p class="font-weight-bold">Follow us on:</p>
-
-            <!--Facebook-->
-            <!--Facebook-->
-            <a class="btn-floating btn-lg btn-fb" role="button"><i class="fab fa-facebook-f"></i></a>
-            <!--Twitter-->
-            <a class="btn-floating btn-lg btn-tw" role="button"><i class="fab fa-twitter"></i></a>
-            <!--Google +-->
-            <!--Linkedin-->
-            <a class="btn-floating btn-lg btn-li" role="button"><i class="fab fa-linkedin-in"></i></a>
-            <!--Instagram-->
-            <!--Youtube-->
-            <a class="btn-floating btn-lg btn-yt" role="button"><i class="fab fa-youtube"></i></a>
+            <!-- Grid row -->
 
         </section>
+
         <!--Section: Content-->
+
+
 
 
     </div>
+
+
 
 }
 
@@ -99,20 +86,18 @@
 {
     foreach (var item in Model.ContactDetailsViewModel)
     {
-        <div class="container my-5 py-5 ">
+        <div class="container mt-5 pt-5">
 
 
             <!--Section: Content-->
-            <section class="dark-grey-text mb-5">
-
-              
-
+            <section class="dark-grey-text">
                 <!-- Section heading -->
-                <div class="form-header form-header blue text-white">
-                    <h3 class="mt-2"><i class="fas fa-envelope"></i> @item.Title</h3>
+                <div class="form-header form-header z-depth-0 text-white mb-0">
+                    <h1 class="mt-2"><i class="fas fa-envelope"></i> @item.Title</h1>
+                    <hr class="hr-light w-25" />
                     <!-- Section description -->
                 </div>
-                
+
                 <!-- Grid row -->
                 <div class="row">
 
@@ -125,7 +110,7 @@
                                 <div class="row ">
                                     <div class="col-lg-12 col-md-12 mb-1">
                                         <h6 class="font-weight-bold mb-1">
-                                            <a class="btn-floating prefix text-left blue accent-1">
+                                            <a class="btn-floating prefix text-left blue lighten-1">
                                                 <i class="fas  fas fa-city"></i>
                                             </a> City: @item.CityName
                                         </h6>
@@ -133,7 +118,7 @@
                                     </div>
                                     <div class="col-lg-12 col-md-12 mb-1">
                                         <h6 class="font-weight-bold mb-1">
-                                            <a class="btn-floating prefix text-left blue accent-1">
+                                            <a class="btn-floating prefix text-left blue lighten-1">
                                                 <i class="fas fa-road"></i>
                                             </a> Street: @item.StreetName
                                         </h6>
@@ -141,16 +126,16 @@
                                     </div>
                                     <div class="col-lg-12 col-md-12 mb-1">
                                         <h6 class="font-weight-bold mb-1">
-                                            <a class="btn-floating prefix text-left blue accent-1">
+                                            <a class="btn-floating prefix text-left blue lighten-1">
                                                 <i class="fas fa-archway"></i>
                                             </a> Area: @item.AreaName
                                         </h6>
 
                                     </div>
-                                   
+
                                     <div class="col-lg-12 col-md-12 mb-1">
                                         <h6 class="font-weight-bold mb-1">
-                                            <a class="btn-floating prefix text-left blue accent-1">
+                                            <a class="btn-floating prefix text-left blue blue lighten-1">
                                                 <i class="fas fa-home"></i>
                                             </a> Center: @item.CenterName
                                         </h6>
@@ -158,7 +143,7 @@
                                     </div>
                                     <div class="col-lg-12 col-md-12 mb-1">
                                         <h6 class="font-weight-bold mb-1">
-                                            <a class="btn-floating prefix text-left blue accent-1">
+                                            <a class="btn-floating prefix text-left blue blue lighten-1">
                                                 <i class="fas fa-mobile-alt"></i>
                                             </a> Mobile: @item.MobileNumber
                                         </h6>
@@ -166,7 +151,7 @@
                                     </div>
                                     <div class="col-lg-12 col-md-12 mb-1">
                                         <h6 class="font-weight-bold mb-1">
-                                            <a class="btn-floating prefix text-left blue accent-1">
+                                            <a class="btn-floating prefix text-left blue blue lighten-1">
                                                 <i class="fas fa-envelope"></i>
                                             </a> Email: @item.CenterEmail
                                         </h6>
@@ -184,7 +169,7 @@
 
                         <!--Google map-->
                         <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 487px">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44092.59090383205!2d3.361300550456787!3d46.31406888932458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f1255dfbd3424f%3A0x79b25ab1393e8e35!2s03150%20Varennes-sur-Allier!5e0!3m2!1sen!2sfr!4v1584986457676!5m2!1sen!2sfr"  height="480" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44092.59090383205!2d3.361300550456787!3d46.31406888932458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f1255dfbd3424f%3A0x79b25ab1393e8e35!2s03150%20Varennes-sur-Allier!5e0!3m2!1sen!2sfr!4v1584986457676!5m2!1sen!2sfr" height="480" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                         </div>
                         <!-- Buttons-->
 
@@ -200,21 +185,22 @@
 
 
         </div>
-       
+
     }
 }
 
 @if (Model?.ContactInfoViewModel != null)
 {
-        <div class="container">
-            <div class="form-header blue text-white">
-                <h3 class="mt-2"><i class="fas fa-map-marker-alt"></i> Find More Address</h3>
-            </div>
-
+    <div class="container">
+        <div class="form-header text-white z-depth-0 mt-2">
+            <h2 class="mt-2"><i class="fas fa-map-marker-alt"></i> Find More Address</h2>
+            <hr class="hr-light w-25 mb-0" />
         </div>
+
+    </div>
     foreach (var item in Model.ContactInfoViewModel)
     {
-       <div class="container my-0">
+        <div class="container my-0">
 
             <!-- Section: Block Content -->
             <section class="">
@@ -236,20 +222,20 @@
                 </style>
 
                 <div class="card bg-transparent">
-                    <div class="card-header  text-center blue text-white">
+                    <div class="card-header  text-center  blue lighten-1 text-white z-depth-1">
                         <div class="col-lg-12 col-md-12 ">
-                            <h4 class=" text-white "> 
-                              @Html.Raw(item.Content)
-                            </h4>
+                            <h3 class=" text-white mt-2 ">
+                                @Html.Raw(item.Content)
+                            </h3>
 
                         </div>
                     </div>
                     <div class="row">
-                        
-                        <div class="col-lg-6 align-self-center py-4">
+
+                        <div class="col-lg-6 align-self-center py-2">
 
                             <!--Google map-->
-                            <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 487px">
+                            <div id="map-container-section" class="z-depth-1-half map-container-section my-2" style="height: 487px">
                                 @Html.Raw(item.GoogleMap)
                             </div>
                             <!-- Buttons-->
@@ -263,7 +249,7 @@
 
                                 <div class="col-lg-12 col-md-12 mb-1">
                                     <h6 class="font-weight-bold mb-1">
-                                        <a class="btn-floating prefix text-left blue accent-1">
+                                        <a class="btn-floating prefix text-left blue lighten-1">
                                             <i class="fas fa-clinic-medical"></i>
                                         </a> Title: @Html.Raw(item.Title)
                                     </h6>
@@ -271,7 +257,7 @@
                                 </div>
                                 <div class="col-lg-12 col-md-12 mb-1">
                                     <h6 class="font-weight-bold mb-1">
-                                        <a class="btn-floating prefix text-left blue accent-1">
+                                        <a class="btn-floating prefix text-left blue lighten-1">
 
                                             <i class="fas fa-archway"></i>
                                         </a> City: @item.PlaceName
@@ -279,7 +265,7 @@
                                 </div>
                                 <div class="col-lg-12 col-md-12 mb-1">
                                     <h6 class="font-weight-bold mb-1">
-                                        <a class="btn-floating prefix text-left blue accent-1">
+                                        <a class="btn-floating prefix text-left blue lighten-1">
                                             <i class="fas fa-road"></i>
                                         </a> Add:@item.PlaceAddress
                                     </h6>
@@ -289,7 +275,7 @@
 
                                 <div class="col-lg-12 col-md-12 mb-1">
                                     <h6 class="font-weight-bold mb-1">
-                                        <a class="btn-floating prefix text-left blue accent-1">
+                                        <a class="btn-floating prefix text-left blue lighten-1">
                                             <i class="fas fa-mobile-alt"></i>
                                         </a> Mobile: @item.PlaceContactNumber
                                     </h6>
@@ -297,7 +283,7 @@
                                 </div>
                                 <div class="col-lg-12 col-md-12 mb-1">
                                     <h6 class="font-weight-bold mb-1">
-                                        <a class="btn-floating prefix text-left blue accent-1">
+                                        <a class="btn-floating prefix text-left blue lighten-1">
                                             <i class="fas fa-map-marked"></i>
                                         </a> Area Code: @item.PostalCode
                                     </h6>
@@ -305,7 +291,7 @@
                                 </div>
                                 <div class="col-lg-12 col-md-12 mb-1">
                                     <h6 class="font-weight-bold mb-1">
-                                        <a class="btn-floating prefix text-left blue accent-1">
+                                        <a class="btn-floating prefix text-left blue lighten-1">
                                             <i class="fas fa-map-marked"></i>
 
                                         </a>
@@ -330,7 +316,11 @@
         </div>
         <br />
     }
+    <!-- Modal -->
+    
 }
+
+
 @section ContactCustomCSS{
 
     <link href="~/Content/ContactCustomCSS.css" rel="stylesheet" />
