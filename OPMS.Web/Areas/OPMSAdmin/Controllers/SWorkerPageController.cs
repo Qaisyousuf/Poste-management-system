@@ -1,12 +1,8 @@
 ﻿using OPMS.Data.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using OPMS.ViewModels;
 using OPMS.Models;
+using OPMS.ViewModels;
 using OPMS.Web.Infrastructure;
+using System.Web.Mvc;
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
@@ -98,7 +94,6 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
             if(ModelState.IsValid)
             {
                 var sworkerFromdb = uow.SWorkerPageRepository.GetById(viewmodel.Id);
-
                 sworkerFromdb.Id = viewmodel.Id;
                 sworkerFromdb.Title = viewmodel.Title;
                 sworkerFromdb.Content = viewmodel.Content;

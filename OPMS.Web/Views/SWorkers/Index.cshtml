@@ -9,7 +9,7 @@
     foreach (var item in Model.sWBannerVMs)
     {
 
-        <div class="my-2">
+        <div class="">
             <div class="view jarallax BackCOLOR  my-sm-0" data-jarallax='{"speed": 0.4}' style="background-image: url('https://i.ibb.co/zmX47Wx/Meeting.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; height:100vh;">
                 <!-- Mask & flexbox options-->
                 <div class="mask mask BackCOLOR d-flex justify-content-center align-items-center">
@@ -18,10 +18,10 @@
                         <!--Grid row-->
                         <div class="row">
                             <!--Grid column-->
-                            <div class="col-md-12 white-text text-center my-2">
-                                <h1 class="display-4 mb-0 pt-5 pb-md-0 pb-sm-3 pb-2 white-text font-weight-bold wow fadeInDown" data-wow-delay="0.3s"><span class="text-white text-uppercase">@item.BTitle</span></h1>
+                            <div class="col-md-12 white-text text-center my-md-5 my-sm-1">
+                                <h1 class="display-4 mb-md-0 mb-sm-1  pt-md-5 pt-sm-2 pb-md-0  pb-sm-0 pb-md-1 white-text font-weight-bold wow fadeInDown" data-wow-delay="0.3s"><span class="text-white text-uppercase">@item.BTitle</span></h1>
                                 <hr class="hr-light my-4 w-50">
-                                <h5 class="text-uppercase  pt-2 pb-md-2 pb-sm-2 pb-2 white-text font-weight-bold wow fadeInDown"
+                                <h5 class="text-uppercase   pt-md-3 pt-sm-2 pb-md-2 pb-sm-4 white-text font-weight-bold wow fadeInDown"
                                     data-wow-delay="0.3s">
                                     <span class="text-white text-uppercase ">@item.BSubTitle</span>
                                 </h5>
@@ -40,21 +40,19 @@
                 <div class="my-5"></div>
             </div>
         </div>
-        <div class="container my-5 py-5 z-depth-1">
+        <div class="container mt-5 pt-5 ">
 
 
             <!--Section: Content-->
-            <section class="px-md-5 mx-md-5 text-center dark-grey-text">
+            <section class="px-md-2 mx-md-2 text-center">
 
                 <!--Grid row-->
-                <div class="row">
+                <div class="row mx-2">
 
                     <!--Grid column-->
-                    <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="col-md-6">
 
-                        <h3 class="font-weight-bold">@item.BSubTitle</h3>
-
-
+                        <h2 class="font-weight-bold text-primary">@item.BSubTitle</h2>
 
                         <p class="text-muted">@Html.Raw(item.BContent)</p>
 
@@ -63,9 +61,9 @@
                     </div>
                     <!--Grid column-->
                     <!--Grid column-->
-                    <div class="col-md-6 mb-4 mb-md-0  py-sm-0 py-md-5">
+                    <div class="col-md-6 mt-4">
 
-                        <img src="~/Content/Img/undraw_status_update_jjgk.svg" class="img-fluid img-responsive" alt="" id="zoom">
+                        <img src="~/Content/Img/undraw_status_update_jjgk.svg" class="img-fluid" alt="" id="">
 
                     </div>
                     <!--Grid column-->
@@ -86,42 +84,46 @@
 {
     foreach (var item in Model.SWorkerPageVMs)
     {
-        <div class="bg-transparent my-5">
-            <!-- Mask & flexbox options-->
-            <div class="mask">
-                <!-- Content -->
-                <div class="container h-100">
-                    <!--Grid row-->
-                    <div class="row align-items-center h-100">
-                        <!--Grid column-->
-                        <div class="col-md-6">
-                            <h1 class="blue-text font-weight-bold mb-0 pt-5 pb-md-0 pb-sm-3 pb-2">@item.Title</h1>
-                            <p class="mb-4 pb-2 dark-grey-text">@Html.Raw(item.Content)</p>
-                            <hr class="hr-light my-4">
-                            <p class="mb-4 pb-2 dark-grey-text">@Html.Raw(item.SubContent)</p>
+        <div class=" my-sm-5 my-md-5 my-lg-5 py-sm-5 py-md-4 py-lg-4 text-justify ">
+            <div class="cke_panel_frame  my-5" style="background-image: url('https://i.ibb.co/nRL9fBY/Social-Worker-Team.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;" id="sidebar">
+                <!-- Mask & flexbox options-->
+                <div class="mask BackCOLOR d-flex justify-content-center align-items-center h-100">
 
-                            <a href="/AboutUs" class="btn btn-deep-orange btn-rounded waves-effect btn-md ml-lg-0"><i class="far fa-building fa-lg pr-1"></i> About Us</a>
-                            <a href="/contact" class="btn btn-deep-orange btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-mobile-alt fa-lg pr-1"></i> Contact Us</a> 
+                    <div class="container">
+                        <!--Grid row-->
+                        <div class="row mx-2 ">
+                            <!--Grid column-->
+                            <div class="col-md-7 text-white  mt-xl-5 mb-5 my-sm-5 my-md-5 my-lg-5 ">
+                                <h1 class="h1-responsive font-weight-bold mt-sm-5 animated  fadeInUp">@item.Title </h1>
+                                <hr class="hr-light">
+                                <p class="text-justify">@Html.Raw(item.Content)</p>
+                                <hr class="hr-light ">
+                                <p class="text-left">@Html.Raw(item.SubContent)</p>
 
+                                <div class="text-sm-center ">
+                                    <a href="/AboutUs" class="btn  btn btn-outline-white btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-building fa-lg pr-1"></i> About Us</a>
+                                    <a href="/Contact" class="btn  btn btn-outline-white btn-rounded waves-effect btn-md ml-lg-0"> <i class="fas fas fa-phone fa-lg pr-1"></i>Contact Us</a>
+                                </div>
+
+                            </div>
+                            <!--Grid column-->
+                            <!--Grid column-->
+                            <div class="col-md-5 my-sm-4 my-md-5 py-sm-2 py-md-5 py-lg-5 my-lg-5">
+                                <img src="~/Content/Img/HowOPMSWorks.svg" alt="" class="img-fluid">
+                            </div>
+                            <!--Grid column-->
                         </div>
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <div class="col-md-6 my-5">
-                            <img src="~/Content/Img/undraw_interview_rmcf.svg" alt="" class="img-fluid">
-                        </div>
-                        <!--Grid column-->
+                        <!--Grid row-->
                     </div>
-                    <!--Grid row-->
+                    <!-- Content -->
                 </div>
-                <!-- Content -->
+                <!-- Mask & flexbox options-->
             </div>
-            <!-- Mask & flexbox options-->
-        </div>
-        <!-- Full Page Intro -->
 
+        </div>
+       
     }
 }
-<hr />
 
 @section SocialWorkerCustomCSS{
 

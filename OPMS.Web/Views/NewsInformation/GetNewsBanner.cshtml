@@ -16,10 +16,10 @@
                         <!--Grid row-->
                         <div class="row">
                             <!--Grid column-->
-                            <div class="col-md-12 white-text text-center my-5">
-                                <h1 class=" cke_font responsive-font-size mb-0 pt-5 pb-md-0 pb-sm-3 pb-3 white-text font-weight-bold wow fadeInDown" data-wow-delay="0.3s"><span class="text-white text-uppercase">@item.Title</span></h1>
+                            <div class="col-md-12 white-text text-center  my-md-5 pt-md-5 my-sm-5">
+                                <h1 class="display-4 mb-md-0 mb-sm-1  pt-md-5 mt-md-4 pt-sm-4 pb-md-0  pb-sm-0 pb-md-1  white-text font-weight-bold wow fadeInDown" data-wow-delay="0.3s"><span class="text-white text-uppercase">@item.Title</span></h1>
                                 <hr class="hr-light w-50">
-                                <h1 class=" text-uppercase  pt-3 pb-md-2 pb-sm-3 pb-3 white-text font-weight-bold wow fadeInDown"
+                                <h1 class=" text-uppercase  pt-md-2 pt-sm-2 pb-md-2 pb-sm-4 white-text font-weight-bold wow fadeInDown"
                                     data-wow-delay="0.3s">
                                     <span class="text-white text-uppercase ">@item.SubTitle</span>
                                 </h1>
@@ -40,10 +40,10 @@
         </div>
 
     
-  <div class="container my-3 py-3  py-sm-1  ">
+  <div class="container mt-4 pt-4">
 
 
-   <div class="container my-3 ">
+   <div class="container">
 
 
   <!--Section: Content-->
@@ -58,13 +58,13 @@
 
       </div>
       <div class="col-md-5 d-flex align-items-center">
-        <div>
+        <div class="mx-2">
           
-          <h3 class="font-weight-bold mb-4">@item.SubTitle</h3>
+          <h2 class="font-weight-bold mb-4 text-primary">@item.SubTitle</h2>
 
         	<p>@Html.Raw(item.Content)</p>
 
-        	<a href="@item.ButtonUrl" class="btn btn-deep-orange btn-rounded mx-0"><i class="fas fa-home fa-lg pr-1"></i> @item.ButtonText</a>
+        	<a href="@item.ButtonUrl" class="btn btn-primary btn-rounded mx-0"><i class="fas fa-home fa-lg pr-1"></i> @item.ButtonText</a>
 
         </div>
       </div>

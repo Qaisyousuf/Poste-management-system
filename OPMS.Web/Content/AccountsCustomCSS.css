@@ -1,8 +1,130 @@
 ﻿html,
 body,
 header {
-   
     height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #42a5f5 !important;
+}
+
+.btn-outline-primary {
+    color: #fff;
+}
+
+.text-primary {
+    color: #42a5f5 !important;
+}
+
+@media(min-width: 300px) and (max-width: 567px) {
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media(min-width: 567px) and (max-width: 767px) {
+    h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media(min-width: 767px) and (max-width: 867px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 867px) and (max-width: 1000px) {
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
+.text-body p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+
+
+@media(min-width: 300px) and (max-width: 567px) {
+    h3 {
+        font-size: 1rem;
+    }
+}
+
+@media(min-width: 567px) and (max-width: 767px) {
+    h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media(min-width: 767px) and (max-width: 867px) {
+    h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media(min-width: 867px) and (max-width: 1000px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+@media(min-width: 300px) and (max-width: 567px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media(min-width: 567px) and (max-width: 767px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media(min-width: 767px) and (max-width: 867px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media(min-width: 867px) and (max-width: 1000px) {
+    h1 {
+        font-size: 1.9rem;
+    }
+}
+
+
+
+
+@media(min-width: 300px) and (max-width: 567px) {
+    .display-4 {
+        font-size: 2rem !important;
+    }
+}
+
+@media(min-width: 567px) and (max-width: 767px) {
+    .display-4 {
+        font-size: 2.2rem !important;
+    }
+}
+
+@media(min-width: 767px) and (max-width: 867px) {
+    .display-4 {
+        font-size: 2.5rem !important;
+    }
+}
+
+@media(min-width: 867px) and (max-width: 1000px) {
+    .display-4 {
+        font-size: 3rem !important;
+    }
 }
 
 sectin .intro {

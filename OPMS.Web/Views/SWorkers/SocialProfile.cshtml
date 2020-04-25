@@ -4,20 +4,17 @@
 @if (Model.SocialProfileVM != null)
 {
 
-<div class="container my-5">
+<div class="container pt-0 mt-0">
 
 
     <!--Section: Content-->
-    <section class="team-section text-center dark-grey-text">
+    <section class="team-section text-center dark-grey-text mt-0 pt-0">
 
         <!-- Section heading -->
-        <h3 class="font-weight-bold pb-2 mb-4">Our amazing team</h3>
+        <h3 class="font-weight-bold  text-primary">Our amazing team</h3>
+        <hr class="w-25 mb-5 hr-light" />
         <!-- Section description -->
-        <p class="text-muted w-responsive mx-auto mb-5">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
-            eum porro a pariatur veniam.
-        </p>
+        
 
         <!-- Grid row -->
         <div class="row">
@@ -26,23 +23,23 @@
             
 
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card bg-transparent z-depth-1 mx-3">
-                    <div class="avatar mx-3 my-3 mt-md-4">
-                        <img src="@item.ImageUrl" class="rounded-circle z-depth-1"
-                             alt="Sample avatar">
+                <div class="card  blue lighten-5 z-depth-1 mx-3">
+                    <div class="avatar mx-3 my-3 mt-md-4" id="ProfileBackImage">
+                        <img src="@item.ImageUrl" class="rounded-circle z-depth-1" alt="Sample avatar">
                     </div>
-                    <h4 class="font-weight-bold text-uppercase mt-3 mb-3 mb-sm-3"><strong>@item.FullName</strong></h4>
+                    <h4 class="font-weight-bold text-uppercase mt-3 mb-3 mb-sm-3 text-primary">@item.FullName</h4>
                     <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                          aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                                <div class="modal-header">
+                                <div class="modal-header mt-0">
                                     <h5 class="modal-title" id="exampleModalLabel">@item.JobTitle</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
+                                    
                                     @Html.Raw(item.Content)
                                 </div>
                                 <div class="modal-footer">
@@ -52,18 +49,18 @@
                             </div>
                         </div>
                     </div>
-                    <p class="font-weight-bold text-uppercase blue-text"><strong>@item.JobTitle</strong></p>
+                    <p class="font-weight-bold text-uppercase blue-text mb-0"><strong>@item.JobTitle</strong></p>
 
-                    <div class="card-body mt-0 mb-0 mb-sm-0">
-                        <p class="justify-content-center mb-0 mb-sm-0">
-
+                    <div class="card-body mt-0 pt-0">
+                        <p class="justify-content-center">
+                            <hr />
                             @Html.Raw(item.Content)
                         </p>
                     </div>
                     <div class="card-footer">
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="/contact" class="btn btn-deep-orange btn-rounded waves-effect btn-md ml-lg-0" data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-eye fa-lg pr-1"></i> View Profile</a>
+                                <a href="/contact" class="btn btn-primary btn-rounded waves-effect btn-md ml-lg-0" data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-eye fa-lg pr-1"></i> View Profile</a>
                                 <!-- Button trigger modal -->
                                 <!-- Modal -->
 
