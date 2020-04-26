@@ -18,47 +18,52 @@
             {
                 if (item.HasPost)
                 {
-                    <div class="container mt-5 py-2 pt-5 pr-3 pl-3">
+                    <div class="container mt-5 pt-5">
                         <div class="row">
                             <div class="col-md-6">
-                                <!-- Card Regular -->
-                                <div class="card  h-100 bg-transparent">
+
+                                <div class="card card-cascade narrower blue lighten-5">
 
                                     <!-- Card image -->
-                                    <div class="view view-cascade overlay pr-3 pl-3 pt-2 pb-0 mb-0">
-                                        <img class="card-img-top " src="~/Content/Img/HavePost.svg" alt="Card image cap">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
+                                    <div class="view view-cascade gradient-card-header  blue lighten-1 py-sm-3 py-md-3 py-lg-3 ml-md-3 ml-sm-3 ml-lg-3 ">
+
+                                        <!-- Title -->
+                                        <h2 class="card-header-title">Post Status</h2>
+                                        <!-- Subtitle -->
+
+
+                                    </div>
+                                    <div class="card-img-top  pt-3   px-3 mb-0 pb-0">
+                                        <img class="card-img-top img-fluid " src="~/Content/Img/HavePost.svg" alt="Card-post">
                                     </div>
 
                                     <!-- Card content -->
-                                    <div class="card-body card-body-cascade text-center  ml-md-0  ml-0 mr-0 pr-0 pl-0 pb-5">
+                                    <div class="card-body card-body-cascade text-center">
 
-                                        <!-- Title -->
-                                        <h2 class="card-title font-weight-bold blue-text text-capitalize">hi, @User.Identity.Name </h2>
+                                        <h2 class="card-title font-weight-bold blue-text text-capitalize mb-2">hi, @User.Identity.Name </h2>
 
-                                        <h4 class=" blue-text pr-4   "> <i class="fas fa-check blue-text text-capitalize"></i> You Have Post </h4>
-                                        <h6 class=" blue-text  pt-2 text-capitalize ">  Get Your Post from The Office</h6>
-
-
+                                        <h4 class=" blue-text font-weight-bold pr-4"> <i class="fas fa-check blue-text text-capitalize"></i> You Have Post </h4>
+                                        <h6 class=" blue-text font-weight-bold pt-1 text-capitalize mb-0 ">Get Your Post from The Office</h6>
                                     </div>
-
-                                    <!-- Card footer -->
                                     <div class="card-footer text-muted text-center">
                                         @DateTime.Now
                                     </div>
-
                                 </div>
+                                <!-- Card Regular -->
+                            
                                 <!-- Card Regular -->
 
                             </div>
-                            <div class="col-md-6 my-2 my-md-2 pr-md-3 pl-md-3 ">
-                                <div class="card card-cascade  pr-md-3 pl-md-3 blue lighten-5">
+                            <div class="col-md-6 ">
+                                <div class="card card-cascade narrower  blue lighten-5">
 
                                     <!--Card image-->
-                                    <div class="view view-cascade gradient-card-header blue-gradient narrower py-lg-0   mb-0   mr-md-0 ml-md-0 mb-5 justify-content-between align-items-center">
-                                        <h5 class="font-weight-bold mt-3 mb-3 ">Post Details</h5>
+                                    <div class="view view-cascade gradient-card-header  blue lighten-1 py-sm-3 py-md-4 py-lg-3 ml-md-3 ml-sm-3 ml-lg-3 mb-5 ">
+
+                                        <!-- Title -->
+                                        <h2 class="card-header-title">Post Details</h2>
+                                        <!-- Subtitle -->
+
 
                                     </div>
                                     <!--/Card image-->
@@ -69,48 +74,48 @@
                                             <!--Table-->
                                             <table class="table table-hover mb-0 ">
                                                 <tbody>
-                                                    <tr>
+                                                    <tr class="pt-4">
                                                         <th scope="row">
-                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-tag"></i></a>
+                                                            <a class="btn-floating btn-sm  blue lighten-1"><i class="fas fa-tag"></i></a>
                                                         </th>
-                                                        <td class="font-weight-bold">Post Title</td>
-                                                        <td class="text-primary">@item.Title</td>
+                                                        <td class="font-weight-bold pt-4">Post Title</td>
+                                                        <td class="text-primary font-weight-bold pt-4">@item.Title</td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">
-                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-envelope"></i></a>
+                                                            <a class="btn-floating btn-sm blue lighten-1"><i class="fas fa-envelope"></i></a>
                                                         </th>
-                                                        <td class="font-weight-bold">Post type</td>
+                                                        <td class="font-weight-bold pt-4">Post type</td>
 
-                                                        <td class="text-primary">@item.PostSystems.Title</td>
+                                                        <td class="text-primary font-weight-bold pt-4">@item.PostSystems.Title</td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">
-                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-user-check"></i></a>
+                                                            <a class="btn-floating btn-sm blue lighten-1"><i class="fas fa-user-check"></i></a>
                                                         </th>
-                                                        <td class="font-weight-bold">Assigned By</td>
-                                                        <td class="text-primary">@item.SendedBy</td>
+                                                        <td class="font-weight-bold pt-4">Assigned By</td>
+                                                        <td class="text-primary font-weight-bold pt-4">@item.SendedBy</td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">
-                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-paper-plane"></i></a>
+                                                            <a class="btn-floating btn-sm blue lighten-1"><i class="fas fa-paper-plane"></i></a>
                                                         </th>
-                                                        <td class="font-weight-bold">Sent by</td>
-                                                        <td class="text-primary">@item.SocialWorker.FullName</td>
+                                                        <td class="font-weight-bold pt-4">Sent by</td>
+                                                        <td class="text-primary font-weight-bold pt-4">@item.SocialWorker.FullName</td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">
-                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-calendar-check"></i></a>
+                                                            <a class="btn-floating btn-sm blue lighten-1"><i class="fas fa-calendar-check"></i></a>
                                                         </th>
-                                                        <td class="font-weight-bold">Sent Date</td>
-                                                        <td class="text-primary">@item.SentDateTime</td>
+                                                        <td class="font-weight-bold pt-4">Sent Date</td>
+                                                        <td class="text-primary font-weight-bold pt-4">@item.SentDateTime</td>
                                                     </tr>
                                                     <tr class="text-danger ">
                                                         <th scope="row">
-                                                            <a class="btn-floating btn-sm blue-gradient"><i class="fas fa-calendar-times"></i></a>
+                                                            <a class="btn-floating btn-sm blue lighten-1"><i class="fas fa-calendar-times"></i></a>
                                                         </th>
-                                                        <td class="font-weight-bold">Expiration Date</td>
-                                                        <td class="text-danger">@item.PostExpirationDate</td>
+                                                        <td class="font-weight-bold pt-4">Expiration Date</td>
+                                                        <td class="text-danger font-weight-bold pt-4">@item.PostExpirationDate</td>
                                                     </tr>
                                                 </tbody>
                                                 <!--Table body-->
@@ -119,7 +124,9 @@
                                         </div>
 
                                     </div>
-
+                                    <div class="card-footer text-muted text-center mt-4">
+                                        @DateTime.Now
+                                    </div>
                                 </div>
                                 <!-- Table with panel -->
                             </div>
@@ -131,44 +138,41 @@
                 else
                 {
 
-                    <div class="container mt-5 pt-5 py-2">
-                        <div class="row">
+                    <div class="  mt-5 pt-5">
+                        <div class="col-md-6 col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3">
 
-                            <div class="col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3">
-                                <!-- Card Regular -->
-                                <div class="card  h-100   bg-transparent">
+                            <div class="card card-cascade narrower blue lighten-5">
 
-                                    <!-- Card image -->
-                                    <div class="view view-cascade overlay pr-3 pl-3 pt-3">
-                                        <img class="card-img-top " src="~/Content/Img/No-Post-orginal.svg" alt="Card image cap">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
+                                <!-- Card image -->
+                                <div class="view view-cascade gradient-card-header  blue lighten-1 py-sm-3 py-md-3 py-lg-3 ml-md-3 ml-sm-3 ml-lg-3 ">
 
-                                    <!-- Card content -->
-                                    <div class="card-body card-body-cascade text-center ml-md-0  ml-0 mr-0 pr-0 pl-0 pb-5">
+                                    <!-- Title -->
+                                    <h2 class="card-header-title">Post Status</h2>
+                                    <!-- Subtitle -->
 
-                                        <!-- Title -->
-                                        <h2 class="card-title font-weight-bold blue-text text-capitalize">hi, @User.Identity.Name </h2>
-
-                                        <h4 class="font-weight-bold blue-text pr-4  "> <i class="fas fa-times text-danger"></i> You Have No Post </h4>
-
-
-
-                                    </div>
-
-                                    <!-- Card footer -->
-                                    <div class="card-footer text-muted text-center">
-                                        @DateTime.Now
-                                    </div>
 
                                 </div>
-                                <!-- Card Regular -->
+                                <div class="card-img-top  pt-3   px-3 mb-0 pb-0">
+                                    <img class="card-img-top " src="~/Content/Img/No-Post-orginal.svg" alt="Card image cap">
+                                </div>
 
+                                <!-- Card content -->
+                                <div class="card-body card-body-cascade text-center">
+
+                                    <h2 class="card-title font-weight-bold blue-text text-capitalize mb-2">hi, @User.Identity.Name </h2>
+
+                                    <h4 class="font-weight-bold blue-text pr-4  "> <i class="fas fa-times text-danger"></i> You Have No Post </h4>
+                                    
+                                </div>
+                                <div class="card-footer text-muted text-center">
+                                    @DateTime.Now
+                                </div>
                             </div>
+                            <!-- Card Regular -->
+                            <!-- Card Regular -->
 
                         </div>
+                       
                     </div>
 
 

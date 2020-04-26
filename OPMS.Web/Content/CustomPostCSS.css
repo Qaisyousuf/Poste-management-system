@@ -127,6 +127,21 @@ header {
         font-size: 3rem !important;
     }
 }
+
+@media(min-width: 200px) and (max-width: 1000px) {
+    .card.card-cascade.narrower .view.view-cascade {
+       width:auto;
+    }
+}
+
+@media(min-width: 200px) and (max-width: 1000px) {
+    .card.card-cascade.narrower {
+        margin-top:40px;
+    }
+}
+
+
+
 #sidebar {
     background-image: url(Img/photo-of-eiffel-tower-with-lights-149637.jpg);
     background-size: cover;
