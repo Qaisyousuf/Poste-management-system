@@ -2,46 +2,90 @@
 @{
     ViewBag.Title = ViewBag.PageTitle;
 }
-
-<div class="container-fluid py-md-4  my-md-4 px-5 py-sm-3 my-sm-3">
+<div class="container">
 
 
     <!--Section: Content-->
-    <section class=" text-center text-lg-left dark-grey-text">
+    <section class="pb-5 pt-5">
 
-        <!--Grid row-->
-        <div class="row">
-            <div class="col-md-5 offset-1">
+        <!-- Grid row -->
+        <div class="row mx-2">
 
-                <!--Image-->
-                <div class="view overlay">
-                    <img src="~/Content/Img/undraw_delivery_address_03n0.svg" class="img-fluid" alt="HomeBanner" id="zoom">
-                    
+            <!-- Grid column -->
+            <div class="col-lg-5 col-md-12 mb-lg-0 mb-4">
+
+                <!-- Featured image -->
+                <div class="view overlay rounded  mb-lg-0 pb-5">
+                    <div class="view overlay wow fadeIn"  data-wow-delay="0.2s" id="HomeSectionBackImage">
+                        <img src="~/Content/Img/undraw_delivery_address_03n0.svg" class="img-fluid" alt="HomeBanner" id="zoom">
+
+                    </div>
                 </div>
 
             </div>
-            <!--Grid column-->
-            <div class="col-md-6 my-5 pt-md-4">
+            <!-- Grid column -->
+            <!-- Grid column -->
+            <div class="col-lg-7 col-md-6  mb-4 mt-xl-4 pt-3 wow fadeIn " data-wow-delay="0.2s">
 
                 <h1 class="font-weight-bold"><span class="text-primary">@Model.Title</span></h1>
-                <hr />
-
-                <p class="text-justify">@Html.Raw(Model.Content) </p>
+                <hr class="hr-light" />
+                <p class="text-justify" >@Html.Raw(Model.Content) </p>
                 <a href="/CheckPost" class="btn btn-primary btn-rounded waves-effect btn-md ml-lg-1"><i class="fa fa-check fa-lg pr-1"></i> Check The Post</a>
+                @*<a class="btn btn-outline-primary mx-0" href="#">Read More <i class="fas fa-arrow-right fs-9 ml-2"></i></a>*@
+
             </div>
-            <!--Grid column-->
-            <!--Grid column-->
-            <!--Grid column-->
+            <!-- Grid column -->
 
         </div>
-        <!--Grid row-->
-
+        <!-- Grid row -->
 
     </section>
     <!--Section: Content-->
 
 
 </div>
+@*<div class="container-fluid py-md-5 my-md-4 px-5 py-sm-3 my-sm-3">
+
+
+        <!--Section: Content-->
+        <section class=" text-center text-lg-left dark-grey-text">
+
+            <!--Grid row-->
+            <div class="row">
+                <div class="col-md-6 offset-1 ">
+
+                    <!--Image-->
+                    <div class="view overlay" id="HomeSectionBackImage">
+                        <img src="~/Content/Img/undraw_delivery_address_03n0.svg" class="img-fluid" alt="HomeBanner">
+
+                    </div>
+
+                </div>
+                <!--Grid column-->
+                <div class="col-md-5  my-5 pt-md-4 mx-3">
+
+                    <h1 class="font-weight-bold"><span class="text-primary">@Model.Title</span></h1>
+                    <hr />
+
+                    <p class="text-justify">@Html.Raw(Model.Content) </p>
+                    <a href="/CheckPost" class="btn btn-primary btn-rounded waves-effect btn-md ml-lg-1"><i class="fa fa-check fa-lg pr-1"></i> Check The Post</a>
+                </div>
+                <!--Grid column-->
+                <!--Grid column-->
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+
+        </section>
+        <!--Section: Content-->
+
+
+    </div>*@
+
+
+
 @section HomeCustomCSS{
 
     <link href="~/Content/HomeCustomCSS.css" rel="stylesheet" />

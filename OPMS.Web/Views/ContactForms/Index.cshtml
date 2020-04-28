@@ -93,7 +93,7 @@
             <section class="dark-grey-text">
                 <!-- Section heading -->
                 <div class="form-header form-header z-depth-0 text-white mb-0">
-                    <h1 class="mt-2"><i class="fas fa-envelope"></i> @item.Title</h1>
+                    <h1 class="mt-2 pt-4 text-primary"><i class="fas fa-envelope"></i> @item.Title</h1>
                     <hr class="hr-light w-25" />
                     <!-- Section description -->
                 </div>
@@ -109,52 +109,52 @@
                             <div class="card-body">
                                 <div class="row ">
                                     <div class="col-lg-12 col-md-12 mb-1">
-                                        <h6 class="font-weight-bold mb-1">
+                                        <p class=" mb-1">
                                             <a class="btn-floating prefix text-left blue lighten-1">
                                                 <i class="fas  fas fa-city"></i>
                                             </a> City: @item.CityName
-                                        </h6>
+                                        </p>
 
                                     </div>
                                     <div class="col-lg-12 col-md-12 mb-1">
-                                        <h6 class="font-weight-bold mb-1">
+                                        <p class=" mb-1">
                                             <a class="btn-floating prefix text-left blue lighten-1">
                                                 <i class="fas fa-road"></i>
                                             </a> Street: @item.StreetName
-                                        </h6>
+                                        </p>
 
                                     </div>
                                     <div class="col-lg-12 col-md-12 mb-1">
-                                        <h6 class="font-weight-bold mb-1">
+                                        <p class=" mb-1">
                                             <a class="btn-floating prefix text-left blue lighten-1">
                                                 <i class="fas fa-archway"></i>
                                             </a> Area: @item.AreaName
-                                        </h6>
+                                        </p>
 
                                     </div>
 
                                     <div class="col-lg-12 col-md-12 mb-1">
-                                        <h6 class="font-weight-bold mb-1">
+                                        <p class=" mb-1">
                                             <a class="btn-floating prefix text-left blue blue lighten-1">
                                                 <i class="fas fa-home"></i>
                                             </a> Center: @item.CenterName
-                                        </h6>
+                                        </p>
 
                                     </div>
                                     <div class="col-lg-12 col-md-12 mb-1">
-                                        <h6 class="font-weight-bold mb-1">
+                                        <p class=" mb-1">
                                             <a class="btn-floating prefix text-left blue blue lighten-1">
                                                 <i class="fas fa-mobile-alt"></i>
                                             </a> Mobile: @item.MobileNumber
-                                        </h6>
+                                        </p>
 
                                     </div>
                                     <div class="col-lg-12 col-md-12 mb-1">
-                                        <h6 class="font-weight-bold mb-1">
+                                        <p class=" mb-1">
                                             <a class="btn-floating prefix text-left blue blue lighten-1">
                                                 <i class="fas fa-envelope"></i>
                                             </a> Email: @item.CenterEmail
-                                        </h6>
+                                        </p>
 
                                     </div>
                                 </div>
@@ -192,8 +192,8 @@
 @if (Model?.ContactInfoViewModel != null)
 {
     <div class="container">
-        <div class="form-header text-white z-depth-0 mt-2">
-            <h2 class="mt-2"><i class="fas fa-map-marker-alt"></i> Find More Address</h2>
+        <div class="form-header text-white z-depth-0 mt-2 mb-1">
+            <h2 class="mt-2 pt-4 text-primary pb-0"><i class="fas fa-map-marker-alt"></i> Find More Address</h2>
             <hr class="hr-light w-25 mb-0" />
         </div>
 
@@ -248,49 +248,49 @@
                             <div class="row ">
 
                                 <div class="col-lg-12 col-md-12 mb-1">
-                                    <h6 class="font-weight-bold mb-1">
+                                    <p class=" mb-1">
                                         <a class="btn-floating prefix text-left blue lighten-1">
                                             <i class="fas fa-clinic-medical"></i>
                                         </a> Title: @Html.Raw(item.Title)
-                                    </h6>
+                                    </p>
 
                                 </div>
                                 <div class="col-lg-12 col-md-12 mb-1">
-                                    <h6 class="font-weight-bold mb-1">
+                                    <p class=" mb-1">
                                         <a class="btn-floating prefix text-left blue lighten-1">
 
                                             <i class="fas fa-archway"></i>
                                         </a> City: @item.PlaceName
-                                    </h6>
+                                    </p>
                                 </div>
                                 <div class="col-lg-12 col-md-12 mb-1">
-                                    <h6 class="font-weight-bold mb-1">
+                                    <p class=" mb-1">
                                         <a class="btn-floating prefix text-left blue lighten-1">
                                             <i class="fas fa-road"></i>
                                         </a> Add:@item.PlaceAddress
-                                    </h6>
+                                    </p>
 
                                 </div>
 
 
                                 <div class="col-lg-12 col-md-12 mb-1">
-                                    <h6 class="font-weight-bold mb-1">
+                                    <p class=" mb-1">
                                         <a class="btn-floating prefix text-left blue lighten-1">
                                             <i class="fas fa-mobile-alt"></i>
                                         </a> Mobile: @item.PlaceContactNumber
-                                    </h6>
+                                    </p>
 
                                 </div>
                                 <div class="col-lg-12 col-md-12 mb-1">
-                                    <h6 class="font-weight-bold mb-1">
+                                    <p class=" mb-1">
                                         <a class="btn-floating prefix text-left blue lighten-1">
                                             <i class="fas fa-map-marked"></i>
                                         </a> Area Code: @item.PostalCode
-                                    </h6>
+                                    </p>
 
                                 </div>
                                 <div class="col-lg-12 col-md-12 mb-1">
-                                    <h6 class="font-weight-bold mb-1">
+                                    <p class=" mb-1">
                                         <a class="btn-floating prefix text-left blue lighten-1">
                                             <i class="fas fa-map-marked"></i>
 
@@ -299,7 +299,7 @@
                                         <a href="@item.WebSite" class="btn btn-primary btn-rounded waves-effect btn-md" target="_blank"><i class="fas fa-external-link-alt fa-lg pr-1 "></i> Viste Site</a>
 
 
-                                    </h6>
+                                    </p>
 
                                 </div>
                             </div>

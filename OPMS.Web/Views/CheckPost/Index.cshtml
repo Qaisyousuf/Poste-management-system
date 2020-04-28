@@ -42,7 +42,7 @@
 
                                         <h2 class="card-title font-weight-bold blue-text text-capitalize mb-2">hi, @User.Identity.Name </h2>
 
-                                        <h4 class=" blue-text font-weight-bold pr-4"> <i class="fas fa-check blue-text text-capitalize"></i> You Have Post </h4>
+                                        <h5 class=" blue-text font-weight-bold pr-4"> <i class="fas fa-check blue-text text-capitalize"></i> You Have Post </h5>
                                         <h6 class=" blue-text font-weight-bold pt-1 text-capitalize mb-0 ">Get Your Post from The Office</h6>
                                     </div>
                                     <div class="card-footer text-muted text-center">
@@ -137,43 +137,45 @@
                 }
                 else
                 {
+                    <div class="container m-0 p-0 text-center">
+                        <div class="  mt-5 pt-5">
+                            <div class="col-md-6 col-sm-12 col-md-6 offset-md-4 col-lg-6 offset-lg-4 ">
 
-                    <div class="  mt-5 pt-5">
-                        <div class="col-md-6 col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3">
+                                <div class="card card-cascade narrower blue lighten-5">
 
-                            <div class="card card-cascade narrower blue lighten-5">
+                                    <!-- Card image -->
+                                    <div class="view view-cascade gradient-card-header  blue lighten-1 py-sm-3 py-md-3 py-lg-3 ml-md-3 ml-sm-3 ml-lg-3 ">
 
-                                <!-- Card image -->
-                                <div class="view view-cascade gradient-card-header  blue lighten-1 py-sm-3 py-md-3 py-lg-3 ml-md-3 ml-sm-3 ml-lg-3 ">
-
-                                    <!-- Title -->
-                                    <h2 class="card-header-title">Post Status</h2>
-                                    <!-- Subtitle -->
+                                        <!-- Title -->
+                                        <h3 class="card-header-title">Post Status</h3>
+                                        <!-- Subtitle -->
 
 
+                                    </div>
+                                    <div class="card-img-top  pt-3   px-3 mb-0 pb-0">
+                                        <img class="card-img-top " src="~/Content/Img/No-Post-orginal.svg" alt="Card image cap">
+                                    </div>
+
+                                    <!-- Card content -->
+                                    <div class="card-body card-body-cascade text-center">
+
+                                        <h2 class="card-title font-weight-bold blue-text text-capitalize mb-2">hi, @User.Identity.Name </h2>
+
+                                        <h5 class="font-weight-bold blue-text pr-4  "> <i class="fas fa-times text-danger"></i> You Have No Post </h5>
+
+                                    </div>
+                                    <div class="card-footer text-muted text-center">
+                                        @DateTime.Now
+                                    </div>
                                 </div>
-                                <div class="card-img-top  pt-3   px-3 mb-0 pb-0">
-                                    <img class="card-img-top " src="~/Content/Img/No-Post-orginal.svg" alt="Card image cap">
-                                </div>
+                                <!-- Card Regular -->
+                                <!-- Card Regular -->
 
-                                <!-- Card content -->
-                                <div class="card-body card-body-cascade text-center">
-
-                                    <h2 class="card-title font-weight-bold blue-text text-capitalize mb-2">hi, @User.Identity.Name </h2>
-
-                                    <h4 class="font-weight-bold blue-text pr-4  "> <i class="fas fa-times text-danger"></i> You Have No Post </h4>
-                                    
-                                </div>
-                                <div class="card-footer text-muted text-center">
-                                    @DateTime.Now
-                                </div>
                             </div>
-                            <!-- Card Regular -->
-                            <!-- Card Regular -->
 
                         </div>
-                       
                     </div>
+                   
 
 
                 }
@@ -197,11 +199,11 @@
                         <img src="~/Content/Img/WelcomeBack.svg" class="img-fluid img-responsive" />
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-6 mt-5">
+                <div class="col-sm-6 col-md-6 mt-5 pb-4">
                     <div class="card card-cascade wider">
 
                         <!-- Card image -->
-                        <div class="view view-cascade gradient-card-header blue-gradient">
+                        <div class="view view-cascade gradient-card-header  blue lighten-1">
 
                             <!-- Title -->
                             <h2 class="card-header-title mb-3">Admin Authrization</h2>
@@ -211,12 +213,12 @@
                         </div>
 
                         <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center bg-transparent pb-0 pt-5">
+                        <div class="card-body card-body-cascade text-center  blue lighten-5 pb-0 pt-5">
 
 
 
-                            <h2 class=" blue-text text-capitalize  pt-2"> Hi, @User.Identity.Name</h2>
-                            <h4 class="text-capitalize blue-text pb-4 "> welcome back </h4>
+                            <h2 class=" text-primary text-capitalize font-weight-bold pt-2"> Hi, @User.Identity.Name</h2>
+                            <h4 class="text-capitalize text-primary pb-4 "> welcome back </h4>
 
                             <!-- Link -->
 
@@ -257,7 +259,7 @@
                             </div>
                             <!--Grid column-->
                             <!--Grid column-->
-                            <div class="col-md-6 pt-5">
+                            <div class="col-md-6 pt-3">
                                 <img src="~/Content/Img/Login.svg" alt="" class="img-fluid" id="zoom">
                             </div>
                             <!--Grid column-->

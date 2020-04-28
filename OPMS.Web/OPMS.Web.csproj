@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44317</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -171,7 +171,10 @@
     <Content Include="Content\HelpCustomCSS.css" />
     <Content Include="Content\HomeCustomCSS.css" />
     <Content Include="Content\Img\AnimationFigmasvg.svg" />
+    <Content Include="Content\Img\BackGroudnSectionsvg.svg" />
+    <Content Include="Content\Img\ContactFormImage.svg" />
     <Content Include="Content\Img\dashboard_nklg.svg" />
+    <Content Include="Content\Img\FooterBack.svg" />
     <Content Include="Content\Img\Footersvg.svg" />
     <Content Include="Content\Img\HavePost.svg" />
     <Content Include="Content\Img\help.svg" />
@@ -195,8 +198,6 @@
     <Content Include="Content\Img\ThanksContact.svg" />
     <Content Include="Content\Img\undraw_dashboard_nklg.svg" />
     <Content Include="Content\Img\undraw_delivery_address_03n0.svg" />
-    <Content Include="Content\Img\undraw_fill_forms_yltj.svg" />
-    <Content Include="Content\Img\undraw_interview_rmcf.svg" />
     <Content Include="Content\Img\undraw_manage_chats_ylx0.svg" />
     <Content Include="Content\Img\undraw_mobile_testing_reah.svg" />
     <Content Include="Content\Img\undraw_newsletter_vovu.svg" />
@@ -210,6 +211,7 @@
     <Content Include="Content\Img\undraw_web_devices_ad58.svg" />
     <Content Include="Content\Img\undraw_work_chat_erdt.svg" />
     <Content Include="Content\Img\WelcomeBack.svg" />
+    <Content Include="Content\Img\WorkingSystem.svg" />
     <Content Include="Content\mdb.min.css" />
     <Content Include="Content\NewsCustomCSS.css" />
     <Content Include="Content\SideNavbar.js" />
@@ -980,7 +982,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49810</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49810/</IISUrl>
+          <IISUrl>https://localhost:44317/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -9,9 +9,9 @@
         @foreach (var item in Model.HomeRRVMs)
         {
 
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-2">
 
-                <div class="card card-cascade bg-transparent hoverable">
+                <div class="card card-cascade blue lighten-5 hoverable">
 
                     <!-- Card image -->
                     <div class="view px-5 pt-4">
@@ -19,21 +19,21 @@
                     </div>
 
                     <!-- Card content -->
-                    <div class="card-body card-body-cascade dark-grey-text text-justify mx-4 my-1">
+                    <div class="card-body card-body-cascade dark-grey-text text-justify mx-2 my-1">
 
                         <!-- Title -->
                         <!-- Subtitle -->
-                        <h4 class="font-weight-bold text-primary py-2 text-center">@item.Title</h4>
+                        <h4 class="font-weight-bold text-primary py-1 text-center">@item.Title</h4>
                         <hr />
                         <!-- Text -->
-                        <p class=" dark-grey-text mb-1 pb-2">@Html.Raw(item.Content) </p>
+                        <p class=" dark-grey-text mb-0 pb-0">@Html.Raw(item.Content) </p>
                     </div>
 
                     
-                    <div class="card-footer pl-4">
+                    <div class="card-footer text-center">
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#basicExampleModal"> <i class="fas fa-book-open mr-2"></i>
+                        <button type="button" class="btn btn-primary btn-rounded btn-md" data-toggle="modal" data-target="#basicExampleModal"> <i class="fas fa-book-open mr-2"></i>
                             Read More
                         </button>
 

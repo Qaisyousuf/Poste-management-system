@@ -76,127 +76,131 @@
         @RenderSection("HomeCustomCSS", required: true)
 
         <!-- Footer -->
-        <footer class="page-footer font-small  blue lighten-2">
+        <div class="footerBack">
+            <footer class="page-footer font-small bg-transparent pt-5 ">
 
-            <div style="background-color: #42a5f5;">
-                <div class="container">
+                <div>
+                    <div class="container mt-3 mb-n4">
 
-                    <!-- Grid row-->
-                    <div class="row py-md-2 py-sm-4 mt-sm-2 d-flex align-items-center">
+                        <!-- Grid row-->
+                        <div class="row  d-flex align-items-center">
 
+                            <!-- Grid column -->
+                            <div class="col-md-6 col-lg-5 text-center text-md-left">
+                                <h3 class=" text-white">@Model.SiteFooter</h3>
+                            </div>
+                            <!-- Grid column -->
+                            <!-- Grid column -->
+                            <div class="col-md-6 col-lg-7 text-center text-md-right ">
+
+                                <!-- Facebook -->
+                                <a class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f"></i></a>
+                                <!--Twitter-->
+                                <a class="btn-floating btn-sm btn-tw"><i class="fab fa-twitter"></i></a>
+                                <!--Google +-->
+                                <a class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
+                                <!--Linkedin-->
+                                <a class="btn-floating btn-sm btn-li"><i class="fab fa-linkedin-in"></i></a>
+                                <!--Instagram-->
+                                <a class="btn-floating btn-sm btn-ins"><i class="fab fa-instagram"></i></a>
+                                <!--Pinterest-->
+
+
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row-->
+
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="container text-center text-md-left pt-5">
+
+                    <!-- Grid row -->
+                    <div class="row">
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto pt-5">
+                            <div class="card-img-top">
+                                <img src="~/Content/Img/Footersvg.svg" class="img-fluid" />
+                            </div>
+
+
+                        </div>
                         <!-- Grid column -->
-                        <div class="col-md-6 col-lg-5 text-center text-md-left mb-2 mb-md-0">
-                            <h3 class="mt-3">@Model.SiteFooter</h3>
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-3 pb-0 mb-0 mt-0">
+
+                            <!-- Content -->
+                            <h6 class="text-uppercase font-weight-bold">@Model.SiteName</h6>
+                            <hr class="white accent-2 mb-3 mt-0 d-inline-block mx-auto" style="width:60px;">
+                            <p class="pt-2">
+                                @Html.Raw(Model.ContentFooterBase)
+                            </p>
+
+
+
                         </div>
                         <!-- Grid column -->
                         <!-- Grid column -->
-                        <div class="col-md-6 col-lg-7 text-center text-md-right">
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto ">
 
-                            <!-- Facebook -->
-                            <a class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f"></i></a>
-                            <!--Twitter-->
-                            <a class="btn-floating btn-sm btn-tw" ><i class="fab fa-twitter"></i></a>
-                            <!--Google +-->
-                            <a class="btn-floating btn-sm btn-gplus" ><i class="fab fa-google-plus-g"></i></a>
-                            <!--Linkedin-->
-                            <a class="btn-floating btn-sm btn-li" ><i class="fab fa-linkedin-in"></i></a>
-                            <!--Instagram-->
-                            <a class="btn-floating btn-sm btn-ins"><i class="fab fa-instagram"></i></a>
-                            <!--Pinterest-->
-                           
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-bold">Links</h6>
+                            <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                            <p>
+                                <a href="@Model.HomeUrlBase"> <i class="fas fa-home mr-3"></i>@Model.HomeFooter</a>
+                            </p>
+                            <p>
+                                <a href="@Model.AboutUrl"><i class="fas fa-building mr-3"></i>@Model.AboutFooter</a>
+                            </p>
+                            <p>
+                                <a href="@Model.ContactUrlBase"><i class="fas fa-phone-square-alt mr-3"></i>@Model.ContactFooterBase</a>
+                            </p>
+                            <p>
+                                <a href="@Model.LoginUrlBase"><i class="fas fa-sign-in-alt mr-3"></i>@Model.LoginFooter</a>
+                            </p>
+
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto">
+
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                            <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 80px;">
+                            <p>
+                                <a href="#!"><i class="fas fa-map-marker-alt mr-3"></i> @Model.AddresFooterBase</a>
+                            </p>
+                            <p>
+                                <a href="#!"><i class="fas fa-mobile-alt mr-3"></i> @Model.ContactNumberFooterBase</a>
+                            </p>
+                            <p>
+                                <a href="#!"><i class="fas fa-at mr-3"></i>@Model.EmailFooterBase</a>
+                            </p>
+                            <p>
+                                <a href="#!"> <i class="far fa-building mr-3"></i>@Model.SiteOwner</a>
+                            </p>
 
                         </div>
                         <!-- Grid column -->
 
                     </div>
-                    <!-- Grid row-->
+                    <!-- Grid row -->
 
                 </div>
-            </div>
-
-            <!-- Footer Links -->
-            <div class="container text-center text-md-left mt-5">
-
-                <!-- Grid row -->
-                <div class="row mt-2">
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 mt-md-4">
-                        <div class="view">
-                            <img src="~/Content/Img/Footersvg.svg" class="img-fluid" />
-                        </div>
-
-                    </div>
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-3 mb-4 mt-0">
-
-                        <!-- Content -->
-                        <h6 class="text-uppercase font-weight-bold">@Model.SiteName</h6>
-                        <hr class="white accent-2 mb-3 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                        <p>
-                            @Html.Raw(Model.ContentFooterBase)
-                        </p>
-                       
-
-
-                    </div>
-                    <!-- Grid column -->
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                        <!-- Links -->
-                        <h6 class="text-uppercase font-weight-bold">Links</h6>
-                        <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                        <p>
-                            <a href="@Model.HomeUrlBase"> <i class="fas fa-home mr-3"></i>@Model.HomeFooter</a>
-                        </p>
-                        <p>
-                            <a href="@Model.AboutUrl"><i class="fas fa-building mr-3"></i>@Model.AboutFooter</a>
-                        </p>
-                        <p>
-                            <a href="@Model.ContactUrlBase"><i class="fas fa-phone-square-alt mr-3"></i>@Model.ContactFooterBase</a>
-                        </p>
-                        <p>
-                            <a href="@Model.LoginUrlBase"><i class="fas fa-sign-in-alt mr-3"></i>@Model.LoginFooter</a>
-                        </p>
-
-                    </div>
-                    <!-- Grid column -->
-                    <!-- Grid column -->
-                    <!-- Grid column -->
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                        <!-- Links -->
-                        <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                        <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 80px;">
-                        <p>
-                            <a href="#!"><i class="fas fa-map-marker-alt mr-3"></i> @Model.AddresFooterBase</a>
-                        </p>
-                        <p>
-                            <a href="#!"><i class="fas fa-mobile-alt mr-3"></i> @Model.ContactNumberFooterBase</a>
-                        </p>
-                        <p>
-                            <a href="#!"><i class="fas fa-at mr-3"></i>@Model.EmailFooterBase</a>
-                        </p>
-                        <p>
-                            <a href="#!"> <i class="far fa-building mr-3"></i>@Model.SiteOwner</a>
-                        </p>
-
-                    </div>
-                    <!-- Grid column -->
-
+                <!-- Footer Links -->
+                <!-- Copyright -->
+                <div class="footer-copyright text-center py-3 bg-transparent">
+                    Site Last Update:@Model.SiteLastUpdate<br />
+                    @Model.CopyrightFooterBase
                 </div>
-                <!-- Grid row -->
+                <!-- Copyright -->
 
-            </div>
-            <!-- Footer Links -->
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3 blue lighten-1">
-                Site Last Update:@Model.SiteLastUpdate<br />
-                @Model.CopyrightFooterBase
-            </div>
-            <!-- Copyright -->
-
-        </footer>
+            </footer>
+        </div>
+      
      
     </div>
 

@@ -7,6 +7,16 @@ header {
     font-family: 'Ubuntu', sans-serif;
     font-size: 1rem;
 }
+
+#HomeSectionBackImage
+{
+    background-image:url(/Content/Img/ProfileBackImage.svg);
+    background-repeat:no-repeat;
+}
+
+nav-link ml-auto waves-effect waves-light {
+    padding-left: 5rem;
+}
 .btn-primary {
     color: #fff;
     background-color: #42a5f5 !important;
@@ -15,6 +25,14 @@ header {
     color: #42a5f5 !important;
 }
 
+.footerBack {
+    background-image: url(Img/FooterBack.svg);
+    height:auto;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:top;
+    
+}
 
 #sidebar
 {

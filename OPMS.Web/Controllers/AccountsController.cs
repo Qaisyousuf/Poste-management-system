@@ -74,6 +74,7 @@ namespace OPMS.Web.Controllers
             HttpCookie myCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptTicket)
             {
                 HttpOnly = true,
+                Secure=true,
                 Expires = DateTime.Now.AddMinutes(30)
             };
 

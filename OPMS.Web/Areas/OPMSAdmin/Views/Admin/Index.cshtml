@@ -15,7 +15,7 @@
 
             foreach (var item in Model)
             {
-                <div class="container mt-5">
+                <div class="container my-5">
 
 
                     <!--Section: Content-->
@@ -30,9 +30,7 @@
                                 <!-- Featured image -->
                                 <div class="view overlay rounded z-depth-0 mb-lg-0 mb-4 ">
                                     <img class="img-fluid" src="~/Content/Img/dashboard_nklg.svg" alt="Sample image">
-                                    <a>
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
+                                  
                                 </div>
 
                             </div>
@@ -40,11 +38,11 @@
                             <!-- Grid column -->
                             <div class="col-lg-7 col-md-6 mb-md-0 mb-4 mt-xl-4">
 
-                                <h3 class="font-weight-normal mb-2">@item.Title</h3>
-                                <h4 class="font-weight-normal mb-2">@Html.Raw(item.SubContent)</h4>
-                                <p class="text-muted">@Html.Raw(item.Content)</p>
+                                <h3 class="font-weight-normal mb-2  text-primary">@item.Title</h3>
+                                <h4 class="font-weight-normal mb-2 text-white">@Html.Raw(item.SubContent)</h4>
+                                <p class="">@Html.Raw(item.Content)</p>
 
-                                <button class="btn btn-primary bg-transparent " data-toggle="modal" data-target="#basicExampleModal">Dear, @item.AuthenticatedUser ,read the roles<i class="fas fa-cog ml-3 fa-1x fa-spin"></i></button>
+                                <button class="btn btn-primary bg-transparent " data-toggle="modal" data-target="#basicExampleModal">@item.AuthenticatedUser ,read the roles<i class="fas fa-cog ml-3 fa-1x fa-spin"></i></button>
 
                             </div>
                             <!-- Grid column -->
@@ -69,7 +67,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body text-center">
+                            <div class="modal-body justify-content-center">
                                 <h3 class="font-weight-normal mb-2">@item.Title</h3>
                                 <h4 class="font-weight-normal mb-2">@Html.Raw(item.SubContent)</h4>
                                 <p class="text-muted">@Html.Raw(item.Content)</p>

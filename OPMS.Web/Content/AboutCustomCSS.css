@@ -6,6 +6,13 @@ header {
     font-size: 1rem;
    
 }
+.footerBack {
+    background-image: url(Img/FooterBack.svg);
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
 .btn-primary {
     color: #fff;
     background-color: #42a5f5 !important;
@@ -166,7 +173,20 @@ sectin .intro {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DCEDFA', endColorstr='#95CDF5',GradientType=0 ); /* ie6-9 */
     background-size: 400% 400%;
     -webkit-animation: gradientBG 10s ease infinite;
-    animation: gradientBG 5s ease infinite;
+    animation: gradientBG 10s ease infinite;
+}
+
+.BackCOLORSection {
+    background: -moz-linear-gradient(316deg, rgba(69,171,255,0.9) 0%, rgba(255,152,25,0.7) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(69,171,255,0.9)), color-stop(100%, rgba(255,152,25,0.7))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(316deg, rgba(69,171,255,0.9) 0%, rgba(255,152,25,0.7) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(316deg, rgba(69,171,255,0.9) 0%, rgba(255,152,25,0.7) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(316deg, rgba(69,171,255,0.9) 0%, rgba(255,152,25,0.7) 100%); /* ie10+ */
+    background: linear-gradient(134deg, rgba(69,171,255,0.9) 0%, rgba(255,152,25,0.7) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ABFF', endColorstr='#FF9819',GradientType=1 ); /* ie6-9 */
+    background-size: 400% 400%;
+    -webkit-animation: gradientBG 7s ease infinite;
+    animation: gradientBG 7s ease infinite;
 }
 @-webkit-keyframes gradientBG {
     0% {

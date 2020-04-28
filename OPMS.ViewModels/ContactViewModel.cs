@@ -27,6 +27,7 @@ namespace OPMS.ViewModels
 
         [Display(Name = "Mobile")]
         [Required]
+        [DataType(DataType.PhoneNumber)]
         public string MobileNumber { get; set; }
 
         public string IpAddres { get; set; }
@@ -37,6 +38,7 @@ namespace OPMS.ViewModels
 
         [Required]
         [Display(Name = "Write more")]
+        [DataType(DataType.Text)]
         public string MessageText { get; set; }
 
         [Display(Name ="Location")]
