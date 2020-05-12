@@ -7,10 +7,10 @@
 
 @foreach (var item in Model.AboutPageViewModels)
 {
-    <div class=" text-justify pt-5 ">
+    <div class=" text-justify pt-3 ">
         <div class="" style="background-image: url(''); background-repeat: no-repeat; background-size: cover; background-position: center center;" id="sidebar">
             <!-- Mask & flexbox options-->
-            <div class="mask BackCOLOR d-flex justify-content-center align-items-center h-100">
+            <div class="mask BackCOLORSection d-flex justify-content-center align-items-center h-100">
                 <!-- Content -->
                 <div class="container">
                     <!--Grid row-->
@@ -22,7 +22,7 @@
                             <hr class="hr-light">
                            
                             <div class="text-body">
-                                <p>@Html.Raw(item.Content)</p> 
+                                <p class="text-white">@Html.Raw(item.Content)</p> 
                                 <a href="/Contact" class="btn btn-primary  btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-phone-alt fa-lg pr-1"></i> Contact Us</a>
                                 <a href="/@item.AboutUrl" class="btn btn-primary btn-rounded waves-effect btn-md"><i class="fas fa-home fa-lg pr-1 "></i> Home</a>
                             </div>
@@ -53,7 +53,7 @@
                 <div class="text-justify-center ">
                     <div class="cke_panel_frame  my-2" style="background-image: url('https://i.ibb.co/jbxSqM6/About-Working-System.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;" id="sidebar">
                         <!-- Mask & flexbox options-->
-                        <div class="mask BackCOLORSection d-flex justify-content-center align-items-center h-100">
+                        <div class="mask BackCOLOR d-flex justify-content-center align-items-center h-100">
                             <!-- Content -->
                             <div class="container h-100 pt-5 mx-2">
                                 <!--Grid row-->
@@ -142,11 +142,10 @@
             <!-- Section: Block Content -->
             <section class="">
 
-                <div class="container">
 
 
                     <!--Section: Content-->
-                    <section class="mx-md-5">
+                    <section class="">
 
                         <!-- Grid row -->
                         <div class="row">
@@ -201,7 +200,6 @@
                     <!--Section: Content-->
 
 
-                </div>
 
 
                 <!-- Grid row -->
@@ -224,9 +222,9 @@
                                     <h2 class="font-weight-bold text-primary text-left pb-2">@item.SubTitle</h2>
                                     <h3 class="font-weight-bold text-white text-left">@item.MainTitle</h3>
                                     <p class=" w-responsive mx-auto text-left pt-2">@Html.Raw(item.Content)</p>
-                                    <div class="pt-2 text-left">
+                                    <div class="pt-2 text-center">
                                         <a href="/Contact" class="btn btn-primary btn-rounded waves-effect btn-md ml-lg-0"><i class="fas fa-phone-alt fa-lg pr-1"></i> Contact Us</a>
-                                        <a href="/SocialWokers" class="btn btn-primary btn-rounded waves-effect btn-md"><i class="fas fa-users fa-lg pr-1 "></i> Social Worker</a>
+                                       
                                     </div>
                                 </div>
                                

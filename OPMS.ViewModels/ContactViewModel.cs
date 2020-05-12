@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace OPMS.ViewModels
 {
@@ -39,6 +36,7 @@ namespace OPMS.ViewModels
         [Required]
         [Display(Name = "Write more")]
         [DataType(DataType.Text)]
+        [AllowHtml]
         public string MessageText { get; set; }
 
         [Display(Name ="Location")]

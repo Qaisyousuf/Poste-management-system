@@ -1,11 +1,12 @@
 ﻿html,
 body,
 header {
-    padding-top: 15px;
+    padding-top: 10px;
     height: 100%;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1rem;
 }
+
 .btn-primary {
     color: #fff;
     background-color: #42a5f5 !important;

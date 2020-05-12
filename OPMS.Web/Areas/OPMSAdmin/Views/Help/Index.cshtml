@@ -12,7 +12,7 @@
     foreach (var item in Model.Take(1))
     {
       
-<div class="container my-5 pt-5 mt-5 ">
+<div class="container my-5 pt-3 mt-3 ">
 
   
     <!--Section: Content-->
@@ -37,7 +37,7 @@
             <!-- Grid column -->
             <div class="col-lg-7 col-md-6 mb-1 mb-4 mt-xl-4">
 
-                <h2 class="font-weight-bold mb-4">@item.Title</h2>
+                <h3 class="font-weight-normal mb-4 text-primary">@item.Title</h3>
                 <p class="text-muted">@Html.Raw(item.Content)</p>
                 <a class="btn btn-primary mt-4" href="https://www.teamviewer.com/en/teamviewer-automatic-download/" target="_blank"><i class="fas fa-cloud-download-alt pr-2"></i> Download the support Software</a>
 

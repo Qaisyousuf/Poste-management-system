@@ -1,17 +1,17 @@
 ﻿
-@if (Request.IsAuthenticated)
-{
-    if (User.Identity.IsAuthenticated)
-    {
-        using (Html.BeginForm("LogOut", "Accounts", new { Area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+        @if (Request.IsAuthenticated)
         {
-            <ul class="nav navbar-nav ">
-                <li class="nav-item"><a class="nav-link  " href="javascript:document.getElementById('logoutForm').submit();" style="padding-left:8rem;"> Hi,  @User.Identity.Name | <span class="btn btn-danger btn-rounded btn-sm"> Logout <i class="fas fa-lock"></i> </span></a></li>
-            </ul>
+            if (User.Identity.IsAuthenticated)
+            {
+                using (Html.BeginForm("LogOut", "Accounts", new { Area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item navbar-light"><a class="nav-link  " href="javascript:document.getElementById('logoutForm').submit();" style="padding-left:7rem;"> Hi,  @User.Identity.Name | <span class="btn btn-danger btn-rounded btn-sm"> Logout <i class="fas fa-lock"></i> </span></a></li>
+                    </ul>
            
+                }
+            }
         }
-    }
-}
         else
         {
                     <ul class="nav navbar-nav ml-auto">

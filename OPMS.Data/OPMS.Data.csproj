@@ -262,6 +262,10 @@
     <Compile Include="Migrations\202004022313023_VirtualKeyAddedToPage.designer.cs">
       <DependentUpon>202004022313023_VirtualKeyAddedToPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005071631410_ErrorFixedForContactForms.cs" />
+    <Compile Include="Migrations\202005071631410_ErrorFixedForContactForms.designer.cs">
+      <DependentUpon>202005071631410_ErrorFixedForContactForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -362,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004022313023_VirtualKeyAddedToPage.resx">
       <DependentUpon>202004022313023_VirtualKeyAddedToPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005071631410_ErrorFixedForContactForms.resx">
+      <DependentUpon>202005071631410_ErrorFixedForContactForms.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

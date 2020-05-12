@@ -6,10 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
+
 
 namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 {
@@ -97,10 +99,10 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 
                 var socialName = ("Sended By: " + socialWorker.FullName).ToUpper();
 
-                var messbody ="Time: " + dtCOMPLTDTTM +"\n"+"Title: "+ mess.Title+"\n"+ "SMS:" + mess.Content + "\n"+socialName;
+                string messbody ="Time: " + dtCOMPLTDTTM +"\n"+"Title: "+ mess.Title+"\n"+ "SMS:" + mess.Content + "\n"+socialName;
 
 
-                var userName = ("Bonjour Mr : " + viewmodel.UserName).ToUpper();
+                var userName = ("Hi, Mr : " + viewmodel.UserName).ToUpper();
 
                 var accountsid = ConfigurationManager.AppSettings["TwilioAccountSid"];
                 var authKey = ConfigurationManager.AppSettings["TwilioAuthToken"];
@@ -109,8 +111,8 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 var to = new PhoneNumber(viewmodel.PhoneNumber);
                 var from = new PhoneNumber(ConfigurationManager.AppSettings["TwilioPhoneNumber"]);
 
-
-                var message = MessageResource.Create(to: to, from: from, body: userName + "\n" + messbody);
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; //TLS 1.2
+                string message = MessageResource.Create(to: to, from: from, body: userName + "\n" + messbody).ToString();
 
                 if (ModelState.IsValid)
                 {
