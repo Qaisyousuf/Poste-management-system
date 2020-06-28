@@ -136,7 +136,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                     uow.Commit();
                    // var SS = message.Sid;
                     TempData["Message"] = $"{viewmodel.UserName}";
-                    return RedirectToAction("ThankYou");
+                    return RedirectToAction("ThankYou", "Messages");
                 }
 
             }

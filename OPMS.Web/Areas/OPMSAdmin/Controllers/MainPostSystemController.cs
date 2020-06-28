@@ -108,7 +108,7 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                     uow.MainPostSystemRepository.Add(postFromdb);
                     uow.Commit();
                     TempData["Message"] = $"{viewmodel.UserName}";
-                    return RedirectToAction(nameof(ThankYou));
+                    return RedirectToAction("ThankYou", "MainPostSystem");
                 }
              
             }
