@@ -97,12 +97,12 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
 
                 var socialWorker = uow.SocialWorkerRepository.GetById(viewmodel.SocialId);
 
-                var socialName = ("Sended By: " + socialWorker.FullName).ToUpper();
+                var socialName = ("Envoyée par: " + socialWorker.FullName).ToUpper();
 
-                string messbody ="Time: " + dtCOMPLTDTTM +"\n"+"Title: "+ mess.Title+"\n"+ "SMS:" + mess.Content + "\n"+socialName;
+                string messbody ="Time: " + dtCOMPLTDTTM +"\n"+"Title: "+ mess.Title+"\n"+ "Message:" + mess.Content + "\n"+socialName;
 
 
-                var userName = ("Hi, Mr : " + viewmodel.UserName).ToUpper();
+                var userName = ("Bonjour, Messieurs , " + viewmodel.UserName).ToUpper();
 
                 var accountsid = ConfigurationManager.AppSettings["TwilioAccountSid"];
                 var authKey = ConfigurationManager.AppSettings["TwilioAuthToken"];

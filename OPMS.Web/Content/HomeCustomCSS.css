@@ -162,16 +162,16 @@ sectin .intro {
 }
 
 .BackCOLOR {
-    background: -moz-linear-gradient(322deg, rgba(30,136,229,0.85) 0%, rgba(255,152,0,0.85) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(30,136,229,0.85)), color-stop(100%, rgba(255,152,0,0.85))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(322deg, rgba(30,136,229,0.85) 0%, rgba(255,152,0,0.85) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(322deg, rgba(30,136,229,0.85) 0%, rgba(255,152,0,0.85) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(322deg, rgba(30,136,229,0.85) 0%, rgba(255,152,0,0.85) 100%); /* ie10+ */
-    background: linear-gradient(128deg, rgba(30,136,229,0.85) 0%, rgba(255,152,0,0.85) 100%); /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e88e5', endColorstr='#ff9800',GradientType=1 ); /* ie6-9 */
+    background: -moz-linear-gradient(324deg, rgba(255,111,0,0.8) 0%, rgba(33,150,243,0.5) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(255,111,0,0.8)), color-stop(100%, rgba(33,150,243,0.5))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(324deg, rgba(255,111,0,0.8) 0%, rgba(33,150,243,0.5) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(324deg, rgba(255,111,0,0.8) 0%, rgba(33,150,243,0.5) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(324deg, rgba(255,111,0,0.8) 0%, rgba(33,150,243,0.5) 100%); /* ie10+ */
+    background: linear-gradient(126deg, rgba(255,111,0,0.8) 0%, rgba(33,150,243,0.5) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6f00', endColorstr='#2196f3',GradientType=1 ); /* ie6-9 */
     background-size: 400% 400%;
-    -webkit-animation: gradientBG 10s ease infinite;
-    animation: gradientBG 10s ease infinite;
+    -webkit-animation: gradientBG 5s ease infinite;
+    animation: gradientBG 5s ease infinite;
 }
     .navbar-brand img {
     height: 40px;
