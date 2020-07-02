@@ -7,7 +7,7 @@
 }
 @if (TempData["Message"] != null)
 {
-   
+
 
     <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
@@ -26,34 +26,32 @@
                                 <!-- Card image -->
                                 <div class="view view-cascade z-depth-0 px-1 mx-5">
                                     <img class="card-img-top" src="~/Content/Img/ThanksContact.svg" alt="Card image cap">
-                                  
+
                                 </div>
 
                                 <!-- Card content -->
                                 <div class="card-body card-body-cascade text-center pb-0">
-                                    <hr/>
-                                   
+                                    <hr />
+
                                     <h6 class="text-primary">Thank You : @TempData["Message"] for contacting us</h6>
                                     <!-- Text -->
-                                    
-
                                     <!-- Linkedin -->
 
 
                                 </div>
 
                             </div>
-                            
-                              
-                           
+
+
+
                         </div>
                     </div>
 
-                   
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                    
+
                 </div>
             </div>
         </div>
@@ -75,3 +73,4 @@
     <link href="~/Content/ContactCustomCSS.css" rel="stylesheet" />
 
 }
+

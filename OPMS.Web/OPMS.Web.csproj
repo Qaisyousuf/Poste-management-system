@@ -923,7 +923,6 @@
     <Content Include="Views\Shared\_AboutLayout.cshtml" />
     <Content Include="Views\ContactForms\Create.cshtml" />
     <Content Include="Views\ContactForms\Index.cshtml" />
-    <Content Include="Views\ContactForms\ThankYou.cshtml" />
     <Content Include="Views\SWorkers\Index.cshtml" />
     <Content Include="Views\Shared\_Social.cshtml" />
     <Content Include="Views\SWorkers\SocialProfile.cshtml" />
@@ -939,6 +938,7 @@
     <Content Include="Views\Shared\_ErrorLayout.cshtml" />
     <Content Include="Views\CustomErrors\PageNotFound.cshtml" />
     <Content Include="Views\CustomErrors\Unauthorized.cshtml" />
+    <Content Include="Views\ContactForms\ThankYou.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

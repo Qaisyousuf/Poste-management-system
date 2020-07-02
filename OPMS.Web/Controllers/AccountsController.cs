@@ -67,7 +67,7 @@ namespace OPMS.Web.Controllers
 
             string userData = serializer.Serialize(serialize);
 
-            FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(2, user.UserName, DateTime.Now, DateTime.Now.AddMinutes(20), false, userData);
+            FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(2, user.UserName, DateTime.Now, DateTime.Now.AddMinutes(10), false, userData);
 
             string encryptTicket = FormsAuthentication.Encrypt(authTicket);
 
@@ -75,7 +75,7 @@ namespace OPMS.Web.Controllers
             {
                 HttpOnly = true,
                 Secure=false,
-                Expires = DateTime.Now.AddMinutes(30)
+                Expires = DateTime.Now.AddMinutes(10)
             };
 
             Response.Cookies.Add(myCookie);

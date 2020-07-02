@@ -134,6 +134,8 @@ namespace OPMS.Web.Areas.OPMSAdmin.Controllers
                 Content=bannerFromdb.Content,
             };
 
+            uow.HomeBannerRepository.Remove(bannerFromdb);
+            uow.Commit();
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
